@@ -75,6 +75,18 @@ phpinfo.php
 # =========================
 node_modules/
 
+# =========================
+# Booking - Ignore client folders
+# =========================
+# Keep only base files and test client, ignore all other client folders
+www/app07/booking/*
+!www/app07/booking/index.php
+!www/app07/booking/favicon.ico
+!www/app07/booking/robots.txt
+!www/app07/booking/sitemap.xml
+!www/app07/booking/symblinkreadme.txt
+!www/app07/booking/_assets
+!www/app07/booking/mobminder/
 
-www/app07/booking
+# Mobminder utilities
 www/app07/mobminder/htdocs/utilities/*

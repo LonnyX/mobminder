@@ -1,0 +1,6 @@
+Allow: /*
+
+User-agent: *
+Disallow: /_assets
+
+Sitemap: https://booking.mobminder.com/sitemap.xml
