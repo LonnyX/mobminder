@@ -1,0 +1,69 @@
+
+
+html { direction:ltr; width:100%; overflow:hidden; /* prevents scrollbars to appear */ }
+
+body {
+	position: absolute; right:0px; top:0px; left:0px; bottom:0px;
+}
+
+/* Animated Logo at login time */
+
+div.innerblury {
+	/* border:1px solid rgba(0,0,0,.2); */
+	min-height: 300px; width:80%; margin: 3em auto;
+	background: transparent;
+	position: relative;
+}
+
+div.innerblury::before { /* logo container */
+	content:""; position: absolute; right:0px; top:0px; left:0px; bottom:0px; pointer-events:none; 
+	background: transparent;
+	
+	background-image: url(../imgs/Mobminder-logo-1500-630.gif); /* the girl with the smile and a hand on her kin */
+	background-repeat: no-repeat; 
+	background-size: auto 50%;
+	background-position: right top;
+	
+	z-index:+0;
+	animation: 1s ease-out downscale; 
+	overflow:hidden;
+}
+
+@keyframes downscale {
+  from { transform: scale(5) translate(-400px, 150px); }
+  to { transform: scale(1) translate(-0px, 0px); }
+}
+
+
+div.fromblury {
+	/* border:1px solid rgba(0,0,0,.2); */
+	/* min-height: 300px; width:60%; margin: 3em auto;*/
+	background: transparent;
+	/* position: relative;*/
+	/* overflow:hidden; */
+}
+
+div.fromblury::after { /* blurred window standing between the animated object and the viewpoint */
+	content:""; 
+	position:absolute; /* on the entire viewport */
+	right:-99px; top:-99px; left:-99px; bottom:-99px; pointer-events:none; /* outset the actual viewport size */
+	background: transparent;
+	border:99px solid white; /* Chrome issue displays uggly black shades during animation on blur, these are hidden by this border */
+	/* box-shadow: inset 0px 0px 100px white;*/
+	z-index:+1;
+	backdrop-filter: blur(0px);
+	animation: 1.2s ease-out blury;
+}
+
+@keyframes blury {
+  from { backdrop-filter: blur(30px);  }
+  to { backdrop-filter: blur(0px); }
+}
+
+
+
+
+
+
+
+	

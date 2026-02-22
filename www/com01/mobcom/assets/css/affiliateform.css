@@ -1,0 +1,218 @@
+
+			/*     M O B   M E N U    */
+
+
+nav.bg-grey-gradient { background:linear-gradient(to right, rgba(240,240,240,0.9) 0%, rgba(240,240,240,0.8) 30%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0.4) 100%); }
+.toggle-label.lang-toggle-label.airup { padding-top: 12px;}
+
+			/*     W E L C O M E    +    P R O M O T I O N   */
+
+
+section.welcome {
+	
+    min-height: 500px;  
+	position: relative;
+	background-color: rgb(122,154,185); /* blue color of sky behind the clouds */
+	background-image: url(../imgs/clouds/clouds_02_f.png);
+	background-repeat: repeat no-repeat;
+	background-position: left 0% bottom -65%; /* see (*cp01*) */
+
+
+	
+} @media only screen and (max-width:1200px){
+		section.welcome{ background-image: url(../imgs/clouds/clouds_03_c.png); background-size: auto 55%; background-repeat: repeat no-repeat;}
+	} @media only screen and (max-width:768px){
+		section.welcome{ background-image: url(../imgs/clouds/clouds_03_c.png); background-size: auto 60%; background-repeat: repeat no-repeat;}
+	}
+
+section.welcome > div.animate.welcome { /* bottom side waved */	
+    height: 600px;
+    background-color: white; 
+}
+
+.welcome img.mobminderlogo { max-width: 120px; } 
+.welcome h1.mobminder { font-size: 2em; padding: 40px 0 0 40px; }  
+.welcome div.promo { align-items:center; padding:0 180px 130px 0; }
+.welcome div.promo h2 { padding-bottom:20px; }
+.welcome div.promo p { font-size:2.5em; line-height: 95% }
+.welcome img.account-manager { max-width:260px; }
+
+@media only screen and (max-width:1200px){ 
+    section.welcome img.mobminderlogo { max-width: 80px; }
+    .welcome div.promo { padding:0 100px 30px 50px; }
+    .welcome div.promo h2 { font-size:30px; }
+    .welcome div.promo p { font-size:2.3em; }
+    .welcome img.account-manager { max-width:240px; padding-top:50px; }
+    
+} @media only screen and (max-width:992px){
+    .welcome div.promo h2 { font-size:25px; }
+    .welcome div.promo p { font-size:2em; }
+    .welcome img.account-manager { max-width:230px; padding-top:60px; }
+
+}  @media only screen and (max-width:768px){
+    .welcome div.promo h2 { font-size:20px; }
+    .welcome div.promo p { font-size:1.6em; }
+    .welcome img.account-manager { max-width:200px; padding-top:110px; }
+
+}  @media only screen and (max-width:450px){
+    .welcome div.promo h2 { font-size:18px; }
+    .welcome div.promo p { font-size:1.3em; }
+    .welcome img.account-manager { max-width:170px; padding-top:160px; }
+}
+
+
+
+section.welcome > div.shade { /* white gradient blurring the bottom under clouds */
+    position: absolute; z-index:0; top:400px; left:0; bottom: 0px; width:100%; 
+    /* should hover the previous wave */
+    /* background:linear-gradient(to bottom, 	rgba(255,255,255,0) 0%, rgba(255,255,255,.1) 30%, rgba(255,255,255,.5) 60%, rgba(255,255,255,.95) 90%, rgba(255,255,255,1) 95%, rgba(255,255,255,1) 100%); */
+    background:linear-gradient(to top, rgba(255,255,255,1) 0px, rgba(255,255,255,.97) 20px, rgba(255,255,255,.90) 80px, rgba(255,255,255,.4) 200px, rgba(255,255,255,.1) 50%, rgba(255,255,255,0) 100%);
+    
+    /*border:3px solid blue;*/
+}
+section.welcome > div.advantages {
+    position: relative; z-index:1;
+    background-color: transparent; /* under the background image, should match the img background */
+    min-height: 450px;  
+    
+    /* border:2px solid red;*/
+}
+
+
+section.welcome div.promotion-box { 
+    margin:.45em; 
+    height:auto; 
+    width:100%; 
+    text-align:center; 
+    border-radius:1.2em;
+    background: rgba(255,255,255,0.7); 
+}
+section.welcome div.promotion-box-inner { height:auto; width:100%; padding:40px;  }
+section.welcome div.promotion-box-inner p { line-height: 110%; padding-top:10px; }
+    @media only screen and (max-width:1200px){
+        section.welcome div.promotion-box-inner p { 
+        font-size:0.9em;
+        padding: 15px; 
+        position: absolute; 
+        top: 50%; 
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%); }
+    } 
+section.welcome div.promotion-box-img { height:115px; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; align-items: center; }
+section.welcome div.promotion-box-img img{ display:block; max-width:95px; max-height:85px }
+    @media only screen and (max-width:576px){
+        section.welcome div.promotion-box-img { height:170px; }
+        section.welcome div.promotion-box-img img { max-width:85px; max-height:85px }
+    }
+
+
+/*     G I F T   C H O I C E   */  
+
+
+section.single-delegation {
+} 
+
+        .singdel-type { max-width:300px; margin:.5em; overflow:hidden; }
+        .singdel-type.left { border-radius:2em .2em .2em 2em; text-align:right; } 
+        .singdel-type.center { border-radius:.2em .2em .2em .2em; } 
+        .singdel-type.right { border-radius:.2em 2em 2em .2em; } 
+        .singdel-type img { max-width:100%; border-style:none; margin:auto; display:block;  } 
+        .singdel-type h3 { line-height:1.2em; margin:0; text-align:center; padding:10px; }
+        
+        .singdel-question { text-align:center; padding:1em 3em 1em 3em;}
+        
+        @media only screen and (max-width:768px){
+            .singdel-type { margin:.2em; }
+            .singdel-question { text-align:center; padding:1em 0em 1em 0em;}
+        } 
+
+        /*     T O U C H     O N    (generic interactive elements)   */
+			
+
+    div.touch-on { display: flex; }
+    div.touch-on > div { box-shadow: 5px 10px 20px rgba(89,92,109, 0.3);   }
+                        /* border-bottom:1px solid silver;  border-right:1px solid silver;
+                        border-left:1px solid white;  border-top:1px solid white; */
+
+    .touch-on h3 {
+        text-align: center;
+    }
+
+    .touch-on.selected {
+        transform: scale(1.1);
+        opacity: 1;
+        transition: 400ms ease-in;
+            transition-delay: 0ms;
+    }	
+        .touch-on.selected h3 {
+            /* color: red; for testing */
+            transition: 400ms ease-in;
+            transition-delay: 0ms;
+        }
+        .touch-on.selected > div {
+            /* border: 1px solid red;*/ 
+            transition: 400ms ease-in;
+            box-shadow: 8px 16px 16px rgba(69,72,109, 0.4);
+        }
+
+    .touch-on.reduced {
+        transform: scale(0.6);
+        opacity: 0.3;
+        transition: 800ms ease-in;
+        transition-delay: 50ms;
+    }
+        .touch-on.reduced h3 {
+            color: grey;
+            transition: 800ms ease-in;
+            transition-delay: 50ms;
+        }
+        .touch-on.reduced > div {
+            /* border: 1px solid red;*/ 
+            transition: 800ms ease-in;
+            box-shadow: none;
+        }
+
+
+
+
+/*     P O P U P    W I N D O W   */   
+
+    div.popup-screen div.message-box {
+        
+        position: fixed;
+        width: 70%;
+        border-radius: 1em;
+        background: linear-gradient(to right, rgba(240,240,240,1) 0%, rgba(240,240,240,0.9) 30%, rgba(255,255,255,0.8) 60%, rgba(255,255,255,0.7) 100%);
+        box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.4);
+}
+
+    @media only screen and (max-width:1200px){
+        div.popup-screen div.message-box { width: 90%; }
+    } 
+    @media only screen and (max-width:992px){
+        div.popup-screen div.message-box { width: 95%; }
+    }
+
+
+        div.popup-screen div.message { padding: 3em 2em; }
+
+            div.popup-screen a.cta_2 { 
+            background-color: white;
+            width: 60%; 
+            padding: 15px 30px; 
+            margin-left: auto; margin-right: auto;
+            border: 1.9px solid white;
+            box-shadow: 5px 5px 15px rgb(0 0 0 / 20%);
+            }
+
+                @media only screen and (max-width:576px){
+                    div.popup-screen a.cta_2 { width: 100%; }
+                } 
+
+
+        div.popup-screen div.message-box img{
+            height: 120%;
+            position: absolute;
+            left:0;
+            bottom:0;
+        }

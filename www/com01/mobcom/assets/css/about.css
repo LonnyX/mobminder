@@ -1,0 +1,164 @@
+
+
+section.welcome {
+	
+	min-height:400px;  
+	position: relative;
+	background-color: white; 
+	background-image: url(../imgs/clouds/flat-world-1.png);
+	background-repeat: repeat no-repeat;
+	background-size: auto 45%; /* to be adjusted if the source image pxl size is different */
+	background-position: left 0 bottom 0; /* see (*cp01*) */
+	
+} @media only screen and (max-width:1200px){
+		section.welcome{ background-image: url(../imgs/clouds/flat-world-1.png); background-size: auto 55%; background-repeat: repeat no-repeat;}
+	} @media only screen and (max-width:768px){
+		section.welcome{ background-image: url(../imgs/clouds/flat-world-1.png); background-size: auto 60%; background-repeat: repeat no-repeat;}
+	}
+				
+		section.welcome > div.animate.welcome { /* bottom side waved */
+			
+			height: 500px;  /* adjusts height of visual floating line, should match the background height */
+			
+			background-color: white; /* under the background image, should match the img background */
+			background-image: url(../imgs/banners/bg-welcome-about.jpg); /* hands */
+			background-repeat: no-repeat; 
+			background-size: auto 100%;
+			background-position: right 0% bottom 0px;
+			
+		} @media only screen and (max-width:576px){
+			section.welcome > div.animate.welcome { background-image: url(../imgs/banners/bg-welcome-about.jpg);background-position: right -30px bottom 0px; height: 400px; background-size: auto 400px; }
+
+		} @media only screen and (min-width:576px) and (max-width: 768px){
+			section.welcome > div.animate.welcome { background-position: right -150px bottom 0px; height: 440px; background-size: auto 440px; }
+			
+		} @media only screen and (min-width:768px) and (max-width: 992px){
+			section.welcome > div.animate.welcome { background-position: right -100px bottom 0px; height: 480px; background-size: auto 480px;  }
+			
+		} @media only screen and (min-width:992px) and (max-width: 1200px) {
+			section.welcome > div.animate.welcome { background-position: right -100px bottom 0px; height: 450px; background-size: auto 450px; }
+		}
+		
+		section.welcome > div.shade { /* white gradient blurring the bottom under clouds */
+			position: absolute; top:290px; left:0; bottom: 0px; width:100%; 
+			/* should hover the previous wave */
+			/* background:linear-gradient(to bottom, 	rgba(255,255,255,0) 0%, rgba(255,255,255,.1) 30%, rgba(255,255,255,.5) 60%, rgba(255,255,255,.95) 90%, rgba(255,255,255,1) 95%, rgba(255,255,255,1) 100%); */
+			background: linear-gradient(180deg, rgba(107,147,185,.95) 0%, rgba(107,147,185,.9) 25% , rgba(107,147,185,.8) 50% , rgba(107,147,185,.75) 75%, rgba(107,147,185,.5) 90%, white 100%);
+
+			/* background: linear-gradient(180deg, rgba(112,144,175,.9) 0%, rgba(112,144,175,.8) 25% , rgba(112,144,175,.9) 50% , rgba(112,144,175,.8) 75%, white 100%); */
+			/* background:linear-gradient(to top, rgba(255,255,255,1) 0px, rgba(255,255,255,.97) 20px, rgba(255,255,255,.90) 80px, rgba(255,255,255,.4) 200px, rgba(255,255,255,.1) 50%, rgba(255,255,255,0) 100%); */
+			
+			/*border:3px solid blue;*/
+		}
+
+		
+		.figure-box { margin:.3em; height:auto; width:100%; text-align:center; border-radius:0em 0em 1.5em 1.5em;
+			background:linear-gradient(to bottom, rgba(63,85,108,0) 0px, rgba(63,85,108,.05) 40px, rgba(63,85,108,.60) 150px, rgba(63,85,108,.70) 100%); 
+			/* backdrop-filter: blur(2px);  PVH-2021 too heavy processing combined with sliding background image ... try again in 2024 */
+		}
+		.figure-box-inner { height:auto; width:100%; padding:10px 5% 20px 5%;  }
+		.figure-box-inner div.fal { margin-bottom:.5em; }
+
+		.figure-box-inner h3 { margin:0 0 15px 0; } 
+		.figure-box-inner p { color:#fff; margin-bottom:0; }
+
+
+		
+/*   C U S T O M E R S   */
+
+.customers .wesolve-box { margin:.5em .3em; padding:.4em; text-align:center; border-radius:0 0 1.5em 1.5em;
+	background:linear-gradient(to bottom, rgba(185,188,200,0) 0%, rgba(185,188,200,.08) 50%, rgba(185,188,220,.25) 100%);
+}
+.customers .wesolve-box p{ padding-bottom:10px; }
+.customers .wesolve-box-image { height:120px; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; -webkit-box-align:center; -ms-flex-align:center; align-items:center; }
+.customers .wesolve-box-image img{ max-width:220px; max-height:100px }
+
+.slide-customers { overflow:hidden; width:auto; height:100%; margin:0 auto; } /*display:flex; } /* display:flex in the wrapper works along with height:auto; in the inner div. */	
+.slide-customers img { opacity:0.8; width:auto; height:350px; max-height:100%; border-style:none; margin:auto; display:block; 
+	 display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; -webkit-box-align:center; -ms-flex-align:center; align-items:center;
+}
+
+
+/*  P A R T N E R S  */
+
+section.team img.t-partner-pic {max-height:350px;}
+
+/*  T E A M  */
+
+.team .slightgreytobtm { 
+	background: linear-gradient(to bottom, rgb(255,255,255) 0px, rgb(255,255,255) 120px, rgb(248, 248, 255) 240px,rgb(244,244,248) 100%);
+}
+
+section.team img.t-member-pic {max-height:400px;}
+section.team dl {margin:0; padding:.5em 0; display:block;}
+section.team dd.team-description {padding-top:10px; text-align:center; height:9.5em; width:90%; margin:0 auto; }
+
+
+/*  T I M E    L I N E   */
+
+
+			/*  O N L Y    L A R G E R     S C R E E N   */
+
+
+.history div.ls-timeline h2.year { min-width:160px; width:160px; text-align:center; position:absolute; }
+	.history div.ls-timeline h2.year-right { margin:0 0 0 auto; right:-160px; }
+	.history div.ls-timeline h2.year-left { margin:0 auto 0 0; left:-160px; }
+
+	.history div.ls-timeline div.timeline-box { padding-bottom:80px; }
+
+	.history div.ls-timeline div.right-margins { background: linear-gradient(to left, rgba(133,165,191,0.15) 0px, rgba(133,165,191,0.03) 40px, transparent 80px); padding-right:80px; }
+		.history div.ls-timeline div.right-margins.img-container { text-align:right; }
+	.history div.ls-timeline div.left-margins { background: linear-gradient(to right, rgba(133,165,191,0.15) 0px, rgba(133,165,191,0.03) 40px, transparent 80px); padding-left:80px; }
+		.history div.ls-timeline div.left-margins.img-container { text-align:left; }
+			.history div.ls-timeline div.img-container img { max-height:230px; opacity:0.8; }
+				.history div.ls-timeline div.img-container img.logo { max-height:130px; max-width:240px; }
+
+	.history div.ls-timeline .cap-top { height:80px; width:160px; border-radius:50% 50% 0 0; bottom: 0px; background: radial-gradient(circle at bottom, rgba(133,165,191,0.15) 0px, rgba(133,165,191,0.03) 40px, transparent 100%); }
+	.history div.ls-timeline .cap-bottom { height:80px; width:160px; border-radius:0 0 50% 50%; top: 0px; background: radial-gradient(circle at top,rgba(133,165,191,0.15) 0px, rgba(133,165,191,0.03) 40px, transparent 100%); }
+
+	@media only screen and (min-width: 992px) { 
+			#ls-timeline { display: block !important; }
+			#ms-timeline { display: none; }
+	}
+
+			/*  O N L Y    S M A L L E R    S C R E E N   */
+
+.history div.ms-timeline h2.year { min-width:100px; width:100px; text-align:center; position:absolute; }
+	.history div.ms-timeline h2.year-left { margin:0 auto 0 0; left:-100px; }
+
+.history div.ms-timeline div.left-margins { background: linear-gradient(to right, transparent 0px, rgba(133,165,191,0.03) 20px, rgba(133,165,191,0.15) 40px, rgba(133,165,191,0.15) 60px, rgba(133,165,191,0.03) 80px, transparent 100px); padding-left:100px; }
+
+.history div.ms-timeline div.img-container { padding:20px 0; }
+	.history div.ms-timeline div.img-container img { max-height:180px; opacity:0.8; }
+	.history div.ms-timeline div.img-container img.logo { max-height:120px; }
+
+.history div.ms-timeline .cap-top { height:50px; width:100px; border-radius:50% 50% 0 0; bottom: 0px; background: radial-gradient(circle at bottom, rgba(133,165,191,0.15) 0px, rgba(133,165,191,0.03) 40px, transparent 100%); }
+.history div.ms-timeline .cap-bottom { height:50px; width:100px; border-radius:0 0 50% 50%; top: 0px; background: radial-gradient(circle at top,rgba(133,165,191,0.15) 0px, rgba(133,165,191,0.03) 40px, transparent 100%);}
+
+
+			/*  T I M E    L I N E    C O M M O N    T O   S M A L L   A N D    L A R G E    S C R E E N   */
+
+.history h2 { 
+	font-size:120%;
+	padding-bottom:6px; 
+}
+
+			/*  T O D A Y   */
+
+section.today { text-align:center; }
+
+	.association-area { /*overflow:hidden;*/ width:180px; height:220px; margin:1em auto; border-radius:1em 1em .2em .2em; box-shadow: 4px 6px 10px rgba(0, 0, 50, 0.2); } /*display:flex; } /* display:flex in the wrapper works along with height:auto; in the inner div. */	
+	.association-area img { opacity:0.6; max-width:100%; max-height:100%; border-style:none; margin:auto; display:block; 
+		height:140px; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; -webkit-box-align:center; -ms-flex-align:center; align-items:center;
+	}
+
+	
+	.association-area div.name { height:4em; border-radius:0em 0em .2em .2em; padding:.3em .2em; line-height:.8em; } /* company name */ 
+	.association-area img:hover { opacity: 1; }
+
+	.association-area div.name dd.abrev { font-weight:bold; letter-spacing:0.1em; font-size:110%; padding:.2em; }
+
+
+
+
+

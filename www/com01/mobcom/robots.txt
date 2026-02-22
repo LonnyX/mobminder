@@ -1,0 +1,15 @@
+User-agent: *
+Disallow: /assets
+Disallow: /langless
+Disallow: index.php
+Disallow: partnership.php
+Disallow: trynow.php
+Disallow: pay.php
+
+User-agent: *
+Allow: /fr
+Allow: /nl
+Allow: /en
+Allow: /es
+
+Sitemap: https://www.mobminder.com/sitemap.xml

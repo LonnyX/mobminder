@@ -1,0 +1,105 @@
+
+
+
+			/*     W E L C O M E    +    P R O M O T I O N   */
+
+
+
+section.welcome {
+	
+	min-height: 500px;  
+	position: relative;
+	background-color: rgb(122,154,185); /* blue color of sky behind the clouds */
+	background-image: url(../imgs/clouds/clouds_02_f.png);
+	background-repeat: repeat no-repeat;
+	background-size: auto 55%; /* to be adjusted if the source image pxl size is different */
+	background-position: left 0% bottom -30%; /* see (*cp01*) */
+	
+} @media only screen and (max-width:1200px){
+		section.welcome{ background-image: url(../imgs/clouds/clouds_03_c.png); background-size: auto 55%; background-repeat: repeat no-repeat;}
+	} @media only screen and (max-width:768px){
+		section.welcome{ background-image: url(../imgs/clouds/clouds_03_c.png); background-size: auto 60%; background-repeat: repeat no-repeat;}
+	}
+		
+		section.welcome div.headers { margin:1rem 14% 0 0; }
+		
+		section.welcome > div.animate.welcome { /* bottom side waved */
+			
+			height: 490px;  /* adjusts height of visual floating line, should match the background height */
+			background-color: white; /* under the background image, should match the img background */
+			background-image: url(../imgs/banners/bg-welcome-promomedinect.jpg); /* the girl with the smile and a hand on her kin */
+			background-repeat: no-repeat; 
+			background-size: auto 100%;
+			background-position: right 10% bottom 0px;
+			
+		} @media only screen and (max-width:576px){  /* move background according to device viewport width */
+			section.welcome > div.animate.welcome { background-position: right -210px bottom -120px; height: 400px; background-size: auto 500px; }
+			
+		} @media only screen and (min-width:576px) and (max-width:768px){
+			section.welcome > div.animate.welcome { background-position: right -180px bottom -80px; height: 450px; background-size: auto 510px; }
+			
+		} @media only screen and (min-width:768px) and (max-width: 1200px) {
+			section.welcome > div.animate.welcome { background-position: right -100px bottom 0px; height: 480px; background-size: auto 500px; }
+		}
+		
+		
+		section.welcome > div.shade { /* white gradient blurring the bottom under clouds */
+			position: absolute; z-index:0; top:400px; left:0; bottom: 0px; width:100%; 
+			/* should hover the previous wave */
+			/* background:linear-gradient(to bottom, 	rgba(255,255,255,0) 0%, rgba(255,255,255,.1) 30%, rgba(255,255,255,.5) 60%, rgba(255,255,255,.95) 90%, rgba(255,255,255,1) 95%, rgba(255,255,255,1) 100%); */
+			background:linear-gradient(to top, rgba(255,255,255,1) 0px, rgba(255,255,255,.97) 20px, rgba(255,255,255,.90) 80px, rgba(255,255,255,.4) 200px, rgba(255,255,255,.1) 50%, rgba(255,255,255,0) 100%);
+			
+			/*border:3px solid blue;*/
+		}
+		section.welcome > div.advantages {
+			position: relative; z-index:1;
+			background-color: transparent; /* under the background image, should match the img background */
+			min-height: 200px;  
+            margin-top:50px;
+
+			
+			/* border:2px solid red;*/
+		}
+
+
+
+		section.welcome div.promotion-box { 
+            text-align:center; border-radius:2em 2em 2em 2em;
+            /*background:linear-gradient(to bottom, rgba(63,85,108,0) 0px, rgba(63,85,108,.05) 40px, rgba(63,85,108,.70) 160px, rgba(63,85,108,.80) 100%);*/
+            background-image:radial-gradient(60% 40% at top, rgba(63,85,108,0) 0px, rgba(63,85,108,.04) 30vw, rgba(63,85,108,.60) 55vw,rgba(63,85,108,.70) 65vw,rgba(63,85,108,.80) 80vw,rgba(63,85,108,.80) 100%);
+
+        }
+    section.welcome div.promotion-box-inner { height:auto; width:100%; padding:40px 20px 40px 20px; }
+    section.welcome div.promotion-box-inner h2 { padding:0 0 40px 0; }
+        @media only screen and (max-width: 1200px) { 
+            section.welcome div.promotion-box h2 { text-align:left; position:absolute; bottom:0; padding:0 0 24px 0; } 
+        }
+    section.welcome div.promotion-box-inner p { color:#fff; margin-bottom:0; text-align: center; }
+    section.welcome div.promotion-box-img { height:115px; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; }
+    section.welcome div.promotion-box-img img{ display:block; max-width:100px; max-height:85px }
+
+
+
+
+
+
+
+
+
+
+			/*     W E   S O L V E    */
+
+
+.wesolve-box { margin:.5em .3em; padding:.4em; text-align:center; border-radius:0 0 2em 2em;
+		background:linear-gradient(to bottom, rgba(185,188,200,0) 0%, rgba(185,188,200,.08) 50%, rgba(185,188,220,.25) 100%);
+	}
+.wesolve-box p{ padding-bottom:10px; }
+.wesolve-box-image { height:120px; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; -webkit-box-align:center; -ms-flex-align:center; align-items:center; }
+.wesolve-box-image img{ max-width:120px; max-height:100px }
+
+	
+
+
+
+
+	

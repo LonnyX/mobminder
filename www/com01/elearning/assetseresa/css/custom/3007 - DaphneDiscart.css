@@ -1,0 +1,71 @@
+
+
+
+/* background colors */
+
+body { 
+	background-color: black;
+	background-image: url("../logos/3007_discart_2.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	}
+
+section.s-h1
+	, section.s-footer {  background:rgba(141,61,67,.7); }
+
+section.s-info div.container 
+	, section.s-img div.container 
+	, section.s-directions div.container 
+	, section.s-action div.container
+	, section.s-desk div.container { background:rgba(255,255,255,.8); }
+	
+div.e-bullet
+	, input.e-button { background:#AFCE3C;  }
+div.action { background:rgb(141,61,67);  }
+td.click:hover {	background-color:rgba(255,255,255,0)!important; }	
+	
+div.e-link > a { background-color:rgba(255,255,255,0.7); color:black; }
+div.e-link > a:hover {	background-color: rgba(255,255,255,1); }
+	
+	
+/* font colors */
+	
+h1 { color:white; }
+h2, div.container { color:black; }
+section.s-footer div.container {  color:silver; }
+
+
+
+/* border radius */
+
+section.s-h1 div.container { border-radius:1em; }
+section.s-img div.container { border-radius:1em 1em 0em 0em; }
+section.s-directions div.container
+	, section.s-desk div.container { border-radius:1em; }
+	
+
+section.s-action div.container { border-radius:0 0 1em 1em; }
+
+div.action { border:2px solid orange; color:white; }
+
+
+
+/* section margins adjustment */
+
+section.s-img div.container { padding-top:1em; }
+section.s-h1 {  margin-top:1em; margin-bottom:2em; }
+section.s-directions { margin-top:1.5em; }
+
+
+
+/* miscellaneous */
+
+section.s-img div.container img { max-height:250px !important; }
+	
+
+	
+
+
+
+
+

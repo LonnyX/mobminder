@@ -1,0 +1,58 @@
+
+
+
+
+
+body.dot { min-height:100vh; }
+
+
+.pvh { margin-top: 50px; }
+.pvh-3dcontainer { perspective: 600px; }
+
+
+
+
+/* SPIN */
+
+.pvh-plane {
+	margin: 0 auto;
+	height: 300px; width: 300px; max-width: 80%; border-radius: 25px;
+	
+	position: relative;
+	
+	transition: all 1s ease;
+	transform-style: preserve-3d;
+}
+.pvh-plane.spinned { transform: rotateY(-180deg); }
+
+.pvh-contents {
+	width: 100%; height: 100%; 	position: absolute; top: 0; left: 0;
+	border-radius: 25px;
+	display: flex; justify-content: center; align-items: center; flex-direction: column;
+	text-align: center;
+	backface-visibility: hidden;
+}
+	.pvh-contents.pvh-front {
+		/* background: linear-gradient(to top left, #3a6186, #89253e); */
+		
+		box-shadow: inset 50px 50px 100px 40px rgba(0,0,0,.2);	
+		transform-style: preserve-3d;
+	}
+	.pvh-contents.pvh-back {
+		box-shadow: inset 50px 50px 100px 40px rgba(0,0,0,.2);	
+		transform-style: preserve-3d;
+		transform: rotateY(180deg);
+	}
+
+.pvh-depth { /* add some depth to each side of the card */
+	transform: translateZ(100px);
+	transform-style: preserve-3d;
+	perspective: inherit;
+}
+
+
+.pvh-contents.bordered { border: 4px solid silver; }
+	.pvh-contents.bordered.blue { border-color: lightblue; }
+
+
+

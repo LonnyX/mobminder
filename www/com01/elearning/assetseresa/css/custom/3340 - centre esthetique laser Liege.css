@@ -1,0 +1,55 @@
+
+/* 3340 - Centre Esthétique Laser */
+
+
+/* background colors */
+
+body { background:#ECF0F1; }
+
+section.s-img div.container 
+	, section.s-h1 div.container
+	, section.s-footer {  background:rgb(52,73,94); }
+
+section.s-info div.container 
+	, section.s-directions div.container 
+	, section.s-action div.container
+	, section.s-desk div.container { background:white; }
+	
+div.e-bullet
+	, input.e-button
+	, div.action { background:rgb(44,152,139);  }	
+	
+	
+/* font colors */
+	
+h1 { color:rgb(236,240,241); }
+h2, div.container { color:rgb(110,110,110); }
+
+
+
+/* border radius */
+
+section.s-h1 div.container { border-radius:1em 1em 0 0; }
+section.s-directions div.container
+	, section.s-desk div.container { border-radius:0 0 1em 1em; }
+
+div.action { border-radius: 2em !important; }
+
+/* section margins adjustment */
+
+section.s-h1 {  margin-top:1em; }
+section.s-directions { margin-top:1.5em; }
+
+
+
+/* miscellaneous */
+
+section.s-img div.container img { max-height:250px !important; }
+	
+
+	
+
+
+
+
+

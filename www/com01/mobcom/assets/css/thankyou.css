@@ -1,0 +1,92 @@
+
+			/*     M O B   M E N U    */
+
+
+nav.bg-grey-gradient { background:linear-gradient(to right, rgba(240,240,240,0.9) 0%, rgba(240,240,240,0.8) 30%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0.4) 100%); }
+.toggle-label.lang-toggle-label.airup { padding-top: 12px;}
+
+			/*     W E L C O M E    +    P R O M O T I O N   */
+
+
+section.maintenance {
+	
+    min-height:1100px;
+    height: 100%;
+    width: 100%;
+	position: absolute;
+	background-color: rgb(58,118,175); /* blue color of sky behind the clouds rgb(33,80,128)  rgb(68,150,210) */
+	background-image: url(../imgs/clouds/clouds_02_f.png);
+	background-repeat: repeat no-repeat;
+	background-size: auto 500px; /* to be adjusted if the source image pxl size is different */
+	background-position: left 0% top 5em; /* see (*cp01*) */
+	
+}
+	
+    @media only screen and (max-width:1200px){
+		section.maintenance{ background-image: url(../imgs/clouds/clouds_03_c.png); background-size: auto 500px; background-repeat: repeat no-repeat;}
+	} 
+    @media only screen and (max-width:768px){
+		section.maintenance{ background-image: url(../imgs/clouds/clouds_03_c.png); background-size: auto 600px; background-repeat: repeat no-repeat;}
+	}
+		
+
+		section.maintenance > div.shade { /* white gradient blurring the bottom under clouds */
+            position: absolute; z-index:0; top:0; bottom: 0; width:100%; 
+			background:linear-gradient(to top, rgba(255,255,255,.8) 0px, rgba(255,255,255,.7) 60%, rgba(255,255,255,0) 100%);
+		}
+
+		section.maintenance div.message-box {
+                position: relative; top:120px;
+                width: 65%;
+                border-radius: 1em;
+                padding: 3em 5em;
+                background: linear-gradient(to right, rgba(240,240,240,0.95) 0%, rgba(240,240,240,0.9) 30%, rgba(255,255,255,0.8) 60%, rgba(255,255,255,0.6) 100%);
+                border-right: .5px solid lightgrey;
+                border-bottom: .5px solid white;
+                box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
+            }
+
+        @media only screen and (max-width:1200px){
+            section.maintenance div.message-box { width: 75%; }
+        } 
+        @media only screen and (max-width:992px){
+            section.maintenance div.message-box { width: 85%; }
+        }
+
+        @media only screen and (max-width:768px){
+            section.maintenance div.message-box { width: 95%; padding: 2em; }
+        }
+
+            .maintenance .message-box>h1 { font-size: 2em; }           
+            .maintenance h1.mobminder { font-size: 2em; padding-top: 30px; }
+            .maintenance h1.mobminder img { max-width: 100px; }
+
+                @media only screen and (max-width:576px){
+                    section.maintenance div.message-box h1 { font-size: 1.7em;  }
+                    section.maintenance div.message-box>p { font-size: 21px;  }
+                    section.maintenance h1.mobminder img { max-width:90px; }
+                }
+
+
+                /*  B T N  2  */
+
+
+.cta2-button {
+    display:grid; place-items:center;
+	font-size:105%;
+    margin-top:25px;
+	padding:0.8em 2em;
+	cursor:pointer;
+	border:1px solid #c2e249;
+	background:white;
+	box-shadow: 0px 12px 10px -8px rgb(0 0 0 / 16%), 0px 8px 10px -2px rgb(89 92 109 / 16%), 0px 10px 30px rgb(89 92 109 / 24%); ;
+	border-radius:0em 1em 0em 1em;
+	position:relative;
+	transition: all .2s;
+}
+
+.cta2-button i {color:#c2e249; transition: color .2s;}
+.cta2-button i, span {text-shadow:none;}
+.cta2-button:hover i {color:white;}
+
+.cta2-button:hover {transform: scale(0.99); box-shadow:none; background:#c2e249;  }

@@ -1,0 +1,107 @@
+2021-01-30 Migration depuis NUC vers HYSTOU
+
+NUC = EasyPHP 14
+HYSTOU = EasyPHP 17 (Apache 2.4.25, MySQL 5.7.17, PHP 5.6.30 x86), Navicat 15.0.22 
+
+
+Expérience 1: copier les fichiers binaires 
+
+
+Liste des problèmes rencontrés:
+
+	1. mySQL upgrade ( version des fichiers .bin )
+	2. mdp user SQL vu depuis l'application: mobminder@localhost / tgx23PiQ 
+	3. 2 secondes de délais avant réponse du serveur
+	4. update reservations
+	5. déplacer les dossiers DB vers un répertoire mobdev
+	6. pas d'accès sur les images (?!)
+
+		améliorations à prévoir: 
+	
+	10. Expulser les Timestamps de la structure DB
+	11. SET NAMES UTF-8 ( nécessaire pour les nouveaux serveurs )
+
+
+
+1. mySQL upgrade
+	A la connexion sur la DB, Navicat indique une erreur => mySQL upgrade
+	
+	https://stackoverflow.com/questions/31967527/table-performance-schema-session-variables-doesnt-exist
+	
+	https://serverfault.com/questions/538572/how-to-run-mysql-upgrade-on-windows
+	
+	Ouvrir une console windows, se déplacer jusqu'au répertoire 
+	
+	C:\Program Files (x86)\EasyPHP-Devserver-17\eds-binaries\dbserver\mysql5717x86x201201220202\
+	
+	puis exécuter l'upgrade # mysql_upgrade -u root -p
+	
+
+
+2. mobminder@localhost / tgx23PiQ 
+	J'ai donné des doits limités à select/insert/delete
+	J'ai utilisé simplement Navicat pour le faire.
+	L'idée est d'avoir un user applicatif qui par exemple ne peut pas faire un show-tables ou un drop-tables
+
+
+
+3. secondes de délais sur la réponse d'une page de la WebApp
+	
+	Google indique un problème de résolution de ip 127.0.0.1 sur Win10 avec IPV6
+	Afin de définir si c'est Apache ou MySQL qui a le soucis, il faut examiner le temps de réponse sur un fichier qui n'a pas d'accès DB.
+	J'ai choisi /smart/check.php <= réponse immédiate. 
+	
+	Edit sur le fichier 
+	C:\Program Files (x86)\EasyPHP-Devserver-17\eds-binaries\dbserver\mysql5717x86x201201220202\my.ini
+	il faut simplement indiquer une adresse en format IPV6. L'équivalent de 127.0.0.1 est ::1
+	
+	bind-address = ::1
+	# bind-address = 127.0.0.1
+	# Solve slow access to server, check https://serverfault.com/questions/408550/connecting-to-mysql-from-php-is-extremely-slow
+	# From Windows 8, IPV6 is used on Win OS and therefore you need to specify ::1 iso 127.0.0.1
+
+
+
+4. pas d'écriture possible sur la table reservations
+
+	$dS_reservation->deleted = '0000-00-00 00:00:00'; // Format de timestamp explicit àpd MySQL 5.6
+	faire la même adaptation partout où le code indique ->deleted = 0; ( chercher sur ->deleted )
+
+	my.ini, ajouter variable: explicit_defaults_for_timestamp=true
+	C:\Program Files (x86)\EasyPHP-Devserver-17\eds-binaries\dbserver\mysql5717x86x201201220202\my.ini
+
+
+
+
+5. Le dossier data de mySQL peut être défini dans eds-app-actions.php
+
+
+	https://stackoverflow.com/questions/41550223/configure-path-of-mysql-database-on-easyphp-devserver-16-1-1
+
+
+	C:\Program Files (x86)\EasyPHP-Devserver-17\eds-binaries\dbserver\mysql5717x86x201201220202\eds-app-actions.php
+	
+	Il y a 3 modif à faire dans le fichier:
+	
+	// Update datadir
+	// $replacement = '${1}' . str_replace('\\', '/', __DIR__) . '/data/$3'; // original, PVH replaced to point to a baseline directory
+	$replacement = '${1}' . 'D:/mobdev/db/$3';
+	$serverconffile = preg_replace('/^([\s|\t]*datadir.*\")(.*)(\".*)$/m', $replacement, $serverconffile);
+	
+	// Update innodb_data_home_dir
+	// $replacement = '${1}' . str_replace('\\', '/', __DIR__) . '/data/$3'; // original, PVH replaced to point to a baseline directory
+	$replacement = '${1}' . 'D:/mobdev/db/$3';
+	$serverconffile = preg_replace('/^([\s|\t]*innodb_data_home_dir.*\")(.*)(\".*)$/m', $replacement, $serverconffile);
+	
+	// Update innodb_log_group_home_dir
+	// $replacement = '${1}' . str_replace('\\', '/', __DIR__) . '/data/$3'; // original, PVH replaced to point to a baseline directory
+	$replacement = '${1}' . 'D:/mobdev/db/$3';
+	$serverconffile = preg_replace('/^([\s|\t]*innodb_log_group_home_dir.*\")(.*)(\".*)$/m', $replacement, $serverconffile);
+
+
+	// J'ai aussi adapté la localisation du mysql_error.log
+	$replacement = '${1}' . 'D:/mobdev/db/mysql_error.log$3';
+
+
+
+

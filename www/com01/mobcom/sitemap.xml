@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://www.mobminder.com/fr/index.php</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.mobminder.com/en/index.php"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://www.mobminder.com/nl/index.php"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.mobminder.com/es/index.php"/>
+    </url>
+       <url>
+        <loc>https://www.mobminder.com/fr/features.php</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.mobminder.com/en/features.php"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://www.mobminder.com/nl/features.php"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.mobminder.com/es/features.php"/>
+    </url>
+
+    <url>
+        <loc>https://www.mobminder.com/fr/about.php</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.mobminder.com/en/about.php"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://www.mobminder.com/nl/about.php"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.mobminder.com/es/about.php"/>
+    </url>
+
+    <url>
+        <loc>https://www.mobminder.com/fr/trynow.php</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.mobminder.com/en/trynow.php"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://www.mobminder.com/nl/trynow.php"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.mobminder.com/es/trynow.php"/>
+    </url>
+
+    <url>
+        <loc>https://www.mobminder.com/fr/partnership.php</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.mobminder.com/en/partnership.php"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://www.mobminder.com/nl/partnership.php"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.mobminder.com/es/partnership.php"/>
+    </url> 
+
+    <url>
+        <loc>https://www.mobminder.com/fr/beauty-sector.php</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.mobminder.com/en/beauty-sector.php"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://www.mobminder.com/nl/beauty-sector.php"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.mobminder.com/es/beauty-sector.php"/>
+    </url> 
+
+    <url>
+        <loc>https://www.mobminder.com/fr/pay.php</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.mobminder.com/en/pay.php"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://www.mobminder.com/nl/pay.php"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.mobminder.com/es/pay.php"/>
+    </url> 
+
+    <url>
+        <loc>https://www.mobminder.com/fr/transactionfees.php</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://www.mobminder.com/en/transactionfees.php"/>
+        <xhtml:link rel="alternate" hreflang="nl" href="https://www.mobminder.com/nl/transactionfees.php"/>
+        <xhtml:link rel="alternate" hreflang="es" href="https://www.mobminder.com/es/transactionfees.php"/>
+    </url>
+
+    <url>
+        <loc>https://www.mobminder.com/fr/offremedinect.php</loc>
+    </url>
+
+    <url>
+        <loc>https://www.mobminder.com/fr/directory.php</loc>
+    </url>
+
+</urlset>
+
+

@@ -1,0 +1,123 @@
+﻿
+/* global rules */
+
+body { 
+	color: /*blue;*/ #444;
+	font-family: verdana, Arial, Helvetica, sans-serif; 
+	margin:0; 
+	
+	background: white; 
+	position: relative;
+	font-size: 0.8em; 
+	overflow-y:scroll;
+	-webkit-font-smoothing:antialiased;
+	
+	width:96%; margin: 1em auto; 
+}
+
+input, textarea { 
+	color: /*red;*/ #556; /* note that the color specified for the body does not apply to input elements, hence this statement */
+	background-color: white;
+	padding-left:0.5em; 
+	
+	border-radius:3px;
+    border:1px solid rgba(0,0,0, 0.2);
+	
+	outline:none;
+    transition: box-shadow 0.25s ease-in-out;
+    -webkit-transition: box-shadow 0.25s ease-in-out;
+    -moz-transition: box-shadow 0.25s ease-in-out;
+
+	-webkit-appearance: none; /* rmoves the inner shadow on mobile devices on Safari */
+} 
+
+data { color:blue; }
+command { color:red; }
+code { color:darkgreen; font-size:120%; }
+error { color:red; font-weight:bold; }
+
+input:focus, textarea:focus {
+    box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.3);
+}
+
+textarea { font-size: 1.4em; } /* this setting makes input and textarea being equal font sized */
+input { font-size: 1.2em }
+
+table.list { border-collapse:collapse; border:1px solid silver; margin:1em 0; padding-left:1em; border-spacing:0; }
+table.list tr { border-bottom:1px solid silver; }
+
+table.list tbody tr:nth-child(odd) { background: rgba(0, 0, 0, 0.05); }
+table.list col:nth-child(odd) { background: rgba(0, 0, 0, 0.05); }
+table.list tbody th:nth-child(odd) { background: rgba(0, 0, 0, 0.05); }
+
+table.list tr th { border-bottom:1px solid grey; border-right:1px solid silver; padding:.6em 1em; }
+table.list tr td { border-right:1px solid silver; padding:.5em .5em .7em .5em; vertical-align:top; }
+table.list tr th.msg { width:90%; min-width:40em; }
+table.list tr td.notice { color:inherit; }
+table.list tr td.warning { color:orangered; }
+table.list tr td.error { color:deeppink; font-weight:bold; }
+table.list tr td.fatal { color:red; background-color:yellow; font-weight:bold; }
+table.list tbody tr.fatal { background-color:lemonchiffon; }
+table.list tbody tr:hover :not(.idle) { cursor:pointer; background-color:rgba(123, 214, 125, 0.1); } /* keep as last rule so to overload previous settings */
+
+
+
+table.bargraph_v { border-collapse:collapse; margin:1em 0; padding-left:1em; border-spacing:10; }
+table.bargraph_v tr.bars th { color:grey; border-bottom:1px solid grey; border-right:1px solid silver; padding:.6em 1em; }
+table.bargraph_v tr.bars td {border-bottom:1px solid grey; padding:0em .2em; vertical-align:top; }
+table.bargraph_v tr.idx th { border-bottom:1px solid grey; border-right:1px solid silver; padding:.6em 1em; }
+table.bargraph_v tr.idx td {border-bottom:1px solid grey; padding:.5em .2em; vertical-align:top; }
+table.bargraph_v tbody tr.fatal { background-color:lemonchiffon; }
+table.bargraph_v tr.title th {border:none; background-color:transparent; color:grey; padding-top:.5em;}
+
+
+
+table.bargraph_h { border-collapse:collapse; margin:1em 0; border-spacing:0; }
+table.bargraph_h th.left { color:grey; max-width: 1%; border-right:1px solid grey; padding:.6em 1em; }
+table.bargraph_h th.right { color:grey; padding:0 4em; text-align:left; }
+table.bargraph_h tr.header { border-bottom:1px solid grey; text-align:left; }
+table.bargraph_h tr.bars td.left { border-right:1px solid grey; padding:.4em .5em .4em .0em; text-align:center; }
+table.bargraph_h tr.bars td.bar { padding: 0; }
+table.bargraph_h tr.title td { color:grey; }
+table.bargraph_h tr.bars div { display: inline-block; padding: O; }
+
+table { border-collapse:collapse; border:none; margin:0; padding:0; border-spacing: 0; }
+
+h1 {	margin:1em 0 1em 0; font-size:2em; color:#85A5BF; font-weight: normal; letter-spacing:-0.04em; }
+h2 {	margin:1em 0 1em 0; font-size: 1.5em; color: #a4b357; font-weight: normal; padding-left:1em; }									
+h3 {	margin:1em 0 1em 0; font-size:1.1em; color:grey;  font-weight: bold;  padding-left:3em; }							
+h4 {	margin:1em 0 1em 0; font-size:1.05em; color:#999;  font-weight: bold;  padding-left:5em; }							
+a {	text-decoration: none; border:none; cursor:pointer; font-size:1.0em; font-weight:bold; color:steelblue; padding:0.2em 2em; }
+a:visited, a:hover { text-decoration: none;  border:none; }
+
+
+/* Contact form */
+
+div.contact-form { padding:2em 6em; }
+
+.contact-form input::placeholder, .contact-form textarea::placeholder  { color:black; }
+
+.contact-form input,.contact-form textarea{background:#F5F5FA;display:block;font-family:"Arial";font-size:16px;color:steelblue;padding:8px 12px;border:0;margin-bottom:15px; border-radius:10px 2px 10px 3px; }
+.contact-form input[type=submit] { background:#EE2B7B;color:#fff;font-family:"Arial";width:auto;padding:12px 35px;margin-top:30px;margin-bottom:0;cursor:pointer;-webkit-transition:0.3s;transition:0.3s }
+.contact-form input[type=submit]:hover { background:#d51161 }
+
+.contact-form textarea { width:70%; resize:none; margin-bottom:30px }
+.contact-form input { width:10em;}
+
+.contact-form label{color:#fff;font-family:"Arial";font-size:20px;margin:0;display:block;cursor:pointer }
+.contact-form label input{padding:0;margin:0;width:auto;display:inline-block;position:relative;top:3px;margin-right:7px }
+
+div.contact-form div.click.submit { font-size:20px; display:inline-block; width:40%; padding:.5em; border:none; border-radius:4px; background:red; color:white; text-align:center; }
+
+div.click.submit { box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.3); }
+div.click.submit.disabled { opacity: 0.3; filter: alpha(opacity=30); cursor: default; box-shadow: 0px 0px 8px 3px rgba(0, 0, 0, 0.3); } /* grays out */
+
+div.contact-form h3 { color:white; font-size:20px; }
+
+textarea.validOK, input.validOK, div.validOK { border:2px solid rgba(150, 200, 150, 1) !important; }
+textarea.validNOK, input.validNOK, div.validNOK { border:2px solid rgba(250, 130, 150, 1) !important; }
+
+
+div.contact-form input.small { font-size:18px; display:inline-block; max-width:5em; margin-left:1em; padding:2px; }
+
+

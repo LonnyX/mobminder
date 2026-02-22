@@ -1,0 +1,362 @@
+
+//test 3 avec arret apres silences
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// http://localhost/testing/_pocaiclientgtw/index.html?lgn=B.Spoden.2024&pwd=bernards2024&kid=28454&resourceid=12773&gender=0
+//
+// https://elearning.mobminder.com/assets/testai/index.html?lgn=B.Spoden.2024&pwd=bernards2024&kid=28454&resourceid=12773&gender=0
+//
+// dev mode : WSS from http page works only with edge and not with chrome!
+//
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+let vad=true;
+
+let socket;
+let audioContext1;
+let workletNode1;
+let audioContext2;
+let workletNode2;
+let pttNode;
+let stream1;
+
+if (vad)
+{
+  document.getElementById("push").style.visibility = "hidden";
+}
+
+async function startSession() {
+
+
+  console.log('starting session...');
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      console.error('WebRTC non supporté sur ce navigateur.');
+      alert('Votre navigateur ne supporte pas WebRTC ou vous devez activer HTTPS.');
+      return;
+  }
+
+  let lgn = findGetParameter("lgn");
+  let pwd = findGetParameter("pwd");
+  let kid = findGetParameter("kid");
+  let resourceid = findGetParameter("resourceid");
+  let gender = findGetParameter("gender");
+
+
+  try {
+    // 1. Connexion WebSocket
+    //socket = new WebSocket('ws://192.168.0.11:5050/testrealtime');
+    //socket = new WebSocket('wss://192.168.0.11:5051/testrealtime');
+    
+    //PROD
+    socket = new WebSocket('wsy
+://91.134.44.204:5061/testrealtime');
+    //socket = new WebSocket('wss://gtw01.mobminder.com:5061/testrealtime');
+
+    socket.onopen = () => console.log('WebSocket connecté !');
+    socket.onerror = (error) => console.error('WebSocket erreur :', error);
+    socket.onclose = () => console.log('WebSocket déconnecté.');
+
+    // 2. Créer un AudioContext avec la fréquence cible
+    audioContext2 = new AudioContext({ sampleRate: 24000 });
+
+    // 3. Charger et ajouter l’AudioWorkletProcessor
+    await audioContext2.audioWorklet.addModule('pcmPlayerProcessor.js');
+
+    // 4. Créer le WorkletNode et l’attacher à la sortie audio
+    workletNode2 = new AudioWorkletNode(audioContext2, 'pcm-player');
+    workletNode2.connect(audioContext2.destination);
+
+    // 5. Écouter les messages WebSocket et envoyer au Worklet
+    socket.onmessage = async (event) => {
+        if (event.data instanceof Blob) {
+          
+          let arrayBuffer = await event.data.arrayBuffer(); // Convertir Blob en ArrayBuffer
+          let uint8Array = new Uint8Array(arrayBuffer); // Transformer ArrayBuffer en Uint8Array
+          console.log('receiving data... '+uint8Array.length);//+event.data);
+    
+          
+          //let int16Array = new Int16Array(uint8Array.buffer);
+          let int16Array = new Int16Array(uint8Array.buffer, uint8Array.byteOffset, uint8Array.byteLength / Int16Array.BYTES_PER_ELEMENT);
+
+
+          let float32Array = new Float32Array(int16Array.length);
+          for (let i = 0; i < int16Array.length; i++) {
+            float32Array[i] = int16Array[i] / 32768.; 
+          }
+
+          workletNode2.port.postMessage(float32Array);
+        }
+        else
+        {
+          const response = JSON.parse(event.data);
+          //console.log('response='+response);
+          if (response.status=='ready') //message = IA connection ready response
+          {
+            console.log('received message : status=ready => IA is ready');
+            if (vad) pttNode.port.postMessage('start');
+          }
+          else if (response.status=='interrupted') 
+          {
+            console.log('received message : status=interrupted');
+            workletNode2.port.postMessage('clear');
+          }
+          else
+          {
+            console.log('received message : invalid status ='+response.status);
+          }
+        }
+
+    };
+    
+
+    const audioContext1 = new AudioContext({ sampleRate: 24000 });
+    await audioContext1.audioWorklet.addModule('pcmRecorderProcessor.js');
+  
+    stream1 = await navigator.mediaDevices.getUserMedia({ audio: true });
+    const source1 = audioContext1.createMediaStreamSource(stream1);
+  
+    pttNode = new AudioWorkletNode(audioContext1, 'pcm-recorder');
+    source1.connect(pttNode).connect(audioContext1.destination);
+
+    let counter=0;
+    let buffer = new Float32Array();
+    let istalking=false;
+
+    const vad = new VADController({
+      sampleRate: 24000,
+      frameSize: 256*1,
+      silenceDurationMs: 2000,
+      threshold: 0.02 // ajuste selon ton setup 0.008
+    });
+    vad.onVoiceStart = () => {
+      console.log("Parole détectée, on commence à streamer");
+      //startStreaming(); // ton stream vers OpenAI par exemple
+      workletNode2.port.postMessage('clear');
+      istalking=true;
+    };
+    
+    vad.onVoiceEnd = () => {
+      console.log("Silence prolongé détecté, on arrête le stream");
+      //stopStreaming();
+      istalking=false;
+    };
+
+
+    pttNode.port.onmessage = (event) => {
+
+      //let float32Array = new Float32Array(event.data);
+      vad.process(event.data);
+
+
+      let newFetchedData = new Float32Array(buffer.length + event.data.length);
+      newFetchedData.set(buffer, 0);
+      newFetchedData.set(event.data, buffer.length); 
+      buffer = newFetchedData;
+
+      //packet size = 256
+      //if (buffer.length==(2048))
+      if (buffer.length==(256*1))
+      {
+          
+          if (istalking)
+          {
+
+            let int16Array = float32ToInt16(buffer);
+
+            buffer = new Float32Array();
+
+            //let uint8Array = new Uint8Array(int16Array.buffer);
+            let uint8Array = int16ToUint8Manual(int16Array);
+
+            counter +=(uint8Array.length);
+            //console.log('counter='+counter);
+            /*if (counter==24576)
+            {
+              counter=0;
+              console.log('sending data... 24576');
+            }*/
+            console.log('sending data...');
+
+            //console.log('uint8Array='+uint8Array.length);
+
+            uint8Array = prependValueToUint8Array(2, uint8Array);
+            
+            
+            socket.send(uint8Array.buffer);
+            //workletNode2.port.postMessage(float32Array);
+          }
+          else
+          {
+            console.log('silence');
+            buffer = new Float32Array();
+          }
+      }
+
+    };
+
+    let audioDelta = {
+      action : 'connectToIa', //action = connect to IA
+      lgn : lgn,
+      pwd : pwd,
+      kid : kid,
+      resourceid : resourceid,
+      gender: gender,
+      vad : vad,              //enable vad mode (false =push-to-talk)
+      booking : true
+    };
+    let json = JSON.stringify(audioDelta);
+    console.log('requesting connectToIa...');
+    socket.send(json);
+
+    console.log('Enregistrement démarré...');
+  } catch (error) {
+      console.error('Erreur :', error);
+  }
+}
+// Stop current session, clean up peer connection and data channel
+function stopSession() {
+
+  if (vad) pttNode.port.postMessage('stop');
+
+  if (stream1) stream1.getTracks().forEach(track => track.stop())
+  stream1=null;
+
+  if (workletNode2) workletNode2.disconnect();
+  workletNode2=null;
+  if (audioContext2) audioContext2.close();
+  audioContext2=null;
+  
+  if (workletNode1) workletNode1.disconnect();
+  workletNode1=null;
+  if (audioContext1) audioContext1.close();
+  audioContext1=null;
+
+  if (socket) socket.close();
+  socket=null;
+
+  console.log('stopping session...');
+
+}
+async function startRecording() {
+  if (vad) return;
+
+  pttNode.port.postMessage('start');
+}
+async function stopRecording(){
+  if (vad) return;
+
+  pttNode.port.postMessage('stop');
+
+  console.log('AI:requesting createResponse...');
+  let audioDelta = {
+    action : 'createResponse',
+  };
+  let json = JSON.stringify(audioDelta);
+  console.log('requesting connectToIa...');
+  socket.send(json);
+
+}
+
+function float32ToInt16(float32Array) {
+  const inputChannel = float32Array;
+  const bufferLength = inputChannel.length;
+  const outputBuffer = new Int16Array(bufferLength);
+
+  for (let i = 0; i < bufferLength; i++) {
+
+    // Clamp the sample value to the range [-1, 1]
+    const sample = Math.max(-1, Math.min(1, inputChannel[i]));
+
+    // Scale to 16-bit signed integer range and convert
+    outputBuffer[i] = sample < 0 ? sample * 0x8000 : sample * 0x7FFF;
+  }
+
+  return outputBuffer;
+}
+
+function int16ToUint8Manual(int16Array) {
+  let uint8Array = new Uint8Array(int16Array.length * 2);
+  
+  for (let i = 0; i < int16Array.length; i++) {
+      uint8Array[i * 2] = int16Array[i] & 0xFF;         // Octet faible
+      uint8Array[i * 2 + 1] = (int16Array[i] >> 8) & 0xFF; // Octet fort
+
+      //uint8Array[i * 2] = (int16Array[i] >> 8) & 0xFF;   // MSB d'abord
+      //uint8Array[i * 2 + 1] = int16Array[i] & 0xFF;      // LSB après
+  }
+  
+  return uint8Array;
+}
+
+function prependValueToUint8Array(value, uint8Array) {
+  const newArray = new Uint8Array(uint8Array.length + 1);
+  newArray[0] = value; // Insérer la nouvelle valeur au début
+  newArray.set(uint8Array, 1); // Copier l'ancien tableau après
+  return newArray;
+}
+
+function findGetParameter(parameterName) {
+  var result = null,
+      tmp = [];
+  location.search
+      .substr(1)
+      .split("&")
+      .forEach(function (item) {
+        tmp = item.split("=");
+        if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+      });
+  return result;
+}
+
+
+class VADController {
+  constructor({
+    sampleRate = 24000,
+    frameSize = 720,
+    silenceDurationMs = 1000,
+    threshold = 0.01
+  }) {
+    this.sampleRate = sampleRate;
+    this.frameSize = frameSize;
+    this.threshold = threshold;
+
+    this.silenceDurationMs = silenceDurationMs;
+    this.framesPerSecond = Math.floor(sampleRate / frameSize);
+    this.maxSilenceFrames = Math.floor(silenceDurationMs / (1000 / this.framesPerSecond));
+
+    this.silenceCount = 0;
+    this.speaking = false;
+    this.onVoiceStart = () => {};
+    this.onVoiceEnd = () => {};
+  }
+
+  process(frame) {
+    const rms = this._computeRMS(frame);
+
+    const isSpeech = rms > this.threshold;
+
+    if (isSpeech) {
+      if (!this.speaking) {
+        this.speaking = true;
+        this.onVoiceStart(); // 🔊 Début de parole
+      }
+      this.silenceCount = 0;
+    } else if (this.speaking) {
+      this.silenceCount++;
+      if (this.silenceCount >= this.maxSilenceFrames) {
+        this.speaking = false;
+        this.silenceCount = 0;
+        this.onVoiceEnd(); // 🔇 Fin de parole
+      }
+    }
+  }
+
+  _computeRMS(frame) {
+    let sum = 0;
+    for (let i = 0; i < frame.length; i++) {
+      sum += frame[i] * frame[i];
+    }
+    return Math.sqrt(sum / frame.length);
+  }
+}

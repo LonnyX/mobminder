@@ -1,0 +1,62 @@
+
+/* 3340 - Centre Esthétique Laser */
+
+
+/* background colors */
+
+body { background-color:white;}
+
+
+section.s-h1{background-image: url("../logos/SOSh1bckg.jpg");background-size:auto 100%; height:230px; }
+section.s-img div.container 
+	, section.s-footer {  background:white; }
+
+section.s-info div.container 
+	, section.s-directions div.container 
+	, section.s-action div.container
+	, section.s-desk div.container { background:white; }
+	
+div.e-bullet
+	, input.e-button
+	, div.action { background:#f7e634;border: 2px solid red ; }
+td.click:hover {	background-color:rgba(255,255,255,0)!important; }	
+	
+div.e-link > a { background-color:rgba(255,255,255,0.7); color:black; }
+div.e-link > a:hover {	background-color: rgba(255,255,255,1); }
+	
+	
+/* font colors */
+	
+h1 { color:white;font-size:1.5em !important;}
+h2, div.container { color:#222; }
+div.left,
+div.right{color:#222;}
+section.s-directions div.container{color:#e63d3d;}
+
+
+/* border radius */
+
+section.s-h1 div.container {}
+section.s-directions div.container
+	, section.s-desk div.container { border-radius:0 0 0em 0em; }
+
+
+
+/* section margins adjustment */
+
+section.s-h1 {  padding-top:3.5em; }
+section.s-directions { margin-top:1.5em; }
+section.s-img{margin-top:0.3em;}
+
+
+/* miscellaneous */
+
+section.s-img div.container img { max-height:100px !important; }
+	
+
+	
+
+
+
+
+

@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /assets
+Disallow: /assetseresa
+Disallow: /langless
+Disallow: index.php
+Disallow: /en/cssbuilder.php
+
+User-agent: *
+Allow: /fr
+Allow: /nl
+Allow: /en
+Disallow: /en/cssbuilder.php

@@ -1,0 +1,57 @@
+
+
+
+			/*     W E L C O M E    +    P R O M O T I O N   */
+
+
+section.welcome {
+	
+	min-height: 500px;  
+	position: relative;
+    background-color: white;
+	background-image: url(../imgs/clouds/flat-world-3.png);
+	background-repeat: repeat no-repeat;
+	background-size: auto 40%; /* to be adjusted if the source image pxl size is different */
+	background-position: left 0 bottom 0; /* see (*cp01*) */
+	
+}
+		
+		section.welcome div.headers { margin:1rem 8% 0 0; }
+		
+		section.welcome > div.animate.welcome { /* bottom side waved */
+			
+			height: 480px;  /* adjusts height of visual floating line, should match the background height */
+			
+			background-color: white; /* under the background image, should match the img background */
+			background-image: url(../imgs/banners/bg-welcome-student.jpg);
+			background-repeat: no-repeat; 
+			background-size: auto 100%;
+			background-position: right 20% bottom 0px;
+
+			
+		} @media only screen and (max-width:992px){  /* move background according to device viewport width */
+
+			section.welcome > div.animate.welcome { background-position: right -20px top 0px; }
+
+		}@media only screen and (max-width:768px){  /* move background according to device viewport width */
+
+			section.welcome > div.animate.welcome { background-position: right -60px top 0px; }
+
+		}@media only screen and (max-width:576px){  /* move background according to device viewport width */
+
+			section.welcome img.moblogo { width:200px; } /* adjust logo so it does't invade the available space */
+			section.welcome div.headers { margin:70px 24% 0 0; }
+			section.welcome > div.animate.welcome { background-position: right -160px top 0px; }
+
+		} @media only screen and (max-width:400px){  /* no background image in very small screen to see the titles properly */
+
+			section.welcome > div.animate.welcome { background-image: none; }
+		}
+		
+		section.welcome > div.shade { 
+			position: absolute; top:400px; left:0; bottom: 0px; width:100%; 
+            background: linear-gradient(to right, rgba(185,188,200,0) 0%, rgba(185,188,200,.08) 50%, rgba(185,188,220,.25) 100%);
+		}
+
+		.internship-offers li {margin-bottom:20px;}
+

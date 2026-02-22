@@ -1,0 +1,26 @@
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO="pascal@mobminder.com"
+
+
+# every midnite
+0 0 * * * root [ -f /home/master.info ] && [ -x /usr/bin/php5 ] && [ -f /var/www/mobminder/htdocs/smsgateaway/cron/midnite.php ] && /usr/bin/php5 /var/www/mobminder/htdocs/smsgateaway/cron/midnite.php >> /var/log/smsga-crons/midnite.log 2>&1
+
+# every hour (h59)
+59 * * * *  root [ -f /home/master.info ] && [ -x /usr/bin/php5 ] && [ -f /var/www/mobminder/htdocs/smsgateaway/cron/hourly.php ] && /usr/bin/php5 /var/www/mobminder/htdocs/smsgateaway/cron/hourly.php >> /var/log/smsga-crons/hourly.log 2>&1
+
+# every month first day at 6 am
+0 6 1 * *  root [ -f /home/master.info ] && [ -x /usr/bin/php5 ] && [ -f /var/www/mobminder/htdocs/smsgateaway/cron/monthly.php ] && /usr/bin/php5 /var/www/mobminder/htdocs/smsgateaway/cron/monthly.php >> /var/log/smsga-crons/monthly.log 2>&1
+
+# every ten minutes 
+9,19,29,39,49,59 * * * * root [ -f /home/master.info ] && [ -x /usr/bin/php5 ] && [ -f /var/www/mobminder/htdocs/smsgateaway/cron/tens.php ] && /usr/bin/php5 /var/www/mobminder/htdocs/smsgateaway/cron/tens.php >> /var/log/smsga-crons/tens.log 2>&1
+
+# every five minutes 
+0,5,10,15,20,25,30,35,40,45,50,55 * * * *  root [ -f /home/master.info ] && [ -x /usr/bin/php5 ] && [ -f /var/www/mobminder/htdocs/smsgateaway/cron/fivy.php ] && /usr/bin/php5 /var/www/mobminder/htdocs/smsgateaway/cron/fivy.php >> /var/log/smsga-crons/fivy.log 2>&1
+
+# every minute 
+* * * * * root [ -f /home/master.info ] && [ -x /usr/bin/php5 ] && [ -f /var/www/mobminder/htdocs/smsgateaway/cron/minute.php ] && /usr/bin/php5 /var/www/mobminder/htdocs/smsgateaway/cron/minute.php >> /var/log/smsga-crons/minute.log 2>&1
+
+# every week on sunday at 1am 
+0 1 * * Sun   root [ -f /home/master.info ] && [ -x /usr/bin/php5 ] && [ -f /var/www/mobminder/htdocs/smsgateaway/cron/weekly.php ] && /usr/bin/php5 /var/www/mobminder/htdocs/smsgateaway/cron/weekly.php >> /var/log/smsga-crons/weekly.log 2>&1
+

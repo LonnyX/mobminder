@@ -1,0 +1,291 @@
+/*     N  A  V   B  A  R      */
+
+@media only screen and (max-width: 992px) { /* Nav bar elements disappear  */
+    div.menu-banner a { display:none; }
+    }
+
+
+/*     A  N  I  M  A  T  I  O  N   */
+
+.zoom { transition: transform .2s; }
+.zoom:hover { transform: scale(1.05); }
+
+
+
+
+
+
+/*     W E L C O M E    +    P R O M O T I O N   */
+
+
+section.welcome {
+	
+	min-height: 1000px;  
+	position: relative;
+	background-color: rgb(122,154,185); /* blue color of sky behind the clouds */
+	background-image: url(../imgs/clouds/clouds_02_f.png);
+	background-repeat: repeat no-repeat;
+	background-size: auto 50%; /* to be adjusted if the source image pxl size is different */
+	background-position: left 0% bottom 0%; /* see (*cp01*) */
+	
+} @media only screen and (max-width:1200px){
+		section.welcome{ background-image: url(../imgs/clouds/clouds_02_f.png); background-size: auto 55%; background-repeat: repeat no-repeat;}
+	} @media only screen and (max-width:768px){
+		section.welcome{ background-image: url(../imgs/clouds/clouds_02_f.png); background-size: auto 60%; background-repeat: repeat no-repeat;}
+	}
+		
+		section.welcome div.headers { margin:1rem 8% 0 0; }
+		
+		section.welcome > div.animate.welcome { /* bottom side waved */
+			
+			height: 480px;  /* adjusts height of visual floating line, should match the background height */
+			
+			background-color: white; /* under the background image, should match the img background */
+			background-image: url(../imgs/banners/bg-welcome-try-resp.jpg); /* the girl with the smile and a hand on her kin */
+			background-repeat: no-repeat; 
+			background-size: auto 100%;
+			background-position: right 10% bottom 0px;
+			
+		} @media only screen and (max-width:768px){  /* move background according to device viewport width */
+			section.welcome > div.animate.welcome { background-position: right -320px bottom 0px; height: 480px; background-size: auto 480px; }
+			section.welcome img.moblogo { width:200px; } /* adjust logo so it does't invade the available space */
+			
+		} @media only screen and (min-width:768px) and (max-width:992px){
+			section.welcome > div.animate.welcome { background-position: right -280px bottom 0px; height: 480px; background-size: auto 480px; }
+			section.welcome img.moblogo { width:230px; }
+			
+		} @media only screen and (min-width:992px) and (max-width: 1200px) {
+			section.welcome > div.animate.welcome { background-position: right -220px bottom 0px; height: 480px; background-size: auto 480px; }
+			section.welcome img.moblogo { width:260px; }
+		}
+		
+		
+		section.welcome > div.shade { /* white gradient blurring the bottom under clouds */
+			position: absolute; z-index:0; top:400px; left:0; bottom: 0px; width:100%; 
+			/* should hover the previous wave */
+			/* background:linear-gradient(to bottom, 	rgba(255,255,255,0) 0%, rgba(255,255,255,.1) 30%, rgba(255,255,255,.5) 60%, rgba(255,255,255,.95) 90%, rgba(255,255,255,1) 95%, rgba(255,255,255,1) 100%); */
+			background:linear-gradient(to top, rgba(255,255,255,1) 0px, rgba(255,255,255,.99) 10px, rgba(255,255,255,.97) 40px, rgba(255,255,255,.8) 100px, rgba(255,255,255,0) 100%);
+			
+			/*border:3px solid blue;*/
+		}
+		section.welcome > div.advantages {
+			position: relative; z-index:1;
+			padding-top:140px;
+			background-color: transparent; /* under the background image, should match the img background */
+			min-height: 200px;  
+			
+			/* border:2px solid red;*/
+		}
+
+
+
+		.promotion-box { margin:.3em; height:auto; width:100%; text-align:center; border-radius:0 0 2em 2em;
+						background:linear-gradient(to bottom, rgba(63,85,108,0) 0px, rgba(63,85,108,.05) 40px, rgba(63,85,108,.70) 150px, rgba(63,85,108,.80) 100%); }
+		.promotion-box-inner { height:auto; width:100%; padding:40px 20px 20px 20px;  }
+		.promotion-box-inner h2 { padding:0 0 30px 0; }
+			@media only screen and (max-width: 992px) { .promotion-box h2 { text-align:left; position:absolute; bottom:0; padding:0 0 24px 0; } }
+		.promotion-box-inner p { color:#fff; margin-bottom:0; }
+		.promotion-box-img { height:115px; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; }
+		.promotion-box-img img{ display:block; max-width:95px; max-height:85px }
+
+
+		.intro { font-size:25px; }
+
+
+				/* F E A T U R E S   M E N U */
+
+				.single-service { max-width:280px; margin:.5em; border-radius:2em 2em; overflow:hidden; cursor:pointer; background:linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 30%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.5) 100%);
+				} /*display:flex; } /* display:flex in the wrapper works along with height:auto; in the inner div. */
+				.single-service img { max-width:100%; border-style:none; margin:auto; display:block; } 
+				
+				@media only screen and (min-width:768px){
+					/* border-radius should stay on img and on outer div */
+						.single-service img { border-radius:2em 2em 2em 2em; }
+						.single-service { border-radius: 2em 2em 2em 2em; }
+				}
+		
+				.single-service h3  { line-height:1.2em; max-width:90%; margin:auto; text-align:center; padding:10px 2px 10px 2px;  }
+				.single-service i  { display:block; margin:0; text-align:center; padding-top:10px; font-size:1.2em; }
+		
+		
+
+
+	/*    M O B      E - L E A R N I N G     */
+
+input.css-field { width:90%; padding:3px 10px; height:40px; }
+input.dropdowncss { margin-bottom:10px; padding:3px 10px; margin-right:10px; border:1px solid rgb(209 213 219); color: rgba(10,30,15,0.9); text-align:end; }
+
+section.custom-css h3 { cursor:pointer; margin-top:40px; margin-bottom:0px; }
+	section.custom-css h3:hover { color:#C3D949; }
+section.custom-css h4 { cursor:pointer; margin: 20px 0px 0px 20px; }
+	section.custom-css h4:hover { color:#C3D949; }
+	section.custom-css h4.knowledge { color: #eb581e; }
+
+
+section.custom-css h5 { margin-top: 10px; margin-bottom: 5px; }
+
+section.custom-css td { vertical-align:top; }
+tr td:last-child { padding-left:20px; }
+
+
+section.custom-css h3 i, section.custom-css h4 i, section.custom-css h5 i {margin-right:10px;}
+
+.iframe-window {
+	border:solid rgb(209 213 219);
+	/*box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);*/
+	border-radius:10px;
+	box-shadow: 0.5rem 0.5rem 1.5rem rgba(66,95,255,.1);
+}
+
+.iframe_50pc /* Zoom dropdown menu */
+ {
+	width:200%; min-height:200%;
+	zoom: 0.5;
+	-moz-transform: scale(0.5);
+	-moz-transform-origin: 0 0;
+	-o-transform: scale(0.5);
+	-o-transform-origin: 0 0;
+	-webkit-transform: scale(0.5);
+	-webkit-transform-origin: 0 0;
+  }
+  
+.iframe_70pc
+{
+   width:143%; min-height:143%;
+   zoom: 0.7;
+   -moz-transform: scale(0.7);
+   -moz-transform-origin: 0 0;
+   -o-transform: scale(0.7);
+   -o-transform-origin: 0 0;
+   -webkit-transform: scale(0.7);
+   -webkit-transform-origin: 0 0;
+ }
+
+ .iframe_100pc
+{
+	width:100%; min-height:100%;
+}
+
+ .viewport-iphone12_pro { /* Viewport dropdown menu */
+	 
+	width:390px;
+	height:844px; min-height:844px;
+}
+
+.viewport-computer {
+	
+	width:100%;
+	height:1000px; min-height:1000px;
+}
+
+input::selection, textarea::selection  { background-color: rgba(66,95,255,.2); }
+#css-summary p { user-select: text; }
+	#css-summary p::selection { background-color: rgba(66,95,255,.2); }
+
+
+
+			/*     L A Y O U T S    */
+
+			
+section.layouts {
+} 
+	.single-layout { max-width:300px; margin:.5em; border-radius:2em; overflow:hidden; } 
+	.single-layout img { max-width:100%; border-style:none; margin:auto; display:block; }
+	.single-layout h3 { line-height:2em; max-width:90%; margin:auto; text-align:center; padding:10px; }
+	
+	@media only screen and (max-width:768px){
+		.single-layout { margin:.3em; border-radius:1em; }
+		.single-layout h3 { line-height:.9em; max-width:100%;  }
+	}
+					
+			
+				/*     C O L O R   P A L E T T E S    */
+				
+section.palettes {
+} 
+	.single-palette { height:240px; max-height:240px; margin:2em; border-radius:1em; overflow:hidden; font-size:20px; } 
+	.single-palette h3 { line-height:1.2em; text-align:center; padding:10px; }
+	
+	@media only screen and (max-width:768px){
+		.single-palette { margin:.3em; border-radius:1em; }
+		.single-palette h3 { line-height:.9em; max-width:100%;  }
+	}
+
+/* Create three equal columns that floats next to each other */
+.columnonethird { width: 33.33%; padding: 10px; height: 60px; }
+.columnonehalf { width: 50%; padding: 10px; height: 60px; width:120px; }
+.columnone { padding: 10px; height: 60px; width:100%; }
+
+
+section.palettes h4 { cursor:pointer; margin: 20px 0px 0px 20px; }
+	section.palettes h4:hover { color:#C3D949; }
+
+section.palettes h5 { margin-top: 10px; margin-bottom: 5px; }
+
+section.palettes td { vertical-align:top; }
+tr td:last-child { padding-left:20px; }
+
+section.palettes h4 i, section.palettes h5 i {margin-right:10px;}
+
+.color-preview {border-radius:1em; padding:30px 30px; margin:15px 15px; box-shadow: 5px 10px 20px rgba(89,92,109, 0.3); }
+.colorsetpreview {gap:1rem;}
+.colorsetpreview input.colorfield { 
+	padding: 0.3em; 
+	margin:0px 10px; 
+	white-space:nowrap; 
+	resize:none; 
+	height:40px; width:250px; }
+			
+
+
+	/*     T O U C H     O N    (generic interactive elements)   */
+			
+
+div.touch-on { display: flex; }
+div.touch-on > div { box-shadow: 5px 10px 20px rgba(89,92,109, 0.3);   }
+					/* border-bottom:1px solid silver;  border-right:1px solid silver;
+					border-left:1px solid white;  border-top:1px solid white; */
+
+.touch-on h3 {
+    text-align: center;
+}
+
+.touch-on.selected {
+    transform: scale(1.1);
+    opacity: 1;
+    transition: 400ms ease-in;
+		transition-delay: 0ms;
+}	
+	.touch-on.selected h3 {
+		/* color: red; for testing */
+		transition: 400ms ease-in;
+		transition-delay: 0ms;
+	}
+	.touch-on.selected > div {
+		/* border: 1px solid red;*/ 
+		transition: 400ms ease-in;
+		box-shadow: 8px 16px 16px rgba(69,72,109, 0.4);
+	}
+
+.touch-on.reduced {
+    transform: scale(0.6);
+    opacity: 0.3;
+    transition: 800ms ease-in;
+	transition-delay: 50ms;
+}
+	.touch-on.reduced h3 {
+		color: grey;
+		transition: 800ms ease-in;
+		transition-delay: 50ms;
+	}
+	.touch-on.reduced > div {
+		/* border: 1px solid red;*/ 
+		transition: 800ms ease-in;
+		box-shadow: none;
+	}
+
+
+
+	/*     C_iBUTTON CSS related to the Copy CSS button   */
+
+	.copycssbtn {padding:10px; border:1px solid rgb(209 213 219); }

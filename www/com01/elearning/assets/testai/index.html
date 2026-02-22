@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI POC</title>
+</head>
+<body>
+  <form id='myForm1' action='https://elearning.mobminder.com/assets/testai/phone.php' method='POST' target='_blank'>
+    <input type='hidden' name='mode' value='booking'>
+    <input type='hidden' id='testmode1' name='testmode' value='0'>
+    <table>
+      <tr><td>login (tmp credentiels)</td><td><input id='idlgn' type='input' name='lgn' value='' placeholder='my.login'></td></tr>
+      <tr><td>password (tmp credentiels)</td><td><input id='idpwd' type='input' name='pwd' value='' placeholder='my.password'></td></tr>
+      <tr><td>kid (accesskey)</td><td><input id='idkid' type='input' name='kid' value='' placeholder='28454'></td></tr>
+      <tr><td>postfixurl</td><td><input id='idpostfixurl' type='input' name='postfixurl' value='' placeholder='cabinetdentaire'></td></tr>
+      <tr><td>lastname</td><td><input id='idlastname' type='input' name='lastname' value='' placeholder=''></td></tr>
+      <tr><td>firstname</td><td><input id='idfirstname' type='input' name='firstname' value='' placeholder=''></td></tr>
+      <tr><td>mobile</td><td><input id='idmobile' type='input' name='mobile' value='' placeholder='0497123456'></td></tr>
+      <tr><td>birthday</td><td><input id='idbirthday' type='input' name='birthday' value='' placeholder='YYYYMMDD'></td></tr>
+      <tr><td>vad mode</td><td><input id='idvadmode' type='input' name='vadmode' value='' placeholder='vad/push/continuous'></td></tr>
+      <tr><td>interrupt response</td><td><input id='idinterruptresponse' type='input' name='interruptresponse' value='' placeholder='0=no,1=yes'></td></tr>
+      <tr><td>eagerness</td><td><input id='ideagerness' type='input' name='eagerness' value='' placeholder='l=low,a=auto(medium),h=high'></td></tr>
+      <tr><td>input audio noise reduction</td><td><input id='idinputaudionoisereduction' type='input' name='inputaudionoisereduction' value='' placeholder='n=near_field,f=far_field'></td></tr>
+      <tr></tr>
+      <tr><td colspan='2' ><button type='submit'>Open WebRTC page</button></td></tr>
+    </table>
+  </form>
+  <br/>
+  <form id='myForm2' action='https://elearning.mobminder.com/assets/testai/phone.php' method='POST' target='_blank'>
+    <input type='hidden' name='mode' value='assistant'>
+    <input type='hidden' id='testmode2' name='testmode' value='0'>
+    <table>
+      <tr><td>login</td><td><input id='idlgn2' type='input' name='lgn' value='' placeholder='my.login'></td></tr>
+      <tr><td>password</td><td><input id='idpwd2' type='input' name='pwd' value='' placeholder='my.password'></td></tr>
+      <tr><td>kid (accesskey)</td><td><input id='idkid2' type='input' name='kid' value='' placeholder='28454'></td></tr>
+      <tr><td>rsid (resource) </td><td><input id='idrsid' type='input' name='rsid' value='' placeholder='12773'></td></tr>
+      <tr><td>gender</td><td><input id='idgender' type='input' name='gender' value='' placeholder='0=male/1=female'></td></tr>
+      <tr><td>vad mode</td><td><input id='idvadmode2' type='input' name='vadmode' value='' placeholder='vad/push/continuous'></td></tr>
+      <tr><td>interrupt response</td><td><input id='idinterruptresponse2' type='input' name='interruptresponse' value='' placeholder='0=no,1=yes'></td></tr>
+      <tr><td>eagerness</td><td><input id='ideagerness2' type='input' name='eagerness' value='' placeholder='l=low,a=auto(medium),h=high'></td></tr>
+      <tr><td>input audio noise reduction</td><td><input id='idinputaudionoisereduction2' type='input' name='inputaudionoisereduction' value='' placeholder='n=near_field,f=far_field'></td></tr>
+      <tr></tr>
+      <tr><td colspan='2' ><button type='submit'>Open Moby (assistant) page</button></td></tr>
+    </table>
+  </form>
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('lgn')) document.getElementById('idlgn').value = params.get('lgn');
+    if (params.get('lgn')) document.getElementById('idlgn2').value = params.get('lgn');
+    if (params.get('pwd')) document.getElementById('idpwd').value = params.get('pwd');
+    if (params.get('pwd')) document.getElementById('idpwd2').value = params.get('pwd');
+    if (params.get('kid')) document.getElementById('idkid').value = params.get('kid');
+    if (params.get('kid')) document.getElementById('idkid2').value = params.get('kid');
+    if (params.get('postfixurl')) document.getElementById('idpostfixurl').value = params.get('postfixurl');
+    if (params.get('lastname')) document.getElementById('idlastname').value = params.get('lastname');
+    if (params.get('firstname')) document.getElementById('idfirstname').value = params.get('firstname');
+    if (params.get('mobile')) document.getElementById('idmobile').value = params.get('mobile');
+    if (params.get('birthday')) document.getElementById('idbirthday').value = params.get('birthday');
+    if (params.get('vadmode')) document.getElementById('idvadmode').value = params.get('vadmode');
+    if (params.get('vadmode')) document.getElementById('idvadmode2').value = params.get('vadmode');
+    if (params.get('rsid')) document.getElementById('idrsid').value = params.get('rsid');
+    if (params.get('gender')) document.getElementById('idgender').value = params.get('gender');
+
+    if (params.get('interruptresponse')) document.getElementById('idinterruptresponse').value = params.get('interruptresponse');
+    if (params.get('interruptresponse')) document.getElementById('idinterruptresponse2').value = params.get('interruptresponse');
+
+    if (params.get('eagerness')) document.getElementById('ideagerness').value = params.get('eagerness');
+    if (params.get('eagerness')) document.getElementById('ideagerness2').value = params.get('eagerness');
+
+    if (params.get('inputaudionoisereduction')) document.getElementById('idinputaudionoisereduction').value = params.get('inputaudionoisereduction');
+    if (params.get('inputaudionoisereduction')) document.getElementById('idinputaudionoisereduction2').value = params.get('inputaudionoisereduction');
+    
+    let testmode = 0;
+    if (params.get('testmode')) {
+      document.getElementById('testmode1').value = params.get('testmode');
+      document.getElementById('testmode2').value = params.get('testmode');
+      testmode=params.get('testmode');
+    }
+
+    console.log('testmode='+testmode);
+
+    if (testmode==1){ 
+      document.getElementById('myForm1').action ='http://localhost/testing/_pocaiclientgtw_v3_vadserver/phone.php';
+      document.getElementById('myForm2').action = 'http://localhost/testing/_pocaiclientgtw_v3_vadserver/phone.php';
+    }
+    else{
+      document.getElementById('myForm1').action = 'https://elearning.mobminder.com/assets/testai/phone.php';
+      document.getElementById('myForm2').action = 'https://elearning.mobminder.com/assets/testai/phone.php';
+    }
+    console.log('action='+document.getElementById('myForm1').action);
+  </script>
+</body>
+</html>

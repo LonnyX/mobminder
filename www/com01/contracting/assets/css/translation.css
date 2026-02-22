@@ -1,0 +1,26 @@
+
+
+			/*    T R A N S L A T I O N     T O O L    C S S    */
+			
+
+.xlpoint { color:red; cursor:pointer; }
+.xlchanging { color:red; }
+.xlmodal.overlay { background:rgba(0,0,0,0.2);  }
+.xlmodal.window { box-shadow:1em 2em 1em rgba(0, 0, 0, 0.4); }
+.xlmodal.window div.inner { background:rgba(255,255,255,0.7); color:red; font-size:22px; padding:1em; border:3px solid red;  }
+.xlmodal.window div.busy { background: rgba(255, 255, 255, 0.6) url(spinner-128px.gif) center center no-repeat; }
+
+.xlmodal.window,
+	.xlmodal.window div.inner,
+	.xlmodal.window div.busy { border-radius: 20px 2px 20px 2px; }
+
+
+div.window div.wide { width:100%; min-width:100%; }
+div.window td.right { text-align:right; }
+div.window td.up { vertical-align:top; }
+div.window td.left { text-align:left; color:red; }
+div.xlmodal.window textarea { border:1px solid silver; border-radius:3px; width:100%; }
+div.xlmodal.window input.small { font-size:18px; border:none; color:grey; width:5em; margin:.2em; text-align:center; }
+div.xlmodal.window div.click.submit { font-size:24px; display:inline-block; width:5em; border:none; border-radius:3px; background:red; padding:2px; color:white; text-align:center; }
+
+

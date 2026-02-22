@@ -1,0 +1,244 @@
+
+
+
+			/*     W E L C O M E    +    P R O M O T I O N   */
+
+
+section.welcome {
+	
+	min-height: 500px;  
+	position: relative;
+	background-color: white; /* blue color of sky behind the clouds */
+	background-image: url(../imgs/clouds/flat-world-1.png);
+	background-repeat: repeat no-repeat;
+	background-size: auto 40%; /* to be adjusted if the source image pxl size is different */
+	background-position: left 0% bottom 0%; /* see (*cp01*) */
+	
+} @media only screen and (max-width:1200px){
+	section.welcome{ background-image: url(../imgs/clouds/flat-world-1.png); background-size: auto 45%; background-repeat: repeat no-repeat;}
+} @media only screen and (max-width:768px){
+	section.welcome{ background-image: url(../imgs/clouds/flat-world-1.png); background-size: auto 50%; background-repeat: repeat no-repeat;}
+}
+		
+		section.welcome div.headers { margin:1rem 14% 0 0; }
+		
+		section.welcome > div.animate.welcome { /* bottom side waved */
+			
+			height: 450px;  /* adjusts height of visual floating line, should match the background height */
+			
+			background-color: white; /* under the background image, should match the img background */
+			background-image: url(../imgs/banners/bg-welcome-pay.jpg); /* the girl with the smile and a hand on her kin */
+			background-repeat: no-repeat; 
+			background-size: auto 100%;
+			background-position: right 0% bottom 0px;
+			
+		} @media only screen and (max-width:576px){  /* move background according to device viewport width */
+			section.welcome > div.animate.welcome { background-position: right -60px bottom 0px; height: 450px; background-size: auto 450px; }
+			
+		} @media only screen and (min-width:576px) and (max-width:768px){
+			section.welcome > div.animate.welcome { background-position: right -100px bottom 0px; height: 510px; background-size: auto 510px; }
+			
+		} @media only screen and (min-width:768px) and (max-width: 1200px) {
+			section.welcome > div.animate.welcome { background-position: right -100px bottom 0px; height: 540px; background-size: auto 540px; }
+		}
+		
+		
+		section.welcome > div.shade { /* white gradient blurring the bottom under clouds */
+			position: absolute; z-index:0; top:400px; left:0; bottom: 0px; width:100%; 
+			/* should hover the previous wave */
+			/* background:linear-gradient(to bottom, 	rgba(255,255,255,0) 0%, rgba(255,255,255,.1) 30%, rgba(255,255,255,.5) 60%, rgba(255,255,255,.95) 90%, rgba(255,255,255,1) 95%, rgba(255,255,255,1) 100%); */
+			background: linear-gradient(180deg, rgba(112,144,175,.9) 0%, rgba(112,144,175,.8) 25% , rgba(112,144,175,.9) 50% , rgba(112,144,175,.8) 75%,  rgba(112,144,175,.65) 80%, white 100%);
+			
+			/*border:3px solid blue;*/
+		}
+		section.welcome > div.advantages {
+			position: relative; z-index:1;
+			background-color: transparent; /* under the background image, should match the img background */
+			min-height: 300px;  
+			
+			/* border:2px solid red;*/
+		}
+
+
+			/*mobminder Pay logo*/
+
+
+				.containerpay { position:relative; }
+				.containerpay > span { font-size: 25px; line-height: 1em; right: 6px; bottom: 4px }
+			@media only screen and (max-width:1200px) { 
+				.containerpay { margin-left:12px; }
+					.containerpay > span { font-size: 22px; }
+			}
+			@media only screen and (max-width:992px) { 
+				.containerpay { margin-left:12px; }
+					.containerpay > span { font-size: 22px; }
+			}	
+			@media only screen and (max-width:768px) {
+				.containerpay { margin-left:6px; }
+					.containerpay > span { font-size: 16px; right: 4px; bottom: 2px; }
+			}	
+
+
+
+		section.welcome div.promotion-box { 
+				margin:5px; height:auto; width:100%; text-align:center; border-radius:0 0 2em 2em; padding-top:60px;
+				background:linear-gradient(to bottom, rgba(63,85,108,0) 0px, rgba(63,85,108,.05) 40px, rgba(63,85,108,.70) 160px, rgba(63,85,108,.80) 100%); 
+			}
+		section.welcome div.promotion-box-inner { height:auto; width:100%; padding:40px 20px 20px 20px;  }
+		section.welcome div.promotion-box-inner h2 { padding:0 0 40px 0; }
+			@media only screen and (max-width: 992px) { 
+				section.welcome div.promotion-box h2 { text-align:left; position:absolute; bottom:0; padding:0 0 24px 0; } 
+			}
+		section.welcome div.promotion-box-inner p { color:#fff; margin-bottom:0; }
+		section.welcome div.promotion-box-img { height:115px; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; }
+		section.welcome div.promotion-box-img img{ display:block; max-width:95px; max-height:85px }
+
+
+			/*     T E C H N O L O G I E S     */
+
+section.technologies div.wide {
+	max-width: 1300px;
+} 
+		.single-service { max-width:270px; margin:1em auto; border-radius:1em 1em .2em .2em; box-shadow: 8px 16px 40px rgba(0, 0, 0, 0.3); cursor:pointer; } /*display:flex; } /* display:flex in the wrapper works along with height:auto; in the inner div. */
+		.single-service img { max-width:100%; border-style:none; margin:auto; display:block; } 
+			/* border-radius should stay on img and on outer div */
+				.single-service img.first { border-radius:1em 0.3em 0em 0em; }
+				.single-service.first { border-radius: 1em 0.3em 0.3em 1em; }
+				.single-service img.second, .single-service img.third  { border-radius:0.3em 0.3em 0em 0em; }
+				.single-service.second, .single-service.third { border-radius:0.3em 0.3em 0.3em 0.3em; }
+				.single-service img.fourth { border-radius:0.3em 1em 0em 0em; }
+				.single-service.fourth { border-radius: 0.3em 1em 1em 0.3em; }
+
+
+		.single-service h3  { line-height:1.4em; margin:0; text-align:center; padding:10px; }
+		.single-service i  { display:block; margin:0; text-align:center; padding-top:10px; }
+		
+		@media only screen and (max-width:1200px){
+			section.technologies div.wide { max-width: 680px; } 
+			.single-service img.first { border-radius:1em 0.3em 0em 0em; }
+			.single-service.first { border-radius: 1em 0.3em 0.3em 0.3em; }
+			.single-service img.second { border-radius:0.3em 1em 0em 0em; }
+			.single-service.second { border-radius:0.3em 1em 0.3em 0.3em; }
+			.single-service img.third  { border-radius:0.3em 0.3em 0em 0em; }
+			.single-service.third { border-radius:0.3em 0.3em 0.3em 1em; }
+			.single-service img.fourth { border-radius:0.3em 0.3em 0em 0em; }
+			.single-service.fourth { border-radius: 0.3em 0.3em 1em 0.3em; }
+		}
+
+		@media only screen and (max-width:768px){
+			.single-service { max-width:250px; }
+		}
+
+		@media only screen and (max-width:576px){
+			.single-service { margin:0.5em auto; }
+			.single-service img.first { border-radius:1em 1em 0em 0em; }
+			.single-service.first { border-radius: 1em; }
+			.single-service img.second { border-radius:1em 1em 0em 0em; }
+			.single-service.second { border-radius:1em; }
+			.single-service img.third  { border-radius:1em 1em 0em 0em; }
+			.single-service.third { border-radius:1em; }
+			.single-service img.fourth { border-radius:1em 1em 0em 0em; }
+			.single-service.fourth { border-radius:1em; }
+		}
+					
+					
+
+			/*      P R I C I N G     */
+			
+			
+	/* Countries flags https://dev.to/j471n/i-made-all-countries-flags-using-html-css-4cnc */
+
+.flag {
+    display:inline-block;
+    vertical-align:baseline;
+    margin-right:15px;
+    width: 32px;
+    height: 24px;
+    /*box-shadow: 0 0 4px rgba(0, 0, 0, 0.8);*/
+    opacity:0.65;
+  }
+	.belgium {
+	background: linear-gradient(
+		to right,
+		black 33%,
+		#fddb21 33%,
+		#fddb21 67%,
+		#ef303f 0
+	);
+	}		
+
+	.france {
+	background: linear-gradient(
+		to right,
+		#192f8e 33%,
+		#fff 33%,
+		#fff 67%,
+		#e01414 0
+	);
+	}
+
+	.luxembourg {
+		background: linear-gradient(#ee2336 33%, #fff 33%, #fff 66%, #00a2e0 0);
+	}
+
+
+			
+			
+
+
+	.plan-box { 
+		background-color:rgba(255,255,255,0.6);
+        box-shadow: 8px 16px 40px rgba(0, 0, 50, 0.3); 
+        border-radius:1em 1em;
+		overflow:hidden;
+	}
+	.plan-box.plan-basic {margin:0em 0.5em 0em 0em;}
+		@media only screen and (max-width: 1200px) { .plan-box.plan-basic {margin:0em 0em 1em 0em;} }
+	.plan-box.plan-pro {margin:0em 0.5em 0em 0.5em;}
+		@media only screen and (max-width: 1200px) { .plan-box.plan-pro {margin:0em 0.5em 0em 0em;} }
+		@media only screen and (max-width: 992px) { .plan-box.plan-pro {margin:0em 0em 0.5em 0em;} }
+	.plan-box.plan-premium {margin:0em 0em 0em 0.5em;}
+		@media only screen and (max-width: 1200px) { .plan-box.plan-premium {margin:0em 0em 0em 0.5em;} }
+		@media only screen and (max-width: 992px) { .plan-box.plan-premium {margin:0.5em 0em 0em 0em;} }
+
+
+		
+
+    
+	.plan-box.highlighted { background-color:rgba(73,105,131,.8); }
+        .plan-box .plan-header.highlighted, .plan-box .plan-features.highlighted { background-color:rgba(73,105,131,.8);  }
+	
+	
+    .plan-box .plan-header { padding:1em; }
+	.plan-box .plan-header p { text-align: center; }
+
+	div.plan-footer { 
+		/*background-color:rgba(133,165,191,0.1);*/ 
+		padding:10px 20px;
+		text-align:center;
+		background: linear-gradient(to right, rgba(235, 235, 247, 0.9) 0px, rgba(243, 243, 250, 0.9) 40%, rgba(255,255,255,.9) 100%);
+	}
+	
+
+		.plan-box .highlighted h2, 
+		.plan-box .highlighted h3, 
+		.plan-box .highlighted p, 
+		.plan-box .highlighted li { color:white; text-shadow:none; }
+		
+	.plan-box ul { list-style: none; padding:1em 0em 0.8em 0em; }
+	.plan-box ul li{ position:relative; display:block; padding:.2em 0; }
+	.plan-box ul li:after{ content:''; height:1px; width:50%; position:absolute; left:calc(50% - 50%/2); bottom:0; border-bottom:1px solid rgba(0,0,0,.1);  }
+	.plan-box ul li:last-child:after { border-bottom: 0; }
+	
+	/*.plan-box ul li{ position:relative; display:block; padding-left:40px; line-height:1.4em; padding-bottom:13px; }
+	.plan-box ul li:before{ content:""; background:url(../imgs/mobicons/icon-check-g.png) no-repeat scroll 0 0/100%; position:absolute; width:1.3em; height:1.3em; left:0; top:.01em; }
+	*/
+
+
+
+
+
+
+
+
+	

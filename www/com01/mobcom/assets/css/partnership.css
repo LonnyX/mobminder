@@ -1,0 +1,178 @@
+
+
+
+			/*     W E L C O M E    +    P R O M O T I O N   */
+
+
+section.welcome {
+	
+	min-height: 400px;  
+	position: relative;
+    background-color: white; 
+	background-image: url(../imgs/clouds/flat-world-1.png);
+	background-repeat: repeat no-repeat;
+	background-size: auto 45%; /* to be adjusted if the source image pxl size is different */
+	background-position: left 0 bottom 0; /* see (*cp01*) */
+	
+} @media only screen and (max-width:1200px){
+	section.welcome{ background-image: url(../imgs/clouds/flat-world-1.png); background-size: auto 55%; background-repeat: repeat no-repeat;}
+} @media only screen and (max-width:768px){
+	section.welcome{ background-image: url(../imgs/clouds/flat-world-1.png); background-size: auto 60%; background-repeat: repeat no-repeat;}
+}
+
+		section.welcome > div.animate.welcome { /* bottom side waved */
+			
+			height: 500px;  /* adjusts height of visual floating line, should match the background height */
+			
+			background-color: white; /* under the background image, should match the img background */
+			background-image: url(../imgs/banners/bg-welcome-partnership3.jpg);
+			background-repeat: no-repeat; 
+			background-size: auto 100%;
+			background-position: right -15% bottom 0px;
+
+			
+		} @media only screen and (max-width:576px){
+			section.welcome > div.animate.welcome { background-position: right -150px bottom 0px; height: 400px; background-size: auto 400px; }
+
+		} @media only screen and (min-width:576px) and (max-width: 768px){
+			section.welcome > div.animate.welcome { background-position: right -300px bottom 0px; height: 440px; background-size: auto 440px; }
+			
+		} @media only screen and (min-width:768px) and (max-width: 992px){
+			section.welcome > div.animate.welcome { background-position: right -280px bottom 0px; height: 480px; background-size: auto 480px;  }
+			
+		} @media only screen and (min-width:992px) and (max-width: 1200px) {
+			section.welcome > div.animate.welcome { background-position: right -200px bottom 0px; height: 450px; background-size: auto 450px; }
+		}
+		
+		
+		section.welcome > div.shade { 
+			position: absolute; top:290px; left:0; bottom: 0px; width:100%; 
+			/* background: linear-gradient(180deg, rgba(112,144,175,0.95) 0%, rgba(112,144,175,.9) 25% , rgba(112,144,175,.8) 50% , rgba(112,144,175,.75) 75%,rgba(112,144,175,.5) 90%, white 100%); */
+			background: linear-gradient(180deg, rgba(107,147,185,.95) 0%, rgba(107,147,185,.9) 25% , rgba(107,147,185,.8) 50% , rgba(107,147,185,.75) 75%, rgba(107,147,185,.5) 90%, white 100%);
+
+		}
+
+
+
+/*     P A R T N E R    T Y P E S     */
+
+
+section.partner-types {
+	position:relative;
+	min-height:360px;
+		
+	/* border:1px solid blue; */
+}
+
+	.partner-types-box { margin:.5em 1em; padding:.5em; text-align:center; border-radius:0 0 1.5em 1.5em;
+			background:linear-gradient(to bottom, rgba(224,224,228,0) 0%, rgba(224,224,228,0) 30%, rgba(224,224,228,.25) 60%, rgba(224,224,228,.50) 100%);
+		} @media only screen and (max-width: 992px) { /* image passes under the header lines when screen is narrow */
+			.partner-types-box { margin:.2em .3em; padding:.5em; }
+			}
+	.partner-types-box.header-text  { 
+		min-height:200px; width:100%; background:transparent;  /* border: 1px solid green; */ 		
+	}
+	.partner-types-box.header-text h1 { margin:0; /* border: 1px solid blue; */ }
+	.partner-types-box.header-image { 
+		min-height:14em; width:100%; padding:0; border-radius:1.5em .5em 0em 1.5em;
+		background-color: white; /* under the background image, should match the img background */
+		background-image: url(../imgs/banners/businessman.jpg); /* the group of people looking at you */
+		background-repeat: no-repeat; 
+		background-size: cover;
+		background-position: right 20% top 0px;	
+		/* border: 1px solid green; */
+	}
+	
+	.partner-types-box p{ padding-bottom:10px; }
+	.partner-types-box-image { height:120px; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; -webkit-box-align:center; -ms-flex-align:center; align-items:center; }
+	.partner-types-box-image img{ max-width:120px; max-height:100px }
+
+
+
+
+/*     C O M M O N   T O   A L L   S E C T I O N   F R O M    D I S T R I B U T I O N    T Y P E S     */
+
+
+div.p-list-area ul p { padding-bottom:20px } /*space between p descriptions and CTA buttons*/
+
+img { width:100%; border-radius:10px; max-width:450px;}
+div.pre-img { text-align:center; }
+
+
+@media only screen and (min-width: 1200px) { 	
+	div.pre-img img { margin-left: 2em; } 	/*  see (sp 01)   Align pre images with the checked li in xl screens    */
+	div.list-area ul.left-margin-ul { margin-left: 2em; } /*  (sp 01) create desired space between the ul which are after the pre imgs in xl screens  */
+}
+
+@media only screen and (max-width: 1200px) {		
+	div.pre-img img { margin-bottom:20px; max-width:370px; }
+}
+
+/*  D I S T R I B U T I O N   T Y P E S  */
+
+		/*   Sales cycle    */
+
+section.distribution-types div.sales-cycle span { writing-mode: vertical-rl; padding:1em 0; height:240px; }
+section.distribution-types div.sales-cycle i { font-size: 3em; }
+	@media only screen and (max-width: 768px) {		
+		section.distribution-types div.sales-cycle i { font-size: 2em; }
+	}
+	@media only screen and (max-width: 576px) {		
+		section.distribution-types div.sales-cycle i { font-size: 1.5em; }
+	}
+
+	section.distribution-types div.handshake ul li span i { padding-left:10px; }
+	section.distribution-types div.handshake ul li span i:first-child { padding-left:20px; }
+
+
+
+/*  A P I    */
+
+
+
+
+/*  W H Y    U S    */
+
+
+section.whyus div.worldmap { /* bottom side waved */
+	
+	height: 460px;  /* adjusts height of visual floating line */
+	
+	/*  */
+	background-color: white; /* under the background image, should match the img background */
+	background-image: url(../imgs/banners/bg-welcome-contactus.jpg); /* the business guy looking at you */
+	background-repeat: no-repeat; 
+	background-size: auto 100%;
+	background-position: right 25% top 0px;
+	
+} 
+
+	section.whyus div.worldmap div { padding:10em 0 0 62px; /* to have the title at the bottom and align it with li elements */
+
+	}@media only screen and (max-width: 576px) { /* header passes upper when screen is narrow */
+	section.whyus div.worldmap div { padding-top:2em; }
+	}
+	@media only screen and (max-width: 400px) {
+	section.whyus div.worldmap { background-position: right -120px top 3em; height: 440px; background-size: auto 380px; }
+	}
+
+section.whyus div.worldmapshade { 
+	position: absolute; z-index:0; top:300px; left:0; bottom: 0px; width:100%; 
+	/* should hover the previous wave */
+	background: linear-gradient(to right, rgba(185,188,200,0) 0%, rgba(185,188,200,.08) 50%, rgba(185,188,220,.25) 100%);
+	
+	/*border:3px solid blue;*/
+}
+section.whyus div.differentiators {
+	position: relative; z-index:1;
+	background-color: transparent; /* under the background image, should match the img background */
+	min-height: 200px;		
+	/* border:2px solid red;*/
+}
+
+
+
+
+
+
+

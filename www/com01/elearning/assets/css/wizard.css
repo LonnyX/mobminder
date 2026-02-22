@@ -1,0 +1,686 @@
+
+
+
+
+#wizard {  /*  Auto-increment header counting  */
+	counter-reset: h1_count;
+}
+.h1track {
+	line-height:2.4em;
+}
+.h1track:before {
+	counter-increment: h1_count;
+	content: counter(h1_count)'/7'; /* the total number of steps must be written here manualy */
+}
+
+
+/*
+#page {
+	counter-reset: heading;
+}
+h1:before {
+	content: counter(heading)") ";
+	counter-increment: heading;
+}
+h1 {
+	counter-reset: subheading;
+}
+h2:before {
+	content: counter(heading)"." counter(subheading)") ";
+	counter-increment: subheading;
+}
+*/
+
+			/*     W E L C O M E     */
+
+
+section.trynow {
+	
+	min-height: 330px;  
+	position: relative;
+	background-color: #80a0bf; /* rgb(128,160,191) blue color of sky behind the clouds */
+	background-image: url(../imgs/banners/footer_city_03.jpg);
+	/* background-image: url(../imgs/banners/trees_rotative.jpg); */
+	background-repeat: repeat no-repeat;
+	background-size: auto 50%; /* to be adjusted if the source image pxl size is different */
+	background-position: left 0% bottom 0%; /* see (*cp01*) */
+	
+} @media only screen and (max-width:1200px){
+		section.trynow{ }
+	} @media only screen and (max-width:768px){
+		section.trynow{ }
+	}
+		
+		section.trynow div.headers { margin:1em 0; }
+		
+		section.trynow > div.animate.trynow { /* bottom side waved */
+			
+			height: 440px;  /* adjusts height of visual floating line, should match the background height */
+			
+			background-color: white; /* under the background image, should match the img background */
+			background-image: url(../imgs/banners/bg-welcome-try-resp2.jpg); /* the girl with the smile and a hand on her kin */
+			background-repeat: no-repeat; 
+			background-size: auto 100%;
+			background-position: right 10% bottom 0px;
+			
+		} @media only screen and (min-width:992px) and (max-width:1500px){  /* move background according to device viewport width */
+			section.trynow > div.animate.trynow { background-position: right -300px top 0px; }
+			section.trynow img.moblogo.medium { width:240px; } /* adjust logo so it does't invade the available space */
+			
+		} @media only screen and (min-width:768px) and (max-width:992px){		
+			section.trynow > div.animate.trynow { background-position: right -380px top 0px; }
+			section.trynow img.moblogo.medium { width:230px; }
+			
+		} @media only screen and (min-width:576px) and (max-width: 768px) {
+			section.trynow > div.animate.trynow { background-position: right -430px top 0px; }	
+			section.trynow img.moblogo.medium { width:210px; }
+			
+		} @media only screen and (max-width:576px) {
+			section.trynow > div.animate.trynow { background-position: right -490px top 0px; }	
+			section.trynow img.moblogo.medium { width:190px; }
+		}
+		
+		
+		section.trynow > div.shade { /* white gradient blurring the bottom under clouds */
+			position: absolute; z-index:0; top:360px; left:0; bottom: 0px; width:100%; 
+			/* should hover the previous wave */
+			/* background:linear-gradient(to bottom, 	rgba(255,255,255,0) 0%, rgba(255,255,255,.1) 30%, rgba(255,255,255,.5) 60%, rgba(255,255,255,.95) 90%, rgba(255,255,255,1) 95%, rgba(255,255,255,1) 100%); */
+			background:linear-gradient(to top, rgba(244,244,248,1) 0px, rgba(244,244,248,.5) 100px, rgba(248,248,252,.1) 160px, rgba(100,132,179,.2) 200px, rgba(100,132,179,1) 80%, rgba(100,132,179,1) 100%);
+			
+			/*border:3px solid blue;*/
+		}
+		section.trynow > div.advantages {
+			
+			position: relative; z-index:1;
+			background-color: transparent; /* under the background image, should match the img background */
+			min-height: 400px;  
+			
+			/* border:2px solid red;*/
+		}
+
+
+	/*
+		.promotion-box { margin:.3em; height:auto; width:100%; text-align:center; border-radius:0 0 2em 2em;
+						background:linear-gradient(to bottom, rgba(0,0,0,0) 0px, rgba(0,0,0,.31) 100px, rgba(0,0,0,.35) 100%); }
+		.promotion-box-inner { height:auto; width:100%; padding:40px 20px 20px 20px;  }
+		.promotion-box-inner h2 { padding:0 0 30px 0; }
+			@media only screen and (max-width: 992px) { .promotion-box h2 { text-align:left; position:absolute; bottom:0; padding:0 0 24px 0; } }
+		.promotion-box-inner p { color:#fff; margin-bottom:0; }
+		.promotion-box-img { height:115px; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; }
+		.promotion-box-img img{ display:block; max-width:95px; max-height:85px }
+	*/
+
+
+
+
+
+			/*     P R O F E S S I O N A L S     */
+
+section.professionnals {
+} 
+		.single-service { max-width:280px; margin:.5em; border-radius:2em; overflow:hidden; } 
+		.single-service img { max-width:100%; border-style:none; margin:auto; display:block; }
+		.single-service h3 { line-height:1.2em; max-width:90%; margin:auto; text-align:center; padding:10px; }
+		
+		@media only screen and (max-width:768px){
+			.single-service { margin:.3em; border-radius:1em; }
+			.single-service h3 { line-height:.9em; max-width:100%;  }
+		}
+		
+
+
+
+
+
+			/*     P A P E R   O R    E L E C T R O N I C     */
+
+section.currentagenda {
+} 
+		.agenda-type { max-width:400px; margin:.5em; overflow:hidden; }
+		.agenda-type.left { border-radius:3em .2em .2em 3em; } 
+		.agenda-type.right { border-radius:.2em 3em 3em .2em; } 
+		.agenda-type img { max-width:100%; border-style:none; margin:auto; display:block;  } 
+		.agenda-type h3 { line-height:1.4em; margin:0; text-align:center; padding:10px; }
+		
+		.agenda-question { text-align:center; padding:0em 3em 0em 3em; }
+		
+		
+		@media only screen and (max-width:768px){
+			.agenda-type { margin:.3em; }
+			
+		}@media only screen and (max-width:992px){
+			.agenda-question { text-align:center; padding:0em 0em 1em 0em;}
+		}
+		
+
+
+
+
+			/*     P A Y M E N T      D A T A    */
+			
+			
+
+section.payment {
+	
+	position: relative;
+	background-color: white; /* blue color of sky behind the clouds */
+}
+		section.payment div.payment-wrap {
+			
+			min-height: 360px;  
+			position: relative;
+			background-color: white; /* blue color of sky behind the clouds */
+			/* background-image: url(../imgs/clouds/flat-world-1.png);*/
+			background-image: url(../imgs/banners/see_skyline_01.jpg);
+			background-repeat: repeat no-repeat;
+			background-size: auto 100%; /* to be adjusted if the source image pxl size is different */
+			background-position: left 0% bottom 0px; /* see (*cp02*) */
+			
+		}
+		section.payment div.worldmap { /* bottom side waved */
+			
+			height: 400px;  /* adjusts height of visual floating line */
+			padding: 5em 50% 0 3em;
+			/*  */
+			background-color: white; /* under the background image, should match the img background */
+			background-image: url(../imgs/wizard/paymentcard_02.jpg); /* the group of people looking at you */
+			background-repeat: no-repeat; 
+			background-size: auto 100%;
+			background-position: right 0px top 0px;
+			
+		} @media only screen and (max-width: 1200px) { /* image passes under the header lines when screen is narrow */
+			section.payment div.worldmap { padding:0em 20% 0 0; background-position: right 0px bottom 0px; height: 320px; background-size: auto 80%; /* border:1px solid red; */ }
+			
+		} @media only screen and (max-width: 576px) { /* image passes under the header lines when screen is narrow */
+			section.payment div.worldmap { padding:0; /* border:1px solid blue; */ }
+			
+		}
+		
+		section.payment div.wideshade { /* white gradient blurring the bottom under clouds */
+			position: absolute; z-index:0; top:300px; left:0; bottom: 0px; width:100%; 
+			/* should hover the previous wave */
+			background: linear-gradient(180deg, rgba(128,160,191,1) 0%, rgba(128,160,191,.8) 40%, rgba(255,255,255,0) 70%, rgba(255,255,255,0) 100%);
+			/*border:3px solid blue;*/
+		}
+		section.payment div.figures {
+			position: relative; z-index:1;
+			background-color: transparent; /* under the background image, should match the img background */
+			min-height: 340px;		
+			/* border:2px solid red;*/
+		}
+		section.payment div.vfooter {
+			position: relative; z-index:1;
+			background-color: transparent; /* under the background image, should match the img background */
+			/* border:2px solid red;*/
+			min-height: 3em;		
+		}
+
+		section.payment div.message.shade {
+			width:90%; max-width:1000px;
+			margin:0 auto;
+			border-radius:1em;
+			padding-top:2em;
+			background:linear-gradient(to bottom, rgba(0,0,36,.2) 0px, rgba(0,0,36,.4) 20%, rgba(0,0,36,.5) 50%, rgba(0,0,36,.4) 80%, rgba(0,0,36,.2) 100%);
+		}
+		section.payment div.payment-box.symbol { text-align:center; }
+		section.payment div.payment-box.message { padding:1em; }
+
+		section.payment div.techno { /* this div floats under the section, the next section should have a higher z-index (*ns01*) */
+			
+			width:100%; position:absolute; z-index:0; bottom:-360px; /* border:1px solid red; */
+			min-height:360px;  
+
+			background-color: white; /* under the background image, should match the img background */
+			background-image: url(../imgs/wizard/manyagendas.jpg); /* the group of people looking at you */
+			background-repeat: no-repeat; 
+			background-size: auto 100%;
+			background-position: left 0px bottom 0px;
+
+			/* border:1px solid blue; */
+			
+		} 
+
+
+
+			/*     M A N Y    A G E N D A S   T I T L E  */
+			
+
+section.manytitle {
+	position:relative; z-index:1; /* should have a higher z-index (*ns01*) */
+}
+
+	section.manytitle div.air {
+		min-height:340px; 
+	} 
+	section.manytitle div.say { background-color:white; padding-bottom:.5em; /* border:1px solid red; */
+		
+	} @media only screen and (min-width: 992px) { /* image passes under the header lines when screen is narrow */
+			section.manytitle div.air {  height:0px; min-height:0px;  }
+			section.manytitle div.say {  position:relative; min-height:220px; margin-left:50%; margin-right:auto; max-width:20em; }
+			section.manytitle div h1 {  position:absolute; bottom:0px; text-align:left; }
+		}
+
+
+
+
+			/*     O N E   O R   M A N Y     */
+
+section.ismultiagenda {
+} 
+		section.ismultiagenda h2.confirm { min-height:2.4em } 
+
+		.agenda-many { max-width:300px; margin:.5em; overflow:hidden; }
+		.agenda-many.left { border-radius:3em .2em .2em 3em; text-align:right; } 
+		.agenda-many.right { border-radius:.2em 3em 3em .2em; } 
+		.agenda-many img { max-width:100%; border-style:none; margin:auto; display:block;  } 
+		.agenda-many h3 { line-height:1.4em; margin:0; text-align:center; padding:10px; }
+		
+		.agenda-many-tip { text-align:center; padding:0em 3em 0em 3em;}
+		
+		@media only screen and (max-width:768px){
+			.agenda-many { margin:.3em; }
+			
+		}
+
+
+
+
+
+			/*     S I N G L E    D E L E G A T I O N    T Y P E     */
+
+section.single-delegation {
+} 
+
+		.singdel-type { max-width:300px; margin:.5em; overflow:hidden; }
+		.singdel-type.left { border-radius:2em .2em .2em 2em; text-align:right; } 
+		.singdel-type.center { border-radius:.2em .2em .2em .2em; } 
+		.singdel-type.right { border-radius:.2em 2em 2em .2em; } 
+		.singdel-type img { max-width:100%; border-style:none; margin:auto; display:block;  } 
+		.singdel-type h3 { line-height:1.2em; margin:0; text-align:center; padding:10px; }
+		
+		.singdel-question { text-align:center; padding:1em 3em 1em 3em;}
+		
+		@media only screen and (max-width:768px){
+			.singdel-type { margin:.2em; }
+			.singdel-question { text-align:center; padding:1em 0em 1em 0em;}
+		} 
+
+	
+
+
+
+
+
+			/*     M U L T I     A G E N D A       D E L E G A T I O N    T Y P E     */
+
+section.comanaged-delegation {
+} 
+
+		.comanaged.upleft,	.comanaged.downleft { justify-content:right; } 
+		.comanaged.upright,	.comanaged.downright { justify-content:left; } 
+		
+		.comanaged.upleft 		> div { border-radius:2em .2em .2em .2em; } 
+		.comanaged.upright 		> div { border-radius:.2em 2em .2em .2em; } 
+		.comanaged.downright 	> div { border-radius:.2em .2em 2em .2em; } 
+		.comanaged.downleft 	> div { border-radius:.2em .2em .2em 2em; } 
+		.comanaged-type { max-width:300px; margin:.5em; overflow:hidden; }
+		.comanaged-type img { max-width:100%; border-style:none; margin:auto; display:block;  } 
+		.comanaged-type h3 { line-height:1.2em; margin:0; text-align:center; padding:10px; }
+		
+		.comanaged-question { min-height:8em; text-align:center; padding:1em 3em 1em 3em;}
+		
+		@media only screen and (max-width:768px){
+			.comanaged-type { margin:.2em; }
+			.comanaged-question { min-height:9em; text-align:center; padding:1em 0em 1em 0em;}
+		} 
+
+	
+
+
+
+
+
+
+
+
+
+			/*     T I M E      S L I C E     */
+
+section.timeslice {
+} 
+
+		@media only screen and (min-width:992px){ 
+		
+			.slice.upleft,	.slice.midleft,	 .slice.downleft { justify-content:right; } 
+			.slice.upright,	.slice.midright, .slice.downright { justify-content:left; } 
+			
+			.slice.upleft 	> div { border-radius:2em .2em .2em .2em; } 
+			.slice.upright 	> div { border-radius:.2em 2em .2em .2em; } 
+			.slice.midleft 	> div { border-radius:.2em .2em .2em .2em; } 
+			.slice.midright > div { border-radius:.2em .2em .2em .2em; } 
+			.slice.downleft > div { border-radius:.2em .2em .2em 2em; } 
+			.slice.downright > div { border-radius:.2em .2em 2em .2em; } 
+		
+		}
+		@media only screen and (max-width:992px){ 
+			
+			section.timeslice div.options { width:400px; margin:0 auto; /* border:1px solid blue; */ }
+			
+			.slice.up1,	.slice.dwn1 { justify-content:right; } 
+			.slice.up2,	.slice.dwn2 { justify-content:center; } 
+			.slice.up3,	.slice.dwn3 { justify-content:left; } 
+			
+			.slice.up1 	> div { border-radius:2em .2em .2em .2em; } 
+			.slice.up2 	> div { border-radius:.2em .2em .2em .2em; } 
+			.slice.up3 	> div { border-radius:.2em 2em .2em .2em; } 
+			.slice.dwn1 > div { border-radius:.2em .2em .2em 2em; } 
+			.slice.dwn2 > div { border-radius:.2em .2em .2em .2em; } 
+			.slice.dwn3 > div { border-radius:.2em .2em 2em .2em; } 
+		}
+		
+		div.timeslice-box { background:white; width:120px; height:120px; margin:.5em; overflow:hidden; /* border:5px solid #85A5BF; */ }
+		div.timeslice-box h3 { line-height:1.4em; margin:0; text-align:center; padding:10px; }
+		
+		div.timeslice-image { max-width:90%; padding-top:1em; } 
+		div.timeslice-image h3 { padding-bottom:1em; text-align:left; } 
+		div.timeslice-image img { max-width:100%; max-height:200px; border-style:none; margin:auto; display:block;  } 
+		
+		div.timeslice-question { text-align:center; }
+		
+		@media only screen and (max-width:992px){
+			.timeslice-box { margin:.2em; }
+			.timeslice-question { text-align:center; padding:1em 0em 1em 0em;}
+			div.timeslice-image { max-width:70%; }
+		} 
+
+
+
+	
+
+
+			/*     C O M M U N I C A T I O N S      */
+
+section.communication-options {
+	}
+
+	section.communication-options div.option-box{ min-height:4em; }
+	section.communication-options div.radio-box { padding:2em 0 1em 0;  }
+	section.communication-options h3.confirm { padding:.1em 2em; }
+	
+		@media only screen and (max-width:992px){
+			section.communication-options div.radio-box { padding:2em 0 1em 0; }
+			section.communication-options div.option-box{ min-height:6em; }
+			section.communication-options h3.confirm { padding:.1em .5em; }
+		} 
+
+
+
+
+			/*     O N L I N E     R E S E R V A T I O N     */
+
+section.ereservation {
+} 
+
+		section.ereservation h1 { margin-bottom:1em; }
+		
+		div.wisheresa-box { max-width:300px; margin:.5em; overflow:hidden; }
+		div.wisheresa-box.left { border-radius:3em .2em .2em 3em; } 
+		div.wisheresa-box.right { border-radius:.2em 3em 3em .2em; } 
+		div.wisheresa-box img { max-width:100%; border-style:none; margin:auto; display:block;  } 
+		div.wisheresa-box h3 { line-height:1.4em; margin:0; text-align:center; padding:10px; }
+		
+		div.wisheresa-question { min-height:7em; text-align:center; padding:0em 1em 0em 1em; }
+		
+		
+		@media only screen and (max-width:768px){
+			div.wisheresa-box { margin:.3em; }
+			
+		}@media only screen and (max-width:992px){
+			section.ereservation h1 { margin-bottom:0em; }
+			div.wisheresa-question { text-align:center; }
+		}
+		
+
+
+
+			/*     E X I S T I N G     W E B S I T E      */
+
+
+		div.haswebsite-box { max-width:300px; margin:.5em; overflow:hidden; }
+		div.haswebsite-box.left { border-radius:3em .2em .2em 3em; } 
+		div.haswebsite-box.right { border-radius:.2em 3em 3em .2em; } 
+		div.haswebsite-box img { max-width:100%; border-style:none; margin:auto; display:block; } 
+		div.haswebsite-box h3 { line-height:1.4em; margin:0; text-align:center; padding:10px; /* border-top:2px solid silver; */ }
+		
+		div.haswebsite-question { min-height:8em; text-align:center; padding:0em 1em 0em 1em; }
+		div.haswebsite-url { text-align:center; padding:2em 1em 0em 1em; }
+		
+		
+		@media only screen and (max-width:768px){
+			div.haswebsite-box { margin:.3em; }
+
+		}@media only screen and (max-width:992px){
+			div.haswebsite-question { text-align:center; }
+		}
+		
+
+
+
+
+
+
+			/*      A L I V E    O R    C L E A R      */
+
+section.live {
+} 
+		section.live h1 { margin-bottom:.5em; }
+		
+		div.live2-box { max-width:220px; margin:.5em; overflow:hidden; border-radius:.2em; }
+		
+		div.live2-box.lefter { justify-content:right; } 
+		div.live2-box.righter { justify-content:left; } 
+		
+		div.live2-box h3 { line-height:1.4em; margin:0; text-align:center; padding:10px; }
+		
+		div.live2-box img { max-width:100%; border-style:none; margin:auto; display:block; } 
+		
+		div.live2-question { margin:0 1em 0 0; min-height:250px; text-align:right; }
+		
+			@media only screen and (max-width:992px){
+				section.live h1 { margin-bottom:0; }
+				div.live2-box { margin:.2em; }
+				div.live2-question { margin:0 16%; text-align:center; }
+			} 
+			@media only screen and (max-width:768px){
+				div.live2-question { margin:0 0; padding-bottom: 1em; }
+			} 
+
+	
+	
+
+	
+
+
+
+
+			/*     H O W    M A N Y     A G E N D A s     */
+
+section.howmany {
+} 
+		div.howmany-box { width:100px; height:90px; margin:.5em; overflow:hidden; }
+		div.howmany-box { border-radius:1em .2em 1em .2em; /* border:5px solid #85A5BF; */ } 
+		div.howmany-box h3 { line-height:1.4em; margin:0; text-align:center; padding:10px; }
+		
+		div.howmany-question { text-align:center; padding:0em 3em 0em 3em; }
+		div.howmany-image { background:transparent; padding-left:1em; padding-top:1.5em; } /* padding-left for having the box shadow displayed fully when item is selected */
+		div.howmany-image img { max-width:100%; max-height:300px; border-style:none; margin:auto; display:block;  } 
+		
+		section.howmany div.options { /* border:1px solid blue; */ }
+		
+		@media only screen and (max-width:992px){ 
+			section.howmany div.options { width:360px; margin:0 auto; }
+			div.howmany-question { text-align:center; padding:0em 0em 1em 0em;}
+			div.howmany-image { max-width:80%; }
+		}
+		
+		@media only screen and (max-width:768px){
+			div.howmany-box { margin:.3em; }
+		}
+
+
+
+
+
+
+			/*     A C C E S S    D A T A    F O R M     */
+			
+section.access-wave {
+	position:relative;
+} 			
+			
+		section.access-wave > div.animate {
+			min-height:340px;
+			background-color: white; 
+			background-image: url(../imgs/banners/thereyougo.jpg); /* the group of people looking at you */
+			background-repeat: no-repeat; 
+			background-size: auto 100%;
+			background-position: right 10% bottom 0px;
+			
+		} @media only screen and (max-width:1600px){
+			section.access-wave > div.animate { background-position: right -100px bottom 0px; }
+		} @media only screen and (max-width:1200px){
+			section.access-wave > div.animate { background-position: right -200px bottom 0px; }
+		} @media only screen and (max-width:576px){
+			section.access-wave > div.animate { background-position: right -300px bottom 0px; }
+		}
+	
+		section.access-wave div.access-title {
+			position:absolute;
+			top:140px; bottom:auto; left:0; right:0; 
+		}
+
+	
+		section.access-wave div.access-title h1 {
+			max-width:60%; 
+			
+		} @media only screen and (max-width:768px){
+			section.access-wave div.access-title { top:20px; bottom:auto; left:0; right:0;  }
+			section.access-wave div.access-title h1 { max-width:60%;  }
+		}
+
+
+			/*     W I Z A R D     F O R M     S U B M I T      */
+
+
+
+div.click.submit {
+    font-size: 28px;
+    display: inline-block;
+    width: 70%;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #BBE82A 0%, #BBE82A 80%);
+    color: #FFF;
+    text-align: center;
+}
+
+div.click.submit:hover {
+    background: linear-gradient(135deg, #BEFF37 0%, #50d934 80%);
+    color: #FFF;
+}
+
+div.click.submit:focus {
+    box-shadow: 0 0 0 3px rgba(226, 60, 142, 0.5);
+    color: #FFF;
+}
+
+div.click.submit.disabled {
+    font-size: 24px;
+    display: inline-block;
+    width: 70%;
+    padding: 5px 15px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, silver 0%, grey 80%);
+    color: #555;
+    text-align: center;
+}
+
+div.click.submit.disabled:hover, div.click.submit.disabled:focus {
+    background: linear-gradient(135deg, darkgrey 0%, grey 80%);
+    color: #666;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+			/*     W I Z A R D . J S     I N T E R A C T I V E    E L E M E N T S      */
+
+
+
+div.geo-form { margin-top:1em; padding:.5em 0; }
+
+
+
+
+	
+		
+		
+		
+			/*     T O U C H     O N    (generic interactive elements)   */
+			
+
+div.touch-on { display: flex; }
+div.touch-on > div { box-shadow: 5px 10px 20px rgba(89,92,109, 0.3);   }
+					/* border-bottom:1px solid silver;  border-right:1px solid silver;
+					border-left:1px solid white;  border-top:1px solid white; */
+
+.touch-on h3 {
+    text-align: center;
+}
+
+.touch-on.selected {
+    transform: scale(1.1);
+    opacity: 1;
+    transition: 400ms ease-in;
+		transition-delay: 0ms;
+}	
+	.touch-on.selected h3 {
+		/* color: red; for testing */
+		transition: 400ms ease-in;
+		transition-delay: 0ms;
+	}
+	.touch-on.selected > div {
+		/* border: 1px solid red;*/ 
+		transition: 400ms ease-in;
+		box-shadow: 8px 16px 16px rgba(69,72,109, 0.4);
+	}
+
+.touch-on.reduced {
+    transform: scale(0.6);
+    opacity: 0.3;
+    transition: 800ms ease-in;
+	transition-delay: 50ms;
+}
+	.touch-on.reduced h3 {
+		color: grey;
+		transition: 800ms ease-in;
+		transition-delay: 50ms;
+	}
+	.touch-on.reduced > div {
+		/* border: 1px solid red;*/ 
+		transition: 800ms ease-in;
+		box-shadow: none;
+	}
+
+
+

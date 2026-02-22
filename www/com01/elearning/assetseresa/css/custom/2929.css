@@ -1,0 +1,32 @@
+
+/* 2929 Ophtalmologue Dr Hemarns */
+
+body.c2929 { background: white;  }
+body.c2929 h2, div.e-bullet-caption { color:rgb(36,40,40); }
+body.c2929 .action {  } /* this is the orange on buttons */
+body.c2929 .e-button {  }
+
+body.c2929 section.s-h1 { margin:0; padding:1em 0;}
+	body.c2929 section.s-h1 h1 { color:steelblue; margin:0; }
+
+body.c2929 section.s-img { padding:0em; margin-top:0; }
+	body.c2929 section.s-img div { padding:0; }
+		body.c2929 section.s-img div img { max-height:200px !important; }
+	
+body.c2929 section.s-info  { background:white; padding:1em;  }
+
+body.c2929 section.s-action {  }
+body.c2929 section.s-directions { }
+body.c2929 section.s-footer { margin-top:10em; /* display:none; */ }
+
+/* body.c2929 section.s-h1 */
+body.c2929 section.s-img
+	{ background:linear-gradient(to right, rgba(187,221,255,1) 0%, rgba(187,221,255,1) 50%, rgba(187,221,255,.2) 60%, rgba(187,221,255,.5)); }
+
+	body.c2929 section.s-footer
+	{ background:linear-gradient(to right, rgba(187,221,255,.6) 0%, rgba(187,221,255,1) 50%, rgba(187,221,255,.6)); }
+
+
+body.c2929 div.e-bullet, input.e-button { background:steelblue;  }
+
+

@@ -1,0 +1,23 @@
+
+/* Sofie De Turck */
+
+body{ background:white;  }
+h2, div.e-bullet-caption { color:rgb(33,33,33); }
+.action {  } /* this is the orange on buttons */
+.e-button {  }
+
+section.s-h1 { margin:0; padding:1em 0; background:rgb(38,45,65); }
+	section.s-h1 h1 { color:white; margin:0; }
+
+section.s-img { padding:0em; margin-top:1em; }
+	section.s-img div { padding:0; }
+		section.s-img div img { max-height:22em !important; }
+	
+section.s-info  { background:rgb(239,237,240); padding:1em; margin:1em; }
+
+section.s-action, section.s-directions, section.s-desk { background:white; margin-top:2em; }
+
+section.s-footer { margin-top:0em; } 
+	
+div.e-bullet, input.e-button  { background:red; }
+div.action { background:#40A48D; border:2px solid silver; border-radius:1px !important; color:white; }

@@ -1,0 +1,304 @@
+
+
+
+			/*     W E L C O M E    +    P R O M O T I O N   */
+
+
+section.welcome {
+	
+	min-height: 400px;  
+	position: relative;
+	background-color: rgb(107,147,185);	/* blue color of sky behind the clouds */
+	background-image: url(../imgs/clouds/clouds_02_f.png);
+	background-repeat: repeat no-repeat;
+	background-size: auto 35%; /* to be adjusted if the source image pxl size is different */
+	background-position: left 0% bottom 0%; /* see (*cp01*) */
+	
+} @media only screen and (max-width:1200px){
+		section.welcome{ background-image: url(../imgs/clouds/clouds_03_c.png); background-size: auto 35%; background-repeat: repeat no-repeat;}
+	} @media only screen and (max-width:768px){
+		section.welcome{ background-image: url(../imgs/clouds/clouds_03_c.png); background-size: auto 40%; background-repeat: repeat no-repeat;}
+	}
+		
+		section.welcome > div.animate.welcome { /* bottom side waved */
+				
+			height: 520px;  /* adjusts height of visual floating line, should match the background height */
+			
+			background-color: white; /* under the background image, should match the img background */
+			background-image: url(../imgs/ia/bg-welcome-ai-blue.jpg); /* Moby */
+			background-repeat: no-repeat; 
+			background-size: auto 80%;
+			background-position: right 10% bottom 0px;
+			
+		} @media only screen and (max-width:768px){
+			section.welcome > div.animate.welcome { background-image: url(../imgs/ia/bg-welcome-ai-blue.jpg); background-position: right -40px bottom 0px; height: 340px; background-size: auto 280px; }
+			
+		} @media only screen and (min-width:768px) and (max-width: 992px){
+			section.welcome > div.animate.welcome { background-image: url(../imgs/ia/bg-welcome-ai-blue.jpg); background-position: right -40px bottom 0px; height: 480px; background-size: auto 300px; }
+			
+		} @media only screen and (min-width:992px) and (max-width: 1200px) {
+			section.welcome > div.animate.welcome { background-position: right -30px bottom 0px; height: 470px; background-size: auto 300px; }
+		}
+
+        @media only screen and (max-width:768px) { section.welcome div.headers {margin-top:40px;} }
+		
+		section.welcome > div.shade { /* white gradient blurring the bottom under clouds */
+			position: absolute; z-index:0; top:400px; left:0; bottom: 0px; width:100%; 
+			/* should hover the previous wave */
+			/* background:linear-gradient(to bottom, 	rgba(255,255,255,0) 0%, rgba(255,255,255,.1) 30%, rgba(255,255,255,.5) 60%, rgba(255,255,255,.95) 90%, rgba(255,255,255,1) 95%, rgba(255,255,255,1) 100%); */
+			background:linear-gradient(to top, rgba(255,255,255,1) 0px, rgba(255,255,255,.97) 20px, rgba(255,255,255,.90) 80px, rgba(255,255,255,.4) 200px, rgba(255,255,255,.1) 50%, rgba(255,255,255,0) 100%);
+			
+			/*border:3px solid blue;*/
+		}
+		section.welcome > div.advantages {
+			position: relative; z-index:1;
+			background-color: transparent; /* under the background image, should match the img background */
+			min-height: 350px;  
+			
+			/* border:2px solid red;*/
+		}
+
+
+
+		section.welcome div.promotion-box { 
+				margin:5px; height:auto; width:100%; text-align:center; border-radius:0 0 1.5em 1.5em;
+				background:linear-gradient(to bottom, rgba(63,85,108,0) 0px, rgba(63,85,108,.05) 40px, rgba(63,85,108,.70) 160px, rgba(63,85,108,.80) 100%); 
+			}
+		section.welcome div.promotion-box-inner { height:auto; width:100%; padding:35px 35px 35px 35px;  }
+		section.welcome div.promotion-box-inner h2 { padding:0 0 40px 0; }
+			@media only screen and (max-width: 992px) { 
+				section.welcome div.promotion-box h2 { text-align:left; position:absolute; bottom:0; padding:0 0 24px 0; } 
+			}
+		section.welcome div.promotion-box-inner p { color:#fff; margin-bottom:0; }
+		section.welcome div.promotion-box-img { height:115px; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; }
+		section.welcome div.promotion-box-img img{ display:block; max-width:95px; max-height:85px }
+
+
+        div.videomoby-wrap { width:1100px; max-width:100%; margin-top:60px; } 
+        div.videomoby-wrap div.vjs-poster {border-radius:30px !important;}
+        #ai-chapters div.vwrap div.vjs-poster {border-radius:30px !important; box-shadow: 5px 10px 20px rgba(89, 92, 109, 0.3)!important;}
+
+
+
+
+
+        		/*    C O M P A T I B I L I T Y   A P P   */
+
+
+	ul.accordeon input:checked + div div.sub { max-height:1000% /*avoid display bug on short height screens*/; opacity:1; }
+	ul.accordeon input:checked + div > label i { transform-origin: center; transform: rotate(90deg); }
+
+	ul.accordeon .sub > li:hover { color:#C3D949; }
+
+	section.compatibility ul{ width: 100%; text-align:center; margin:0; padding-top:20px; padding-left:0; }
+	section.compatibility li{ display: inline-block; margin: 20px; }
+
+	section.compatibility div.download {
+		width: 240px; height: 90px;	float:left; border-radius: 5px;
+		position: relative;	cursor: pointer;
+		border: 2px solid rgba(10,30,15,0.5);
+		color: rgba(10,30,15,0.6);
+	}
+
+	section.compatibility div.download > i.fab {
+		position: absolute; top: 50%; left: 15px;
+  		color:#C3D949;
+		transform: translateY(-50%);
+	}
+
+	section.compatibility div.download:hover {
+		background:#C3D949;	border: 2px solid #C3D949;
+	}
+
+	section.compatibility div.download:hover i{ color:white; }
+
+	section.compatibility div.download:hover span.df{ color:rgba(10,30,15,0.7); }
+	section.compatibility div.download:hover span.dfn{ color:rgba(10,30,15,0.7); }
+
+	section.compatibility span.df,
+		section.compatibility span.dfn { position: absolute; left: 90px; }
+	
+	section.compatibility span.df {	top: 20px; font-size: .8em;	}
+		section.compatibility span.dfn { top: 33px;	font-size: 1.2em; }
+
+
+
+/*     L I S T    F E A T U R E S    */
+
+.features img { width:100%; margin-bottom:20px; border-radius:10px 10px; /*To have a space between the picture and li in small device*/ }
+.features div.pre-img { text-align:center; }
+.features div.pre-img img { max-width:500px; }
+
+.features div.cta_1_centered { 
+    min-height:150px; 
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    @media only screen and (max-width: 1200px) { .features div.hidden_left { display:none; } }
+
+
+/*    C H A P T E R S      A C C O R D E O N  */
+
+    ul.accordeon { list-style-type: none; margin-left: 0em; padding-left: 0; }
+
+		ul.accordeon label, .accordeon label h2 { cursor: pointer; padding:0.3em 0 0.2em 0;}
+
+		ul.accordeon label:hover { color:#C3D949; }
+    		
+		ul.accordeon i { color: #C3D949; padding-right:0; }
+
+		ul.accordeon div.sub ul.sub div.vwrap { padding-bottom:0.5em; }
+
+	ul.accordeon input[type=radio],
+	ul.accordeon input[type=checkbox] {
+	display: none;
+	}
+
+	.sub {
+		max-height: 0;
+		opacity: 0;
+		overflow: hidden;
+		transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+	}
+	
+	.sub .vwrap {
+		opacity: 0;
+		transform: translateY(20px); /* Décalage initial vers le bas */
+		transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+	}
+	
+	.open {
+		max-height: 500px; /* Ajuste selon la taille de ton contenu */
+		opacity: 1;
+	}
+	
+	.open .vwrap {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+
+	/*     V O L U M E S   /   F I G U R E S     */
+			
+			
+
+section.volumes {
+	
+	min-height: 360px;  
+	position: relative;
+	background-color: white; /* blue color of sky behind the clouds */
+	background-image: url(../imgs/clouds/flat-world-1.png);
+	background-repeat: repeat no-repeat;
+	background-size: auto 50%; /* to be adjusted if the source image pxl size is different */
+	background-position: left 0% bottom 30px; /* see (*cp02*) */
+}
+		section.volumes div.worldmap { /* bottom side waved */
+			
+			height: 360px;  /* adjusts height of visual floating line */
+			
+			/*  */
+			background-color: white; /* under the background image, should match the img background */
+			background-image: url(../imgs/banners/bg-main-users.jpg); /* the group of people looking at you */
+			background-repeat: no-repeat; 
+			background-size: auto 100%;
+			background-position: right 0px top 0px;
+			
+		} @media only screen and (max-width: 768px) { /* image passes under the header lines when screen is narrow */
+			section.volumes div.worldmap { background-position: right 0px top 7em; height: 440px; background-size: auto 300px; }
+		}
+		section.volumes div.worldmapshade { /* white gradient blurring the bottom under clouds */
+			position: absolute; z-index:0; top:300px; left:0; bottom: 0px; width:100%; 
+			/* should hover the previous wave */
+			background: linear-gradient(180deg, rgba(107,147,185,.9) 0%, rgba(107,147,185,.8) 25% , rgba(107,147,185,.7) 50% , rgba(107,147,185,.6) 75%, rgba(107,147,185,0) 100%);
+			
+			/*border:3px solid blue;*/
+		}
+		section.volumes div.figures {
+			position: relative; z-index:1;
+			background-color: transparent; /* under the background image, should match the img background */
+			min-height: 200px;		
+			/* border:2px solid red;*/
+		}
+		section.volumes div.vfooter {
+			position: relative; z-index:1;
+			background-color: transparent; /* under the background image, should match the img background */
+			/* border:2px solid red;*/
+			min-height: 100px;		
+		}
+
+		.figure-box { margin:.3em; height:auto; width:100%; text-align:center; border-radius:0em 0em 1.5em 1.5em;
+						background:linear-gradient(to bottom, rgba(63,85,108,0) 0px, rgba(63,85,108,.05) 40px, rgba(63,85,108,.60) 150px, rgba(63,85,108,.70) 100%); 
+						/* backdrop-filter: blur(2px);  PVH-2021 too heavy processing combined with sliding background image ... try again in 2024 */
+					}
+		.figure-box-inner { height:auto; width:100%; padding:10px 5% 20px 5%;  }
+		.figure-box-inner div.fal { margin-bottom:.5em; }
+		
+		.figure-box-inner h3 { margin:0 0 15px 0; } 
+		.figure-box-inner p { color:#fff; margin-bottom:0; }
+
+		section.volumes div.techno { /* this div floats under the section, the next section should have a higher z-index (*ns01*) */
+			
+			width:100%; position:absolute; z-index:0; bottom:-290px; 
+			min-height:330px;  
+
+			background-color: white; /* under the background image, should match the img background */
+			background-image: url(../imgs/banners/main-typing.jpg); /* the group of people looking at you */
+			background-repeat: no-repeat; 
+			background-size: auto 100%;
+			background-position: left 0px top 0px;
+
+			/* border:1px solid blue; */
+			
+		} @media only screen and (max-width: 768px) { /* image passes under the header lines when screen is narrow */
+			section.volumes div.techno {  bottom:-260px; /* keep aligned (*ka01*) */ }
+			}
+
+
+			.promotion-box { margin:.3em; height:auto; width:100%; text-align:center; border-radius:0 0 2em 2em;
+				background:linear-gradient(to bottom, rgba(63,85,108,0) 0px, rgba(63,85,108,.05) 40px, rgba(63,85,108,.70) 150px, rgba(63,85,108,.80) 100%); }
+.promotion-box-inner { height:auto; width:100%; padding:40px 20px 20px 20px;  }
+.promotion-box-inner h2 { padding:0 0 30px 0; }
+	@media only screen and (max-width: 992px) { .promotion-box h2 { text-align:left; position:absolute; bottom:0; padding:0 0 24px 0; } }
+.promotion-box-inner p { color:#fff; margin-bottom:0; }
+.promotion-box-img { height:115px; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; }
+.promotion-box-img img{ display:block; max-width:95px; max-height:85px }
+
+
+/* F E A T U R E S   M E N U */
+
+.single-service { max-width:280px; margin:.5em; border-radius:1em 1em; overflow:hidden; box-shadow: 8px 16px 40px rgba(0, 0, 0, 0.35); cursor:pointer; background:linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 30%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.5) 100%);
+} /*display:flex; } /* display:flex in the wrapper works along with height:auto; in the inner div. */
+.single-service img { max-width:100%; border-style:none; margin:auto; display:block; } 
+
+@media only screen and (min-width:768px){
+	/* border-radius should stay on img and on outer div */
+		.single-service img.first { border-radius:1em 0.3em 0em 0em; }
+		.single-service.first { border-radius: 1em 0.3em 0.3em 0.3em; }
+		.single-service img.second, .single-service img.fifth  { border-radius:0.3em 0.3em 0em 0em; }
+		.single-service.second, .single-service.fifth { border-radius:0.3em 0.3em 0.3em 0.3em; }
+		.single-service img.third  { border-radius:0.3em 1em 0em 0em; }
+		.single-service.third { border-radius:0.3em 1em 0.3em 0.3em; }
+		.single-service img.fourth { border-radius:0.3em 1em 0em 0em; }
+		.single-service.fourth { border-radius: 0.3em 0.3em 0.3em 1em; }
+		.single-service img.last { border-radius:0.3em 0.3em 0em 0em; }
+		.single-service.last { border-radius: 0.3em 0.3em 1em 0.3em; }
+}
+
+.single-service h3  { line-height:1.2em; max-width:90%; margin:auto; text-align:center; padding:10px 2px 10px 2px;  }
+.single-service i  { display:block; margin:0; text-align:center; padding-top:10px; font-size:1.2em; }
+
+@media only screen and (max-width:768px){
+	.single-service { margin:.3em; border-radius:1em; }
+	.single-service h3 { line-height:.9em; max-width:100%;  }
+}
+
+
+
+
+	
+/*     Chat Telavox to be hidden on this page   */
+
+	#tvx-customer-widget { display:none !important; }
+		#tvx-customer-widget-button { display:none !important; }

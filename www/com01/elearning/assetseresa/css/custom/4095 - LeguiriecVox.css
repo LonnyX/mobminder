@@ -1,0 +1,29 @@
+
+/* 3801 Medeo - Pierre Halut */
+
+body{ background:#f9efd1;  }
+h1 { color:rgba(0,0,0,.8); }
+h2, div.e-bullet-caption { color:#5e4028; }
+.action {  } /* this is the orange on buttons */
+.e-button {  }
+
+section.s-h1 { margin:0; padding:1em 0; background:#5B4027; }
+	section.s-h1 h1 { color:white; margin:0; }
+
+section.s-img { padding:0em; margin-top:0; }
+	section.s-img div { padding:0; }
+		section.s-img div img { max-height:15em !important; }
+	
+	
+	
+section.s-info  { padding:1em;  }
+
+section.s-action {  }
+
+section.s-directions {}
+section.s-desk {}
+section.s-footer {}
+
+section.s-footer { margin-top:0em; } 
+	
+div.e-bullet, input.e-button, div.action { background:#5e4028; color:white; }

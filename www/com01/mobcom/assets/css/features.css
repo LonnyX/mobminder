@@ -1,0 +1,140 @@
+
+
+
+			/*     W E L C O M E    +    P R O M O T I O N   */
+
+
+section.welcome {
+	
+	min-height: 400px;  
+	position: relative;
+	background-color: rgb(107,147,185);
+	/* background-color: rgb(122,154,185); */ /* blue color of sky behind the clouds */
+	background-image: url(../imgs/clouds/clouds_02_f.png);
+	background-repeat: repeat no-repeat;
+	background-size: auto 55%; /* to be adjusted if the source image pxl size is different */
+	background-position: left 0% bottom 0%; /* see (*cp01*) */
+	
+} @media only screen and (max-width:1200px){
+		section.welcome{ background-image: url(../imgs/clouds/clouds_03_c.png); background-size: auto 55%; background-repeat: repeat no-repeat;}
+	} @media only screen and (max-width:768px){
+		section.welcome{ background-image: url(../imgs/clouds/clouds_03_c.png); background-size: auto 60%; background-repeat: repeat no-repeat;}
+	}
+		
+		/* section.welcome div.headers { margin:1rem 8% 0 0; } */
+		
+		section.welcome > div.animate.welcome { /* bottom side waved */
+			
+			height: 500px;  /* adjusts height of visual floating line, should match the background height */
+			
+			background-color: white; /* under the background image, should match the img background */
+			background-image: url(../imgs/banners/bg-welcome-features0.jpg); /* the girl with the smile and a hand on her kin */
+			background-repeat: no-repeat; 
+			background-size: auto 80%;
+			background-position: right 25% bottom 0px;
+			
+		} @media only screen and (max-width:768px){  /* move background according to device viewport width */
+			section.welcome > div.animate.welcome { background-image: url(../imgs/banners/bg-welcome-features1.jpg);  background-position: right -90px bottom -20px; height: 400px; background-size: auto 350px; }
+			
+		} @media only screen and (min-width:768px) and (max-width:992px){
+			section.welcome > div.animate.welcome { background-image: url(../imgs/banners/bg-welcome-features1.jpg); background-position: right -120px bottom -40px; height: 480px; background-size: auto 430px; }
+
+		} @media only screen and (min-width:992px) and (max-width: 1100px) {
+			section.welcome > div.animate.welcome { background-image: url(../imgs/banners/bg-welcome-features0.jpg); background-position: right -120px bottom 0px; height: 450px; background-size: auto 380px; }
+		}
+
+		
+		
+		section.welcome > div.shade { /* white gradient blurring the bottom under clouds */
+			position: absolute; z-index:0; top:400px; left:0; bottom: 0px; width:100%; 
+			/* should hover the previous wave */
+			/* background:linear-gradient(to bottom, 	rgba(255,255,255,0) 0%, rgba(255,255,255,.1) 30%, rgba(255,255,255,.5) 60%, rgba(255,255,255,.95) 90%, rgba(255,255,255,1) 95%, rgba(255,255,255,1) 100%); */
+			background:linear-gradient(to top, rgba(255,255,255,1) 0px, rgba(255,255,255,.97) 20px, rgba(255,255,255,.90) 80px, rgba(255,255,255,.4) 200px, rgba(255,255,255,.1) 50%, rgba(255,255,255,0) 100%);
+			
+			/*border:3px solid blue;*/
+		}
+		section.welcome > div.advantages {
+			position: relative; z-index:1;
+			background-color: transparent; /* under the background image, should match the img background */
+			min-height: 600px;  
+			
+			/* border:2px solid red;*/
+		}
+
+
+
+		.promotion-box { margin:.3em; height:auto; width:100%; text-align:center; border-radius:0 0 2em 2em;
+						background:linear-gradient(to bottom, rgba(63,85,108,0) 0px, rgba(63,85,108,.05) 40px, rgba(63,85,108,.70) 150px, rgba(63,85,108,.80) 100%); }
+		.promotion-box-inner { height:auto; width:100%; padding:40px 20px 20px 20px;  }
+		.promotion-box-inner h2 { padding:0 0 30px 0; }
+			@media only screen and (max-width: 992px) { .promotion-box h2 { text-align:left; position:absolute; bottom:0; padding:0 0 24px 0; } }
+		.promotion-box-inner p { color:#fff; margin-bottom:0; }
+		.promotion-box-img { height:115px; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; }
+		.promotion-box-img img{ display:block; max-width:95px; max-height:85px }
+
+
+		/* F E A T U R E S   M E N U */
+
+		.single-service { max-width:280px; margin:.5em; border-radius:1em 1em; overflow:hidden; box-shadow: 8px 16px 40px rgba(0, 0, 0, 0.35); cursor:pointer; background:linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 30%, rgba(255,255,255,0.6) 70%, rgba(255,255,255,0.5) 100%);
+		} /*display:flex; } /* display:flex in the wrapper works along with height:auto; in the inner div. */
+		.single-service img { max-width:100%; border-style:none; margin:auto; display:block; } 
+		
+		@media only screen and (min-width:768px){
+			/* border-radius should stay on img and on outer div */
+				.single-service img.first { border-radius:1em 0.3em 0em 0em; }
+				.single-service.first { border-radius: 1em 0.3em 0.3em 0.3em; }
+				.single-service img.second, .single-service img.fifth  { border-radius:0.3em 0.3em 0em 0em; }
+				.single-service.second, .single-service.fifth { border-radius:0.3em 0.3em 0.3em 0.3em; }
+				.single-service img.third  { border-radius:0.3em 1em 0em 0em; }
+				.single-service.third { border-radius:0.3em 1em 0.3em 0.3em; }
+				.single-service img.fourth { border-radius:0.3em 1em 0em 0em; }
+				.single-service.fourth { border-radius: 0.3em 0.3em 0.3em 1em; }
+				.single-service img.last { border-radius:0.3em 0.3em 0em 0em; }
+				.single-service.last { border-radius: 0.3em 0.3em 1em 0.3em; }
+		}
+
+		.single-service h3  { line-height:1.2em; max-width:90%; margin:auto; text-align:center; padding:10px 2px 10px 2px;  }
+		.single-service i  { display:block; margin:0; text-align:center; padding-top:10px; font-size:1.2em; }
+		
+		@media only screen and (max-width:768px){
+			.single-service { margin:.3em; border-radius:1em; }
+			.single-service h3 { line-height:.9em; max-width:100%;  }
+		}
+
+
+
+		/*     L I S T    F E A T U R E S    */
+
+		.features img { width:100%; margin-bottom:20px; border-radius:10px 10px; /*To have a space between the picture and li in small device*/ }
+		.features div.pre-img { text-align:center; }
+		.features div.pre-img img { max-width:500px; }
+
+		.features div.cta_1_centered { 
+			min-height:150px; 
+			display:flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+			@media only screen and (max-width: 1200px) { .features div.hidden_left { display:none; } }
+
+
+
+			/*     T R Y    M E   S E C T I O N    */
+
+
+		div.cta1-centered { align-items: center; justify-content: center; }
+
+
+		@media only screen and (max-width:768px){  /* create more air around the CTA1 in small devices  */
+			#try-free div.cta1-centered { margin: 40px 0 25px 0; }
+			
+		}
+
+		.slide-features { overflow:hidden; width:auto; height:100%; margin:0 auto; } /*display:flex; } /* display:flex in the wrapper works along with height:auto; in the inner div. */	
+		.slide-features img { width:auto; height:500px; max-height:100%; border-style:none; margin:auto; display:block; 
+			 display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; -webkit-box-align:center; -ms-flex-align:center; align-items:center;
+		}
+
+
+

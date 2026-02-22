@@ -1,0 +1,100 @@
+/*     W E L C O M E    +    P R O M O T I O N   */
+
+
+section.login {
+    height: 100vh;
+    position: relative;
+    background-color: rgb(58, 118, 175);
+    /* blue color of sky behind the clouds rgb(33,80,128)  rgb(68,150,210) */
+    background-image: url(../imgs/clouds/clouds_02_f.png);
+    background-repeat: repeat no-repeat;
+    background-size: auto 50%;
+    /* to be adjusted if the source image pxl size is different */
+    background-position: left 0% top 5em;
+    /* see (*cp01*) */
+}
+
+section.login>div.shade {
+    /* white gradient blurring the bottom under clouds */
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(255, 255, 255, .8) 0px, rgba(255, 255, 255, 0) 100%);
+}
+
+section.login div.message-box {
+    width: 400px;
+    max-width: 400px;
+    position: absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    border-radius: 1em;
+    padding: 3em 1em;
+    background: linear-gradient(to right, rgba(240, 240, 240, 1) 0%, rgba(240, 240, 240, 0.9) 30%, rgba(255, 255, 255, 0.8) 60%, rgba(255, 255, 255, 0.6) 100%);
+    border-right: .5px solid lightgrey;
+    border-bottom: .5px solid white;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width:576px) {
+    section.login div.message-box {
+        max-width:100%;
+        width:100%;
+        position: relative; top:0px; left:0px; transform:none;
+        width:auto;
+        padding: 2em;
+        border-radius:0em 0em;
+
+    }
+}
+
+.login img {
+    max-width: 90px;
+    vertical-align: middle;
+}
+
+.login h1 {
+    font-size: 2em;
+    padding-bottom: 40px;
+    opacity: 0.85;
+}
+
+section.login div.wrap-input {
+    padding-bottom: 15px;
+}
+
+section.login .wrap-input input {
+    margin: 0;
+    width: 280px;
+}
+
+section.login input.input {
+    background-color: rgba(255, 255, 255, .7);
+    font-size: 18px;
+    height: 50px;
+    width: 300px;
+    padding: 5px 5px;
+    border-radius: .3em .3em;
+    border: 1px solid white;
+}
+
+input:focus, textarea:focus { box-shadow: +3px 0px 0px rgb(175,197,60); }
+
+section.login .wrap-input.span {
+    color: #919db1;
+}
+
+
+
+@media only screen and (max-width:576px) {
+    section.login div.wrap-input input {
+        width: 95%;
+    }
+}
+
+section.login #container-login-btn {
+    align-items: center;
+    margin-top: 20px;
+}
+
+section.login div.message-box .cta_2 {}

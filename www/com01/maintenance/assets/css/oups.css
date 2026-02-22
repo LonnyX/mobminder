@@ -1,0 +1,65 @@
+
+
+
+			/*     W E L C O M E    +    P R O M O T I O N   */
+
+
+section.maintenance {
+	
+    height: 100%;  
+	position: relative;
+	background-color: rgb(58,118,175); /* blue color of sky behind the clouds rgb(33,80,128)  rgb(68,150,210) */
+	background-image: url(../imgs/clouds/clouds_02_f.png);
+	background-repeat: repeat no-repeat;
+	background-size: auto 500px; /* to be adjusted if the source image pxl size is different */
+	background-position: left 0% top 5em; /* see (*cp01*) */
+	
+}
+	
+    @media only screen and (max-width:1200px){
+		section.maintenance{ background-image: url(../imgs/clouds/clouds_03_c.png); background-size: auto 500px; background-repeat: repeat no-repeat;}
+	} 
+    @media only screen and (max-width:768px){
+		section.maintenance{ background-image: url(../imgs/clouds/clouds_03_c.png); background-size: auto 600px; background-repeat: repeat no-repeat;}
+	}
+		
+
+		section.maintenance > div.shade { /* white gradient blurring the bottom under clouds */
+            position: absolute; z-index:0; top:0; bottom: 0; width:100%; 
+			background:linear-gradient(to top, rgba(255,255,255,.8) 0px, rgba(255,255,255,0) 100%);
+		}
+
+		section.maintenance div.message-box {
+                position: relative; top:200px;
+                width: 65%;
+                border-radius: 1em;
+                padding: 3em 5em;
+                background: linear-gradient(to right, rgba(240,240,240,0.9) 0%, rgba(240,240,240,0.8) 30%, rgba(255,255,255,0.6) 60%, rgba(255,255,255,0.5) 100%);
+                border-right: .5px solid lightgrey;
+                border-bottom: .5px solid white;
+                box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
+            }
+
+        @media only screen and (max-width:1200px){
+            section.maintenance div.message-box { width: 75%; }
+        } 
+        @media only screen and (max-width:992px){
+            section.maintenance div.message-box { width: 85%; }
+        }
+
+        @media only screen and (max-width:768px){
+            section.maintenance div.message-box { width: 95%; padding: 2em; }
+        }
+
+            .maintenance .message-box>h1 { font-size: 2em; }           
+            .maintenance h1.mobminder { font-size: 2em; padding-top: 30px; }
+            .maintenance h1.mobminder img { max-width: 100px; }
+
+                @media only screen and (max-width:576px){
+                    section.maintenance div.message-box h1 { font-size: 1.7em;  }
+                    section.maintenance div.message-box>p { font-size: 21px;  }
+                    section.maintenance h1.mobminder img { max-width:90px; }
+                }
+
+
+			

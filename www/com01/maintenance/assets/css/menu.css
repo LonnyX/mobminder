@@ -1,0 +1,101 @@
+
+
+
+			/*     W E L C O M E    +    P R O M O T I O N   */
+
+
+section.minisite-menu { /* full-sized  container that fills up the page */
+	
+    min-height:1000px;
+    height: 100%;
+    width: 100%;
+	position: absolute;
+	background-color: rgb(58,118,175); /* blue color of sky behind the clouds rgb(33,80,128)  rgb(68,150,210) */
+	background-image: url(../imgs/clouds/clouds_02_f.png);
+	background-repeat: repeat no-repeat;
+	background-size: auto 500px; /* to be adjusted if the source image pxl size is different */
+	background-position: left 0% top 5em; /* see (*cp01*) */
+	
+}
+	
+    @media only screen and (max-width:1200px){
+		section.minisite-menu{ background-image: url(../imgs/clouds/clouds_03_c.png); background-size: auto 500px; background-repeat: repeat no-repeat;}
+	} 
+    @media only screen and (max-width:768px){
+		section.minisite-menu{ background-image: url(../imgs/clouds/clouds_03_c.png); background-size: auto 600px; background-repeat: repeat no-repeat;}
+	}
+		
+
+		section.minisite-menu > div.shade { /* white gradient blurring the bottom under clouds */
+            position: absolute; z-index:0; top:0; bottom: 0; width:100%; 
+			background:linear-gradient(to top, rgba(255,255,255,.8) 0px, rgba(255,255,255,0) 100%);
+		}
+
+
+		section.minisite-menu div.message-box {
+                position: relative; top:60px;
+            }
+
+        @media only screen and (max-width:1200px){
+            section.minisite-menu div.message-box { width: 75%; }
+        } 
+        @media only screen and (max-width:992px){
+            section.minisite-menu div.message-box { width: 98%; }
+        }
+
+        @media only screen and (max-width:768px){
+            section.minisitemenu div.message-box { width: 95%; padding: 2em; }
+        }
+
+            .minisite-menu .message-box>h1 { font-size: 2em; }           
+            .minisite-menu h1.mobminder { font-size: 2em; padding-top: 30px; }
+            .minisite-menu h1.mobminder img { max-width: 100px; }
+
+                @media only screen and (max-width:576px){
+                    section.minisite-menu div.message-box h1 { font-size: 1.7em;  }
+                    section.minisite-menu div.message-box>p { font-size: 21px;  }
+                    section.minisite-menu h1.mobminder img { max-width:90px; }
+                }
+
+
+			
+    /*     C T A   B T N S   */
+
+
+              
+
+.cta2-button {
+    display:grid; place-items:center; margin:25px 0;
+	font-size:95%;
+	padding:0.8em 1.5em;
+	cursor:pointer;
+	border:1px solid #c2e249;
+	background:white;
+	box-shadow: 0px 12px 10px -8px rgb(0 0 0 / 16%), 0px 8px 10px -2px rgb(89 92 109 / 16%), 0px 10px 30px rgb(89 92 109 / 24%); ;
+	border-radius:0em 1em 0em 1em;
+	position:relative;
+	transition: all .2s;
+}
+
+.cta2-button i {color:#c2e249; transition: color .2s; padding-bottom:5px;}
+.cta2-button i, span {text-shadow:none;}
+.cta2-button:hover i {color:white;}
+
+.cta2-button:hover {transform: scale(0.99); box-shadow:none; background:#c2e249;  }
+
+.cta2-button span {text-align: center;}
+
+
+
+    /*     S O C I A L   M E D I A   I C O N S */
+
+.minisite-menu div.socials {
+    display:flex; 
+    align-items:center; 
+    justify-content:center;
+}
+
+.minisite-menu div.socials a { margin:30px 20px;  }
+.minisite-menu div.socials i.app-link { text-shadow: 0 0 0.07em rgb(89 92 109/ 16%); }
+.minisite-menu div.socials i.app-link:hover { text-shadow: none; }
+

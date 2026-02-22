@@ -1,0 +1,5 @@
+
+
+Follow instructions in /htdocs/cron/serverHowTo.txt
+
+IMPORTANT : there is only one mob-cron1 file so you need to specify the smsgateaway crons inside that file

@@ -1,0 +1,409 @@
+
+
+/* basic color variables */
+
+:root {
+	
+	--c-base-1: 104, 151, 191; /*primary color for titles h1, section titles(ex : r,g,b)*/
+	--c-base-2: 196, 227, 72; /*secondary color for buttons and selection(r,g,b)*/
+	--c-base-3: 80, 80, 80 ; /*general text color and button text color (ex #505050, rbg(80,80,80)*/
+
+		--c-titles:  rgba(var(--c-base-1),1); /* Titles, section captions, background color bullets, choices titles(ex:prestation), back in the process buttons text color */
+		--c-blueprint:  rgba(var(--c-base-1),1); /* blueprint payments  */
+		--bg-notes: rgba(var(--c-base-1),0.2); /* Note background color */
+		
+		--bg-btns: rgba(var(--c-base-2),1);/* Buttons background color (action button and e-button button) */
+		--bg-selection: rgba(var(--c-base-2),1); /* selection background color (selected checkbox, radiobutton,etc)*/
+		--bg-hover-selection: rgba(var(--c-base-2), 0.4); /*  selection background color hover (hovered checkbox, radiobutton, time slot span, previous and next date buttons)*/
+		--bg-scroll: rgba(var(--c-base-2), 0.6); /* Scrollbar background color */
+
+		--bg-hover-btns: rgba(var(--c-base-2), 1); /* Buttons background color hover (action button and e-button button) */
+			--bg-hover-btns-brightness : 95%; /*to be used when bg-btns equals bg-hover-btns, ex : 50% will make bg-btns darker, 100% changes nothing*/
+		
+		--c-body: rgb(var(--c-base-3)); /* Body color text + input, textarea, div.like-input*/
+		--c-btns: rgb(var(--c-base-3)); /* Buttons text color (action button and e-button button) */
+		--c-hover-btns: rgb(var(--c-base-3)); /* Buttons text color hover */
+
+		--c-input:  rgb(20,20,20); /* color input, textarea, div.like-input*/
+		--bg-input: white; /* background color input, textarea, div.like-input*/
+
+		--c-tooltip:  rgb(20,20,20); /* color tooltip*/
+		--bg-tooltip: #ffe066; /* background color toltip*/
+}
+
+
+/* COLOR PALETTE
+	!! this is not a stupid re-programming of the standard color palettes, because
+	IT RULES THE CONTRASTING TEXT COLOR !! */
+
+	
+/*   W A R N I N G
+
+Before changing anything inside this fil OR changing this file name, check this class: C_cssNameToHexaColor
+*/
+	
+	
+	
+/* PATTERNS PALETTE 'patterns'  KEEP THIS AT THE END OF THE FILE <= so it overrules the previous rules */
+ 
+.p800 { background-image: url(planning/stripped-up.png); background-position: center center; background-repeat: repeat; }
+.p801 { background-image: url(planning/stripped-down.png); background-position: center center; background-repeat: repeat; }
+.p802 { background-image: url(planning/stripped-vert.png); background-position: center center; background-repeat: repeat; }
+.p803 { background-image: url(planning/stripped-horiz.png); background-position: center center; background-repeat: repeat; }
+
+.p804 { background-image: url(planning/stripped-up-slide.gif); background-position: center center; background-repeat: repeat; }
+.p805 { background-image: url(planning/stripped-down-slide.gif); background-position: center center; background-repeat: repeat; }
+.p806 { background-image: url(planning/stripped-vert-slide.gif); background-position: center center; background-repeat: repeat; }
+.p807 { background-image: url(planning/stripped-horiz-slide.gif); background-position: center center; background-repeat: repeat; }
+
+.p810 { background-image: url(planning/tiles.png); background-position: center center; background-repeat: repeat; }
+.p811 { background-image: url(planning/checker-tall.png); background-position: center center; background-repeat: repeat; }
+.p812 { background-image: url(planning/checker-big.png); background-position: center center; background-repeat: repeat; }
+.p813 { background-image: url(planning/checker-diamond.png); background-position: center center; background-repeat: repeat; }
+
+.p820 { background-image: url(planning/shade-left.png); background-position: top left; background-repeat: no-repeat; }
+.p821 { background-image: url(planning/shade-bottom-right.png); background-position: bottom right; background-repeat: no-repeat; }
+.p822 { background-image: url(planning/shade-vert-top.png); background-position: top left; background-repeat: repeat-x; }
+.p823 { background-image: url(planning/shade-vert-bottom.png); background-position: bottom left; background-repeat: repeat-x; }
+
+.p900 { background-image: url(planning/check.png); background-position: top right; background-repeat: no-repeat; }
+.p901 { background-image: url(planning/crossed.png); background-position: top right; background-repeat: no-repeat;}
+.p902 { background-image: url(planning/dot.png); background-position: top right; background-repeat: no-repeat; }
+.p903 { background-image: url(planning/forbidden.png); background-position: top right; background-repeat: no-repeat; }
+
+.p910 { background-image: url(planning/arrow-back.png); background-position: top right; background-repeat: no-repeat; }
+.p911 { background-image: url(planning/arrow-up.png); background-position: top right; background-repeat: no-repeat;}
+.p912 { background-image: url(planning/arrow-down.png); background-position: top right; background-repeat: no-repeat; }
+.p913 { background-image: url(planning/arrow-forw.png); background-position: top right; background-repeat: no-repeat; }
+
+.p999 { background-color: #EEE;  } /* status for no status (default value of C_dS_cssSpecStatus.css) */
+
+/* COLOR PALETTE 'colors' */
+
+.c0 { background: rgba(20, 20, 20, 0.01); box-shadow: inset 3px 0px 3px rgba(0, 0, 0, 0.03), inset -1px -1px 0px rgba(0, 0, 0, 0.03); } /* no color id, default DB value */
+
+.c100	{ background-color:#9BFF9B; color:black; } /*   	*/ 
+.c101	{ background-color:#BBE6FF; color:black; } /*   	*/ 
+.c103	{ background-color:#FF8040; color:black; } /*   	*/ 
+.c104	{ background-color:#C1AD84; color:black; } /*   	*/ 
+.c106	{ background-color:#FF9FFF; color:black; } /*   	*/ 
+.c107	{ background-color:#C49DF7; color:black; } /*   	*/ 
+.c108	{ background-color:#8080FF; color:black; } /*   	*/ 
+.c110	{ background-color:#FFFF00; color:black; } /* superyellow */ 
+.c111	{ background-color:#707070; color:black; } /*   	*/ 
+
+.c90	{ background-color:#F2F2F2; color:black; } 	/* color_code_free  	GRAY DEGRADE */ 
+.c91	{ background-color:#D8D8D8; color:black; } 	/* color_code_note  	*/ 
+.c97	{ background-color:#BFBFBF; color:black; } 	/* color_code_norm  	*/ 
+.c98	{ background-color:#A5A5A5; color: white; } /* color_code_excp  	*/ 
+.c99	{ background-color:#7F7F7F; color: white; } /* color_code_event 	*/ 
+.c113	{ background-color:#FFFFC0; color:black; } 	/*   	GOLDEN DEGRADE 	*/ 
+
+.c102	{ background-color:#FFF0A0; color:black; } 	/*   		INTENSE COLORS */ 
+.c105	{ background-color:#FEE283; color:black; } 	/*   	*/ 
+.c109	{ background-color:#BB9600; color: white; } /*   	*/ 
+.c114	{ background-color:#998200; color: white; } /*   	*/ 
+
+.c120	{ background-color:#DDD9C3; color:black; } 	/*   		GREEN/BROWN DEGRADE */ 
+.c121	{ background-color:#C4BD97; color:black; } 	/*   	*/ 
+.c122	{ background-color:#938953; color:black; } 	/*   	*/ 
+.c123	{ background-color:#494429; color: white; } /*   	*/ 
+.c124	{ background-color:#1D1B10; color: white; } /*   	*/ 
+
+.c130	{ background-color:#DBE5F1; color:black; } 	/*   		BLUE DEGRADE */ 
+.c131	{ background-color:#B8CCE4; color:black; } 	/*   	*/ 
+.c132	{ background-color:#95B3D7; color:black; } 	/*   	*/ 
+.c133	{ background-color:#366092; color: white; } /*   	*/ 
+.c134	{ background-color:#244061; color: white; } /*   	*/
+
+.c140	{ background-color:#F2DCDB; color:black; } 	/*   		ARGILE DEGRADE*/ 
+.c141	{ background-color:#E5B9B7; color:black; } 	/*   	*/ 
+.c142	{ background-color:#D99694; color:black; } 	/*   	*/ 
+.c143	{ background-color:#953734; color: white; } /*   	*/ 
+.c144	{ background-color:#632423; color: white; } /*   	*/ 
+
+.c150	{ background-color:#EBF1DD; color:black; } 	/*   		GREEN DEGRADE */ 
+.c151	{ background-color:#D7E3BC; color:black; } 	/*   	*/ 
+.c152	{ background-color:#B5D088; color:black; } 	/*   	*/ 
+.c153	{ background-color:#76923C; color: white; } /*   	*/ 
+.c154	{ background-color:#4F6128; color: white; } /*   	*/ 
+
+.c160	{ background-color:#E5E0EC; color:black; } /*   		PURPLE DEGRADE */ 
+.c161	{ background-color:#CCC1D9; color:black; } /*   	*/ 
+.c162	{ background-color:#B2A2C7; color:black; } /*   	*/ 
+.c163	{ background-color:#5F497A; color: white; } /*   	*/ 
+.c164	{ background-color:#3F3151; color: white; } /*   	*/ 
+
+.c170	{ background-color:#DBEEF3; color:black; } /*   		TURQUOISE DEGRADE*/ 
+.c171	{ background-color:#B7DDE8; color:black; } /*   	*/ 
+.c172	{ background-color:#92CDDC; color:black; } /*   	*/ 
+.c173	{ background-color:#31859B; color: white; } /*   	*/ 
+.c174	{ background-color:#205867; color: white; } /*   	*/ 
+
+.c180	{ background-color:#FDEADA; color:black; } /*   		ORANGE DEGRADE */ 
+.c181	{ background-color:#FBD5B5; color:black; } /*   	*/ 
+.c182	{ background-color:#FAC08F; color:black; } /*   	*/ 
+.c183	{ background-color:#E36C00; color: white; } /*   	*/ 
+.c184	{ background-color:#974806; color: white; } /*   	*/ 
+
+
+
+.c210	{ background-color:#F8F8FF; color:black; } 	/* ghostwhite  	- WHITES */ 
+.c211	{ background-color:#F0FFF0; color:black; }	/* honeydew */
+.c212	{ background-color:#FFF0F5; color:black; }	/* lavenderblush */
+.c213	{ background-color:#FFF5EE; color:black; }	/* seashell */
+.c214	{ background-color:#FAF0E6; color:black; }	/* linen */
+.c215	{ background-color:#FFFFF0; color:black; } 	/* ivory */
+.c216	{ background-color:#FFFAF0; color:black; } 	/* floralwhite */
+.c217	{ background-color:#E6E6FA; color:black; } 	/* lavender */
+
+.c220	{ background-color:#DB7093; color:black; }	/* palevioletred - VIOLETS */ 
+.c221	{ background-color:#BA55D3; color:black; }	/* mediumorchid */
+.c222	{ background-color:#C71585; color:black; }	/* mediumvioletred */
+.c223	{ background-color:#EE82EE; color:black; }	/* violet */
+.c224	{ background-color:#6A5ACD; color:black; }	/* slateblue */
+.c225	{ background-color:#8A2BE2; color:white; }	/* blueviolet */
+.c226	{ background-color:#9370DB; color:black; }	/* mediumpurple */
+.c227	{ background-color:#7B68EE; color:black; }	/* mediumslateblue */
+ 
+.c230	{ background-color:#F08080; color:black; }	/* lightcoral 	- REDS */
+.c231	{ background-color:#FA8072; color:black; }	/* salmon */
+.c232	{ background-color:#CD5C5C; color:white; } /* indianred */
+.c233	{ background-color:#A52A2A; color:white; }	/* brown */
+.c234	{ background-color:#8B0000; color:white; } /* darkred */
+.c235	{ background-color:#B22222; color:black; } 	/* firebrick */
+.c236	{ background-color:#DC143C; color:black; }	/* crimson */
+.c237	{ background-color:#FF4500; color:black; }	/* orangered */
+
+.c240	{ background-color:#7FFFD4; color:black; } /*  aquamarine - GREEN	*/ 
+.c241	{ background-color:#00FA9A; color:black; }	/* mediumspringgreen */
+.c242	{ background-color:#00FF7F; color:black; }	/* springgreen */
+.c243	{ background-color:#98FB98; color:black; }	/* palegreen */
+.c244	{ background-color:#90EE90; color:black; }	/* lightgreen */
+.c245	{ background-color:#32CD32; color:black; } 	/* limegreen */
+.c246	{ background-color:#7FFF00; color:black; }	/* chartreuse */
+.c247	{ background-color:#ADFF2F; color:black; }	/* greenyellow */
+
+.c250	{ background-color:#FFFFE0; color:black; } 	/* lemonchiffon - YELLOWS */
+.c251	{ background-color:#FFFACD; color:black; } 	/* lightyellow*/
+.c252	{ background-color:#EEE8AA; color:black; } 	/* palegoldenrod	 */
+.c253	{ background-color:#FEF273; color:black; }  /* brightyellow */
+.c254	{ background-color:#FFCC00; color:black; } 	/* midyellow */
+.c255	{ background-color:#FFA500; color:black; }  /* orange */
+.c256	{ background-color:#FF8C00; color:black; }  /* darkorange */
+.c257	{ background-color:#DD9900; color:black; } 	/* lowyellow */
+
+.c260	{ background-color:#FAFAD2; color:black; } 	/* lightgoldenrodyellow	- KHAKI	*/ 
+.c261	{ background-color:#F0E68C; color:black; } 	/* khaki*/
+.c262	{ background-color:#BDB76B; color:black; } 	/* darkkhaki */
+.c263	{ background-color:#8FBC8F; color:black; } 	/* darkseegreen */
+.c264	{ background-color:#3CB371; color:black; }  /* mediumseagreen */
+.c265	{ background-color:#2E8B57; color:white; } 	/* seagreen */
+.c266	{ background-color:#556B2F; color:white; }	/* darkolivegreen */
+.c267	{ background-color:#006400; color:white; } 	/* darkgreen */
+
+.c270	{ background-color:#FFF8DC; color:black; } 	/* cornsilk		- BEIGES */ 
+.c271	{ background-color:#F5F5DC; color:black; }	/* beige */
+.c272	{ background-color:#FAEBD7; color:black; }	/* antiquewhite */
+.c273	{ background-color:#FFE4B5; color:black; }	/* moccasin */
+.c274	{ background-color:#FFDEAD; color:black; }	/* navajowhite */
+.c275	{ background-color:#FFDAB9; color:black; }	/* peachpuff */ 
+.c276	{ background-color:#F5DEB3; color:black; }	/* wheat */ 
+.c277	{ background-color:#D2B48C; color:black; }	/* tan */
+
+.c280	{ background-color:#F5DEB3; color:black; } 	/* weat			- 	BROWNS */ 
+.c281	{ background-color:#DEB887; color:black; }	/* burlywood */
+.c282	{ background-color:#BC8F8F; color:black; }	/* rosybrown */
+.c283	{ background-color:#B8860B; color:black; } 	/* darkgoldenrod */
+.c284	{ background-color:#D2691E; color:black; } 	/* chocolate */
+.c285	{ background-color:#CD853F; color:black; } 	/* peru */
+.c286	{ background-color:#A0522D; color:white; }  /* sienna*/
+.c287	{ background-color:#8B4513; color:white; } 	/* saddlebrown */
+
+.c290	{ background-color:#F0F8FF; color:black; } 	/* aliceblue		- BLUES	*/ 
+.c291	{ background-color:#B0E0E6; color:black; }	/* powderblue 	*/ 
+.c292	{ background-color:#ADD8E6; color:black; }	/* lightblue  	*/ 
+.c293	{ background-color:#B0C4DE; color:black; }	/* lightsteelblue */
+.c294	{ background-color:#6495ED; color:white; }	/* cornflowerblue */  
+.c295	{ background-color:#4682B4; color:white; } 	/* steelblue 	*/ 
+.c296	{ background-color:#5F9EA0; color:white; }  /* cadetblue  	*/ 
+.c297	{ background-color:#4169E1; color:white; } 	/* royalblue	*/
+
+/* writings	*/
+
+.txt-grey-l { color:#B8B8B8; }
+.txt-bluetitle { color:var(--c-titles); }
+
+/* backgrounds	*/
+.bg-lime  { background-color:#C4E348; }
+
+/* bitmapless mobminder logo */
+
+
+div.moblogo-em {
+	/* font-size:4em; line-height:3em; /* this is where you scale the complete drawing. To be specified in the element hard style */
+	margin: 20% auto; /* places the logo middle centered in the containing div */
+	color: white; /* text color */
+	width:4em; height:3em; /* preset a convenient size surrounding the text when the clock is not used */
+	font-style:italic; text-align:center; 
+	background: rgba(77,129,179,1); /* mob blue, makes the main foreground phylactery */
+	box-shadow: 1em 0em 0em -.16em rgba(182,225,34,1); /* minder lime, makes the hidden phylactery */
+	border-radius: 50%; /* makes it a potato */
+	position: relative; /* handles before and after positions */
+	transform: rotate(-8deg);  -webkit-transform: rotate(-8deg); /* the -webkit- bullshit is here only for Safari on iPad and iPhone... */
+}
+div.moblogo-em:before, div.moblogo-em:after {
+ content:""; border:none; position: absolute;
+}
+div.moblogo-em:before { /* main foreground phylactery arrow */
+	background:transparent; 
+	right: auto; top:auto; left:-.2em; bottom:-.3em;
+	width:1.6em; height:2.6em;
+	border-radius: 1.6em 2.8em 0em 3.6em;
+	border-left: 0.8em solid rgba(77,129,179,1); /* mob blue, makes the main foreground arrow */
+	transform: rotate(20deg);  -webkit-transform: rotate(20deg);
+}
+div.moblogo-em:after { /* background phylactery arrow */
+	background:transparent; 
+	left: auto; top:auto; right:-0.86em; bottom:-.1em;
+	width:1.6em; height:2.8em;
+	border-radius: 0em 2.8em 3.2em 1.6em;
+	border-right: 0.64em solid rgba(182,225,34,1); /* minder lime, makes the hidden phylactery arrow */
+	transform: rotate(-10deg); -webkit-transform: rotate(-10deg);
+}
+
+div.mobclock {
+	display:inline-block; /* makes it centered */
+	top:0.5em; /* makes it vertical middle */
+	border:0.12em solid white;
+	width:1.8em; height:1.8em; /* border:1px solid red;*/
+	border-radius:50%; /* make a circle */
+	transform: rotate(+188deg); -webkit-transform: rotate(+188deg); /* 8deg from logo rotation + 180deg so to have 0deg at top for arrows */
+	position:relative;
+}
+div.mobclock:before, div.mobclock:after { /* both arrows */
+	content:""; position: absolute; left:0.84em; top:0.9em;
+	width:0.12em;
+	border-radius: 0.06em; /* make a circle */
+	background: white; /* make minutes arrow */
+	transform-origin: 0.06em 0%; -webkit-transform-origin: 0.06em 0%;
+	transform:rotate(0deg); -webkit-transform:rotate(0deg);
+}
+div.mobclock:before { /* little arrow */
+	height:0.6em;
+}
+div.mobclock:after { /* big arrow */
+	height:0.85em;
+}
+
+div.mobseconds { /* makes seconds arrow */
+	display:inline-block; /* makes it centered */
+	top:0em; left:0em; /* makes it vertical middle */
+	border:none;
+	width:1.8em; height:1.8em; /* border:1px solid red;*/
+	/*border-radius:50%; /* make a circle */
+	/*transform: rotate(+188deg); /* 8deg from logo rotation + 180deg so to have 0deg at top for arrows */
+	position:relative;
+}
+div.mobseconds:after, div.mobseconds:before { /* both arrows */
+	content:""; position: absolute; left:0.87em; top:0.9em;
+	width:0.06em;
+	border-radius: 0.03em; /* make a circle */
+	background: rgba(255,255,255,.5); /* makes seconds arrow */
+	transform-origin: 0.03em 0%; -webkit-transform-origin: 0.03em 0%;
+	transform:rotate(0deg); -webkit-transform:rotate(0deg);
+	height:1.2em;
+}
+div.mobseconds:before { /* midday */
+	width:0.04em; height:0.2em; left:0.88em; top:1.6em;
+	
+}
+
+
+div.mobclock.h01:before { transform:rotate(30deg); -webkit-transform:rotate(30deg); }
+div.mobclock.h02:before { transform:rotate(60deg); -webkit-transform:rotate(60deg); }
+div.mobclock.h03:before { transform:rotate(90deg); -webkit-transform:rotate(90deg); }
+div.mobclock.h04:before { transform:rotate(120deg); -webkit-transform:rotate(120deg); }
+div.mobclock.h05:before { transform:rotate(150deg); -webkit-transform:rotate(150deg); }
+div.mobclock.h06:before { transform:rotate(180deg); -webkit-transform:rotate(180deg); }
+div.mobclock.h07:before { transform:rotate(210deg); -webkit-transform:rotate(210deg); }
+div.mobclock.h08:before { transform:rotate(240deg); -webkit-transform:rotate(240deg); }
+div.mobclock.h09:before { transform:rotate(270deg); -webkit-transform:rotate(270deg); }
+div.mobclock.h10:before { transform:rotate(300deg); -webkit-transform:rotate(300deg); }
+div.mobclock.h11:before { transform:rotate(330deg); -webkit-transform:rotate(330deg); }
+
+div.mobclock.m01:after, div.mobclock.s01 > div.mobseconds:after { transform:rotate(6deg);  -webkit-transform:rotate(6deg); }
+div.mobclock.m02:after, div.mobclock.s02 > div.mobseconds:after { transform:rotate(12deg); -webkit-transform:rotate(12deg); }
+div.mobclock.m03:after, div.mobclock.s03 > div.mobseconds:after { transform:rotate(18deg); -webkit-transform:rotate(18deg); }
+div.mobclock.m04:after, div.mobclock.s04 > div.mobseconds:after { transform:rotate(24deg); -webkit-transform:rotate(24deg); }
+div.mobclock.m05:after, div.mobclock.s05 > div.mobseconds:after { transform:rotate(30deg); -webkit-transform:rotate(30deg); }
+
+div.mobclock.m06:after, div.mobclock.s06 > div.mobseconds:after { transform:rotate(36deg); -webkit-transform:rotate(36deg); }
+div.mobclock.m07:after, div.mobclock.s07 > div.mobseconds:after { transform:rotate(42deg); -webkit-transform:rotate(42deg); }
+div.mobclock.m08:after, div.mobclock.s08 > div.mobseconds:after { transform:rotate(48deg); -webkit-transform:rotate(48deg); }
+div.mobclock.m09:after, div.mobclock.s09 > div.mobseconds:after { transform:rotate(54deg); -webkit-transform:rotate(54deg); }
+div.mobclock.m10:after, div.mobclock.s10 > div.mobseconds:after { transform:rotate(60deg); -webkit-transform:rotate(60deg); }
+
+div.mobclock.m11:after, div.mobclock.s11 > div.mobseconds:after { transform:rotate(66deg); -webkit-transform:rotate(66deg); }
+div.mobclock.m12:after, div.mobclock.s12 > div.mobseconds:after { transform:rotate(72deg); -webkit-transform:rotate(72deg); }
+div.mobclock.m13:after, div.mobclock.s13 > div.mobseconds:after { transform:rotate(78deg); -webkit-transform:rotate(78deg); }
+div.mobclock.m14:after, div.mobclock.s14 > div.mobseconds:after { transform:rotate(84deg); -webkit-transform:rotate(84deg); }
+div.mobclock.m15:after, div.mobclock.s15 > div.mobseconds:after { transform:rotate(90deg); -webkit-transform:rotate(90deg); }
+
+div.mobclock.m16:after, div.mobclock.s16 > div.mobseconds:after { transform:rotate(96deg); -webkit-transform:rotate(96deg); }
+div.mobclock.m17:after, div.mobclock.s17 > div.mobseconds:after { transform:rotate(102deg); -webkit-transform:rotate(102deg); }
+div.mobclock.m18:after, div.mobclock.s18 > div.mobseconds:after { transform:rotate(108deg); -webkit-transform:rotate(108deg); }
+div.mobclock.m19:after, div.mobclock.s19 > div.mobseconds:after { transform:rotate(114deg); -webkit-transform:rotate(114deg); }
+div.mobclock.m20:after, div.mobclock.s20 > div.mobseconds:after { transform:rotate(120deg); -webkit-transform:rotate(120deg); }
+
+div.mobclock.m21:after, div.mobclock.s21 > div.mobseconds:after { transform:rotate(126deg); -webkit-transform:rotate(126deg); }
+div.mobclock.m22:after, div.mobclock.s22 > div.mobseconds:after { transform:rotate(132deg); -webkit-transform:rotate(132deg); }
+div.mobclock.m23:after, div.mobclock.s23 > div.mobseconds:after { transform:rotate(138deg); -webkit-transform:rotate(138deg); }
+div.mobclock.m24:after, div.mobclock.s24 > div.mobseconds:after { transform:rotate(144deg); -webkit-transform:rotate(144deg); }
+div.mobclock.m25:after, div.mobclock.s25 > div.mobseconds:after { transform:rotate(150deg); -webkit-transform:rotate(150deg); }
+
+div.mobclock.m26:after, div.mobclock.s26 > div.mobseconds:after { transform:rotate(156deg); -webkit-transform:rotate(156deg); }
+div.mobclock.m27:after, div.mobclock.s27 > div.mobseconds:after { transform:rotate(162deg); -webkit-transform:rotate(162deg); }
+div.mobclock.m28:after, div.mobclock.s28 > div.mobseconds:after { transform:rotate(168deg); -webkit-transform:rotate(168deg); }
+div.mobclock.m29:after, div.mobclock.s29 > div.mobseconds:after { transform:rotate(174deg); -webkit-transform:rotate(174deg); }
+div.mobclock.m30:after, div.mobclock.s30 > div.mobseconds:after { transform:rotate(180deg); -webkit-transform:rotate(180deg); }
+
+div.mobclock.m31:after, div.mobclock.s31 > div.mobseconds:after { transform:rotate(186deg); -webkit-transform:rotate(186deg); }
+div.mobclock.m32:after, div.mobclock.s32 > div.mobseconds:after { transform:rotate(192deg); -webkit-transform:rotate(192deg); }
+div.mobclock.m33:after, div.mobclock.s33 > div.mobseconds:after { transform:rotate(198deg); -webkit-transform:rotate(198deg); }
+div.mobclock.m34:after, div.mobclock.s34 > div.mobseconds:after { transform:rotate(204deg); -webkit-transform:rotate(204deg); }
+div.mobclock.m35:after, div.mobclock.s35 > div.mobseconds:after { transform:rotate(210deg); -webkit-transform:rotate(210deg); }
+
+div.mobclock.m36:after, div.mobclock.s36 > div.mobseconds:after { transform:rotate(216deg); -webkit-transform:rotate(216deg); }
+div.mobclock.m37:after, div.mobclock.s37 > div.mobseconds:after { transform:rotate(222deg); -webkit-transform:rotate(222deg); }
+div.mobclock.m38:after, div.mobclock.s38 > div.mobseconds:after { transform:rotate(228deg); -webkit-transform:rotate(228deg); }
+div.mobclock.m39:after, div.mobclock.s39 > div.mobseconds:after { transform:rotate(234deg); -webkit-transform:rotate(234deg); }
+div.mobclock.m40:after, div.mobclock.s40 > div.mobseconds:after { transform:rotate(240deg); -webkit-transform:rotate(240deg); }
+
+div.mobclock.m41:after, div.mobclock.s41 > div.mobseconds:after { transform:rotate(246deg); -webkit-transform:rotate(246deg); }
+div.mobclock.m42:after, div.mobclock.s42 > div.mobseconds:after { transform:rotate(252deg); -webkit-transform:rotate(252deg); }
+div.mobclock.m43:after, div.mobclock.s43 > div.mobseconds:after { transform:rotate(258deg); -webkit-transform:rotate(258deg); }
+div.mobclock.m44:after, div.mobclock.s44 > div.mobseconds:after { transform:rotate(264deg); -webkit-transform:rotate(264deg); }
+div.mobclock.m45:after, div.mobclock.s45 > div.mobseconds:after { transform:rotate(270deg); -webkit-transform:rotate(270deg); }
+
+div.mobclock.m46:after, div.mobclock.s46 > div.mobseconds:after { transform:rotate(276deg); -webkit-transform:rotate(276deg); }
+div.mobclock.m47:after, div.mobclock.s47 > div.mobseconds:after { transform:rotate(282deg); -webkit-transform:rotate(282deg); }
+div.mobclock.m48:after, div.mobclock.s48 > div.mobseconds:after { transform:rotate(288deg); -webkit-transform:rotate(288deg); }
+div.mobclock.m49:after, div.mobclock.s49 > div.mobseconds:after { transform:rotate(294deg); -webkit-transform:rotate(294deg); }
+div.mobclock.m50:after, div.mobclock.s50 > div.mobseconds:after { transform:rotate(300deg); -webkit-transform:rotate(300deg); }
+
+div.mobclock.m51:after, div.mobclock.s51 > div.mobseconds:after { transform:rotate(306deg); -webkit-transform:rotate(306deg); }
+div.mobclock.m52:after, div.mobclock.s52 > div.mobseconds:after { transform:rotate(312deg); -webkit-transform:rotate(312deg); }
+div.mobclock.m53:after, div.mobclock.s53 > div.mobseconds:after { transform:rotate(318deg); -webkit-transform:rotate(318deg); }
+div.mobclock.m54:after, div.mobclock.s54 > div.mobseconds:after { transform:rotate(324deg); -webkit-transform:rotate(324deg); }
+div.mobclock.m55:after, div.mobclock.s55 > div.mobseconds:after { transform:rotate(330deg); -webkit-transform:rotate(330deg); }
+
+div.mobclock.m56:after, div.mobclock.s56 > div.mobseconds:after { transform:rotate(336deg); -webkit-transform:rotate(336deg); }
+div.mobclock.m57:after, div.mobclock.s57 > div.mobseconds:after { transform:rotate(342deg); -webkit-transform:rotate(342deg); }
+div.mobclock.m58:after, div.mobclock.s58 > div.mobseconds:after { transform:rotate(348deg); -webkit-transform:rotate(348deg); }
+div.mobclock.m59:after, div.mobclock.s59 > div.mobseconds:after { transform:rotate(354deg); -webkit-transform:rotate(354deg); }
+div.mobclock.m00:after, div.mobclock.s00 > div.mobseconds:after { transform:rotate(360deg); -webkit-transform:rotate(360deg); }
+
+
+
+

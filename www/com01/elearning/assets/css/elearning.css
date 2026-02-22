@@ -1,0 +1,274 @@
+::selection {
+    background: #6897BF;
+    color: white;
+}
+
+::-moz-selection {
+    background: #6897BF;
+    color: white;
+}
+
+div.safari-warning { padding:10px; margin:10px; border-radius:15px; color:rgb(228, 97, 16); background-color:#fff3cd; }
+
+
+/*     N  A  V   B  A  R      */
+
+@media only screen and (max-width: 992px) { /* Nav bar elements disappear  */
+    div.menu-banner a { display:none; }
+    }
+
+
+/*     A  N  I  M  A  T  I  O  N   */
+
+.zoom { transition: transform .2s; }
+.zoom:hover { transform: scale(1.05); }
+
+
+
+
+/*     W E L C O M E    +    P R O M O T I O N   */
+
+
+section.welcome {
+	
+	min-height: 500px;  
+	position: relative;
+	background-color: rgb(122,154,185); /* blue color of sky behind the clouds */
+	background-image: url(../imgs/clouds/clouds_02_f.png);
+	background-repeat: repeat no-repeat;
+	background-size: auto 50%; /* to be adjusted if the source image pxl size is different */
+	background-position: left 0% bottom 0%; /* see (*cp01*) */
+	
+} @media only screen and (max-width:1200px){
+		section.welcome{ background-image: url(../imgs/clouds/clouds_02_f.png); background-size: auto 55%; background-repeat: repeat no-repeat;}
+	} @media only screen and (max-width:768px){
+		section.welcome{ background-image: url(../imgs/clouds/clouds_02_f.png); background-size: auto 60%; background-repeat: repeat no-repeat;}
+	}
+		
+		section.welcome div.headers { margin:1rem 8% 0 0; }
+		
+		section.welcome > div.animate.welcome { /* bottom side waved */
+			
+			height: 480px;  /* adjusts height of visual floating line, should match the background height */
+			
+			background-color: white; /* under the background image, should match the img background */
+			background-image: url(../imgs/banners/bg-welcome-try-resp.jpg); /* the girl with the smile and a hand on her kin */
+			background-repeat: no-repeat; 
+			background-size: auto 100%;
+			background-position: right 10% bottom 0px;
+			
+		} @media only screen and (max-width:768px){  /* move background according to device viewport width */
+			section.welcome > div.animate.welcome { background-position: right -320px bottom 0px; height: 480px; background-size: auto 480px; }
+			section.welcome img.moblogo { width:200px; } /* adjust logo so it does't invade the available space */
+			
+		} @media only screen and (min-width:768px) and (max-width:992px){
+			section.welcome > div.animate.welcome { background-position: right -280px bottom 0px; height: 480px; background-size: auto 480px; }
+			section.welcome img.moblogo { width:230px; }
+			
+		} @media only screen and (min-width:992px) and (max-width: 1200px) {
+			section.welcome > div.animate.welcome { background-position: right -220px bottom 0px; height: 480px; background-size: auto 480px; }
+			section.welcome img.moblogo { width:260px; }
+		}
+		
+		
+		section.welcome > div.shade { /* white gradient blurring the bottom under clouds */
+			position: absolute; z-index:0; top:400px; left:0; bottom: 0px; width:100%; 
+			/* should hover the previous wave */
+			/* background:linear-gradient(to bottom, 	rgba(255,255,255,0) 0%, rgba(255,255,255,.1) 30%, rgba(255,255,255,.5) 60%, rgba(255,255,255,.95) 90%, rgba(255,255,255,1) 95%, rgba(255,255,255,1) 100%); */
+			background:linear-gradient(to top, rgba(255,255,255,1) 0px, rgba(255,255,255,.99) 10px, rgba(255,255,255,.97) 40px, rgba(255,255,255,.8) 100px, rgba(255,255,255,0) 100%);
+			
+			/*border:3px solid blue;*/
+		}
+		section.welcome > div.advantages {
+			position: relative; z-index:1;
+			padding-top:140px;
+			background-color: transparent; /* under the background image, should match the img background */
+			min-height: 200px;  
+			
+			/* border:2px solid red;*/
+		}
+
+
+
+		.promotion-box { margin:.3em; height:auto; width:100%; text-align:center; border-radius:0 0 2em 2em;
+						background:linear-gradient(to bottom, rgba(63,85,108,0) 0px, rgba(63,85,108,.05) 40px, rgba(63,85,108,.70) 150px, rgba(63,85,108,.80) 100%); }
+		.promotion-box-inner { height:auto; width:100%; padding:40px 20px 20px 20px;  }
+		.promotion-box-inner h2 { padding:0 0 30px 0; }
+			@media only screen and (max-width: 992px) { .promotion-box h2 { text-align:left; position:absolute; bottom:0; padding:0 0 24px 0; } }
+		.promotion-box-inner p { color:#fff; margin-bottom:0; }
+		.promotion-box-img { height:115px; display:-webkit-box; display:-ms-flexbox; display:flex; -webkit-box-pack:center; -ms-flex-pack:center; justify-content:center; }
+		.promotion-box-img img{ display:block; max-width:95px; max-height:85px }
+
+
+
+
+	/*    E     L E A R N I N G     A C C O R D E O N  */
+
+    ul.accordeon { list-style-type: none; margin-left: 0em; padding-left: 0; }
+
+		ul.accordeon label, .accordeon label h2 { cursor: pointer; padding:0.3em 0 0.2em 0;}
+
+		ul.accordeon label:hover { color:#C3D949; }
+    		
+			ul.sub { list-style-type: none; margin-left: 1.5em; padding-left: 0; }
+
+				ul.accordeon div.sub ul li.subtitle { padding:0 0 1em 0; }
+				ul.accordeon div.sub ul li.subtitle { color:#6897BF; }
+				ul.accordeon div.sub ul li.instruction { padding:0 0 0.7em 0; font-size:90%; }
+
+				
+
+					ul.accordeon i { color: #C3D949; padding-right:0; }
+
+        			ul.accordeon div.sub ul li i { padding:0 0.5em 0 0; color: #C3D949;}
+
+						ul.accordeon div.sub ul.sub div.vwrap { padding-bottom:0.5em; }
+
+    ul.accordeon > li div label i{ transform: rotate(0deg); transition: transform 450ms ease-in-out; }
+
+	ul.accordeon input[type=radio],
+	ul.accordeon input[type=checkbox] {
+	display: none;
+	}
+
+
+	
+
+    ul.accordeon div.sub { height:auto; max-height:0; overflow:hidden; opacity:0; transition: all 450ms ease-in-out; } /*BS1*/
+
+	ul.accordeon ul.sub > li {
+	cursor: pointer;
+	margin: 0;
+	padding: 0 0 0 0;
+	height:auto;
+	}
+
+	.vwrap {
+		display: none;
+		opacity: 0;
+		transition: opacity 0.2s ease-in-out;
+		margin-top: 10px;
+		margin-bottom: 20px;
+    }
+
+
+	.vwrap.visible {
+		display: block;
+		opacity: 1;
+	}
+
+	div.vwrap video { border-radius:30px; box-shadow: 5px 10px 20px rgba(89, 92, 109, 0.3)!important;  } /*BS1*/
+	
+	#video_touch { border-radius:30px; box-shadow: 5px 10px 20px rgba(89, 92, 109, 0.3)!important;  }
+	#video_touch div.vjs-poster {border-radius:30px !important;}
+	#video_touch div.vjs-poster {border-radius:30px !important; box-shadow: 5px 10px 20px rgba(89, 92, 109, 0.3)!important;}
+	
+
+
+	/* div.vwrap div.video-js {border-radius:30px !important; box-shadow: 5px 10px 20px rgba(89, 92, 109, 0.3)!important;} */
+	/* div.vwrap video, div.vwrap div.video-js {
+		border-radius: 30px !important;
+		filter: drop-shadow(5px 10px 20px rgba(89, 92, 109, 0.3));
+	} */
+
+	
+	div.steps { padding-top:30px; }
+	div.alternative { padding-top:20px; }
+	ol { padding-left: 1.5em; padding-top:20px; padding-bottom:0px; border-left:2.5px solid #c2e249; border-radius:10px; /*border:1px solid #c2e249; border-radius:20px;*/ }
+	ol li::marker {
+		font-weight: bold;
+		color:rgba(10,30,15,0.6); text-shadow: -1px -1px 2px rgba(255,255,255,.6);
+	  }
+
+	ul.sub-instruction-list { padding-bottom:0.7em; padding-left: 0.5em; font-size: 90%; list-style-type: disc; }
+	ul.sub-instruction-list li { padding-bottom:0.5em; }
+	
+	
+
+	.new { border-radius:15px; padding:10px; margin-left:15px; font-size:70%; color:white; background-color:#c2e249; text-shadow:none; }
+		
+
+		/*    C O M P A T I B I L I T Y   A P P   */
+
+
+	ul.accordeon input:checked + div div.sub { max-height:1000% /*avoid display bug on short height screens*/; opacity:1; overflow: visible; /*allow box-shadow around video to be visible BS1*/ }
+	ul.accordeon input:checked + div > label i { transform-origin: center; transform: rotate(90deg); }
+
+	ul.accordeon .sub > li.subtitle:hover { color:#C3D949; }
+
+	section.compatibility ul{ width: 100%; text-align:center; margin:0; padding-top:60px; padding-left:0; }
+	section.compatibility li{ display: inline-block; margin: 20px; }
+
+	section.compatibility div.download {
+		width: 240px; height: 90px;	float:left; border-radius: 5px;
+		position: relative;	cursor: pointer;
+		border: 2px solid rgba(10,30,15,0.5);
+		color: rgba(10,30,15,0.6);
+	}
+
+	section.compatibility div.download > i.fab {
+		position: absolute; top: 50%; left: 15px;
+  		color:#C3D949;
+		transform: translateY(-50%);
+	}
+
+	section.compatibility div.download:hover {
+		background:#C3D949;	border: 2px solid #C3D949;
+	}
+
+	section.compatibility div.download:hover i{ color:white; }
+
+	section.compatibility div.download:hover span.df{ color:rgba(10,30,15,0.7); }
+	section.compatibility div.download:hover span.dfn{ color:rgba(10,30,15,0.7); }
+
+	section.compatibility span.df,
+		section.compatibility span.dfn { position: absolute; left: 90px; }
+	
+	section.compatibility span.df {	top: 20px; font-size: .8em;	}
+		section.compatibility span.dfn { top: 33px;	font-size: 1.2em; }
+
+
+		/*     T E C H N O L O G I E S     */
+
+section.technologies div.wide {
+	max-width: 1100px;
+} 
+		.single-service { max-width:300px; margin:1em auto; border-radius:1em 1em .2em .2em; box-shadow: 8px 16px 40px rgba(0, 0, 0, 0.3); } /*display:flex; } /* display:flex in the wrapper works along with height:auto; in the inner div. */
+		.single-service img { max-width:100%; border-style:none; margin:auto; display:block; } 
+			/* border-radius should stay on img and on outer div */
+				.single-service img.first { border-radius:1em 0.3em 0em 0em; }
+				.single-service.first { border-radius: 1em 0.3em 0.3em 1em; }
+				.single-service img.fourth { border-radius:0.3em 1em 0em 0em; }
+				.single-service.fourth { border-radius: 0.3em 1em 1em 0.3em; }
+
+
+		.single-service h3  { line-height:1.4em; margin:0; text-align:center; padding:10px; }
+		.single-service i  { display:block; margin:0; text-align:center; padding-top:10px; }
+		
+		@media only screen and (max-width:1200px){
+			section.technologies div.wide { max-width: 680px; } 
+			.single-service img.first { border-radius:1em 1em 0em 0em; }
+			.single-service.first { border-radius: 1em; }
+			.single-service img.second { border-radius:1em 1em 0em 0em; }
+			.single-service.second { border-radius:1em; }
+			.single-service img.fourth { border-radius:1em 1em 0em 0em; }
+			.single-service.fourth { border-radius:1em; }
+		}
+
+		@media only screen and (max-width:768px){
+			.single-service { max-width:250px; }
+		}
+
+
+
+		@media only screen and (max-width:576px){
+			.single-service { margin:0.5em auto; }
+			.single-service img.first { border-radius:1em 1em 0em 0em; }
+			.single-service.first { border-radius: 1em; }
+			.single-service img.second { border-radius:1em 1em 0em 0em; }
+			.single-service.second { border-radius:1em; }
+			.single-service img.fourth { border-radius:1em 1em 0em 0em; }
+			.single-service.fourth { border-radius:1em; }
+		}
+			
+		
