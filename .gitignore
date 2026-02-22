@@ -56,6 +56,13 @@ desktop.ini
 # =========================
 .env
 .env.*
+!.env.example
+
+# =========================
+# Docker
+# =========================
+# Keep .env for Docker configuration but add example
+# docker-compose.override.yml
 
 # =========================
 # PHP info (security risk)

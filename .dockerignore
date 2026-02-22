@@ -1,0 +1,54 @@
+# Docker files
+.dockerignore
+Dockerfile
+docker-compose.yml
+.env
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Database (native MySQL data directory)
+db/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+*.pid
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.cache
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Node modules (if any)
+node_modules/
+npm-debug.log
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Documentation
+README.md
+docs/
+*.md
+
+# Plans and agent files
+.cursor/

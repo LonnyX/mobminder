@@ -1,0 +1,190 @@
+version: '3.8'
+
+services:
+  # MySQL 5.7.17 Database
+  mysql:
+    image: mysql:5.7.17
+    container_name: mobi_mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-root}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-smsgateaway}
+      MYSQL_USER: ${MYSQL_USER:-queuing_daemon}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-1970}
+    volumes:
+      - ./db:/var/lib/mysql
+      - ./docker/mysql:/docker-entrypoint-initdb.d
+    ports:
+      - "3337:3306"
+    networks:
+      - mobi_network
+    command: --sql_mode="" --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+
+  # Nginx Web Server
+  nginx:
+    image: nginx:1.21-alpine
+    container_name: mobi_nginx
+    restart: unless-stopped
+    ports:
+      - "${APP06_PORT:-8081}:8081"
+      - "${ELEARNING_PORT:-8082}:8082"
+      - "${MOBCOM_PORT:-8083}:8083"
+      - "${CONTRACTING_PORT:-8084}:8084"
+      - "${MOBMINDER_PORT:-8085}:8085"
+      - "${BOOKING_PORT:-8086}:8086"
+    volumes:
+      - ./www:/var/www/html/www:ro
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d:ro
+      - nginx_logs:/var/log/nginx
+    depends_on:
+      - php-app06
+      - php-elearning
+      - php-mobcom
+      - php-contracting
+      - php-mobminder
+      - php-booking
+    networks:
+      - mobi_network
+
+  # PHP-FPM for app06 (SMS Gateway)
+  php-app06:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: mobi_php_app06
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./www:/var/www/html/www
+      - php_sessions:/tmp
+    environment:
+      DB_HOST: mysql
+      DB_NAME: smsgateaway
+      DB_USER: ${MYSQL_USER:-queuing_daemon}
+      DB_PASSWORD: ${MYSQL_PASSWORD:-1970}
+    depends_on:
+      - mysql
+    networks:
+      - mobi_network
+
+  # PHP-FPM for elearning
+  php-elearning:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: mobi_php_elearning
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./www:/var/www/html/www
+      - php_sessions:/tmp
+    environment:
+      DB_HOST: mysql
+      DB_NAME: elearning
+      DB_USER: ${MYSQL_USER:-queuing_daemon}
+      DB_PASSWORD: ${MYSQL_PASSWORD:-1970}
+    depends_on:
+      - mysql
+    networks:
+      - mobi_network
+
+  # PHP-FPM for mobcom
+  php-mobcom:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: mobi_php_mobcom
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./www:/var/www/html/www
+      - php_sessions:/tmp
+    environment:
+      DB_HOST: mysql
+      DB_NAME: newmobcom
+      DB_USER: ${MYSQL_USER:-queuing_daemon}
+      DB_PASSWORD: ${MYSQL_PASSWORD:-1970}
+    depends_on:
+      - mysql
+    networks:
+      - mobi_network
+
+  # PHP-FPM for contracting
+  php-contracting:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: mobi_php_contracting
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./www:/var/www/html/www
+      - php_sessions:/tmp
+    environment:
+      DB_HOST: mysql
+      DB_NAME: contracting
+      DB_USER: ${MYSQL_USER:-queuing_daemon}
+      DB_PASSWORD: ${MYSQL_PASSWORD:-1970}
+    depends_on:
+      - mysql
+    networks:
+      - mobi_network
+
+  # PHP-FPM for mobminder
+  php-mobminder:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: mobi_php_mobminder
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./www:/var/www/html/www
+      - php_sessions:/tmp
+    environment:
+      DB_HOST: mysql
+      DB_NAME: mobminder
+      DB_USER: mobminder
+      DB_PASSWORD: tgx23PiQ
+    extra_hosts:
+      - "localhost:host-gateway"
+    depends_on:
+      - mysql
+    networks:
+      mobi_network:
+        aliases:
+          - localhost
+
+  # PHP-FPM for booking
+  php-booking:
+    build:
+      context: ./docker/php
+      dockerfile: Dockerfile
+    container_name: mobi_php_booking
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - ./www:/var/www/html/www
+      - php_sessions:/tmp
+    environment:
+      DB_HOST: mysql
+      DB_NAME: mobminder
+      DB_USER: mobminder
+      DB_PASSWORD: tgx23PiQ
+    extra_hosts:
+      - "localhost:host-gateway"
+    depends_on:
+      - mysql
+    networks:
+      mobi_network:
+        aliases:
+          - localhost
+
+networks:
+  mobi_network:
+    driver: bridge
+
+volumes:
+  nginx_logs:
+  php_sessions:
