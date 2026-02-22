@@ -1,0 +1,8 @@
+<french>{dear} {gender} {lname},
+
+votre dentiste Vinciane Art arrêtera définitivement ses consultations le 30 juin 2025 et vous remercie de votre fidélité. 
+
+Voici mon mail en cas de besoin (dossier, radios, attestations, ...):
+vincianeart@skynet.be
+
+Votre dentiste, Vinciane Art.</french>

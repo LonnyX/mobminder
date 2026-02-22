@@ -1,0 +1,29 @@
+﻿<french>{dear} {gender} {lname},
+Je vous écris pour vous avertir du terme de mon exercice professionnel à la fin de ce mois de décembre. Je vous remercie pour la confiance que vous m'avez accordée toutes ces années et pour votre fidélité.
+
+Mon cabinet sera repris par ma consoeur Mme Johanna Chettou qui assurera tous les soins au cabinet dentaire à partir du 1er Janvier 2023.
+
+Les rendez-vous pourrons toujours se prendre au 023511216, et en cas de questions ou d'urgences, contactez le 0487872692.
+
+Tout est mis en oeuvre pour assurer la continuité de vos soins dans les meilleures conditions.
+
+Vous trouverez plus d'informations sur www.dentistelefebvre.be
+
+Nous vous souhaitons un Joyeux Noel et une Belle Année.
+
+Béatrice Lefèbvre et Johanna Chettou.</french>
+<english>{dear} {gender} {lname},
+
+I am writing to inform you that my professional practice will end at the end of this month of December. I would like to thank you for the trust you have placed in me all these years and for your loyalty.
+
+My practice will be taken over by my colleague Mrs. Johanna Chettou who will provide all care at the dental office from January 1, 2023.
+
+Appointments can always be made on 023511216, and in case of questions or emergencies, contact 0487872692.
+
+Everything is done to ensure the continuity of your care in the best conditions.
+
+You will find more information on www.dentistelefebvre.be
+
+We wish you a Merry Christmas and happy New Year.
+
+Béatrice Lefèbvre and Johanna Chettou</english>

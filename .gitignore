@@ -76,4 +76,5 @@ phpinfo.php
 node_modules/
 
 
-www/app07
+www/app07/booking
+www/app07/mobminder/htdocs/utilities/*

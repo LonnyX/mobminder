@@ -1,0 +1,96 @@
+
+INSTALLATION DROPBOX:
+---------------------
+
+voir https://www.dropbox.com/install?os=lnx
+
+voir aussi: http://www.dropboxwiki.com/
+
+
+L'installation produit des dossier et fichier cachés.
+
+Pour voir le contenu du dossier: ls -al
+
+vérifier si le process tourne: ps -aux | grep drop
+
+Bash history:
+
+wget https://www.dropbox.com/download?dl=packages/dropbox.py
+mv download\?dl\=packages%2Fdropbox.py dropbox.py
+chmod +x dropbox.py
+./dropbox.py
+./dropbox.py status
+./dropbox.py filestatus
+cd Dropbox/
+ls
+cd backup/
+files
+cd backup/
+~/dropbox.py filestatus
+~/dropbox.py exclude add bus01
+~/dropbox.py exclude list
+ls
+history
+ls -l
+./dropbox.py
+./dropbox.py status
+./dropbox.py filestatus
+
+
+
+
+BASH DE FLUSH SQL:
+------------------
+
+
+/srv/syst/backup.sh
+
+
+
+
+EXECUTION CRON:
+---------------
+
+[root@app01 /etc/cron.d]|PRODUCTION|# ls -l
+total 16
+-rw-r--r-- 1 root root  185 Jun  3  2014 mob-backup
+-rw-r--r-- 1 root root 1591 Dec 31 01:12 mob-cron1
+-rw-r--r-- 1 root root  475 Aug  6  2012 php5
+-rw-r--r-- 1 root root  459 Jun  3  2014 postfix-summarize
+
+[root@app01 /etc/cron.d]|PRODUCTION|# more mob-backup
+
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO="pascal.vanhove@mobminder.com"
+
+# every day at 5h00 AM
+0 5 * * *      root   [ -x /srv/syst/backup.sh ] && /srv/syst/backup.sh
+[root@app01 /etc/cron.d]|PRODUCTION|#
+
+
+
+
+
+RELANCER DROPBOX: (nécessaire après un reboot)
+-----------------
+
+Attention, il faut passer sur le user dropbox!!
+
+su dropbox
+
+dropbox@app01:~$
+dropbox@app01:~$ ./dropbox.py status
+Dropbox isn't running!
+dropbox@app01:~$ ./dropbox.py start
+Starting Dropbox...Done!
+dropbox@app01:~$
+
+
+
+
+
+
+
+
+

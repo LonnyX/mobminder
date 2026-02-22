@@ -1,0 +1,7 @@
+<french>{dear} {gender} {lname},
+le Cabinet Dentaire Hussin a repris ses activités. 
+Toutes les mesures sanitaires sont appliquées afin d'assurer votre sécurité. 
+Vous pouvez prendre rendez-vous au numéro habituel: 043423978
+Mara et Philippe
+.
+(SVP ne répondez pas à ce SMS. Nous ne lisons pas les réponses aux SMS, utilisez uniquement le numéro 043423978 )</french>

@@ -1,0 +1,10 @@
+﻿<french>{dear} {gender} {lname},
+Bonjour,
+
+Le salon de coiffure Manuel Nyimec est dans l’obligation d’annuler votre prochain rendez-vous.
+Nous vous demandons de vous diriger vers le lien dans la biographie Instagram du salon afin de refixer un rendez-vous.
+
+Merci de votre compréhension,
+L’équipe du salon de coiffure Manuel Nyimec
+
+(svp ne répondez pas à ce sms, contact seulement au 0468361434)</french>

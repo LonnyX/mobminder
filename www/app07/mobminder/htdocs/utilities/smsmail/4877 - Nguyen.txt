@@ -1,0 +1,13 @@
+﻿<french>{dear} {gender} {lname},
+Ce message provient de votre médecin.
+-
+Mesures dans le cadre de la crise COVID-19:
+1) Toute question concernant une éventuelle infection au Coronavirus doit se régler par téléphone exclusivement (04/2460861 ou 0495/248090). A cette fin je reste un maximum disponible, y compris les weekend, avant un recours au service de garde 1733.
+2) Les consultations jugées INDISPENSABLES après contact par téléphone pourront avoir lieu sur RV et un seul patient à la fois.
+3) Les visites et consultations de suivis chroniques sont maintenues par téléphone. La nécessité d'un contact physique sera évaluée au cas par cas.
+4) Prenez soin de vous et des autres, MAIS n'oubliez pas que tout n'est pas coronavirus et donc restez vigilants aux autres symptomes également. Contactez moi au moindre doute.
+Dr Nguyen
+TEL 042460861
+GSM 0495248090
+Ne répondez pas à ce SMS (nous ne pouvons pas lire les réponses à ce SMS)</french>
+

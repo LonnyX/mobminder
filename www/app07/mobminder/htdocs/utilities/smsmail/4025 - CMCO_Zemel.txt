@@ -1,0 +1,11 @@
+<french>Bonjour {gender} {lname},
+
+J’espère que vous allez bien et que vous profitez bien de vos congés.
+
+Tout comme le printemps, j’apporte également du changement dans votre vie comme dans la mienne.
+C’est pourquoi je vous invite à visiter mon site bluebirdmission.be, des nouvelles (trop longues à envoyer par sms) y sont communiquées!
+
+Belle journée,
+
+Eliza Zemel
+Tel: 0479 94 06 43</french>

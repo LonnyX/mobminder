@@ -1,0 +1,10 @@
+﻿<french>{gender} {lname},
+le Dr DEBEER prendra sa retraite le 23 juin 2021.
+Si vous désirez récupérer votre dossier médical, merci d'envoyer un courriel à loh@skynet.be
+La procédure vous sera alors expliquée.
+Merci à vous,
+Dr DEBEER
+Tél: 025231495
+Email: loh@skynet.be
+Ne répondez pas à ce SMS (nous ne pouvons pas lire les réponses aux SMS)</french>
+

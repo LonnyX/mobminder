@@ -1,0 +1,9 @@
+﻿<french>{dear} {gender} {lname},
+
+Désireux d’améliorer la qualité de nos soins, une hygiéniste bucco-dentaire a rejoint notre équipe.
+Elle est spécifiquement formée pour les détartrages, conseils d’hygiène, détection des caries et problèmes gingivaux.
+Elle travaille en collaboration avec les dentistes.
+N’hésitez pas à prendre RDV pour votre contrôle annuel.
+
+Cabinet Schmit et Collaborateurs
+Tel: 027364709</french>

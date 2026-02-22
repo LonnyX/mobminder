@@ -1,0 +1,10 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+#RewriteCond %{HTTPS} !=on
+#RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+
+RewriteRule   ^(.+)  http://be.mobminder.com/e-resa.php?p=$1
+
+#=> Quand on indiquera agenda.mobminder.com/lousse
+#=> Ca va appeler http://be.mobminder.com/e-resa.php?p=lousse

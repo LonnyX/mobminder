@@ -1,0 +1,10 @@
+<french>{dear} {gender} {lname},
+A partir du 28 juin 2021 je mets un terme à mon activité de médecin de famille.
+C'est avec un mélange de tristesse et d'enthousiasme que je vous écris.
+Je tiens à vous remercier du fond du coeur pour la confiance que vous m'avez témoignée.
+Votre dossier médical se trouve sur le Réseau Santé Wallon. Vous avez accès à ces informations ainsi que le médecin que vous aurez choisi.
+Je peux envoyer ce dossier sur demande à un confrère par voie informatique.
+Cordialement,
+Dr Alain Gillet
+.
+(merci de ne pas répondre à ce SMS mais de me contacter par mail alain.gillet@ymail.com)</french>

@@ -1,0 +1,16 @@
+<french>{dear} {gender} {lname},
+
+Le moulin de la beauté est fermé pour une durée indéterminée.
+
+Si vous aviez un rendez-vous planifié, celui-ci est donc annulé.
+En cas de chèque cadeau encore valable, veuillez me contacter par sms au 
+0491501164
+
+Toutes mes excuses pour ce désagrément.
+Laurie
+
+Libert Laurie - Le moulin de la beauté.
+www.lemoulindelabeaute.be
+Tel: 0491501164
+
+(SVP ne répondez pas à ce SMS, utilisez uniquement les moyens de contact ci-dessus)</french>

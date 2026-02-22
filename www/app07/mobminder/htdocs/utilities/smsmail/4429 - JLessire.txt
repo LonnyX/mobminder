@@ -1,0 +1,10 @@
+<french>{dear} {gender} {lname},
+Le cabinet Dental-K / Judith Lessire a le plaisir de pouvoir assurer la continuité de vos soins dentaires et ce à partir du lundi 11 mai. 
+Informations et consignes à respecter sont disponibles sur le site www.dental-k.be ou par téléphone au 023115002 de 8h00 à 17h00.
+La prise de rendez-vous en ligne est à nouveau activée. 
+Des mesures spécifiques et rigoureuses, entre autre dictées par la Société de Médecine Dentaire, sont mises en place pour garantir une continuité de prestation de qualité mais également un niveau sanitaire optimal vu le contexte.
+Votre dentiste vous accueillera toujours avec le sourire mais la situation oblige, il sera masqué.
+Bien cordialement,
+Dentiste Judith Lessire
+Dental-K
+(Prière de ne pas répondre à ce SMS. Veuillez utiliser le numéro et site web ci-dessus)</french>

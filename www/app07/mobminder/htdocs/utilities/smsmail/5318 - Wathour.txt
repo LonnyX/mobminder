@@ -1,0 +1,8 @@
+<french>{dear} {gender} {lname},
+
+Je vous informe du déménagement vers une nouvelle adresse de mon cabinet de consultations diététiques.
+Il se situe désormais Chemin de Stoisy 12 à Nivelles (à proximité Parc de la Dodaine, parking aisé).
+Pour tout renseignement vous pouvez me joindre au 0478670295 ou consulter mon tout nouveau site internet: www.dietgw.be
+
+Cordialement,
+Géraldine Wathour</french>

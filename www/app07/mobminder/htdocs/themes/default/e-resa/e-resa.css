@@ -1,0 +1,684 @@
+﻿
+/* general sizing */
+
+html { font-size:12pt; line-height:1.2em; } /* rules the overall font-size except input size */
+h1 { font-size:1.8em !important; color:steelblue; 	font-weight:bold;	margin:0em 0 .2em 0; 	text-align:center;	line-height:1em;}
+h2 { font-size:1.0em; color:steelblue; 	font-weight:normal;	margin:0; padding:0; 	text-align:center; 	 }						
+h3 { font-size:1.0em; color:dimgray; 	font-weight:normal;	margin:0em 0 1em 0; 	text-align:center; 	 }
+h4 { font-size:0.9em; color:dimgray; 	font-weight:bold; 	margin:0; 				text-align:left; 	 }
+input, textarea { font-size: 1em; }
+
+.e-bullet { font-size:2em; }
+.e-bullet-caption { font-size:1.1em; }
+
+/* global rules */
+body { 
+	color: #444;
+	font-family: verdana, Arial, Helvetica, sans-serif;
+	margin:0; padding:0; 
+	
+	background: white; 
+	position: relative;
+	overflow-y:auto;
+	-webkit-font-smoothing:antialiased;
+}
+body.touch { line-height: 120%; }
+body.mouse { padding:0 0 0 0; }
+
+
+
+/* css for C_iFIELD & C_iNOTE */
+
+textarea.validOK, input.validOK, div.validOK {  }
+textarea.validNOK, input.validNOK, div.validNOK { 
+    /*box-shadow: inset 0 0 10px rgba(255, 21, 20, 0.4) !important; */
+	border:	1px solid rgba(255, 21, 20, 0.8) !important;  
+}
+
+input, textarea, div.like-input { 
+	color: /*red;*/ #575; /* note that the color specified for the body does not apply to input elements, hence this statement */
+	background-color: white;
+	padding-left:0.5em; 
+	
+	font-family: verdana, Arial, Helvetica, sans-serif; /* does NOT inherit body setting, MUST stay explicit here*/
+	
+	border-radius:3px;
+    border:1px solid rgba(0,0,0, 0.2);
+	padding: 0.1em 0.5em; /* same padding in buttons!! <> so they have equal height */ 
+	
+	outline:none;
+    transition: box-shadow 0.25s ease-in-out;
+    -webkit-transition: box-shadow 0.25s ease-in-out;
+    -moz-transition: box-shadow 0.25s ease-in-out;
+
+	-webkit-appearance: none; /* removes the inner shadow on mobile devices on Safari */
+} 
+
+input:-moz-placeholder { color:#999; } ::-webkit-input-placeholder  { color:#999; }
+
+textarea.alpha20, input.alpha20, div.alpha20 {  width: 20em; overflow: hidden; }
+textarea.alpha16, input.alpha16 {  width: 16em; overflow: hidden; }
+textarea.alpha06, input.alpha06 {  width: 6em; overflow: hidden; }
+
+/* input[type="text"] { margin: 0 1em 1em 0 } */
+textarea { margin:0 auto; resize:none; overflow-y:auto; width:90%; }
+
+
+table { border-collapse:collapse; border:none; margin:0; padding:0; border-spacing: 0; }
+table td { padding:0; }
+
+
+
+p { margin:0; }
+
+
+
+tr.resapop-header th { padding:0 1em; text-align:left; }
+tr.resapop-row td { padding-left: 2em; text-align:left; white-space:nowrap; }
+
+
+table.e-coords { margin-right:0px; color:steelblue; font-weight:bold; }
+table.e-coords tr > td:nth-child(1) { text-align:left; }
+table.e-coords tr > td:nth-child(2) { text-align:right; padding-left:3em }
+
+
+.e-link { font-size:80%; }
+
+div.step-pane { width:100%; max-width:900px; margin:0 auto 0 auto; } /* !! re-defined @media */
+	
+
+/* sections - 100% wide */
+
+section { margin:0 0; /*border:1px solid red;*/ }
+
+	section.s-h1 { }
+	section.s-img {  }
+		
+	section.s-info { }
+	section.s-action { } /* article buttons have an own bottom margin as they are floating and need to superpose when the screen is tight */
+	section.s-directions { }
+	section.s-footer { margin-top:5em; }
+
+	section.s-top { }
+	section.s-desk { }
+
+
+/* container - 900px wide */
+
+div.container {	max-width:900px; margin:0 auto; padding:1em 2em; /*border:1px solid blue;*/ } /* !! re-defined @media */
+
+	@media (max-width: 970px) { /* screens under 970px only are affected */
+		div.container { padding-left:2em; padding-right:2em; } /* transitions from fix margins left right (small devices) to variable width larger windows (970px+ browsers)*/
+	}
+
+	section.s-h1 		div.container { }
+	section.s-img 		div.container { padding-bottom:0; padding-top:0; text-align:center; } /* customizable to left or right */
+		
+	section.s-info 		div.container { }
+	section.s-action 	div.container { } /* article buttons have an own bottom margin as they are floating and need to superpose when the screen is tight */
+	section.s-directions div.container { }
+	section.s-footer 	div.container { }
+
+	section.s-top 		div.container { }
+	section.s-desk 		div.container { }
+	
+	
+/* article - 900px wide */
+
+article{ margin-bottom:0em; box-sizing:border-box;	-moz-box-sizing:border-box; -webkit-box-sizing:border-box; text-align:center; }
+
+	article img{ display:block; margin:0 auto; }
+	
+
+	
+/*  scaling to be device responsive   */
+
+	
+@media (min-width: 1025px) { /* screens wider than 1025px will follow listed rules here */ 
+	
+	section { font-size:95%; }	
+	.slider-wrappy { border:1px solid silver; width:34em; margin: 0 auto;}
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)  /* iPad retina landscape */ 
+{
+	section { font-size:100%; line-height: 1.1em; }	
+	h1 { font-size:1.4em; color:blue; }
+	input { font-size:13pt; }
+}	
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2)  /* iPad retina portrait */ 
+{
+	div.step-pane { margin:0; }
+	section { }	
+	h1 { font-size:1.5em; color:green; }
+	input { font-size:14pt; }
+	article.f20, article.f25, article.f33 {width: 50%}
+	article.f50, article.f60, article.f66 {width: 100%}
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation:landscape) /* iPhone 5 in landscape */
+{	
+	html, body { font-size:8pt; }
+	h1 { font-size:1.8em;  line-height:1em;  color:red; }
+	h2 { font-size:9pt; color:green; }
+	div.action, div.click { font-size:12pt; }
+	div.e-msg { font-size:13pt; }
+	
+	div.slider-wrappy  { font-size:9pt; color:red; }
+		div.e-bullet { font-size:20pt; }
+		div.e-bullet-caption { font-size:14pt; }
+	
+	div { font-size:inherit; }
+	span { font-size:12pt; }
+	input, textarea { font-size:12pt; }
+	
+	div.step-pane { margin:0; }
+	section { line-height: 1.4em;  }
+	table { line-height: 1.4em;  } table td { font-size:13pt; color: purple;}
+	article.f20, article.f25, article.f33, article.f50, article.f60, article.f66, article.f75 {width: 100%}
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2)  /* iPhone portrait */
+{	
+	h1 { font-size:1.5em; line-height:1em;  color:orange; }
+	
+	div.action { font-size:0.9em; }
+	div.container { padding:0 .5em; }
+	div.step-pane { margin:0; }
+	div.e-bullet { font-size:2em; }
+	div.e-bullet-caption { font-size:0.9em; }
+	div.slider-wrappy { font-size:0.8em; }
+	
+	section { line-height: 1.3em; }	
+	input { font-size:12pt; max-width:94%; overflow:hidden; }
+	article.f20, article.f25, article.f33, article.f50, article.f60, article.f66, article.f75 {width: 100%}
+}
+
+
+
+
+	
+/* floating */
+
+.f20{width: 20%;}
+.f25{width: 25%;}
+.f33{width: 33%;}
+.f50{width: 50%;}
+.f60{width: 60%;}
+.f66{width: 66%;}
+.f75{width: 75%;}
+.f00{width: 99%;}
+
+.r20{width: 20%;margin-left: 80%}
+.r25{width: 25%;margin-left: 75%}
+.r33{width: 33%;margin-left: 66%}
+.r50{width: 50%;margin-left: 50%}
+.r60{width: 60%;margin-left: 40%}
+.r75{width: 75%;margin-left: 25%}
+
+.l20{width: 20%;margin-right: 80%}
+.l25{width: 25%;margin-right: 75%}
+.l33{width: 33%;margin-right: 66%}
+.l50{width: 50%;margin-right: 50%}
+.l60{width: 60%;margin-right: 40%}
+.l75{width: 75%;margin-right: 25%}
+
+.fixed{float:none} .rfloat{float:right} .lfloat{float:left} .endfloat{clear:both}
+.left{text-align:left} .right{text-align:right}
+.top-pad { padding-top:1em; }
+.bold { font-weight: bold; }
+body.mouse .left-pad { padding-left:2em; } /* does not apply on small smartphones screens */
+	
+
+.e-title { text-align:center; border:1px solid cadetblue; border-radius:0.5em; padding:0.5em }
+.e-note { text-align:left; border:1px solid cadetblue; border-radius:0.5em; padding:0.5em }
+.e-msg { margin:.5em 0; }
+.e-msg-warning { color:red; }
+.e-warner { color:firebrick; font-weight:bold; }
+.e-bullet { 
+	height:2em; width:2em; vertical-align:middle; text-align:center;
+	background-color:steelblue; font-weight:bold; color:white; border-radius:3em;
+}
+/* .e-bullet { box-shadow: inset 4px 4px 4px 2px rgba(255, 255, 255, 0.4), inset -4px -4px 4px 2px rgba(0, 0, 0, 0.4); } */
+
+.disabled { opacity: 0.2; filter:alpha(opacity=20); cursor:default; } /* grays out */
+
+div.e-bullet-caption { color:steelblue; font-weight:bold; padding-left:1em; display:table-cell; vertical-align:middle; /* border:1px solid green;*/ }
+div.e-step { margin-top:1em; }
+
+.centered { text-align:center; }
+
+
+
+/* css for C_iCLIK */
+
+div.touch-in, td.touch-in, input.touch-in, a.touch-in, span.touch-in { 
+	/* when the .click element is pushed-in, this rule will overule the one set in .click (*TRAN1) */
+	-webkit-transition-duration:0s;
+	-moz-transition-duration:0s;
+	transition-duration:0s;
+	background-color: rgba(224, 239, 117, 0.7)!important;
+}
+.textcolor-light { color:#999; } /* applies to picker headers when they lay on the remote pad */
+	input:-moz-placeholder { color:#999; } ::-webkit-input-placeholder  { color:#999; }
+
+
+
+a, .click { /* (*TRAN1) transtition rules written here are overruled when .touch-in, which is much faster => means the rules here are applicable only when the .touch-in is removed */
+	cursor:pointer;
+	-webkit-transition-property:background-color; -webkit-transition-duration:2s; -webkit-transition-timing-function:cubic-bezier(.5, 0, 0, 1);
+	-moz-transition-property:background-color; -moz-transition-duration:2s; -moz-transition-timing-function:cubic-bezier(.5, 0, 0, 1);
+	transition-property:background-color; transition-duration:2s; transition-timing-function:cubic-bezier(.5, 0, 0, 1);
+	/* background: rgba(255, 255, 255, 0.0); /* transparent, or not defined */
+}
+a { text-decoration: none; }
+a, a:visited{color:inherit;} a:hover{color:inherit;} a img{border:none;}
+
+
+
+
+body.mouse a:hover, body.mouse .click:hover {	background-color: rgba(20, 21, 255, 0.1); } 
+
+body.mouse .click-default { padding:0 0.5em; } 
+body.touch .click-default { padding:0 0.6em; }
+
+
+
+
+/* css for C_iBUTTON */
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; } /* removes the ugly dotted gray line when element gets the focus */
+.action, .e-button { background-color:steelblue; font-weight:bold; color:white; }
+
+.button { cursor:pointer; text-align:center; border-radius:0.2em; border:1px solid rgba(0,0,0, 0.1); }
+	textarea.button { vertical-align:middle; display:inline-block; }
+	body.touch input.button, body.touch textarea.button { }
+	body.mouse input.button {	 }
+	
+.button.button-busy { background: url(loading.gif) center center no-repeat; }
+	
+
+
+	
+	
+/* css for C_iLABEL and C_iMENU */
+
+table.menu-table td.menu-label { vertical-align:center; padding-left:1em; }
+	body.mouse table.menu-table td.menu-label { padding-right:2em; }
+	body.mouse table.menu-table.centered td.menu-label { padding:0 0 0 0; } /* e.g. ampm weekdays */
+
+table.menu-table td.menu-label.highlight { background:orange;  /* (*TRAN1) */
+
+	-webkit-transition-property:background; -webkit-transition-duration:0.1s; -webkit-transition-timing-function:cubic-bezier(0, 1, 0, 1);
+	-moz-transition-property:background; -moz-transition-duration:0.1s; -moz-transition-timing-function:cubic-bezier(0, 1, 0, 1);
+	transition-property:background; transition-duration:0.1s; transition-timing-function:cubic-bezier(0, 1, 0, 1);
+}
+table.menu-table td.menu-label.selected { font-weight:bold;  }
+table.menu-table td.menu-label.section { font-weight:bold; } /* section separator */
+
+
+
+
+/* css for C_iSLIDE */
+
+.slider-wrappy 	{ border:1px solid silver; width:99%; }
+.slider-drawer 	{ box-shadow: inset 0px 10px 10px rgba(255, 255, 255, 0.3), inset -0px -10px 10px rgba(255, 255, 255, 0.3); }
+.slider-above 	{ background: #EEE; 	}
+.slider-under 	{ background:orange; 	}
+.slider-busy, div.click.slider-busy:hover 	{ background: rgba(255, 255, 255, 0.8); }
+
+
+
+/* css for C_iTIP */
+
+	/* generic for all tooltips: */
+#tipInset {
+	padding: 0.2em 1em;
+	/* box-shadow: inset 0px 10px 10px rgba(255, 255, 255, 0.3), inset -0px -10px 10px rgba(255, 255, 255, 0.3); */
+}
+#tipOutset { box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); display:block; }
+
+
+
+	/* specific tooltips: */
+	
+div.tip {  background-color: rgba(255, 247, 175, 0.9); /* yellow style tooltip */ }
+div.tip, div.tip > div { border-radius: 6px;}
+div.tip hr { color:#FEA; width:90%; margin:0.4em auto 0.3em auto; height:1px; border-style:solid; border-width:1px 0 0 0; }
+
+div.sticker-tip { opacity:0.9; }
+div.sticker-tip, div.sticker-tip > div { border-radius: 12px 0 12px 0; }
+div.sticker-tip hr { color:rgba(0,0,0,0.2); width:90%; margin:0.3em auto 0.2em auto; height:1px; border-style:solid; border-width:1px 0 0 0;}
+	
+div.warning { background-color: rgba(255, 55, 55, 1); color: white; }
+div.warning, div.warning > div { border-radius: 2px; }
+
+
+/* Setting line-height for different screens */
+
+body.mouse 		table.menu-table td.menu-label, 
+body.mouse 		table.cresta-table td
+			{ font-size: 100%; line-height:1.5em; }
+
+body.touch 		table.menu-table td.menu-label, 
+body.touch 		table.cresta-table td
+			{ font-size: 100%; line-height:1.6em; }
+
+body.small-device 	table.menu-table td.menu-label, 
+body.small-device 	table.cresta-table td
+			{ font-size: 115%; line-height:1.5em; }
+
+			
+table.coords td { padding-bottom: .3em; } /* cell spacing in coordinates table and miscellaneous field tables accross the ui */
+
+
+
+/* css for C_iTEM and C_iCRESTA - see (*C01*) */
+
+
+div.select-header{ padding-bottom: .4em; } /* used for titles above selection controls on the search dashboard */
+
+table.cresta-table 	{ vertical-align:middle; margin-bottom:1em; }
+
+	
+table.cresta-table.flipped	{  }
+table.cresta-table.flipped td 	{ width:10em; text-align:right; }
+
+
+.disabled { opacity: 0.3; filter: alpha(opacity=30); cursor: default; } /* grays out */
+
+table.cresta-table 		td > div 			> table td.cresta-label 	{ white-space:nowrap; padding-left:0.3em; padding-right:0.6em; }
+table.cresta-table 		td > div.selected 	> table td.cresta-label 	{ font-weight:bold; }
+table.cresta-table 		td > div.highlight { border-radius:0.2em; background: rgba(255, 165, 0, 0.3); }
+
+table.cresta-table 		td > div 			> table td.cresta-check 	> ruby { height:0.9em; width:0.9em; }
+
+table.cresta-table.radios td > div 			> table td.cresta-check 	> ruby,   
+	table.cresta-table.checks td > div 			> table td.cresta-check 	> ruby { background:rgba(0, 0, 0, .05); /*border:1px solid rgba(0,0,0,.15);*/ } /* common to checker and radio bullets */
+	
+table.cresta-table.radios td > div 			> table td.cresta-check 	> ruby { border-radius:50%; }   /* circular radio area */
+table.cresta-table.checks td > div 			> table td.cresta-check 	> ruby { border-radius:0 0.3em; } /* rectangle checker area */
+
+table.cresta-table.radios	td > div 			> table td.pushed 		> ruby { box-shadow:inset 0 -0.2em 0.4em rgba(100, 149, 190, 0.8); }
+table.cresta-table.checks	td > div 			> table td.pushed 		> ruby { box-shadow:inset 0 -0.2em 0.4em rgba(175, 206, 60, 0.8); }
+table.cresta-table.radios td > div.selected 	> table td.cresta-check  	> ruby { background:rgb(100, 149, 190); /* rgbA() is ignored by MSIE */}
+table.cresta-table.checks td > div.selected 	> table td.cresta-check  	> ruby { background:rgb(175, 206, 60); /* rgbA() is ignored by MSIE */}
+
+
+
+
+
+/* css for C_iSLOT */
+
+table.slots tr { vertical-align:top; border-top: 1px dotted rgba(0,0,0,0.3); }
+table.slots td { padding:0 0 1em 0;  }
+table.slots span { line-height: 160%; }
+table.slots a { padding:0 0.7em 0 0; }
+
+table.v-coords tr td { padding:0.5em 2em 0 0; }
+
+div.bullet{ line-height:50%; width:1em; border-radius:0.15em; margin-right:0.5em; }
+
+
+
+
+	
+/* C_iONOFF  */
+
+div.cursor { 
+	font-size:1.4em; min-height:1em;
+	background-color:white; border-left:1px solid rgba(0,0,0, 0.2); 
+	margin-left:auto; margin-right:0;
+	border-radius:1em 0em 0em 1em;
+	
+	transition-property:width; transition-duration:.2s; transition-timing-function:ease;
+	width:1em; /* corresponds to ON state */
+}
+	body.touch div.cursor { font-size:1.5em; }
+div.switch { 
+	border: .5px solid rgba(0,0,0, 0.2);
+	border-radius:1em 1em 1em 1em;
+	display:inline-block; width:4em;
+	overflow: hidden;
+	transition-property:background-color; transition-duration:1.5s; transition-timing-function:cubic-bezier(0, 0, 2, 2);	
+	background-color:#FFFFFF;
+}
+div.switch.switch-on  { background-color:#c2e249; }
+div.switch.switch-off div.cursor { width:100%; border-left:1px solid transparent; } /* corresponds to OFF state */
+
+
+
+/* ============================================================= */
+
+
+/* zen palette & styling */
+
+body.zen { 
+	background:linear-gradient(to right, rgb(184,130,87) 0%,rgb(143,100,59) 100%); 
+	color: white;
+}
+body.zen input, body.zen textarea, body.zen div.like-input { color:rgb(71,46,24); }
+body.zen .e-title { 
+	border:1px solid rgb(249,173,59); border-radius:0.7em; 
+	background:linear-gradient(to right, rgb(133,90,49) 0%,rgb(164,110,77) 100%); 
+	box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.2);
+}
+body.zen .textcolor-light { color:white; }
+body.zen .e-warner { color:rgb(251,213,155); }
+body.zen .e-button { background-color:yellow; color:black;  }
+
+body.zen div.zi-modal-inset  { color:rgb(71,46,24); }
+
+body.zen h1 { color:rgb(251,213,155); }
+body.zen h2 { color:rgb(250,243,209); }
+body.zen h3, body.zen table.e-coords { color: rgb(203,219,135); }
+body.zen h4, body.zen div.e-step, body.zen div.e-bullet-caption { color:white; }
+body.zen div.e-bullet { color: rgb(34,27,14); vertical-align:top;}
+body.zen div.e-bullet.disabled { color:white; }
+body.zen div.e-bullet:not(.disabled)  { box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.2); }
+
+/* following three lines draw a yin-yang by styling html elements */
+body.zen div.e-bullet { width: 96px; height: 48px; background:white; border-color:rgb(71,46,24); border-style:solid; border-width: 0px 0px 50px 0px; border-radius: 100%; position: relative; } 
+body.zen div.e-bullet:before { content: ""; position: absolute; top: 50%; left: 0; background:white; border: 18px solid rgb(71,46,24); border-radius: 100%; width: 12px; height: 12px; } 
+body.zen div.e-bullet:after { content: ""; position: absolute; top: 50%; left: 50%; background:rgb(71,46,24); border: 18px solid white; border-radius:100%; width: 12px; height: 12px; }
+
+
+
+/* dynamic palette & styling */
+
+/* Gold & ebony */
+
+body.gold { 
+	height:100%; min-height: 100%;
+	background:linear-gradient(to bottom, rgb(255,255,255) 0%, rgb(255,255,255) 50%,rgb(236,236,236) 100%); 
+	color: black;
+	margin-bottom:50%;
+}
+body.gold h1 { color:rgb(169,169,169); }
+body.gold h2 { color:rgb(74,74,74); }
+body.gold table.e-coords { color:rgb(74,74,74); }
+
+body.gold h3 { 
+	background:linear-gradient(to bottom, rgb(255,233,54) 00%, rgb(255,223,44) 80%,rgb(255,186,4) 100%); 
+	color: rgb(28,28,23); 
+	box-shadow: 0 0.1em 0.2em 0 rgba(0, 0, 0, 0.4);
+}
+body.gold h3 { border:1px solid rgb(229,200,40); }
+
+body.gold div.e-step, body.gold div.e-bullet-caption { color:rgb(125,59,7);}
+
+body.gold div.e-bullet { 
+	height:1.5em; width:1.5em; 
+	color: rgb(41,39,35); font-size:230%; vertical-align:middle; font-style:italic;
+	border-right: 1px solid rgb(41,39,35); border-bottom: 2px solid rgb(15,10,11);
+	background:linear-gradient(to bottom, rgb(255,222,44) 0%, rgb(255,252,227) 20%,rgb(255,217,46) 100%,rgb(247,184,251) 100%); 
+	}
+body.gold div.e-bullet.disabled { opacity: 0.4; filter:alpha(opacity=40); cursor:default; } /* grays out */
+body.gold div.e-bullet.disabled { color:silver; }
+body.gold div.e-bullet:not(.disabled)  { box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.2); }
+
+body.gold  input.e-button { background:linear-gradient(to right bottom, rgb(63,63,63) 00%, rgb(75,75,75) 70%,rgb(12,12,12) 100%); color:yellow; }
+	body.gold input.e-button.disabled{  }
+	body.gold input.e-button.button-busy { background: url(loading.gif) center center no-repeat; } /* grays out */
+	body.gold input.e-button.disabled 
+		, body.gold input.e-button.button-busy { /* background:linear-gradient(to right bottom, rgb(163,163,163) 00%, rgb(175,175,175) 70%,rgb(112,112,112) 100%);*/ }
+
+body.gold input, body.gold textarea, body.gold div.like-input { color:rgb(11,11,11); }
+
+
+
+/* Blue & Violet (Proximus) */
+
+body.blueviolet { 
+	height:100%; min-height: 100%;
+	background:linear-gradient(to bottom, rgb(255,255,255) 0%, rgb(255,255,255) 50%,rgb(236,236,236) 100%); 
+	color: black;
+	margin-bottom:50%;
+}
+body.blueviolet h1 { color:rgb(90,50,138); }
+body.blueviolet h2 { color:rgb(90,50,138); }
+body.blueviolet table.e-coords { color:rgb(90,50,138); }
+
+body.blueviolet h3 { 
+	background:linear-gradient(to bottom, rgb(92,45,145) 00%, rgb(92,45,145) 50%, rgb(75,70,161) 70%, rgb(2,187,237) 100%); 
+	color: white; 
+	border-radius: 0 0 2em 0;
+}
+body.blueviolet h3 { border:none; }
+
+body.blueviolet div.e-step, body.blueviolet div.e-bullet-caption { color:rgb(125,59,7);}
+
+body.blueviolet div.e-bullet { 
+	height:1.5em; width:1.5em;
+	color: rgb(90,50,138); font-size:230%; vertical-align:middle; font-style:italic;
+	background:linear-gradient(to bottom, rgb(185,180,193) 0%, rgb(255,255,255) 100%); 
+	border-radius: 40px 30px 50px 20px;
+	}
+body.blueviolet div.e-bullet.disabled { opacity: 0.4; filter:alpha(opacity=40); cursor:default; } /* grays out */
+body.blueviolet div.e-bullet.disabled { color:silver; }
+body.blueviolet div.e-bullet:not(.disabled)  { box-shadow: none; }
+
+body.blueviolet  input.e-button { background:rgb(92,45,145); color:white; }
+body.blueviolet  input.e-button:hover { background:rgb(2,187,237); }
+	body.blueviolet input.e-button.disabled {  }
+	body.blueviolet input.e-button.button-busy { background: url(loading.gif) center center no-repeat; } /* grays out */
+	body.blueviolet input.e-button.disabled 
+		, body.blueviolet input.e-button.button-busy { /* background:linear-gradient(to right bottom, rgb(163,163,163) 00%, rgb(175,175,175) 70%,rgb(112,112,112) 100%);*/ }
+
+body.blueviolet input, body.blueviolet textarea, body.blueviolet div.like-input { color:rgb(11,11,11); }
+
+body.blueviolet div.e-bullet {
+ position: relative;
+ width: 90px;
+ height: 90px;
+}
+body.blueviolet div.e-bullet:before, body.blueviolet div.e-bullet:after {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 40px;
+ height: 100px;
+ border-left: 7px solid;
+ border-right: none;
+ border-top: 7px solid;
+ border-bottom: none;
+ border-color: linear-gradient(rgb(185,180,193) 0%, rgb(255,255,255) 100%);
+ /* -moz-border-radius: 50px 50px 0 50px; */
+ border-radius: 40px 0px 50px 0px;
+ /* -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); */
+ transform: rotate(0deg); -webkit-transform: rotate(0deg);
+}
+body.blueviolet div.e-bullet:after {
+ left: auto;
+ right: 0;
+ top: auto;
+ bottom: 0;
+ height: 40px; width: 105px;
+  /* -moz-border-radius: 50px 50px 50px 0; */
+ border-radius: 40px 0px 50px 0px;
+ border-color: rgb(2,187,237);
+  /* -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); */
+ transform: rotate(180deg); -webkit-transform: rotate(180deg);
+}
+body.blueviolet div.e-bullet.disabled:after { border:none; }
+
+
+
+/* Bio */
+
+
+body.bio { 
+	height:100%; min-height: 100%;
+	background:linear-gradient(to bottom, rgb(255,255,255) 0%, rgb(255,255,255) 50%,rgb(236,236,236) 100%); 
+	color: black;
+	margin-bottom:50%;
+}
+body.bio h1 { color:rgb(97,78,12); }
+body.bio h2 { color:rgb(97,78,12); }
+body.bio table.e-coords { color:rgb(97,78,12); }
+
+body.bio h3 { 
+	background:linear-gradient(to bottom right, rgb(190,225,45) 00%, rgb(217,235,27) 50%, rgb(175,200,0) 70%, rgb(259,255,183) 100%); 
+	color: rgb(80,23,3); 
+	border-radius: 0 13em 0 2em;
+}
+body.bio h3 { border:none; }
+
+body.bio div.e-step, body.bio div.e-bullet-caption { color:rgb(125,59,7); }
+
+
+body.bio  input.e-button { background: rgb(93,86,32); color:yellow; }
+	body.bio input.e-button.disabled{  }
+	body.bio input.e-button.button-busy { background: url(loading.gif) center center no-repeat; } 
+	body.bio input.e-button.disabled 
+		, body.bio input.e-button.button-busy {  }
+		
+body.bio div.e-bullet { 
+	height:1.5em; width:1.5em; 
+	color: rgb(93,86,32); font-size:230%; vertical-align:middle; font-style:italic;
+	background: rgb(243,253,255); 
+	border-radius: 50%;
+	margin-right:3em;
+	}
+body.bio div.e-bullet.disabled { opacity: 0.4; filter:alpha(opacity=40); cursor:default; } 
+body.bio div.e-bullet.disabled { color:silver; }
+body.bio div.e-bullet:not(.disabled)  { box-shadow: none;  text-align:right; vertical-align:top; }
+
+body.bio input, body.bio textarea, body.bio div.like-input { color:rgb(11,11,11); }
+
+body.bio div.e-bullet {
+ position: relative;
+ width: 80px;
+ height: 80px;
+}
+body.bio div.e-bullet:before, body.bio div.e-bullet:after {
+ content: "";
+ position: absolute;
+ top: 0; left: 0;
+ border-right: none;
+ border-bottom: none;
+ background:linear-gradient(to bottom left, rgb(190,225,45) 00%, rgb(217,235,27) 50%, rgb(175,200,0) 70%, rgb(259,255,183) 100%); 
+}
+body.bio div.e-bullet:before {
+ width:35px; height:70px;
+ border-radius: 0px 70px 0px 70px;
+ border-left: 1px solid rgb(66,120,0);
+ border-top: 2px solid rgb(240,255,34);
+ transform: rotate(-10deg);
+}
+body.bio div.e-bullet:after {
+ left: auto; top:auto;
+ right:0; bottom:0;
+ width:30px; height:40px;
+ border-radius: 0px 50px 0px 50px;
+ border-top: 1px solid rgb(66,120,0);
+ border-left: 2px solid rgb(240,255,34);
+ margin-right:0.2em;
+ transform: rotate(80deg);
+}
+
+
+
+

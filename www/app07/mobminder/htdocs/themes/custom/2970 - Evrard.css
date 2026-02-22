@@ -1,0 +1,55 @@
+
+
+/* 2970 - Dr Jean Evrard */
+
+/* background colors */
+
+body { background:white; color:rgb(71,75,75); }
+
+section.s-h1 div.container 
+	, section.s-directions div.container {  background:rgb(71,75,75); } /* gris */
+
+section.s-info div.container { background:rgb(246,185,89); } /* orange */
+
+	
+div.e-bullet
+	, input.e-button, div.e-link a { background:orange; color: black; }
+
+div.action { background:orange; color:black; } /* action buttons */
+	
+section.s-footer { background:grey; }
+	
+	
+/* font colors */
+	
+h1 { color:white; font-size:1.5em !important; }
+h2 { color:white; }
+div.e-bullet-caption { color:rgb(71,75,75); }
+section.s-directions div.container { color:white; }
+section.s-info div.container h2 { color:rgb(71,75,75); }
+section.s-footer div.container { color:silver; }
+
+
+/* border radius */
+
+section.s-h1 div.container { border-radius:0em 0em 0 0; }
+section.s-directions div.container
+	, section.s-desk div.container { border-radius:0 0 0em 0em; }
+
+
+
+/* section margins adjustment */
+
+section.s-h1 {  margin-top:1em; }
+section.s-img div.container {  padding-top:0em; }
+section.s-info {  margin-top:0em; } /* let info block gap from image, if 0, continuous body appears */
+section.s-action div.container {  margin-top:1em; margin-bottom:1em;  }
+section.s-directions { margin-top:0em; } /* let directions block gap from info block, if 0, continuous body appears */
+
+
+
+/* miscellaneous */
+
+section.s-img div.container img { max-height:400px !important; }
+	
+

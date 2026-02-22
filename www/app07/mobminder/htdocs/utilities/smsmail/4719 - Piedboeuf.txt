@@ -1,0 +1,29 @@
+﻿<french>{dear} {gender} {lname},
+Le Coronavirus frappe le monde de plein fouet! La pandémie s’accompagne d’une crise sanitaire sans précédent. En raison des directives gouvernementales, notre clinique est temporairement contrainte de fermer ses portes.
+La pénurie de matériel de protection médical est mondiale et les promesses d’aide de notre gouvernement non honorées à ce jour. Soyez assuré(e) que, depuis plus d’un mois, nous mettons tout en oeuvre pour trouver du matériel de protection spécifique afin de pouvoir vous recevoir dès la levée du confinement.
+Dans ce contexte votre RDV du {day} {date} à {time} avec notre dentiste {att_bcal} ne peut être maintenu.
+Pour toute urgence ou la planification ultérieure de votre traitement, veuillez utiliser le formulaire de contact de notre site web : https://www.dentistbrussels.be/contact
+Nous sommes présents à vos côtés et vous serez recontacté(e) dans les meilleurs délais.
+Prenez soin de vous,
+Dentist Brussels
+Ne répondez pas à ce SMS (nous ne pouvons pas lire les réponses à ce SMS)</french>
+<english>{dear} {gender} {lname},
+Coronavirus is hitting the world hard! The pandemic is accompanied by an unprecedented health crisis. Due to government directives, our clinic is temporarily forced to close. The lack of medical protective equipment is global and our government's pledges of assistance have not been honored to date. 
+Rest assured that, for more than a month, we have been making every effort to find specific protective equipment so that we can receive you as soon as the containment is lifted.
+In this context your appointment from {day} {date} to {time} with our dentist {att_bcal} is canceled.
+For any emergency or future planning of your treatment, please use the contact form on our website: https://www.dentistbrussels.be/contact
+We are present by your side and you will be contacted as soon as possible.
+Take care of yourself,
+Dentist Brussels
+Please do not respond to this message, we do not read SMS messages.</english>
+<dutch>{dear} {gender} {lname},
+Coronavirus raakt de wereld hard! De pandemie gaat gepaard met een ongekend gezondheidscrisis. Wegens richtlijnen van de overheid moet onze kliniek tijdelijk worden gesloten. Het tekort aan medische beschermingsmiddelen is wereldwijd en de toezeggingen van onze regering zijn tot op heden niet nagekomen.
+U kunt er zeker van zijn dat we al meer dan een maand alles in werk hebben gesteld om specifieke beschermende uitrusting te vinden, zodat we u kunnen ontvangen zodra de insluiting is opgeheven.
+In dit verband wordt uw afspraak van {day} {date} tot {time} met onze tandarts {att_bcal} geannuleerd.
+Gebruik voor elke nood- of toekomstige planning van uw behandeling het contactformulier op onze website: https://www.dentistbrussels.be/contact
+Wij staan ​​aan uw zijde en er wordt zo spoedig mogelijk contact met u opgenomen.
+Pas goed op jezelf,
+Dentist Brussels
+Gelieve geen antwoord te geven op die SMS, we kunnen die niet lezen.</dutch>
+
+

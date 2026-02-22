@@ -1,0 +1,9 @@
+﻿<french>{dear} {gender} {lname}
+C’est avec une certaine émotion que je vous informe de l’arrêt de mon activité au 30 juin 2026.
+Vous aurez ainsi tout le loisir de planifier vos rdv d’ici là.
+Nous pourrons échanger sur la suite de votre suivi et vous orienter au mieux.
+Surtout continuer à prendre soin de vous!
+Ce fut un honneur de vous accompagner durant ces 40 belles années.
+Dr Christine Thomas
+067841098</french>
+

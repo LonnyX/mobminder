@@ -1,0 +1,199 @@
+
+
+/*  G E N E R I C S  */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+img {
+	vertical-align: middle;
+	border-style: none;
+}
+
+/* 	Grid options: https://getbootstrap.com/docs/4.1/layout/grid/ 	*/
+
+
+/* 
+Regarding font-sizes and line-heights:
+Rmq 1. line-height should be 150% of size and 130% on small screen  https://pimpmytype.com/line-length-line-height/ 
+Rmq. 2 font-size and line-height defined in px here and in fonts.css to not alter the look when changing font https://www.codeur.com/tuto/css/unite-de-mesure-taille-px-em-rem/#les_unites_de_mesure_a_eviter_pour_un_affichage_sur_ordinateur
+Rmq. 3 do not go bellow 16 px whathever the screen size is
+*/
+html { direction: ltr; width:100%; overflow-x:hidden;} 
+body { 
+	margin:0em;
+	background-image: linear-gradient(var(--bg-body), var(--bg-body)); 
+	background-color: var(--bg-body); /* https://stackoverflow.com/questions/62989878/how-to-prevent-force-dark-mode-by-system */
+	max-width:100%; overflow-x:hidden;
+	color:var(--c-body);
+	font-family: verdana, Arial, Helvetica, sans-serif;	
+	font-size:16px; line-height:150%; /* rules the overall font-size except input size Rmq. line-height should be 150% of size and the ratio should be higher on small screen */
+	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
+}
+
+.bold { font-weight: bold; }
+
+
+
+/*body.touch { line-height: 1em; }*/
+body.mouse { padding:0 0 0 0; }
+
+
+h1 { font-size:175%; line-height:150%; font-weight:normal; }
+h2 { font-size:100%; font-weight:normal; }
+h3 { font-size:100%; font-weight:normal; }
+
+	@media only screen and (max-width:576px) { /* fonts resizing for portrait small devices */
+		
+		h1 { font-size:140%; line-height:150%; }
+		/*h2 { line-height: 25px; }*/
+		/*h3 { line-height: 25px; }*/
+	}
+
+
+           
+/*     F O N T   A W E S O M E   */
+
+.fa.lighter { font-weight:400; }
+.fa.lightest { font-weight:300; }
+
+
+
+
+
+li, p, h1, h2, h3 { margin:0; cursor:default; }
+p.air, h1.air, h2.air, h3.air { margin-bottom:.7em; }
+	p.airplus, h2.airplus, h3.airplus { padding-bottom:1em; }
+p.gap, h1.gap, h2.gap, h3.gap { margin-bottom:.3em; }
+p.airup, h1.airup, h2.airup, h3.airup { padding-top:.7em; }
+	p.airupplus, h1.airupplus, h2.airupplus, h3.airupplus { padding-top:1em; }
+dd.airup { padding-top:.5em; }
+
+
+
+
+a {	text-decoration:none; cursor:pointer; color:inherit; background-color:transparent; }
+a div { cursor:pointer; }
+a h2 { cursor:pointer; }
+a h1 { cursor:pointer; }
+a:hover { text-decoration:none !important;  }
+a[href^="tel"] {
+  color: inherit; /* Inherit text color of parent element. */
+  text-decoration: none; /* Remove underline. */
+  /* Additional css `propery: value;` pairs here */
+}
+
+li, p  { font-size:1em; text-align:left; text-decoration:none !important; }
+	p.bigger { font-size:1.1em; }
+	p.bold { font-size:.95em; }
+	p.bigger.bold { font-size:1.05em; }
+	p.small { font-size:0.8em; }
+
+
+dl { line-height:1.2em; text-align:center; }
+dd { font-size:.8em; text-align:center; margin-left:0; margin:0; padding: .3em; }
+	dd.smaller { font-size:.75em; }
+
+
+
+span.bigger { font-size:1.1em; } /* is not rem ! */ 
+
+	
+
+
+/*table { border-collapse: collapse; margin:0 auto; border:none; width:100%; font-size:inherit; }*/
+table tr td { padding:0; vertical-align:middle; }
+
+
+
+
+	/* writings */
+/*	
+.mob-txt-blue { color:#6897BF; 	} /* rgb(104,151,191) blue mobminder for normal sized text 
+	.mob-txt-blue-soft { color:rgb(104, 151, 191,.6); 	}
+.mob-txt-lime { color:#C3D949; 	} /* rgb(195,217,73) light mobminder for normal sized text 
+
+	span.lime-hover { font-style: italic; }
+	span.lime-hover:hover { color:#C3D949; cursor: pointer; }
+	a.lime-hover:hover { color:#C3D949; }
+	
+
+
+
+.mob-txt-gray_xl { color:rgba(10,30,15,0.1); }  
+.mob-txt-gray_l { color:rgba(10,30,15,0.4); text-shadow: -1px -1px 2px rgba(255,255,255,.4); }  
+.mob-txt-gray_m { color:rgba(10,30,15,0.5); text-shadow: -1px -1px 2px rgba(255,255,255,.5); }
+.mob-txt-gray_d { color:rgba(10,30,15,0.6); text-shadow: -1px -1px 2px rgba(255,255,255,.6); }
+
+
+.silver { color:#ccc; }*/
+
+
+
+.relative { position:relative; }
+.bottomer { position:absolute; bottom:0; }
+	div.flexinner	{ display:flex; justify-content:center; /* display:-webkit-box; display:-ms-flexbox; -webkit-box-pack:center; -ms-flex-pack:center;*/ } /* let the boxes have all identical height */ 
+	div.flexinner.left { justify-content: left; } 
+	div.flexinner.right { justify-content: right; } 
+	div.flexinner.center { justify-content: center; } 
+
+.centered, ul.centered li { text-align:center; }
+.right { text-align:right; }
+.left { text-align:left; }
+	
+	
+	
+.wrapred { border: 1px solid red; }
+.wrapgreen { border: 1px solid green; }
+.wrapblue { border: 1px solid blue; }
+	
+	
+	
+
+	/*        S  E  C  T  I  O  N  S         */
+
+
+section { width:100%; border:none; margin:0;  }
+	section.air { padding-bottom:4rem; }
+	section.airup { padding-top:3rem; }
+	section.noverflow { overflow:hidden !important; }
+div.container { position:relative; margin:0 auto; max-width:900px; padding:1em 2em; /* border-left:1px solid red; border-right:1px solid red; */ }
+	@media only screen and (max-width:576px) { /* fonts resizing for portrait small devices */
+		div.container { max-width:96%; padding:1em 0.5em; }
+	}
+
+div.air { padding-bottom:1rem; }
+	div.airup { padding-top:1rem; }
+	
+div.gas {
+	min-height:140px; /* keep aligned (*ka01*) */
+} 
+
+.bgwhite { background-color:white;  }
+
+
+
+/*     S C R O L L B A R      */
+
+
+::-webkit-scrollbar{ width:10px; }
+::-webkit-scrollbar-thumb{
+	border-radius: 5px;
+	background-color: var(--bg-scroll);
+	border: 3px solid white;
+}
+::-webkit-scrollbar-track {
+	background-color: transparent; /* combines with background-color: white; in html element */
+}
+html { 
+	scrollbar-color: var(--bg-scroll) transparent; scrollbar-width: thin; /*background-color: white;*/
+}
+
+/* clickable elements in footer */
+a.lime-hover:hover { color:#C4E348; } 
+
+/* font-weight: bold; */
+.blueprint {  font-size:90%; color:var(--c-blueprint);}

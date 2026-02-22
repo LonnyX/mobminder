@@ -1,0 +1,14 @@
+<french>{dear} {gender} {lname}, à partir du 1er Juillet nous pourrons enfin vous recevoir à nouveau.
+Vous pouvez réserver dès à présent par mail:
+phytspa@la-reserve.be ou via ce no: 0477763177
+Nous sommes très heureux de pouvoir vous revoir très bientôt.
+Cordialement, The Wellness Team
+Elizabetlaan 160, 8300 Knokke-Heist
+(SVP ne répondez pas à ce SMS, utilisez uniquement ce numéro: 0477763177)</french>
+<dutch>{dear} {gender} {lname},
+Vanaf 1 Juli mogen wij u eindelijk weer verwennen. U mag vanaf nu al reserveren via mail:
+phytspa@la-reserve.be of via dit no: 0477763177
+Wij verheugen ons u binnenkort weer te verwelkomen. 
+Met verzorgde groetjes, The Wellness team
+Elizabetlaan 160, 8300 Knokke-Heist
+(AUB enkel dit nummer gebruiken: 0477763177)</dutch>

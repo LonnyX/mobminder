@@ -1,0 +1,153 @@
+
+Pour voir la liste des serveurs qui tournent
+
+# mm report
+
+Pour redémarrer l'un ou l'autre: 
+
+# mm stop 0
+# mm start 0
+
+# mm stop 1
+# mm start 1
+
+
+Les fichiers binaires des db se trouvent ici :
+/var/lib/mysql/mobminder/
+/var/lib/mysql1/mobminder/
+
+
+====================================================================================================
+Description incident grave et méthode de réparation : (pascal)
+
+Le dimanche 7 juin 2020, la partition /tmp du serveur app04 était pleine (cause fichiers dropbox). 
+La tâche cron weekly.php a échoué sur un OPTIMIZE TABLE archive_reservations (cette table fait 1.2Gb, le fichier temporaire n'a pas pu être écrit sur la partition tmp, la table archive_reservation s'est trouvée corrompue et le repair n'a pas fonctionnée). 
+Sur le pc local dev, j'ai récupéré le backup du 6 juin sous format binaire (fichiers .MYI .MYD .frm). Leur unique présence dans un dossier du nom de la DB (mobminder) indique à MySQL l'existance de la DB et toutes les tables sont récupérées. Je procède de cette manière depuis 2011 sans soucis. Egalement depuis le passafe à MySQL 5.7, cette manière de faire fonctionne très bien. 
+En local, j'ai fait un Dump SQL de la table archive_reservations non corrompue (puisque issue du backup). 
+Le fichier archive_reservations.sql fait 3.2Gb (puisque c'est une version sous format d'instructions MySQL). Le fichier est en format utf8
+
+Les tests suivant ont tous échoués (les caractères spéciaux sont tous corrompus éèàô... l'encodage utf8 n'est pas respécté):
+
+	Voici comment examiner le défaut:
+	- Dans l'application mobminder, en retournant 4 semaines en arrière, on voit tous les accents corrompus dans les notes de RDV
+	- Dans Navicat, lorsqu'on ouvre la table, on voit tous les accents corrompus dans la colonne 'note'.
+
+
+1- Transfert du fichier sur le serveur via FTP et exécution via 
+
+mysql -u username -p mobminder < archive_reservations.sql
+
+Cette référence indique que c'est une mauvaise méthode ( à cause de < ):
+https://makandracards.com/makandra/595-dumping-and-importing-from-to-mysql-in-an-utf-8-safe-way
+
+
+2- Transfert du même fichier via source
+
+mysql> source /root/archive_reservations.sql
+
+L'exécution d'un giga fichier SQL prend jusqu'à 1h30.
+
+
+3- Transfert du même fichier au moyen de Navicat en utilisant la commande "Execute SQL file" depuis un click droit sur la DB mobminder.
+
+
+4- Ecrire du code PHP qui tente de sélectionner les record avec une cnote corrompue, et y remplacer les caractères corrompus par le bon caractère. Je ne suis pas parvenu à distinguer les caractères corrompus... Il étaient tous pris pour de "é". 
+
+
+
+
+
+Chaque test dure plus d'une heure. Afin de faire des tests plus rapides, j'ai décidé de sectionner le fichier en plusieurs sous parties.
+J'ai utiliser la commande linux 
+$ split --verbose -l600000 archive_reservations.sql arch_resa.
+creating file 'arch_resa.aa'
+creating file 'arch_resa.ab'
+creating file 'arch_resa.ac'
+creating file 'arch_resa.ad'
+creating file 'arch_resa.ae'
+...
+creating file 'arch_resa.as' 
+
+Une vingtaine de fichiers ont été créés.
+
+
+J'ai effectué divers test jusqu'à celui-ci qui a fonctionné :
+
+Chaque fichier a été converti du format utf8 vers utf8-bom
+
+ET 
+
+Dans le premier fichier (celui qui drop puis re-crèe la table), j'ai 
+
+	1. commenté SET NAMES='utf8'
+	2. changé archive_reservations en archive_test (pour faire un test avec seulement le 1er fichier et vérifier l'encodage via Navicat). 
+	3. changé la ligne d'option de table en ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_general_ci
+	(voir entète du fichier arch_resa.aa.sql ci-dessous)
+
+Ensuite j'ai renommé archive_test en archive_reservations et j'ai poursuivi avec les fichier b, c, d, e, ... s. 
+
+
+
+NOTE:
+depuis sa création, la web app écrit dans la DB sans utiliser SET NAMES='utf8'; Cette instruction devrait se trouver dans dbio.php et s'exécuter à chaque ouverture de connexion. Du fait qu'elle ne s'y trouve pas, les query du type LIKE "%bla%" ne respectent pas la collation utf8. C'est un problème à régler.
+
+NOTE: 
+Pour les essais et lors de la remise en place de la table, de nombreux test ont étés effectué et le disque /var/log/mysql qui contient les mysql-bin.007432 a été surchargé. Ceci a provoque un nouveau disk-full error. Je suis aller examiner la situation dans le dossier et j'ai supprimé les mysql-bin.006* pour faire de l'espace disque. Il faudra veiller à correctement dimensionner les partition lors du setup d'un prochain nouveau serveur.
+- Disk is full writing '/var/log/mysql/mysql-bin.007454' -
+
+
+
+
+USE mobminder;
+-- SET NAMES='utf8';
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for archive_reservations
+-- ----------------------------
+DROP TABLE IF EXISTS `archive_test`;
+CREATE TABLE `archive_test`  (
+  `id` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `groupId` bigint(20) UNSIGNED NOT NULL,
+  `created` timestamp(0) NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `creator` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `creatorId` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `changed` timestamp(0) NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `changer` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `changerId` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `deleted` timestamp(0) NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `deletorId` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `cueIn` bigint(20) UNSIGNED NOT NULL,
+  `cueOut` bigint(20) UNSIGNED NOT NULL,
+  `peerId` bigint(20) UNSIGNED NOT NULL,
+  `remoteid` varchar(128) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '',
+  `remoteProfile` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `layerLevel` tinyint(4) UNSIGNED NOT NULL,
+  `iscluster` tinyint(4) UNSIGNED NOT NULL DEFAULT 0,
+  `vip` tinyint(3) UNSIGNED NOT NULL,
+  `waitingList` tinyint(3) UNSIGNED NOT NULL,
+  `note` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `cssColor` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `cssPattern` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `cssTags` text CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL,
+  `rescheduled` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `serieId` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `snext` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `sprev` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `bookingcode` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `company` varchar(64) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '',
+  `residence` varchar(64) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '',
+  `address` varchar(128) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '',
+  `zipCode` varchar(8) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '',
+  `city` varchar(64) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '',
+  `country` varchar(32) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT '',
+  `rversion` int(8) UNSIGNED NOT NULL DEFAULT 1,
+  `archived` tinyint(1) UNSIGNED NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`, `groupId`) USING BTREE,
+  INDEX `arch_test_idx_byCreation`(`created`) USING BTREE,
+  INDEX `arch_test_idx_byChange`(`changed`) USING BTREE,
+  INDEX `arch_test_idx_byDelete`(`deleted`) USING BTREE,
+  INDEX `resas_idx_bycues`(`groupId`, `cueIn`, `cueOut`, `serieId`) USING BTREE
+) ENGINE = MyISAM CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+
+

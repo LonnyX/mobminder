@@ -1,0 +1,13 @@
+<french>{dear} {gender} {lname},
+C'est avec plaisir que nous vous recevrons à nouveau au cabinet dentaire. Les mesures sanitaires ont été prises pour vous soigner en toute sécurité.
+Nous vous demandons de venir seul(e), avec un masque et à l'heure exacte de votre rendez vous.
+L'usage des toilettes est fortement déconseillé, merci de prendre vos précautions.
+Paiement uniquement par carte bancaire. 
+Nous espérons vous voir bientôt, prenez soin de vous.
+Rendez vous sur
+www.cabinetdentaireoutremeuse.be 
+ou en nous appelant:
+043422324
+Cabinet dentaire Outremeuse.
+(SVP ne répondez pas à ce SMS. Utilisez la prise de RDV en ligne ou le numéro ci-dessus)
+</french>

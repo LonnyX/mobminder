@@ -1,0 +1,57 @@
+
+
+
+/* background colors */
+
+body {  }
+
+section.s-img div.container 
+	, section.s-h1 div.container
+	, section.s-footer {   }
+
+section.s-info div.container 
+	, section.s-directions div.container 
+	, section.s-action div.container
+	, section.s-desk div.container {  }
+	
+div.e-bullet
+	, input.e-button
+	, div.action {   }
+td.click:hover { }	
+	
+div.e-link > a {  }
+div.e-link > a:hover { }
+	
+	
+/* font colors */
+	
+h1 {  }
+h2, div.container {  }
+
+
+
+/* border radius */
+
+section.s-h1 div.container {  }
+section.s-directions div.container
+	, section.s-desk div.container {  }
+
+
+
+/* section margins adjustment */
+
+section.s-h1 {   }
+section.s-directions { }
+
+
+
+/* miscellaneous */
+
+section.s-img div.container img {  }
+	
+
+#eresa_chkin_bdate_ui { display:none!important; border:1px solid green; }
+
+
+
+

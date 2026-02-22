@@ -1,0 +1,10 @@
+<french>{dear} {gender} {lname},
+-
+ATTENTION, ce message contient une correction du message que vous avez reçu hier.
+Le numéro à former pour le Dr Quertinier est bien le 081207832
+-
+Pourriez-vous SVP reprendre contact avec le secrétariat du Dr QUERTINIER ophtalmologue au 0494101975 ou 081207832 afin de refixer votre RDV qui avait été annulé lors du confinement.
+Le secrétariat est joignable du lundi au vendredi de 7h30 à 19h.
+Merci et à bientôt,
+Dr. Quertinier
+(Ne répondez pas à ce SMS, nous ne lisons pas les réponses aux SMS. Merci d'utiliser uniquement les numéros fournis ci-dessus)</french>

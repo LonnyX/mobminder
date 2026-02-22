@@ -1,0 +1,11 @@
+﻿<french>{dear} {gender} {lname},
+Petit message pour vous informer que Mr COLOT du PEDICENTRE a repris ses consultations au cabinet de BRUXELLES (Boulevard Charlemagne 47 à 1000 Bruxelles – Tél: 02 280 1837 ) et au cabinet de JODOIGNE (Chaussée de Wavre 119 à 1370 Jodoigne - Tél: 0483 161779 ).
+Prenez soin de vous.
+(Ne répondez pas à ce SMS, SVP utilisez uniquement les numéros indiqués pour me contacter)</french>
+
+
+
+
+
+
+

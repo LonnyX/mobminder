@@ -1,0 +1,58 @@
+
+
+
+/* background colors */
+
+body { background-color:rgb(150,191,0); background-image: url("../logos/bomadentbckg.jpg"); }
+
+section.s-img div.container 
+	, section.s-h1 div.container
+	, section.s-footer {  background:rgb(64,79,86); }
+
+section.s-info div.container 
+	, section.s-directions div.container 
+	, section.s-action div.container
+	, section.s-desk div.container { background:white; }
+	
+div.e-bullet
+	, input.e-button
+	, div.action { background:rgb(165,225,35);  }
+td.click:hover {	background-color:rgba(255,255,255,0)!important; }	
+	
+div.e-link > a { background-color:rgba(255,255,255,0.7); color:black; }
+div.e-link > a:hover {	background-color: rgba(255,255,255,1); }
+	
+	
+/* font colors */
+	
+h1 { color:white; }
+h2, div.container { color:rgb(106,106,106); }
+
+
+
+/* border radius */
+
+section.s-h1 div.container { border-radius:0em 0em 0 0; }
+section.s-directions div.container
+	, section.s-desk div.container { border-radius:0 0 0em 0em; }
+
+
+
+/* section margins adjustment */
+
+section.s-h1 {  margin-top:1em; }
+section.s-directions { margin-top:1.5em; }
+
+
+
+/* miscellaneous */
+
+section.s-img div.container img { max-height:250px !important; }
+	
+
+	
+
+
+
+
+

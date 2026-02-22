@@ -1,0 +1,16 @@
+﻿<french>🕖 Dr {lname},
+
+Nous avons le plaisir de vous rappeler la conférence de ce soir sur le sujet de l'IA.
+L'apéritif vous attend à 19h.
+
+Cordialement,
+Mobminder - Medinect - Burogest
+
+🌏 www.mobminder.com
+
+🌏 www.medinect.net
+
+🌏 www.burogest.be
+
+</french>
+

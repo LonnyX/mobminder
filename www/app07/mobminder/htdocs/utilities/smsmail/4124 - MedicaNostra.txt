@@ -1,0 +1,15 @@
+﻿<french>{dear} {gender} {lname},
+
+Vous recevez ce message car vous faites partie des personnes que j'ai vu à ma consultation durant mes six années de pratique au côté de ma consoeur Julie Vandenberghe.
+Je vous annonce que depuis ce 23 Mai, pour différentes raisons d'ordre déontologique, je ne reçois plus dans les locaux d'Ostéoenergie.
+Si vous le souhaitez, vous pouvez récupérer vos dossiers ostéopathiques en prenant contact avec moi ou la secrétaire de mon nouveau lieu de consultation.
+Cordialement.
+
+Thierry Bernard D.O ostéopathe
+Av. Blücher 14,
+1420 Braine-l'Alleud
+Tel: 023875311
+Gsm: 0477289976
+www.medica-nostra.be
+
+(Ne répondez pas à ce sms. Pour tout contact, veuillez utiliser les coordonnées ci-dessus.)</french>

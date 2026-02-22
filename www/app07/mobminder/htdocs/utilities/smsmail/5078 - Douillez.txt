@@ -1,0 +1,8 @@
+<french>{dear} {gender} {lname},
+
+Ce message pour vous informer du nouvel agenda en ligne de Dr Douillez, Chirurgien Vasculaire: www.drdouillez.be
+Via cette nouvelle plateforme vous pouvez prendre RDV pour la consultation de Mons ou celle d'Havay.
+
+Cordialement,
+
+(Ceci est un message automatique, SVP n'enregistrez pas ce numéro)</french>

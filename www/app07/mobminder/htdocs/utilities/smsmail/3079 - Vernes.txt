@@ -1,0 +1,4 @@
+<french>{dear} {gender} {lname},
+Réouverture du centre laser à partir du 11 mai. Appelez nous au 0144392599. Vernes Dermato Laser. 36 rue d'Assas 75006 PARIS</french>
+<english>{dear} {gender} {lname},
+Reopening of the Laser center from May 11th. Call 0144392599 for session booking. Vernes Dermato Laser. 36 rue d'Assas 75006 PARIS</english>

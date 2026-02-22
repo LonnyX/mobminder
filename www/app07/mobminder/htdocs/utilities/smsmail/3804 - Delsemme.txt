@@ -1,0 +1,6 @@
+<french>{dear} {gender} {lname},
+Le cabinet dentaire ouvrira à partir du lundi 18 mai.
+Vous pouvez me contacter dès demain matin pour reprendre RDV en téléphonant au 0497378480.
+En cas d'absence merci de me laisser un message.
+Dentiste Delsemme. 
+(Ne répondez pas à ce SMS. SVP utilisez uniquement le numéro fourni ci-dessus)</french>

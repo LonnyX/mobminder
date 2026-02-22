@@ -1,0 +1,16 @@
+<french>{dear} {gender} {lname},
+Après ces 2 mois d'attente, j'ai la joie de vous informer que votre salon Coiffeur-Barbier Jérome reprendra du service à partir de ce mardi 19 mai!
+Vous pouvez à nouveau prendre RDV en ligne via ma page:
+https://agenda.mobminder.com/jerome
+.
+Attention, différentes mesures ont été mises en place au salon. Veuillez svp les consulter sur ma page de prise de RDV en ligne.
+Prenez bien soin de vous et au plaisir de vous voir très prochainement!
+.
+Jérome,
+Coiffeur-Barbier Jérome
+Rue Grégoire Nélis, 18a
+1370 Jodoigne  
+0497647260
+.
+(SVP ne répondez pas à ce SMS. Utilisez la prise de RDV en ligne ou le numéro ci-dessus)
+</french>

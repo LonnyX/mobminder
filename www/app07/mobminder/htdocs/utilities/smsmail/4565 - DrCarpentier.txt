@@ -1,0 +1,13 @@
+<french>{dear} {gender} {lname},
+
+Je vous informe qu'à partir du 1er Juillet 2023, le numéro de téléphone fixe sera supprimé et remplacé par le +32488288218
+Je vous invite à enregistrer ce NOUVEAU NUMERO.
+
+Merci.
+
+Dr Carpentier Nancy
+Médecin nutritionniste
+77 rue du Moulin, 7100 La Louvière
++32488288218
+
+(ATTENTION: Ce sms est envoyé depuis un autre numéro, que vous ne devez pas enregistrer)</french>

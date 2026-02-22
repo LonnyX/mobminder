@@ -1,0 +1,9 @@
+<french>{dear} {gender} {lname},
+Toute l'équipe de Flexa Bruxelles est heureuse de vous annoncer la réouverture du magasin.
+Nous sommes impatients de vous retrouver.
+Par facilité, les visites au magasin se font préférentiellement sur RDV. 
+Vous pouvez choisir un créneau horaire sur www.flexa.be ou par téléphone au 023462643
+Au plaisir de vous revoir,
+L'équipe Flexa,
+.
+(SVP ne répondez pas à ce SMS. Utilisez uniquement le numéro 023462643 )</french>

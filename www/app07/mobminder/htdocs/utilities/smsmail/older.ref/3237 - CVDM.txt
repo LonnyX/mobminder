@@ -1,0 +1,10 @@
+<english>{dear} {gender} {lname},
+Dr Van De Merckt and her team whish you 🌠 wonderfull end of year celebrations 🥂🎉
+Follow this link to our wishes ward ❄:
+https://be.mobminder.com/CVDM2020.jpg
+🎀 Cabinet d'imagerie CVDM ✨</english>
+<french>{dear} {gender} {lname},
+Le Dr Van De Merckt et son équipe vous souhaitent de 🌠 belles fêtes de fin d'année 🥂🎉
+Notre carte de voeux sous ce lien ❄:
+https://be.mobminder.com/CVDM2020.jpg
+🎀 Cabinet d'imagerie CVDM ✨</french>

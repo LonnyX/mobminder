@@ -1,0 +1,35 @@
+
+
+/* h4d Intériale */
+
+body.c3660 { background: white; color:rgb(105,108,124); }
+body.c3660 h1 { color: #1672C9; margin: 0 0 1em 0; }
+body.c3660 h2 { color:inherit; }
+body.c3660 .action { background: #F8A523; color:#1672C9;; } /* this is the orange on buttons */
+body.c3660 .e-button { background-color:#F8A523; font-weight:bold; color:#1672C9;; }
+body.c3660 section.s-h1 { }
+
+body.c3660 section.s-img { margin:0; }
+	body.c3660 section.s-img div { padding:0; }
+	
+body.c3660 section.s-info { }
+body.c3660 div.fa-info-circle { display:none !important; }
+
+body.c3660 section.s-action { background: rgb(242,242,242) }
+body.c3660 section.s-directions { }
+body.c3660 section.s-footer { }
+
+
+body.c3660 textarea.validNOK, body.c3660 input.validNOK { 
+    box-shadow: none !important; 
+	border:			1px solid rgba(245, 65, 35, 0.9) !important;  
+}
+
+body.c3660 #eresa_ampm_pm_ui_32 { display:none !important } /* do not display choices for sunday and saturday */
+body.c3660 #eresa_ampm_pm_ui_64 { display:none !important }
+
+body.c3660 #eresa_ampm_am_5_wp { display:none !important }
+body.c3660 #eresa_ampm_am_6_wp { display:none !important }
+
+body.c3660 #eresa_ampm_pm_5_wp { display:none !important }
+body.c3660 #eresa_ampm_pm_6_wp { display:none !important }

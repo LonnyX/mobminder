@@ -1,0 +1,11 @@
+<french>{dear} {gender} {lname},
+la reprise des activités de pédicurie médicale à été annoncée au dernier comité de concertation.
+Si vous souhaitez prendre RDV, nous vous invitons à contacter votre pédicure habituelle:
+.
+📲 Fabienne au 0479399217
+🌏 agenda.mobminder.com/depassefabienne
+.
+📲 Katia au 0485585020
+🌏 agenda.mobminder.com/vanreymenantkatia
+</french>
+

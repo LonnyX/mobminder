@@ -1,0 +1,30 @@
+
+
+Testing on API happens here
+
+be.mobminder.com/synctest.php
+
+
+
+Initialization happens through these links:
+
+be.mobminder.com/sync/init/visitors.php
+be.mobminder.com/sync/init/appointments.php
+be.mobminder.com/sync/init/resources.php
+
+Mandatory post parameters: login, passw
+Mandatory post file: whatevername.csv
+ 
+
+
+Further synchronization through those links:
+
+be.mobminder.com/sync/visitors.php
+be.mobminder.com/sync/appointments.php
+be.mobminder.com/sync/acknowledge.php
+
+
+
+
+
+

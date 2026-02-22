@@ -1,0 +1,164 @@
+
+Q1 : How to create a sub-domain on mobminder.com
+
+
+Summary:
+
+We are going to work on 3 spots for this objective: adding vical as sub-domain of mobminder: vical.mobminder.com
+
+1/ Add a folder under /var/www/mobminder/
+2/ Add a vhost in /etc/apache2/sites-available
+3/ Define your domain in AWS console (DNS)
+
+
+Step 1: DNS  
+===========
+
+	define your domain in AWS console / route53: vical.mobminder.com
+
+	https://console.aws.amazon.com/
+	
+	Services (upper left) / Networking & Content Delivery / Route 53
+	Create record set sousdomaine.mobminder.com  / A-IPv4 address  / Value : 5.196.168.140  (adresse ip failover du serveur si elle n'a pas changé :)
+
+
+
+
+
+
+Step 2: Add a folder under /var/www/mobminder/  (usefull only when url rewriting is needed)  
+==============================================
+
+(this is not absolutely necessary, only if you want to point to the non common folder)
+
+	example for vical.mobminder.com
+	
+	make folder /var/www/mobminder/vical
+	# cd /var/www/mobminder
+	# mkdir vical
+	
+	create (or copy from another vhost) .htaccess that routes to appropriate .php script
+
+	!! if you modify .htaccess, be aware that this hidden file DOES NOT COPY to /var/www/mobminder/htdocs/.htaccess by executing ./pip.sh  <= you need to vi it !
+	
+	chown -R www-data:www-data /var/www/mobminder/smart
+
+	Le chown c’est pour que le repertoire appartienne a l’utilisateur web et pas a root.
+	Si t’oublies ca le serveur web ne pourra pas ecrire dans les dossiers ca peut causer probleme.
+
+
+
+Step 3: Apache config
+=====================
+
+	- add a vhost in /etc/apache2/sites-available    <= tells server what script to call, where to log, etc...
+	- execute command 
+	
+	# cd /etc/apache2/sites-available
+	# a2ensite smart.mobminder.conf
+	
+	the vhost must end with .conf
+	( note: ça ne fonctionne que si on est dans le dossier sites-available, avec la commande par exemple #a2ensite touch.app04.conf)
+
+	=> reload apache config: 
+	# service apache2 reload
+
+	Si le reload d’apache plante apres que tu aies fait un a2ensite monNouveauVhost.conf,
+	Tu peux annuler en faisant : a2dissite monNouveauVhost.conf
+	Ensuite tu reload apache.
+
+
+Note:
+	
+	N01:ical.mobminder.com and vical.mobminder.com can handle both ssl and not ssl connexions, that is on purpose.
+	
+	
+	NO2: How to force http to redirect automatically to httpS
+
+	port 80 = non SSL
+	port 443 = SSL
+
+	
+	The file located in /etc/apache2/site-available becomes like this:
+	
+	#more smart.mobminder.conf
+	
+	<VirtualHost *:80>
+			ServerAdmin webmaster-noreply@mobminder.com
+			ServerName smart.mobminder.com
+			Redirect / https://smart.mobminder.com/
+	</VirtualHost>
+	<VirtualHost *:443>
+
+	 ServerAdmin webmaster-noreply@mobminder.com
+			ServerName smart.mobminder.com
+
+			DocumentRoot /var/www/mobminder/smart  # <= leads to url Re-Writing
+
+			<Directory /var/www/mobminder/smart>
+					Options Indexes FollowSymLinks MultiViews
+					AllowOverride All
+					Order allow,deny
+					allow from all
+			</Directory>
+
+			ErrorLog ${APACHE_LOG_DIR}/smart.mobminder.com-error.log
+
+			# Possible values include: debug, info, notice, warn, error, crit,
+			# alert, emerg.
+			LogLevel warn
+
+			CustomLog ${APACHE_LOG_DIR}/smart.mobminder.com-access.log combined
+
+	SSLEngine on
+			SSLProtocol all
+			SSLCertificateFile /etc/apache2/ssl/17octobercertif.cer
+			SSLCertificateKeyFile /etc/apache2/ssl/privateKey.key
+			SSLCACertificateFile /etc/apache2/ssl/17octoberintermediate.cer
+
+	</VirtualHost>
+
+
+	#more api.mobminder.conf
+	
+	<VirtualHost *:80>
+			ServerAdmin webmaster-noreply@mobminder.com
+			ServerName api.mobminder.com
+			Redirect / https://api.mobminder.com/    # <= this leading slach is important for url re-writing
+	</VirtualHost>
+	<VirtualHost *:443>
+
+	 ServerAdmin webmaster-noreply@mobminder.com
+			ServerName api.mobminder.com
+
+			DocumentRoot /var/www/mobminder/htdocs/api
+
+			<Directory /var/www/mobminder/htdocs/>
+					# ABSOLUTELY MANDATORY as .htaccess MUST be ignored in the parent Directory
+					AllowOverride None
+			</Directory>
+			<Directory /var/www/mobminder/htdocs/api/>
+					Options Indexes FollowSymLinks MultiViews
+					AllowOverride All
+					Order allow,deny
+					allow from all
+			</Directory>
+
+			ErrorLog ${APACHE_LOG_DIR}/api.mobminder.com-error.log
+
+			# Possible values include: debug, info, notice, warn, error, crit,
+			# alert, emerg.
+			LogLevel warn
+
+			CustomLog ${APACHE_LOG_DIR}/api.mobminder.com-access.log combined
+
+	SSLEngine on
+			SSLProtocol all
+			SSLCertificateFile /etc/apache2/ssl/wildCardCertif.crt
+			SSLCertificateKeyFile /etc/apache2/ssl/privateKey.key
+			SSLCACertificateFile /etc/apache2/ssl/IntermediateCA.crt
+
+	</VirtualHost>
+
+
+

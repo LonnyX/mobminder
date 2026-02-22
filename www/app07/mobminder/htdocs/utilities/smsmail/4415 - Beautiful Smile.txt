@@ -1,0 +1,9 @@
+<french>{dear} {gender} {lname},
+Le cabinet dentaire Beautiful Smile est heureux de vous informer de sa réouverture.
+Toutes les mesures de sécurité nécessaires sont mises en oeuvre pour assurer votre sécurité et la nôtre.
+Vous pouvez nous contacter au 027723295 pour prendre RDV.
+Restons positifs et vigilants!
+Dentistes Zein,
+Cabinet dentaire Beautiful Smile
+.
+(SVP ne répondez pas à ce SMS. Utilisez uniquement le numéro fourni ci-dessus)</french>

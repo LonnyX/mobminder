@@ -1,0 +1,8 @@
+<french>{dear} {gender} {lname},
+je suis heureuse de vous annoncer la réouverture de l'institut ce lundi 18 mai.
+Vous pouvez prendre vos rendez-vous en ligne sur agenda.mobminder.com/pure 
+A très bientôt!
+Xtine PURE Institut de Beauté
+0485757571
+(SVP ne répondez pas à ce SMS. Utilisez la prise de RDV en ligne ou le numéro ci-dessus)
+</french>

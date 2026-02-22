@@ -1,0 +1,99 @@
+
+mobminder server crons update:
+
+1/ go su
+2/ cd /etc/cron.d
+3/ open mobminder file and add your stuff
+4/ there is no service or anything to restart, if the syntax of your cron.d file is correct, all runs fine
+
+
+To copy the mobminder from the baseline upload in htdocs, to the proper location, type:
+
+	cp /home/pascal/to_production/cron/mobminder /etc/cron.d
+
+or
+
+	cp /home/pascal/to_production/smsgateaway/cron/smsgateaway /etc/cron.d
+
+
+( complete doc on http://linuxguruz.wordpress.com/2008/10/29/crontab-at-a-glance/ )
+
+
+Your cron job looks like as follows:
+1 2 3 4 5 user /path/to/command arg1 arg2
+
+Where,
+
+1: Minute (0-59)
+2: Hours (0-23)
+3: Day (1-31)
+4: Month (0-12 [12 == December])
+5: Day of the week(0-7 [7 or 0 == sunday])
+/path/to/command – Script or command name to schedule
+Same above five fields structure can be easily remembered with following diagram:
+
+* * * * * command to be executed
+- – - – -
+| | | | |
+| | | | —– Day of week (0 – 7) (Sunday=0 or 7)
+| | | ——- Month (1 – 12)
+| | ——— Day of month (1 – 31)
+| ———– Hour (0 – 23)
+————- Minute (0 – 59)Example(s)
+
+If you wished to have a script named /root/backup.sh run every day at 3am, my crontab entry would look like as follows:
+(a) Install your cronjob:# crontab -e(b)Append following entry:0 3 * * * /root/backup.shRun five minutes after midnight, every day:5 0 * * * /path/to/commandRun at 2:15pm on the first of every month:15 14 1 * * /path/to/commandRun at 10 pm on weekdays: 0 22 * * 1-5 /path/to/command Run 23 minutes after midnigbt, 2am, 4am …, everyday:23 0-23/2 * * * /path/to/commandRun at 5 after 4 every sunday:5 4 * * sun /path/to/command
+
+
+Use of operators
+An operator allows you to specifying multiple values in a field. There are three operators:
+
+The asterisk (*) : This operator specifies all possible values for a field. For example, an asterisk in the hour time field would be equivalent to every hour or an asterisk in the month field would be equivalent to every month.
+The comma (,) : This operator specifies a list of values, for example: “1,5,10,15,20, 25?.
+The dash (-) : This operator specifies a range of values, for example: “5-15? days , which is equivalent to typing “5,6,7,8,9,….,13,14,15? using the comma operator.
+How do I disabling Email output?
+By default the output of a command or a script (if any produced), will be email to your local email account. To stop receiving email output from crontab you need to append >/dev/null 2>&1. For example:0 3 * * * /root/backup.sh >/dev/null 2>&1To mail output to particluer email account let us say vivek@nixcraft.in you need to define MAILTO variable to your cron job:MAILTO=”vivek@nixcraft.in”
+0 3 * * * /root/backup.sh >/dev/null 2>&1
+
+Task:To list your crontab jobs use the command
+Type the following command:# crontab -l 
+
+To remove or erase all crontab jobs use the command:# crontab -r
+
+Use special string to save time
+Instead of the first five fields, you can use any one of eight special strings. It will not just save your time but it will improve readability.
+
+Special string Meaning
+
+@reboot Run once, at startup.
+
+@yearly Run once a year, “0 0 1 1 *”.
+
+@annually (same as @yearly)
+
+@monthly Run once a month, “0 0 1 * *”.
+
+@weekly Run once a week, “0 0 * * 0?.
+
+@daily Run once a day, “0 0 * * *”.
+
+@midnight (same as @daily)
+
+@hourly Run once an hour, “0 * * * *”. 
+
+
+--------------------------------------------------------------------------------------------------------------------
+
+CRON NE DEMARRE PAS ??
+
+
+If you were to add an entry to /etc/cron.d to define a system cronjob which executes with an arbitrary frequency you must be careful with permissions.
+
+You must ensure that the file has permissions 0644, otherwise the script will not run and you'll be puzzled by this mysterious error in syslog:
+
+(*system*foo) WRONG INODE INFO (/etc/cron.d/foo)
+Fixing this should be as simple as running "chmod 644 /path/to/file", but some older versions of cron will ignore such updates. Instead you must rename your cron file.
+
+Note: If you wish to remove group/other read-permissions that is fine. The important thing here is that the file must not be group/other writable. (For example a snippet owned by root:root, with permissions 664 would be ignored, even though only root may write to it.)
+
+

@@ -1,0 +1,27 @@
+
+
+body.c3968 { background: white;  }
+body.c3968 h1 {  }
+body.c3968 h2, div.e-bullet-caption { color:rgb(36,40,40); }
+body.c3968 .action {  } /* this is the orange on buttons */
+body.c3968 .e-button {  }
+body.c3968 section.s-h1 { margin:0; padding:1em 0;}
+	body.c3968 section.s-h1 h1 { color:white; margin:0; }
+
+body.c3968 section.s-img { padding:1em; margin-top:0; margin-bottom:0; padding:0; }
+	body.c3968 section.s-img div { padding:0; }
+		body.c3968 section.s-img div img { max-height:20em !important; }
+	
+body.c3968 section.s-info  { background:white; padding:0em 1em 1em 1em;  margin-top:0; }
+
+body.c3968 section.s-action {  }
+body.c3968 section.s-directions { }
+body.c3968 section.s-footer, 
+	body.c3968 section.s-h1
+	{ background:linear-gradient(to right, rgba(141,173,45,.8), rgba(141,173,45,1), rgba(141,173,45,.8));  }
+
+body.c3968 section.s-footer { margin-top:10em; } 
+	
+body.c3968 div.e-bullet, input.e-button { background:rgb(214,99,3);  }
+
+

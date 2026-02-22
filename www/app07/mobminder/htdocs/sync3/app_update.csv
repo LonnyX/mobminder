@@ -1,0 +1,6 @@
+remoteId;resources;cueIn;cueOut;visitors;note;performances;deleted;rcolor
+20000;AG1;2018/05/28 09:00;2018/05/28 09:30;11;this is a nice note;;0;0
+20001;AG1;2018/05/28 09:30;2018/05/28 10:00;11;this is a nice note;;0;child
+20002;AG1;2018/05/28 10:00;2018/05/28 10:30;11;this is a nice note;;2018/05/28 17:00;emrg
+20003;AG2;2018/05/28 10:00;2018/05/28 10:30;11;bad resource;;0;
+20004;AG1;2018/05/28 10:00;2018/05/28 10:30;9999;bad visitor;;0;

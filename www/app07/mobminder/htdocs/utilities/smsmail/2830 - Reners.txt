@@ -1,0 +1,8 @@
+<french>{dear} {gender} {lname},
+Ce message vous concerne si vous aviez un RDV dentaire annulé durant la période de confinement, et qui n'est pas encore replanifié. 
+Nous vous contacterons très prochainement pour vous fixer un nouveau rendez-vous.
+Si vous désirez nous joindre, merci d'utiliser l'email : paroliege@gmail.com
+En vous remerciant pour votre compréhension.
+L'équipe Paro Liège.
+.
+(Ne répondez pas à ce SMS, nous ne lisons pas les réponses aux SMS. Merci d'utiliser uniquement l'email fourni ci-dessus)</french>

@@ -1,0 +1,9 @@
+<french>{dear} {gender} {lname},
+Pour mieux vous servir, le cabinet dentaire Danckaers réouvrira en juin. Tous les rdv fixés ces prochains mois doivent être réorganisés.
+La prise de nouveaux rdv sera possible à partir du lundi 25/05.
+Chaque patient recevra les nouvelles consignes du cabinet par mail.
+Pour cela, pouvez- vous envoyer vos coordonnées (nom(s)+prénom(s)) à l'adresse: geraldine@danckaers.be ou joindre le secrétariat au 010246330 afin de les leur transmettre.
+Bien à vous,
+Dentiste Danckaers.
+Ne répondez pas à ce SMS, SVP utilisez uniquement le numéro ou l'adresse email ci-dessus.</french>
+

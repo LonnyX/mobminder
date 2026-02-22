@@ -1,0 +1,11 @@
+
+
+
+/* background colors */
+
+body { 	background-image: url("../logos/5301_espacemoment.jpg"); 
+		background-size: cover;
+		background-color: rgb(84,62,48);
+		background-repeat: repeat no-repeat;
+		background-position: center center;
+		background-attachment: fixed;	}

@@ -1,0 +1,8 @@
+﻿<french>{dear} {gender} {lname},
+Nous avons le plaisir de vous informer que notre cabinet rouvre ses portes à partir de ce lundi 4 mai. Par mesure de précaution, il y aura 15 minutes d'attente de notre part entre chaque patient afin que personne ne se croise et que nous nettoyons le matériel utilisé. Il vous sera également demandé de ne pas attendre dans la salle d’attente, de vous désinfecter les mains et si possible de porter un masque.
+Vous pouvez reprendre contact avec Julien au 0474392414 ou avec Sarah au 0472941505 dès que vous le souhaitez. Nous restons à votre disposition si vous avez la moindre question.
+Nous vous envoyons tout le courage possible durant cette période difficile.
+Bien à vous
+Vos kinés,
+Dasnoy Julien et Sarah Tanghe
+(Ne répondez pas à ce SMS, Svp utilisez uniquement les numéros fournis ci-dessus)</french>

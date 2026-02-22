@@ -1,0 +1,5 @@
+// This file must be used as test data for an init upon a Mobminder account having already initialized data.
+// As the file is empty, no visitors are added to the account.
+// If you use the cleanup option in combination with this file, Mobminder ends up empty of visitors.
+//
+remoteId;gender;birthday;firstname;lastname;address;city;zipCode;phone;mobile;email;note;rcolor

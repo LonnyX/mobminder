@@ -1,0 +1,10 @@
+﻿<french>{dear} {gender} {lname},
+Mesures dans le cadre de la crise COVID-19:
+1) Toute question concernant une éventuelle infection au Coronavirus doit se régler par téléphone exclusivement (087/687886). A cette fin nous sommes disponibles, y compris les week-end, avant un recours au service de garde 1733.
+2) Les consultations jugées INDISPENSABLES après contact par téléphone (087/687886) pourront avoir lieu sur RV et un seul patient à la fois.
+3) Les visites et consultations de suivis chroniques sont maintenues par téléphone. La nécessité d'un contact physique sera évaluée au cas par cas.
+4) Prenez soin de vous et des autres, MAIS n'oubliez pas que tout n'est pas coronavirus et donc restez vigilants aux autres symptomes également. Contactez nous au moindre doute.
+Dr Goffard et Moray
+TEL 087/687886
+Ne répondez pas à ce SMS (nous ne pouvons pas lire les réponses à ce SMS)</french>
+

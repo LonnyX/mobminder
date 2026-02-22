@@ -1,0 +1,167 @@
+
+/* fonts for credentials readability */
+
+@font-face { font-family: 'consola'; 	src: url('./text/consola.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'consola-bold'; 	src: url('./text/consolab.ttf') format('truetype'); font-weight: bold; font-style: normal; }
+
+
+.f-consola 	{ font: 16px/1.2 consola; text-rendering: auto; font-smoothing: antialiased; }
+.f-consola-bold { font: 16px/1.2 consola-bold; text-rendering: auto; font-smoothing: antialiased; }
+
+
+
+/* fonts for readable text */
+
+@font-face { font-family: 'calibri'; 	src: url('./text/calibri2024.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'calibri-bold'; 	src: url('./text/calibri-bold.ttf') format('truetype'); font-weight: bold; font-style: normal; }
+@font-face { font-family: 'candara'; 	src: url('./text/candara.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+/*@font-face { font-family: 'comic'; 		src: url('./text/comic.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+@font-face { font-family: 'corbel'; 	src: url('./text/corbel.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+/*@font-face { font-family: 'corsiva'; 	src: url('./text/corsiva.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'eras'; 		src: url('./text/eras.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+@font-face { font-family: 'gil'; 		src: url('./text/gil.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'gothic'; 	src: url('./text/gothic.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'goudy'; 		src: url('./text/goudy.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'maiandra'; 	src: url('./text/maiandra.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+/*@font-face { font-family: 'papyrus'; 	src: url('./text/papyrus.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'perpetua'; 	src: url('./text/perpetua.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'rockwell'; 	src: url('./text/rockwell.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+@font-face { font-family: 'segoe'; 		src: url('./text/segoe.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+/*@font-face { font-family: 'times'; 		src: url('./text/times.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'tunga'; 		src: url('./text/tunga.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+@font-face { font-family: 'montserratlight'; font-weight: normal; src: url('./text/montserratlight.ttf') format('truetype'); }
+@font-face { font-family: 'montserratbold'; font-weight: bold; src: url('./text/montserratbold.ttf') format('truetype'); }
+
+
+    /*new fonts added in 2022 for text*/
+@font-face { font-family: 'roboto'; src: url('./text/roboto.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'opensans'; src: url('./text/opensans.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'lato'; src: url('./text/lato.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'raleway'; src: url('./text/raleway.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'nunito'; src: url('./text/nunito.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'oxygen'; src: url('./text/oxygen.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'quicksand'; src: url('./text/quicksand.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'dosis'; src: url('./text/dosis.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+
+
+.f-calibri 	{ font: 20px/1.3 calibri;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-calibri-bold { font: 20px/1.3 calibri-bold;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-candara 	{ font: 19px/1.3 candara;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+/*.f-comic 	{ font: 19px/1.2 comic;  		text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+.f-corbel 	{ font: 19px/1.3 corbel;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+/*.f-corsiva 	{ font: 24px/1.1 corsiva;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-eras 	{ font: 20px/1.1 eras;  		text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+.f-gil 		{ font: 19px/1.3 gil;  		text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-gothic 	{ font: 17px/1.4 gothic;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-goudy 	{ font: 20px/1.2 goudy;  		text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-maiandra { font: 18px/1.4 maiandra;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+/*.f-papyrus 	{ font: 24px/1.1 papyrus;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-perpetua { font: 25px/1 perpetua;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-rockwell { font: 20px/1.1 rockwell;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+.f-segoe 	{ font: 18px/1.3 segoe;  		text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+/*.f-times 	{ font: 22px/1.1 times;  		text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-tunga 	{ font: 22px/1 tunga;  		text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+.f-montserratlight { font: 16.5px/1.4 montserratlight; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-montserratbold { font: 16.5px/1.4 montserratbold; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+    /*new fonts added in 2022 for text*/
+.f-roboto 	{ font: 17px/1.4 roboto;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-opensans 	{ font: 17px/1.4 opensans;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-lato 	{ font: 17px/1.4 lato;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-raleway 	{ font: 17px/1.4 raleway;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-nunito 	{ font: 17px/1.4 nunito;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-oxygen 	{ font: 17px/1.4 oxygen;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-quicksand 	{ font: 17.5px/1.3 quicksand;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-dosis 	{ font: 20px/1.3 dosis;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+.f-calibri-setsize { font:34px/.6 calibri-bold; text-rendering:auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing:grayscale; }
+
+
+/* fonts for titles */
+
+/*@font-face { font-family: 'harlow'; 		src: url('./title/harlow.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+@font-face { font-family: 'hightower'; 		src: url('./title/hightower.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'imprint'; 		src: url('./title/imprint.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+/*@font-face { font-family: 'grouser'; 		src: url('./title/grouser.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+@font-face { font-family: 'fedservice'; 	src: url('./title/fedservice.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+/*@font-face { font-family: 'staravenue'; 	src: url('./title/staravenue.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'orbitron'; 		src: url('./title/orbitron.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'sportsnight'; 	src: url('./title/sportsnight.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+@font-face { font-family: 'highland'; 		src: url('./title/highland.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'rocko'; 			src: url('./title/rocko.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+/*@font-face { font-family: 'normal'; 		src: url('./title/normal.otf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'kingthings'; 	src: url('./title/kingthings.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'airstrike'; 		src: url('./title/airstrike.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'vinylcuts'; 		src: url('./title/vinylcuts.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'hollowpoint'; 	src: url('./title/hollowpoint.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'covertops'; 		src: url('./title/covertops.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+@font-face { font-family: 'glyceride'; 		src: url('./title/glyceride.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+/*@font-face { font-family: 'organo'; 		src: url('./title/organo.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'instruction'; 	src: url('./title/instruction.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'timesfive'; 		src: url('./title/timesfive.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'alpine'; 		src: url('./title/alpine.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'polo'; 			src: url('./title/polo.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'junegull'; 		src: url('./title/junegull.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'masque'; 		src: url('./title/masque.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'nougat'; 		src: url('./title/nougat.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+/*@font-face { font-family: 'chopin'; 		src: url('./title/chopin.ttf') format('truetype'); font-weight: normal; font-style: normal; }*/
+@font-face { font-family: 'vibes'; 			src: url('./title/vibes.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+
+
+    /*new fonts added in 2022 for title*/
+@font-face { font-family: 'montserrat'; src: url('./title/montserrat.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'oswald'; src: url('./title/oswald.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'merriweather'; src: url('./title/merriweather.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'playfairdisplay'; src: url('./title/playfairdisplay.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'ooohbaby'; src: url('./title/ooohbaby.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'courgette'; src: url('./title/courgette.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'cormorantgaramond'; src: url('./title/cormorantgaramond.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'lobster'; src: url('./title/lobster.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'josefinsans'; src: url('./title/josefinsans.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'comfortaa'; src: url('./title/comfortaa.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'dancingscript'; src: url('./title/dancingscript.ttf') format('truetype'); font-weight: normal; font-style: normal; }
+
+
+
+/*.f-airstrike 	{ font: 16.0pt/1 airstrike;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-alpine 		{ font: 18.0pt/1 alpine;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-chopin 		{ font: 22.0pt/1 chopin;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-covertops 	{ font: 16.0pt/1 covertops;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+.f-fedservice 	{ font: 16px/1 fedservice;  text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-glyceride 	{ font: 18px/1 glyceride;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+/*.f-grouser 		{ font: 14.0pt/1 grouser;  	letter-spacing:2pt; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-harlow 		{ font: 17.0pt/1 harlow;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+.f-highland 	{ font: 16px/1 highland;	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-hightower 	{ font: 20px/1 hightower; 	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+/*.f-hollowpoint 	{ font: 16.0pt/1 hollowpoint; letter-spacing:2pt; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+.f-imprint 		{ font: 19px/1 imprint;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+/*.f-instruction 	{ font: 13.0pt/1 instruction; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-junegull 	{ font: 16.0pt/1 junegull;	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+
+/*.f-kingthings 	{ font: 18px/1 kingthings;  text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-masque 		{ font: 11.0pt/1 masque;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-normal 		{ font:  9.0pt/1.3 normal; letter-spacing:1pt;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-nougat 		{ font: 15.0pt/1 nougat; letter-spacing:1pt;   	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-orbitron 	{ font: 14.0pt/1 orbitron;	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-organo 		{ font: 13.0pt/1 organo;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-polo 		{ font: 17.0pt/1 polo;  		text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+.f-rocko 		{ font: 17px/1 rocko;  		text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+/*.f-sportsnight 	{ font: 14.0pt/1 sportsnight; text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-staravenue 	{ font: 14.0pt/1 staravenue;  text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+/*.f-timesfive 	{ font: 14.5pt/1 timesfive;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+.f-vibes 		{ font: 25px/1 vibes;  		text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+/*.f-vinylcuts 	{ font: 15.0pt/1 vinylcuts; letter-spacing:1pt;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }*/
+
+
+    /*new fonts added in 2022 for title*/
+.f-montserrat 	{ font: 16px/1.4 montserrat;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-oswald 	{ font: 17px/1.4 oswald;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-merriweather 	{ font: 16px/1.4 merriweather;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-playfairdisplay 	{ font: 18px/1.4 playfairdisplay;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-ooohbaby 	{ font: 22px/1.4 ooohbaby;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-courgette 	{ font: 18px/1.4 courgette;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-cormorantgaramond 	{ font: 20px/1.3 cormorantgaramond;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-lobster 	{ font: 19px/1.3 lobster;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-josefinsans 	{ font: 19px/1.3 josefinsans;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-comfortaa 	{ font: 16px/1.3 comfortaa;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.f-dancingscript 	{ font: 22px/1.3 dancingscript;  	text-rendering: auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }

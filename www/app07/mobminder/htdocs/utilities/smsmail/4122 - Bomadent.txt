@@ -1,0 +1,11 @@
+<french>{dear} {gender} {lname},
+
+Attention, information importante: Le Cabinet dentaire Lucido (anciennement Bomadent) déménage le lundi 4 mars à une nouvelle adresse: 42 rue Michel Botte, 1421 Ophain. 
+Parking sur place.
+
+Prise de RDV via
+www.cabinet-lucido.be
+ou
+023840469
+
+Dentiste LUCIDO Marine</french>

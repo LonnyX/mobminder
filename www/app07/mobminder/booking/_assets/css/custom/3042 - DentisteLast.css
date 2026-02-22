@@ -1,0 +1,57 @@
+
+/* 3863 - Osteo Depeauw */
+
+
+
+
+/* background colors */
+
+body { background:#B4D397;  }
+
+section.s-h1 div.container
+	, section.s-footer {  background:rgb(130,192,55); }
+
+section.s-info div.container 
+	, section.s-img div.container 
+	, section.s-directions div.container 
+	, section.s-action div.container
+	, section.s-desk div.container { background:white; }
+	
+div.e-bullet
+	, input.e-button { background:rgb(83,158,67); color: rgb(236,240,241); }
+
+div.action { background:rgb(120,51,134); }
+	
+	
+	
+	
+/* font colors */
+	
+h1 { color:white; }
+h2, div.container { color:rgb(100,100,100); }
+div.e-bullet-caption { color:white;  }
+div.action {  color: rgb(236,240,241);  }
+section.s-footer div.container { color:silver; }
+
+
+/* border radius */
+
+section.s-h1 div.container { border-radius:1em 1em 0 0; }
+section.s-directions div.container
+	, section.s-desk div.container { border-radius:0 0 1em 1em; }
+
+
+
+/* section margins adjustment */
+
+section.s-h1 {  margin-top:2em; }
+section.s-info {  margin-top:1.5em; }
+section.s-directions { margin-top:1.5em; }
+
+
+
+/* miscellaneous */
+
+section.s-img div.container img { max-height:200px !important; }
+	
+

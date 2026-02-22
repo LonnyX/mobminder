@@ -1,0 +1,19 @@
+﻿<french>{dear} {gender} {lname},
+✨ Cap sur 2021 ✨ 
+De la part de toute l'équipe du Centre Médical Albert, nous vous souhaitons une belle et heureuse année 2021 pleine d'énergie et de beaux projets.
+Nous profitons de ces bons vœux pour vous remercier sincèrement de votre fidélité tout au long de cette année compliquée en raison du contexte sanitaire Covid-19.
+Ensemble nous allons surmonter cette crise.
+Merci et bravo pour vos efforts!
+.
+Centre Médical Albert
+02 345 48 21
+www.cmedalbert.be</french>
+
+
+
+
+
+
+
+
+

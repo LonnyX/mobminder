@@ -1,0 +1,20 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+# Rewriting on smart.mobminder.com was disabled 2020-Sept when we re-used the subdomain for the definitive smart app (App Store and Play Store) 
+#
+# any equest like smart.mobminder.com/3044/8612/10999
+# will be turned into https://smart/mobminder.com/smart.php?aid=3044&lid=8612&kid=10999
+#
+# RewriteCond %{HTTP_HOST} smart.mobminder.com
+# RewriteRule   ^([0-9]{4,})\/([0-9]{4,})\/?([0-9]{0,})?$   https://smart.mobminder.com/smart.php?aid=$1&lid=$2&kid=$3 [NC,L]
+
+# any request with no defined path will turn into https://smart.mobminder.com/smart/install.php
+#
+# RewriteCond %{HTTP_HOST} smart.mobminder.com
+# RewriteRule ^$ https://smart.mobminder.com/smart/install.php
+
+# le premier groupe contient minimum 4 chiffres
+# le second groupe contient minimum 4 chiffres
+# le troisieme groupe est optionnel
+

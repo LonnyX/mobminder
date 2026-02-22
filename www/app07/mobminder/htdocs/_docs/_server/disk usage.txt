@@ -1,0 +1,60 @@
+
+Lister les partitions et le remplissage de chaque partition
+
+# df -h
+
+
+Lister tous les sous-dossier avec leurs taille et la somme de l'espace disque consommé :
+
+# du -h | sort -h
+
+
+Lister tous les dossier plus ancien que 200 jours et qui commencent par ./.drop* :
+
+# find /tmp/.drop* -type d -mtime +200   // dossiers
+# find /tmp/.drop* -type f -mtime +200   // fichiers
+
+
+
+Effacer tous les dossier plus ancien que 200 jours :
+
+# find /tmp/.drop* -type d -mtime +200 -exec rm -rd {} \;
+
+ps -aux | grep
+
+DROPBOX : 
+Fait les copies de fichiers dans la partition /home/dropbox
+
+Comment estimer l'espace disque consommé par Dropbox :
+
+# cd /home/dropbox
+# ls -al
+# du -h | sort -h
+
+Comment lister les dossiers à exclure du backup dropbox :
+
+# su dropbox  // permet d'avoir accès à l'exécution de dropbox.py
+# python dropbox.py exclude list  // liste les dossiers exclus du dropbox
+
+
+Le script qui tourne à 2h et copiait les fichiers vers /home/dropbox/app04_backup se trouve dans /root/scripts/
+Et spécialement dans /crons/backup-database-toDropBox.sh
+
+Ce dimanche 07 Jun 2020 on a stoppé la copie des fichiers vers /home/Dropbox/app04_backup, parce que la partition /home était full. 
+Dorénavant, la copie se fait vers un dossier racine /app04_backup et j'irai pécher les binaire dans ce dossier, avec FileZilla
+
+Sur app03, on a laisser fonctionner tel qu'elle provisoirement. 
+
+P.
+
+
+
+
+
+
+
+
+
+
+
+

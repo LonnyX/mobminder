@@ -1,0 +1,21 @@
+
+div.zi-modal-inset::before { /* this is the white background that hides the pattern applied on zi-modal-outset */
+	transition: box-shadow 400ms ease-out; /* timing at removal*/
+	box-shadow: 0px 0px 40px 40px white; /* the pattern area is partially blurred, this is the no-pattern state */
+	
+	pointer-events:none; background:white border-box;
+	content:""; position:absolute;
+	top:200px; bottom:11px; left:11px; right:11px;
+	
+	border-radius: .1em 2.1em .1em 12em; /* this sets the inner shape of the modal */
+	border:11px solid transparent; /* see (*mb01*) */
+	z-index:-1;
+}
+
+
+div.zi-modal-inset.pattern-on::before { /* this is the white background that hides the pattern applied on zi-modal-outset */
+	box-shadow: 0px 0px 0px 0px white; /* removes the blur */
+	transition: box-shadow 1000ms cubic-bezier(0,1,0,1); /* timing at setup */
+}
+
+

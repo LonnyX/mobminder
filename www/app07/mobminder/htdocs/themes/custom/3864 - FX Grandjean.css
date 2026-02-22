@@ -1,0 +1,32 @@
+
+/* 3864 - Osteo FX grandjean - p=sarttilman */
+
+body.c3864 { background:white;  }
+body.c3864 h1 { color:grey; }
+body.c3864 h2, div.container { color:rgb(100,100,100); }
+body.c3864 .action {  } /* this is the orange on buttons */
+body.c3864 .e-button {  }
+body.c3864 section.s-h1 {  margin-bottom:0; background:rgb(222,222,222); }
+	body.c3864 section.s-h1 h1 { margin:0 auto; padding:1em 0; max-width:900px; }
+
+body.c3864 section.s-img {  padding:0em; margin-top:1em; margin-bottom:0; }
+	body.c3864 section.s-img div { margin:0 auto; padding:0; background:white; max-width:900px; }
+		body.c3864 section.s-img div img { max-height:200px !important; }
+	
+body.c3864 section.s-info  { padding:0em; margin:0; margin-bottom:0; margin-top:1em; }
+	body.c3864 section.s-info div.container { margin:0 auto; padding:1em 0; background:white; max-width:900px;  }
+
+body.c3864 section.s-action { padding:0em; margin:0; margin-top:0; margin-bottom:0; }
+	body.c3864 section.s-action div.container { margin:0 auto; padding-top:2em; background:white; max-width:900px;  }
+	
+body.c3864 section.s-directions { background:rgb(222,222,222); padding:0em; margin:0; margin-top:1em; margin-bottom:0; }
+	body.c3864 section.s-directions div.container { margin:0 auto; padding-top:1em; color:grey; max-width:900px; }
+	body.c3864 section.s-directions div.container article { padding-left:2em; padding-right:2em;  }
+
+
+body.c3864 section.s-footer { background:white; margin-top:0em;  /* display:none; */ }
+	body.c3864 section.s-footer div.container { color:silver; }
+
+body.c3864 div.action, body.c3864 input.e-button { background:rgb(173,198,107);  }
+body.c3864 div.e-bullet { background:rgb(100,100,100);  }
+body.c3864 div.e-bullet-caption, body.c3864 div.action, body.c3864 input.e-button { color:white; }

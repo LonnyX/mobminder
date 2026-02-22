@@ -1,0 +1,22 @@
+<french>Bonjour {gender} {lname},
+
+Veuillez noter que votre clinique Dentalis déménage à partir du 2/11/2021.
+Nouvelle adresse: 4 av. des Grenadiers, 1050 Ixelles
+
+Nous restons à votre disposition au 026408678 pour toute question ou demande de rdv.
+
+Bonne journée !
+
+Clinique Dentalis
+(Contact uniquement au 026408678)</french>
+<english>Hello {gender} {lname},
+
+Please note that Dentalis clinic will move on Nov. 2nd 2021.
+New address: 4 avenue des Grenadiers, 1050 Ixelles
+
+Call 026408678 for any question or appointment request.
+
+Have a nice day!
+
+Dentalis Clinic
+(Please use only 026408678 for any contact)</english>

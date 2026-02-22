@@ -1,0 +1,28 @@
+
+
+body { background: white; color:rgb(66,66,80); }
+h1 {  }
+h2, div.e-bullet-caption {  color:rgb(66,66,80); }
+.action {  } /* this is the orange on buttons */
+.e-button {  }
+section.s-h1 { margin:0; padding:1em 0;}
+ section.s-h1 h1 { color:white; margin:0; }
+
+section.s-img { padding:1em; margin-top:3em; margin-bottom:1em; padding:0; }
+ section.s-img div { padding:0; }
+	 section.s-img div img { max-height:20em !important; }
+
+section.s-info  { background:white; padding:0em 1em 1em 1em;  margin-top:0; }
+
+section.s-action {  }
+section.s-directions { }
+section.s-footer, 
+ section.s-h1
+{ background:black; /*linear-gradient(to right, rgba(63,165,178,.8), rgba(63,165,178,1), rgba(63,165,178,.8));*/  }
+
+section.s-footer { margin-top:10em; } 
+
+div.e-bullet { background:black; }
+input.e-button, div.action { background:rgb(63,165,178);  }
+
+

@@ -1,0 +1,12 @@
+<french>{dear} {gender} {lname},
+.
+Après plusieurs mois de transformations, j'ai le plaisir de vous annoncer l'ouverture de mon tout nouvel Institut DS à Petit-Enghien. 
+Les premiers rendez-vous disponibles sont le mardi 23 mars.
+Vous pouvez dès lors reprendre rendez-vous au 0471766954.
+Au plaisir de vous retrouver.
+.
+Séverine, INSTITUT DS 
+Rue Brigade Piron 29,
+7850 Petit-Enghien 
+.
+(Pour tout contact, prière de ne pas répondre sur ce numéro mais d'utiliser le 0471766954)</french>

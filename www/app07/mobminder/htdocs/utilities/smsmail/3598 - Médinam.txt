@@ -1,0 +1,8 @@
+﻿<french>{dear} {gender} {lname},
+Ce sms a pour but de vous informer de nouvelles règles en matière de consultation au cabinet Médinam. Celles-ci se feront dorénavant uniquement sur RDV.
+La prise de RDV en ligne n'est jusqu'à nouvel ordre plus possible.
+Lors de votre RDV au cabinet, le port du masque est obligatoire (foulard ou bandana ok). Nous vous demandons de venir seul(e) ou maximum à 2 personnes et d'arriver à l'heure exacte du RDV afin de ne pas encombrer la salle d’attente.
+Pour le cabinet Médinam, rue Pepin, 15 - Namur
+Dr Francois 0495540020 
+Dr Lebon 0496524778
+(Ne répondez pas à ce SMS, Svp utilisez uniquement les numéros fournis ci-dessus)</french>

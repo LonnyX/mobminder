@@ -1,0 +1,27 @@
+
+/* 2912 ORL - Fassnacht (Burogest) */
+
+body.c2912 { background: white;  }
+body.c2912 h1 { color:rgba(17,38,17,.8); }
+body.c2912 h2, div.e-bullet-caption { color:rgb(36,40,40); }
+body.c2912 .action { background:rgb(156,199,161); color:white; } /* this is the orange on buttons */
+body.c2912 .e-button {  }
+body.c2912 section.s-h1 { margin:0; padding:1em 0;}
+	body.c2912 section.s-h1 h1 { color:white; margin:0; }
+
+body.c2912 section.s-img { padding:1em; margin-top:0; }
+	body.c2912 section.s-img div { padding:0; }
+		body.c2912 section.s-img div img { max-height:15em !important; }
+	
+body.c2912 section.s-info  { background:white; padding:1em;  }
+
+body.c2912 section.s-action {  }
+body.c2912 section.s-directions { }
+	body.c2912 section.s-h1
+	{ background:linear-gradient(to right, rgba(156,199,161,.6), rgba(156,199,161,1), rgba(156,199,161,.6));  }
+
+body.c2912 section.s-footer { margin-top:4em; } 
+	
+body.c2912 div.e-bullet, input.e-button { background:rgb(156,199,161); color:white; }
+
+

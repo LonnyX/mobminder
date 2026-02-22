@@ -1,0 +1,7 @@
+﻿<french>{dear} {gender} {lname}, 
+Nous espérons que vous vous portez bien ainsi que vos proches. C'est avec plaisir que nous vous annoncons la réouverture du centre Médical Hautbiermont.
+Afin de respecter au mieux les directives de sécurité, nous vous demandons de venir avec votre essuie, seul(e), avec un masque propre, de bien vous laver les mains au savon en arrivant et de garder vos distances de sécurité dans la salle d'attente.
+Les prises de rdvs se font dès demain lundi au 0495281963 pour l'ostéopathie et au 0478449085 pour la kiné. Pour toutes les urgences, merci d'envoyer un sms au 0495281963. 
+Au plaisir de vous revoir,
+Fabian et Taylan.
+(Ne répondez pas à ce SMS, svp utilisez uniquement les numéros fournis ci-dessus)</french>

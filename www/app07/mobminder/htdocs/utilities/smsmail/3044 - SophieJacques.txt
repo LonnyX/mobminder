@@ -1,0 +1,7 @@
+<french>{dear} {gender} {lname},
+Votre dernier rdv a été automatiquement annulé suite au COVID-19.
+Les consultations reprenant selon certaines conditions, vous pouvez dès à présent téléphoner au 027624423 entre 10h et 14h pour replanifier votre rdv, ou aller sur le site www.dentiste-jacques.be
+Toutes les mesures sanitaires de circonstance sont prises au cabinet. 
+Merci de votre compréhension, votre dentiste Sophie Jacques.
+.
+(Ne répondez pas à ce SMS, nous ne lisons pas les réponses aux SMS. Merci d'utiliser uniquement le numéro fournis ci-dessus)</french>

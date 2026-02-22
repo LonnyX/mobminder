@@ -1,0 +1,7 @@
+<french>{dear} {gender} {lname},
+Nous espérons que vous vous portez bien.
+Le cabinet dentaire a repris ses consultations suivant les recommandations des autorités scientifiques et a été adapté aux exigences des nouvelles mesures d'hygiène et de protection.
+Vous pouvez nous contacter du lundi au vendredi de 8h30 à 18 h au 087268470
+Nous vous remercions pour votre confiance.
+Cabinet Dentaire Brigitte Monville.
+(Ne répondez pas à ce SMS, nous ne lisons pas les réponses aux SMS. Merci d'utiliser uniquement le numéro fourni ci-dessus)</french>

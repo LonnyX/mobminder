@@ -1,0 +1,6 @@
+<french>{gender} {lname},
+Le Dr BUSSENS reprend les consultations en nutrition dès ce 12 mai.
+Rdv au 0385486745.
+Salle d'attente sécurisée,
+Cordialement,
+Dr B.</french>

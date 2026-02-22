@@ -1,0 +1,34 @@
+
+
+body.c3330 { background: white;  }
+body.c3330 h1 {  }
+body.c3330 h2 {  }
+body.c3330 .action {  } /* this is the orange on buttons */
+body.c3330 .e-button {  }
+body.c3330 section.s-h1 { }
+
+body.c3330 section.s-img {  }
+	body.c3330 section.s-img div { padding:0; }
+	
+body.c3330 section.s-info { }
+body.c3330 section.s-action {  }
+body.c3330 section.s-directions { }
+body.c3330 section.s-footer { display:none; }
+
+
+body.c3330 textarea.validNOK, body.c3330 input.validNOK { }
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation:landscape) /* iPhone 5 in landscape */
+{	
+	body.c3330 section.s-img div img { max-height:100px; }
+}
+
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2)  /* iPhone portrait */
+{	
+
+	body.c3330 section.s-img div { }
+	body.c3330 section.s-img div img { width:40%; }
+}

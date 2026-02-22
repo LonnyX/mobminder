@@ -1,0 +1,75 @@
+﻿
+/* global rules */
+
+body { 
+	color: /*blue;*/ #444;
+	font-family: verdana, Arial, Helvetica, sans-serif; 
+	margin:0; 
+	
+	background: white; 
+	position: relative;
+	font-size: 0.8em; 
+	overflow-y:scroll;
+	-webkit-font-smoothing:antialiased;
+	
+	width:96%; margin: 1em auto; 
+}
+
+input, textarea { 
+	color: /*red;*/ #556; /* note that the color specified for the body does not apply to input elements, hence this statement */
+	background-color: white;
+	padding-left:0.5em; 
+	
+	border-radius:3px;
+    border:1px solid rgba(0,0,0, 0.2);
+	
+	outline:none;
+    transition: box-shadow 0.25s ease-in-out;
+    -webkit-transition: box-shadow 0.25s ease-in-out;
+    -moz-transition: box-shadow 0.25s ease-in-out;
+
+	-webkit-appearance: none; /* rmoves the inner shadow on mobile devices on Safari */
+} 
+
+data, chatpeek, pars { color:blue; }
+code { color:darkgreen; font-size:120%; }
+error { color:red; font-weight:bold; }
+ 
+input:focus, textarea:focus {
+    box-shadow: 		0 0 5px rgba(20, 21, 255, 0.6);
+	border:				1px solid rgba(20, 21, 255, 0.5); 
+}
+
+textarea { font-size: 1.4em; } /* this setting makes input and textarea being equal font sized */
+input { font-size: 1.2em }
+
+
+table { border-collapse:collapse; border:1px solid silver; margin:1em 0; padding-left:1em; border-spacing:0; }
+table tr { border-bottom:1px solid silver; }
+
+table tbody tr:nth-child(odd) { background: rgba(0, 0, 0, 0.05); }
+table col:nth-child(odd) { background: rgba(0, 0, 0, 0.05); }
+table tbody th:nth-child(odd) { background: rgba(0, 0, 0, 0.05); }
+
+table tr th { border-bottom:1px solid grey; border-right:1px solid silver; padding:.6em 1em; }
+table tr td { border-right:1px solid silver; padding:.5em .5em .7em .5em; vertical-align:top; }
+table tr th.msg { width:90%; min-width:40em; }
+table tr td.hideoverflow div { height:100%; max-height:6em; overflow-y:hidden; }
+table tr td.notice { color:inherit; }
+table tr td.warning { color:orangered; }
+table tr td.error { color:deeppink; font-weight:bold; }
+table tr td.fatal { color:red; background-color:yellow; font-weight:bold; }
+table tbody tr.fatal { background-color:lemonchiffon; }
+table tbody tr:hover :not(.idle) { cursor:pointer; background-color:rgba(123, 214, 125, 0.1); } /* keep as last rule so to overload previous settings */
+
+
+
+h1 {	margin:1em 0 1em 0; font-size:2.4em; color:#85A5BF; font-weight: normal; letter-spacing:-0.04em; }
+h2 {	margin:1em 0 1em 0; font-size: 1.8em; color: #a4b357; font-weight: normal; padding-left:1em; }									
+h3 {	margin:1em 0 1em 0; font-size:1.6em; color:grey;  font-weight: bold;  padding-left:3em; }							
+h4 {	margin:1em 0 1em 0; font-size:1.4em; color:#999;  font-weight: bold;  padding-left:5em; }							
+a {	text-decoration: none; border:none; cursor:pointer; font-size:1.0em; font-weight:normal; color:steelblue; padding:0.2em 2em; }
+a:visited, a:hover { text-decoration: none;  border:none; }
+a span { color:red;  font-size:110%; }
+
+.tdnowrap {white-space: nowrap;}

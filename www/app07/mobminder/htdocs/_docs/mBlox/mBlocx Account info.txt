@@ -1,0 +1,45 @@
+---------------------------------------------
+Account Details
+---------------------------------------------
+QOS: Mobminder
+ 
+EnterpriseTxt: 22191  <= France & Belgium
+deliverer group 9480 
+Throughput: 50 msgs/serv/sec 
+
+EnterpriseTxt: 22192
+deliverer group 9482 
+
+EnterpriseTxt: 22193
+deliverer group 9483 
+
+GlobalTxt: 22190  <= rest of the world
+
+Fakeplex profile ID: 22189
+
+Currency: EUR 
+Interface: XML
+Delivery receipt callback URL: http://be.mobminder.com/feedback/mblox.php
+MO callback URL: http://be.mobminder.com/feedback/mbloxstop.php
+----------------------------------------------------------------------------------------
+ 
+User Name (case sensitive): Mobminder              
+Password (case sensitive):    KrJQEvJt            
+ 
+Interface:      XML
+
+MT Server:      http://xml15.mblox.com:8180/send
+                    http://xml16.mblox.com:8180/send
+ 
+Redhot Username:  redhot_6105    
+ 
+For secure connection please substitute port number 8180 for 8443 in the MT servers.        
+---------------------------------------------------------------------
+ *** Please keep your connection details safe for future use ***
+--------------------------------------------------------------------
+
+
+
+
+	// Contact technique Samir Benyacoub
+	// 33 1 73 44 32 14

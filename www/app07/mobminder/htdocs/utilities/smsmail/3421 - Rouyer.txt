@@ -1,0 +1,8 @@
+<french>{dear} {gender} {lname},
+Le numéro de téléphone du cabinet du Dr Rouyer a changé. 
+Il s'agit dorénavant du 010 88 03 69. 
+Merci d'en prendre note.
+Bien à vous,
+Dr Rouyer
+.
+(Ceci est un message automatique, prière de ne pas y répondre)</french>

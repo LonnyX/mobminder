@@ -1,0 +1,17 @@
+<french>Bonjour {gender} {lname},
+.
+Voici les dernières nouvelles made in MOOVIA.
+.
+Moovia évolue et vous accueille désormais exclusivement dans nos 2 centres aux Papeteries de Genval et à Vieusart (à 5 min de LLN).
+L'équipe en place est plus que motivée à vous accompagner dans votre traitement et/ou votre projet sportif.
+.
+N'hésitez pas à vous informer au 010452191 ou via info@moovia.be
+Vous pouvez également prendre rendez-vous en ligne via notre site internet moovia.be
+.
+Pour nos activités en piscine sur le site de Vieusart, contactez-nous au 0478020306 ou via piscine@moovia.be
+.
+Prenez bien soin de vous et de vos proches,
+Vos thérapeutes du mouvement.
+.
+(Prière de ne pas répondre directement à ce message mais d'utiliser les coordonnées ci-dessus)
+</french>

@@ -1,0 +1,8 @@
+<french>{dear} {gender} {lname},
+.
+Ce message pour vous informer que le Cabinet Médical Spécialisé Pnoesis, situé au No 125 avenue Paul Hymans à 1200 Woluwe-St-Lambert, va accueillir la Cardiologue -
+Rythmologue Dr Chatzikyriakou Sofia à partir du 10 juin 2021.
+Pour prendre rendez-vous avec elle, vous pouvez téléphoner au 02/8891160 ou prendre RDV en ligne via www.pnoesis.eu
+.
+Cordialement,
+Cabinet médical PNOESIS</french>

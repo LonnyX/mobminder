@@ -1,0 +1,14 @@
+[Unit]
+Description=smsbox
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 6
+ExecStart=/usr/bin/mono --debug /smsbox/bin/smsbox.exe
+Restart=always
+RestartSec=5s
+WorkingDirectory=/smsbox/bin
+
+[Install]
+WantedBy=multi-user.target
+

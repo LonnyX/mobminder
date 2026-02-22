@@ -1,0 +1,42 @@
+// This file must be used as test data imported upon a Mobminder account having an existing visitors register 
+// This file is used in combination with VisitorsSyncinitTest_Reverse_mobminder_side.csv
+// Note that VisitorsSyncinitTest_Reverse_mobminder_side.csv must be loaded on the test account before using this feil in reverse init mode
+//
+remoteId;gender;birthday;firstname;lastname;address;city;zipCode;phone;mobile;email;note;rcolor
+
+// this section has wrongly typed names with one possible match on mobile, phone, city or birthday
+//
+1000;1; 		;Thomy	;Vanhove	;;					;		;			;			;BL;should match on birthday;BL
+1001;1;			;Jerome	;Mendes		;;					;		;  			;0493000999	;;should match on mobile;
+1002;1;			;Enry	;Dännoi		;;Watermael			;		;			;			;;should match on city;
+1003;1;			;Leopol	;delaProte	;;					;		;022151982	;			;;should match on phone;
+1004;1;			;Leonie	;delProte	;;					;		;022151982	;			;leonie@proute.com;should match on email;
+1005;1;19910123 ;Le		;Yu			;;					;		;			;			;wacho@yuni.com;should match on email;
+
+
+// this section is about family match
+//
+1010;1;20010511;Koen;Adams;Kapperplaats 5;Diegem;1070;025584877;0493000009;adamsfamily@gmail.be;family with missing info at remote side;
+1011;1;20020511;Kris;Adams;Kapperplaats 5;Diegem;1070;025584877;0493000009;adamsfamily@gmail.be;family with missing info at remote side;
+1012;1;20030511;Karl;Adams;Kapperplaats 5;Diegem;1070;025584877;0493000009;adamsfamily@gmail.be;family with missing info at remote side;
+1013;1;20040511;Wout;Adams;Kapperplaats 5;Diegem;1070;025584877;0493000009;adamsfamily@gmail.be;family with missing info at remote side;
+
+// this section is about matching on full name because family name is equal and firstnames all start with 'pa'
+//
+1020;0;19710511;Paola;Van den lange Broek;Kapperplaats 5;Diegem;1070;025584877;0493000009;adamsfamily@gmail.be;family with full info;
+1021;0;19710511;Patricia;Van den lange Broek;Kapperplaats 5;Diegem;1070;025584877;0493000009;adamsfamily@gmail.be;family with full info;
+1022;0;19710511;Pâella;Van den lange Broek;Kapperplaats 5;Diegem;1070;025584877;0493000009;adamsfamily@gmail.be;family with full info;
+1023;0;19710511;Paulina;Van den lange Broek;Kapperplaats 5;Diegem;1070;025584877;0493000019;adamsfamily@gmail.be;family with full info;
+
+// this section has wrongly typed names with one possible match at mobminder side on mobile, phone, city or birthday
+//
+1030;1;19810231	;Val		;Bruny		;;					;6000;			;			;BL;should match on birthday;BL
+1031;1;19820231	;Martin		;Brulote	;;					;5800;  		;0493000222	;;should match on mobile;
+1032;1;19830231	;Véronique	;Binnoche	;;Couvin			;5640;			;			;;should match on city;
+1033;1;19840231	;Leonard	;Bôdelu		;;					;1400;071364560	;			;;should match on phone;
+
+// the following lines have no match in the target mobminder so they should be created
+//
+1050;0;19710511;Myriam;Eetveldt;rue du Brillant 26;Mouzaive;5802;02654987;0493000101;;absent in Mobminder before sync;
+1051;1;19710511;Anthöny;Eetgorius;rue du Brillant 36;Vresse-Oppem;5801;04654987;0493000102;;absent in Mobminder before sync;
+1052;1;19710511;Théo;Eetpistophy;rue du Brillant 46;Dinant;5600;05654321;0493000103;;absent in Mobminder before sync;

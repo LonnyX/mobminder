@@ -1,0 +1,12 @@
+<french>{dear} {gender} {lname},
+
+Du nouveau à la Clinique Dentaire Odontolia Rhode-St-Genèse!
+
+Notre équipe s'agrandit avec l'arrivée d'une orthodontiste et de dentistes généralistes.
+Objectif: réduire les délais et vous offrir une prise en charge complète.
+
+Rendez-vous dès maintenant au 02/5389006 ou via notre agenda en ligne:
+www.odontoliarhode.be
+
+Alex Vanhoutte & l'équipe Odontolia Rhode</french>
+

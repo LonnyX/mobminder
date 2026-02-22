@@ -1,0 +1,13 @@
+<french>{dear} {gender} {lname},
+Le déconfinement progresse et mon cabinet dentaire va reprendre progressivement son activité, mais celle-ci reste limitée par les nombreuses précautions pour prévenir tout risque de contamination.
+En une journée, je ne peux voir qu’environ la moitié des patients que je voyais avant le Covid.
+Dans ces conditions, priorité est donnée aux patients qui ont des problèmes aigus, des dents cassées, des douleurs,... et aux soins qui ont du être reportés suite au confinement et qui risquent de conduire à des situations aigues également.
+A partir du 15 juin, des rendez-vous serons fixés pour ces soins requis. 
+Les contrôles et détartrages pour les personnes qui n’ont ''aucun signal d'alerte'' seront programmés à partir du mois de septembre.
+Je vous rappelle que vous pouvez me joindre pour tout problème douloureux.
+Les conditions d’accès au cabinet vous seront rappelées par SMS.
+Merci de votre compréhension.
+Dentiste Richard Vandenbulcke.
+gsm: 0478951129
+(SVP, ne répondez pas à ce SMS, utilisez uniquement le numéro 0478951129)
+</french>

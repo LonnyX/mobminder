@@ -1,0 +1,12 @@
+<french>{dear} {gender} {lname},
+Nous vous informons que l'Institut ISAHE reprend l'ensemble de ses activités (excepté les cours collectifs) à partir du lundi 11 mai.
+Vous pouvez d'ores et déjà nous contacter afin de prendre rendez-vous, au +32491878157 ou directement avec votre thérapeute.
+Afin de garantir la sécurité de tous, nous avons mis en place quelques directives:
+- 2 personnes MAXIMUM simultanément dans la salle d’attente (1.5 m de distance)
+- Désinfection OBLIGATOIREMENT des mains en entrant et en sortant
+- Port d'une protection qui couvre le nez et la bouche (masque, écharpe, bandana)
+Nous vous remercions d'avance et sommes heureux de vous revoir très prochainement.
+Cordialement,
+ISAHE
+Ne répondez pas à ce SMS, SVP utilisez uniquement le numéro indiqué ci-dessus.</french>
+

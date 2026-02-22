@@ -1,0 +1,7 @@
+﻿<french>{dear} {gender} {lname}, 
+Suite à l'annonce du Conseil National de Sécurité, nous vous informons que le Cabinet Médical GénéAL (Dr Thomas Orban et assistants) réouvre ses portes à partir de ce lundi 4 mai.
+Tout est mis en place pour vous garantir les meilleures conditions sanitaires selon les recommandations officielles en vigueur. Vous trouverez la liste des recommandations à respecter ainsi que toutes les informations utiles sur notre site internet www.docteurorban.be
+Les consultations auront uniquement lieu sur rendez-vous, le secrétariat sera ouvert tous les jours de semaine au 023754555 de 9H30 à 13H30. Pour toute suspicion de COVID19, le cabinet reste joignable à ce même numéro 7/7. 
+A très bientôt, prenez soin de vous et sortez masqués y compris pour venir consulter ;)
+L'équipe du Centre GénéAL
+(Ne répondez pas à ce SMS, Svp utilisez uniquement le numéro fourni ci-dessus)</french>

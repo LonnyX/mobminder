@@ -1,0 +1,12 @@
+remoteId;lastname;firstname;gender;address;city;zipCode;phone;mobile;email;note;rcolor
+1000;AARTS;Clara;0;"Beekstraat 26";"Wezembeek-Oppem";1970;022151982;0493655599;;the note;BL
+1001;ABDELAZIZ;Lina;0;;;;;;;"""Tony"" is my friend";BL
+1002;"ABITBOL";Rebecca;0;73, avenue de l'Aulne;Uccle;1180;25344456;;;"his name is ""Chris""";PVPP
+1003;ACAR;Esra;0;Rue Verte 209;Schaerbeek;1030;;;;"this note as a dot; comma inside";BL
+1004;"ADAM";Clément;0;Harensesteenweg 515;Vilvoorde;1800;;;;"a multi
+lines
+note";ANY
+1005;ADAMCZYK;Zeli;0;Rue Royale, 155 H;Warcoing;7740;69847619;;jessicadereu317@hotmail.com;"a note";0
+1006;Aerts;Jennifer;0;Rue de Huleu 41;Ittre;1460;;;;"with embedded
+""double quotes"" word";BL
+1011;Vanhove;Pascal;1;Brillant 86;Brussels;1170;026621800;0493655599;p@mob.com;"";BL

@@ -1,0 +1,1177 @@
+
+
+/* Date picker, tasks, notes, chats */
+
+
+
+.top-viewport { 
+	background-color:#F3F3F3;
+	background: linear-gradient(to right, rgba(0,0,0,0.1) 0%, rgba(250,250,250,0) 30%, rgba(250,250,250,0) 70%, rgba(0,0,0,0.05) 100%);
+	border-radius: 0 0 0 2em;
+}
+.top-viewport.onscreen { 
+}
+.bottom-pane { 
+}
+
+
+
+/* P_AgendaHVL */
+
+td.agenda-rowhead  { min-width:7em; }
+
+td.v-resource-type { vertical-align:bottom; font-size: 80%; white-space:nowrap; padding:0 1em }
+div.h-resource-type { font-size:80%; text-align:center;}
+
+td.resource-name {  }
+
+
+
+/* P_SLICE */
+
+/*
+
+.rel-label { left:0.2em; top:-.7em; } 
+
+tr.h-ruler th div.ruler-dots { border-left: 1px solid rgba(0, 0, 0, 0.1); height:90%; bottom:0em; }  take care of Safari compatibility if less than 1px 
+table.ruler > tbody > tr > th div.ruler-dots { border-top: 1px solid rgba(0, 0, 0, 0.1); width:100%;  }
+
+tr.h-ruler th.slice-oclock div.ruler-dots { height:100%; }   oClock: those dots are o-clock, we make them darker 
+tr.h-ruler th.slice-oclock div.ruler-dots,
+table.ruler > tbody > tr > th.slice-oclock div.ruler-dots { border-color: rgba(0, 0, 0, 0.3); } 
+*/
+
+
+
+
+tr.h-ruler.h-section-header th div.ruler-dots { 
+	border-left:1px solid rgba(0, 0, 0, 0.2); top:5.0em; bottom:1.5em; /*  */
+	/* border-image: linear-gradient( to bottom, transparent 0%, rgba(0, 0, 0, 0.2) 3em, rgba(0, 0, 0, 0.2) calc(100% - 3em), transparent 100%); border-image-slice: 1; */
+} /*  alpha 0.2 for normal rulers  */
+
+tr.h-ruler.h-section-header th.dotlight div.ruler-dots, tr.h-ruler.h-section-header th.dotlight.slice-oclock div.ruler-dots { top:0; bottom:0; } /*  alpha 0.2 for normal rulers  */
+
+table.h-section.s5 tr.h-ruler th.slice-5 div.ruler-dots   /* display lighter vertical ruler dots as there are pretty dense in a s5 config*/
+	,table.h-section.s5 tr.h-ruler th.slice-10 div.ruler-dots
+	,table.h-section.s5 tr.h-ruler th.slice-20 div.ruler-dots
+	,table.h-section.s5 tr.h-ruler th.slice-25 div.ruler-dots
+	,table.h-section.s5 tr.h-ruler th.slice-35 div.ruler-dots
+	,table.h-section.s5 tr.h-ruler th.slice-40 div.ruler-dots
+	,table.h-section.s5 tr.h-ruler th.slice-50 div.ruler-dots
+	,table.h-section.s5 tr.h-ruler th.slice-55 div.ruler-dots
+	{ border-left: 1px solid rgba(0, 0, 0, 0.04); /* ; */
+		/* border-image: linear-gradient( to bottom, transparent 0%, rgba(0, 0, 0, 0.06) .5em, rgba(0, 0, 0, 0.06) calc(100% - .5em), transparent 100%); border-image-slice: 1; */
+		top:6em; bottom:2.5em; } /*  alpha 0.1 for 5' rulers in an s5 config  */
+
+table.h-section.s5 tr.h-ruler th.dotlight.slice-5 div.ruler-dots 
+	,table.h-section.s5 tr.h-ruler th.dotlight.slice-10 div.ruler-dots
+	,table.h-section.s5 tr.h-ruler th.dotlight.slice-20 div.ruler-dots
+	,table.h-section.s5 tr.h-ruler th.dotlight.slice-25 div.ruler-dots
+	,table.h-section.s5 tr.h-ruler th.dotlight.slice-35 div.ruler-dots
+	,table.h-section.s5 tr.h-ruler th.dotlight.slice-40 div.ruler-dots
+	,table.h-section.s5 tr.h-ruler th.dotlight.slice-50 div.ruler-dots
+	,table.h-section.s5 tr.h-ruler th.dotlight.slice-55 div.ruler-dots
+	{ border-color: red; top:0; bottom:0; border-image:none; }
+	
+	
+table.h-section.s10 tr.h-ruler th.slice-10 div.ruler-dots   /* display lighter vertical ruler dots as there are pretty dense in a s10 config*/
+	,table.h-section.s10 tr.h-ruler th.slice-20 div.ruler-dots
+	,table.h-section.s10 tr.h-ruler th.slice-40 div.ruler-dots
+	,table.h-section.s10 tr.h-ruler th.slice-50 div.ruler-dots
+	{ border-left: 1px solid rgba(0, 0, 0, 0.04); /* ; */
+		/* border-image: linear-gradient( to bottom, transparent 0%, rgba(0, 0, 0, 0.06) .5em, rgba(0, 0, 0, 0.06) calc(100% - .5em), transparent 100%); border-image-slice: 1; */
+		top:6em; bottom:2.5em; } /*  alpha 0.1 for 5' rulers in an s10 config  */
+
+table.h-section.s10 tr.h-ruler th.dotlight.slice-10 div.ruler-dots
+	,table.h-section.s10 tr.h-ruler th.dotlight.slice-20 div.ruler-dots
+	,table.h-section.s10 tr.h-ruler th.dotlight.slice-40 div.ruler-dots
+	,table.h-section.s10 tr.h-ruler th.dotlight.slice-50 div.ruler-dots
+	{ border-color: red; top:0; bottom:0; border-image:none; }
+	
+	
+table.h-section.s15 tr.h-ruler th.slice-15 div.ruler-dots   /* display lighter vertical ruler dots as there are pretty dense in a s15 config*/
+	,table.h-section.s15 tr.h-ruler th.slice-45 div.ruler-dots
+	{ border-left: 1px solid rgba(0, 0, 0, 0.04); /* ; */
+		/* border-image: linear-gradient( to bottom, transparent 0%, rgba(0, 0, 0, 0.06) .5em, rgba(0, 0, 0, 0.06) calc(100% - .5em), transparent 100%); border-image-slice: 1; */
+		top:6em; bottom:2.5em; } /*  alpha 0.1 for 5' rulers in an s15 config  */
+
+table.h-section.s15 tr.h-ruler th.dotlight.slice-15 div.ruler-dots
+	,table.h-section.s15 tr.h-ruler th.dotlight.slice-45 div.ruler-dots
+	{ border-color: red; top:0; bottom:0; border-image:none; }
+
+
+tr.h-ruler.h-section-header th, tr.h-ruler.h-section-footer th { /* text for the time scale on the planning grid in horizontal mode */
+	font-size:90%; color:oklch(from var(--account-color-code) 30% .10 h /.6);
+}
+
+tr.h-ruler.h-section-header th.slice-oclock div.ruler-dots { 
+	border-color: transparent; /* rgba(0, 0, 0, 0.3) */
+	border-image: linear-gradient( to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 3em, rgba(0, 0, 0, 0.4) calc(100% - 3em), transparent 100%); border-image-slice: 1;
+	top:0em; bottom:-.5em;
+} /*  horizontal section alpha 0.3 for oclock rulers */
+table.ruler > tbody > tr > th.slice-oclock div.ruler-dots { border-color: rgba(0, 0, 0, 0.3); } /*  vertical display alpha 0.3 for oclock rulers */
+
+
+table.ruler div.ruler-dots { border-top: 1px solid rgba(0, 0, 0, 0.2); left:2.4em; width:calc(100% - 4.8em);  } /* vertical view, the normal ruler css */ 
+
+tr.h-ruler.h-section-header th.dotlight div.ruler-dots,
+table.ruler > tbody > tr > th.dotlight div.ruler-dots,
+tr.h-ruler.h-section-header th.dotlight.slice-oclock div.ruler-dots,
+table.ruler > tbody > tr > th.dotlight.slice-oclock div.ruler-dots { border-color: red; border-image:none; } /* lighting up when mouseover */
+
+table.ruler > tbody > tr > th.dotlight div.ruler-dots { left:0; width:100%; }
+table.ruler > tbody > tr > th.slice-oclock div.ruler-dots { left:0; width:100%; } /* lighting up when mouseover */
+
+
+table.ruler.s5 th.slice-5 div.ruler-dots   /* display lighter vertical ruler dots as there are pretty dense in a s5 config*/
+	,table.ruler.s5 th.slice-10 div.ruler-dots
+	,table.ruler.s5 th.slice-20 div.ruler-dots
+	,table.ruler.s5 th.slice-25 div.ruler-dots
+	,table.ruler.s5 th.slice-35 div.ruler-dots
+	,table.ruler.s5 th.slice-40 div.ruler-dots
+	,table.ruler.s5 th.slice-50 div.ruler-dots
+	,table.ruler.s5 th.slice-55 div.ruler-dots
+	{ border-top: 1px solid rgba(0, 0, 255, 0.07); left:3.4em; width:calc(100% - 6.8em); } /*  alpha 0.1 for 5' rulers in an s5 config  */
+	
+table.ruler.s5 th.dotlight.slice-5 div.ruler-dots   /* display lighter vertical ruler dots when hover by mouse pointer, turns red */
+	,table.ruler.s5 th.dotlight.slice-10 div.ruler-dots
+	,table.ruler.s5 th.dotlight.slice-20 div.ruler-dots
+	,table.ruler.s5 th.dotlight.slice-25 div.ruler-dots
+	,table.ruler.s5 th.dotlight.slice-35 div.ruler-dots
+	,table.ruler.s5 th.dotlight.slice-40 div.ruler-dots
+	,table.ruler.s5 th.dotlight.slice-50 div.ruler-dots
+	,table.ruler.s5 th.dotlight.slice-55 div.ruler-dots
+	{ border-color: red; left:0; width:100%; } 
+
+
+table.ruler.s10 th.slice-10 div.ruler-dots   /* display lighter vertical ruler dots as there are pretty dense in a s10 config*/
+	,table.ruler.s10 th.slice-20 div.ruler-dots
+	,table.ruler.s10 th.slice-40 div.ruler-dots
+	,table.ruler.s10 th.slice-50 div.ruler-dots
+	{ border-top: 1px solid rgba(0, 0, 255, 0.07); left:3.4em; width:calc(100% - 6.8em); } /*  alpha 0.1 for 5' rulers in an s10 config  */
+	
+table.ruler.s10 th.dotlight.slice-10 div.ruler-dots   /* display lighter vertical ruler dots when hover by mouse pointer, turns red */
+	,table.ruler.s10 th.dotlight.slice-20 div.ruler-dots
+	,table.ruler.s10 th.dotlight.slice-40 div.ruler-dots
+	,table.ruler.s10 th.dotlight.slice-50 div.ruler-dots
+	{ border-color: red; left:0; width:100%; } 
+
+
+table.ruler.s15 th.slice-15 div.ruler-dots   /* display lighter vertical ruler dots as there are pretty dense in a s15 config*/
+	,table.ruler.s15 th.slice-45 div.ruler-dots
+	{ border-top: 1px solid rgba(0, 0, 255, 0.07); left:3.4em; width:calc(100% - 6.8em); } /*  alpha 0.1 for 5' rulers in an s15 config  */
+	
+table.ruler.s15 th.dotlight.slice-15 div.ruler-dots   /* display lighter vertical ruler dots when hover by mouse pointer, turns red */
+	,table.ruler.s15 th.dotlight.slice-45 div.ruler-dots
+	{ border-color: red; left:0; width:100%; } 
+	
+div.P_AgendaHVL div.P_Vertical.multidays:not(.range024) table.ruler th.slice-last div.ruler-dots { display:none; }
+div.P_AgendaHVL div.P_hourly.multidays:not(.range024) table.ruler th.slice-last div.ruler-dots { display:none; }
+
+/* css for P_RULER */
+
+table.ruler > tbody > tr { vertical-align:top; } /* important for stickers positionning */
+table.ruler > tbody > tr > th { cursor:default; text-align:left; font-size:85%; padding-right:0.2em; } /* look & feel for o'clock time span display */
+/* body.touch tr.ruler th { min-width:3em } */
+
+
+	/* time stick and time display */
+
+tr.h-ruler.h-section-header th span.rel-label { left:0.2em; top:1em;  } /* horizontal section, positionning of each time-oclock display ( e.g. "15h", "16h", "17h", ... )*/
+tr.h-ruler.h-section-footer th span.rel-label { left:0.2em; bottom:-2em; } /* same labels positionning in the footer of a resource type section */ 
+table.ruler th span.rel-label { left:4px; top:0em; color:oklch(from var(--account-color-code) 30% .10 h /.6); } /* text for the time scale on the planning grid in vertical mode */
+	
+div.horizontal-section div.time-stick { /* this is the vertical blue line indicating the current day time, see (*pr02*) */
+	width:1px; border-left: 3px solid rgb(var(--mob-txt-blue)); top:0; bottom:0; pointer-events:none;
+} 
+
+div.vertical-section div.time-stick { /* this is the horizontal blue line indicating the current day time */
+	height:1px; border-top: 3px solid rgb(var(--mob-txt-blue)); width:100%; right:0em; pointer-events:none;
+} 
+
+	/* the span in the time stick contains the current time indication */
+	
+div.horizontal-section div.time-stick > span { font-size:1.1em; float:right; right:.3em; top:-4px; padding:.25em; background:rgba(255 255 255 /.1); backdrop-filter: blur(2px); }
+div.vertical-section div.time-stick > span { left:1em; bottom:25px; font-size:1.1em; padding:.25em; background:rgba(255 255 255 /.1); backdrop-filter: blur(2px); }
+
+
+/*
+	timestamp = the red flag above the time scale
+	time-stick = the blue flag on the current time blue stick, visible only on today's date
+	flyingtf = flying time flag = the red flag following the mouse cursor on screen (controls.css)
+*/
+
+tr.h-ruler.h-section-header th > div > span.timestamp {  /* timestamp is the red cursor showing the exact pointed time on the grid, like [15:25] */ 
+	display:none; left:-3.5em; top:-1.6em; color:red; font-weight:normal; padding:0 2em 0 2em;
+	background:linear-gradient( to right, transparent 0%, rgb(var(--mob-bckg-white-20)) 2em, rgb(var(--mob-bckg-white-20)) calc(100% - 2em), transparent 100%); border:1px solid tranparent;
+	z-index:2; }
+tr.h-ruler.h-section-header th.dotlight > div > span.timestamp {  display:inline-block; } /* only the currently pointed time slot is displayed */
+
+table.ruler > tbody > tr > th > div > span.timestamp {  /* check also .red-label */
+	display:none; left:-.2em; top:-1em; color:red; font-weight:normal; padding:1em 0 1em 0; letter-spacing:-.1em;
+	background:linear-gradient( to bottom, transparent 0%, transparent 20%, rgb(var(--mob-bckg-white-20)) 35%, rgb(var(--mob-bckg-white-20)) 65%, transparent 100%); border:1px solid transparent;
+	z-index:2; 
+}
+table.ruler > tbody > tr > th.dotlight > div > span.timestamp {  display:inline-block; } 
+
+
+
+
+div.time-stick > span { color:rgb(var(--mob-txt-blue)); font-size:80%; font-weight:bold; padding:.05em .5em; background-color:transparent;/*rgba(255,255,255,.8);*/ }
+
+tr.h-section-header	{ height:7em; vertical-align:top; text-align:left; } /* resource type name & ruler */
+tr.h-section-header	th { padding-top:2em; } /* resource type name & ruler time display positionning */
+
+tr.h-section-footer	{ height:3em; vertical-align:middle; text-align:left; } /* resource type name & ruler */
+tr.h-section-footer	th { padding-bottom:0em; } /* resource type name & ruler time display positionning */
+
+
+
+
+/* css for  P_horiz  & P_hrow  */
+
+.top-dp-scroll { background:rgb(255,255,255); height:14em; overflow-x:scroll; } /* see (*dn01*), overflow-y:scroll; */
+body.touch .top-dp-scroll-frame { height:15em }
+
+div.topnav { /* horizontal view, white shade */
+	background:transparent; /* transparent 0 makes the modal-body upper border visible */
+	margin:0 auto 0 0;
+	pointer-events:none;
+	/* border:1px solid green; */
+	
+	&:after {
+		content:''; position:absolute; inset:0 0 -40px 0; z-index:-1; pointer-events:none;
+		background-image: linear-gradient(to bottom, rgb(var(--mob-bckg-white-20)) 0px, rgba(var(--mob-bckg-white-20) /.8) 40%, transparent 100%);
+		/* border:1px solid red; */
+	}
+}
+div.bottomshade { /* vertical view, used here : (*tn02*) */
+	background:transparent; /* transparent 0 makes the modal-body upper border visible */ 
+	background-image: linear-gradient(to top, rgb(var(--mob-bckg-white-20)) 0px, transparent 100%);
+	margin-right:8px;
+}
+
+div.h-track { /* is the guide for positionning stickers and hourly lanes, the height should stay 0px */
+	background-color:#0000000A;
+	transition:background-color .5s cubic-bezier(.5, 0, 0, 1);
+	}
+div.h-track.left {  } /*(css01) */ 
+div.h-track.right {  }
+	
+
+tr.planning-row.row-light > td div.h-track { background-color:#00000016; border-top:1px solid red; border-bottom:1px solid red; transition:background-color .1s cubic-bezier(.5, 0, 0, 1); }
+tr.planning-row.row-light > td div.h-track.left {  }
+tr.planning-row.row-light > td div.h-track.right {  }
+
+table.horizontal-planning.busy2023 div.h-track { background:#00000005; }
+
+table.horizontal-planning.busy2023 div.modal-busy { opacity:0; backdrop-filter:blur(3px); transition:opacity 50ms ease-out; } /* see also .modal-busy in controls.css */
+table.horizontal-planning.busy2023.busy-on div.modal-busy { opacity:1; transition:opacity 2000ms ease-in-out; }
+
+
+table.horizontal-planning div.planning-overlay { opacity:0; backdrop-filter:blur(3px); transition:opacity 200ms ease-out; } /* see also .modal-busy in controls.css */
+table.horizontal-planning.busy-on div.planning-overlay { opacity:1; transition:opacity 1000ms ease-in-out; }
+
+table.horizontal-planning div.planning-spinner { opacity:0; transition:opacity 100ms ease-out; } /* see also .modal-busy in controls.css */
+table.horizontal-planning.busy-on div.planning-spinner { opacity:1; transition:opacity 600ms ease-in-out; }
+
+
+div.horizontal-section { /* border:1px solid green; */ } 
+
+	/* rows height */
+tr.planning-row	{ white-space:nowrap;  } /* resources names & grid rows */
+div.resource-label { border-radius:5px; padding:.7em 1em; overflow:clip; }
+div.resource-label, div.resource-label-padder { max-width:16em; }
+	@media (min-width: 1300px) { div.resource-label, div.resource-label-padder { max-width:22em; } }
+	@media (min-width: 2000px) { div.resource-label, div.resource-label-padder { max-width:30em; } }
+
+	/* sets the height of a row on the grid, let appear more details (watch compatibility with Chrome and Firefox !!) // see (*lvl*) */
+tr.planning-row.level1 .h { height: 1.6em; min-height: 1.6em;  } 	tr.planning-row.level1 div.resource-label { padding:.3em 1em; }
+tr.planning-row.level2 .h { height: 2.2em; min-height: 2.2em;  } 	tr.planning-row.level2 div.resource-label { padding:.2em 1em; } 
+tr.planning-row.level3 .h { height: 3.3em; min-height: 3.3em;  } 	tr.planning-row.level3 div.resource-label { padding:.3em 1em; } 
+tr.planning-row.level4 .h { height: 5em;  min-height: 5em;  }  		tr.planning-row.level4 div.resource-label { padding:.5em 1em; } 
+tr.planning-row.level5 .h { height: 7em; min-height: 7em;  } 
+tr.planning-row.level6 .h { height: 8em; min-height: 8em;  } 
+tr.planning-row.level7 .h { height: 9em; min-height: 9em;  } 
+tr.planning-row.level8 .h { height: 11em; min-height: 11em;  } 
+tr.planning-row	td { } /* resources names & grid rows */
+
+
+body.mouse div.zoom div.h-scroll { overflow-x:auto; overflow-y:hidden; } /* (*zm002) */
+div.zoom td.agenda-rowhead  div.h-scroll { overflow-x:scroll; overflow-y:hidden; }
+
+	/* rows td width */
+/* this would be nice to "separate" horizontal agenda lines on accounts having 2 to 4 lines only, but it needs more investigation (it hides the time-boxing labels...)
+table.h-section, table.P_htype {
+	border-collapse:separate;
+    border-spacing:0 3em;
+} */
+div.P_htype.empty table.h-section tr.h-section-footer
+, table.P_htype.empty tr.h-section-footer  {
+	height:1em; max-height:1em;
+}
+div.P_htype.empty table.h-section tr.h-section-header { height:5em; max-height:5em; }
+table.P_htype.empty tr.h-section-header { height:5em; max-height:5em; }
+
+
+div.zoom table.h-section.s5  tr.h-ruler.h-section-header th { min-width:1.2em; } /* (*zm002) */
+div.zoom table.h-section.s10 tr.h-ruler.h-section-header th { min-width:2.1em; }
+div.zoom table.h-section.s15 tr.h-ruler.h-section-header th { min-width:3.0em; }
+div.zoom table.h-section.s20 tr.h-ruler.h-section-header th { min-width:3.9em; }
+div.zoom table.h-section.s30 tr.h-ruler.h-section-header th { min-width:5.6em; }
+div.zoom table.h-section.s60 tr.h-ruler.h-section-header th { min-width:10em; }
+div.zoom table.h-section tr.h-ruler.h-section-header th { transition:width 500ms linear; }
+table.h-section > tbody > tr.h-ruler > th:last-child { min-width:1em !important; width:1em !important;}
+
+
+/* css for P_Vertical */
+
+div.P_AgendaHVL div.v-track { /* v-track is a vertical column under the date, when hovering with the mouse, we highlight it*/
+	border-radius:0em; 
+	background-color:transparent; 
+	background-image: linear-gradient(to bottom, rgba(0,0,0,0.2) 0px, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.05) 60%, rgba(0,0,0,0.15) 100%);
+	opacity:0; 
+	transition:opacity 1s; /* time for going off screen */
+}
+div.P_AgendaHVL div.P_Vertical.multidays td.colight div.v-track
+, div.P_AgendaHVL div.P_hourly.multidays td.colight div.v-track
+{ opacity:1; transition:opacity .1s; /* vertical track goes darker when entering a vertical column display */ }
+
+table.v-dates div.v-track { background:transparent; border-radius:1em 1em 0 0; }  /* column header date css */
+
+/* vertical view column headers */
+
+div.v-date.hourly_excp_day { background:rgba(var(--mob-txt-lime),.30); } /* that is also .c244 */
+div.v-date.hourly_change_day { opacity:.65; }
+
+div.v-date { 
+	font-size:90%;
+	border-radius: 1.6em 1.6em 0 0;
+	padding:.2em;  
+	width:88% /* adjusting this width? see (*vp01*)  */; margin:0 auto;
+}
+div.v-date.click.istoday, div.v-date.click.istoday:hover { 
+	/* color:rgba(var(--mob-lime-thick),1);  */
+	outline: 5px solid rgba(var(--mob-txt-lime), 1); 
+	outline-offset: 2px;
+	font-weight:bold;
+}
+
+/* div.v-date.click.islected, div.v-date.click.islected:hover { */ /* see (*vv01*) */
+	/* color:rgba(var(--mob-blue-thick),1);  */
+	/* outline: 5px solid rgba(var(--mob-blue-thick-20) /.7);, 1);  */
+	/* outline-offset: 2px; */
+	/* font-weight:bold; */
+/* } */
+
+div.v-date.click.istoday:hover,  
+div.v-date.click.islected:hover,
+div.v-date.click:hover { color:black; }
+
+
+
+div.v-date.hourly_excp_day, div.v-date.hourly_change_day {
+	/* box-shadow: rgba(50, 50, 93, 0.4) 0px 25px 50px -10px, rgba(10, 37, 64, 0.3) 0px -1px 3px 0px inset; */
+}
+
+
+div.vshade { /* vertical view */
+	background:transparent; /* transparent 0 makes the modal-body upper border visible */ 
+	background-image: linear-gradient(to bottom, rgb(var(--mob-bckg-white-20)) 0px, rgba(var(--mob-bckg-white-20) /0.7) 50%, transparent 100%);
+	margin-left:8px; /* leave transparent where the vertical slider grooves */
+}
+
+td.colight div.v-date { background-color:rgba(255,59,39,0.4); color:black; opacity:1; } /* vertical column date goes red when hovering the column */
+
+table.v-dates td.colight div.v-track { background-color:transparent; } /* same for the upper column header (the one showing the date) */
+
+
+div.P_Vertical.busy2023 div.planning-overlay { opacity:0; backdrop-filter:blur(3px); transition:opacity 200ms ease-out; } /* see also .modal-busy in controls.css */
+div.P_Vertical.busy2023.busy-on div.planning-overlay { opacity:1; transition:opacity 1000ms ease-in-out; }
+
+div.P_Vertical.busy2023 div.planning-spinner { opacity:0; transition:opacity 100ms ease-out; } /* see also .modal-busy in controls.css */
+div.P_Vertical.busy2023.busy-on div.planning-spinner { opacity:1; transition:opacity 600ms ease-in-out; }
+
+
+div.P_hourly.busy2023 div.planning-overlay { opacity:0; backdrop-filter:blur(3px); transition:opacity 200ms ease-out; } /* see also .modal-busy in controls.css */
+div.P_hourly.busy2023.busy-on div.planning-overlay { opacity:1; transition:opacity 1000ms ease-in-out; }
+
+div.P_hourly.busy2023 div.planning-spinner { opacity:0; transition:opacity 100ms ease-out; } /* see also .modal-busy in controls.css */
+div.P_hourly.busy2023.busy-on div.planning-spinner { opacity:1; transition:opacity 600ms ease-in-out; }
+
+
+
+th.timelight div span.rel-label { color:red; } /* colors time label when hovering grid, see (*pr04*) */
+
+
+
+table.vertical-grid {  }
+
+div.P_AgendaHVL div.P_Vertical.multidays:not(.range024) table.ruler > tbody > tr:first-child 
+{ height:60px; } /* see (*pv02*) before you change the values 60px and 20px */
+div.P_AgendaHVL div.P_Vertical.multidays:not(.range024) table.ruler > tbody > tr:nth-last-child(2)
+{ height:40px; } /* see (*pv02*) before you change the values 60 and 20 */
+
+
+div.P_AgendaHVL div.P_hourly.multidays:not(.range024) table.ruler > tbody > tr:first-child 
+{ height:90px; } /* see (*pv02*) before you change the values 60 and 20 */
+div.P_AgendaHVL div.P_hourly.multidays:not(.range024) table.ruler > tbody > tr:nth-last-child(2)
+{ height:50px; } /* see (*pv02*) before you change the values 60 and 20 */
+
+/* div.P_AgendaHVL div.P_Vertical.multidays:not(.range024) table.ruler > tbody > tr:first-child  */
+
+div.P_AgendaHVL div.P_Vertical.oneday table.ruler > tbody > tr:first-child 
+, div.P_AgendaHVL div.P_Vertical.oneday table.ruler > tbody > tr:nth-last-child(2)
+{ height:30px; } /* see (*pv02*) before you change the values 60 and 20 */
+
+
+div.P_AgendaHVL.zoom table.ruler.s5  > tbody > tr { height:1.4em; } /* (*zm001) , every other stickers for resas and hourly are drawn according to the size specified here */
+div.P_AgendaHVL.zoom table.ruler.s10 > tbody > tr { height:1.8em; }
+div.P_AgendaHVL.zoom table.ruler.s15 > tbody > tr { height:2.1em; }
+div.P_AgendaHVL.zoom table.ruler.s20 > tbody > tr { height:2.5em; }
+div.P_AgendaHVL.zoom table.ruler.s30 > tbody > tr { height:4.0em; }
+div.P_AgendaHVL.zoom table.ruler.s60 > tbody > tr { height:7.0em; }
+
+div.P_AgendaHVL.zoom table.ruler > tbody > tr:nth-last-child(2) { height:60px !important; }
+div.P_AgendaHVL.zoom table.ruler.s30 > tbody > tr:nth-last-child(2) { height:4.0em !important; }
+div.P_AgendaHVL.zoom table.ruler.s60 > tbody > tr:nth-last-child(2) { height:7.0em !important; }
+
+/* div.P_AgendaHVL table.ruler > tbody > tr:nth-last-child(2) { height:20px; }  */
+div.P_AgendaHVL table.ruler > tbody > tr:last-child { height:0px !important; }
+
+
+	/* when the vertical view shows 2 days */
+td.spiral { background: url(spiral-v.gif) repeat-y; }
+div.spiral { box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.2); border:1px solid lightgray; border-radius:4px; }
+
+
+/* P_List */
+
+table.l-screen { border-right: 1px solid #e4f3A7; width:90%; margin:0 auto; }
+table.l-screen tr { border-bottom: 1px solid #E5E7EF; }
+table.l-screen td { vertical-align:top; padding:0 1em 0 1em; border-left: 1px solid #e4f3A7; }
+table.l-screen th { vertical-align:top; padding:0 1em 0 1em; }
+table.l-screen td.vname, td.schedule { font-weight:bold; width:1%; white-space:nowrap; }
+table.l-screen td.duration { vertical-align:middle; border-left:none; padding:0 0.5em 0 0; width:1%; }
+table.l-screen td.color { border-left:none; padding:0 1em 0 0; width:1%; }
+table.l-screen td.smsstatus { padding:0; width:1%; }
+table.l-screen td.mobile { width:1%; }
+
+table.l-screen td.resanote, table.l-screen td.visinote {  padding:0; } /* see (*lv50*) position:relative; is causing problem on the Ctrl+P preview only with Edge */
+/*table.l-screen td.resanote > div, table.l-screen td.visinote > div { position:absolute; top:0; left:0; bottom:0; right:0; overflow-y:scroll; color:red; }*/ /* see (*lv50*) */
+table.l-screen td.resanote > div, table.l-screen td.visinote > div { max-height:10em; overflow-y:clip; width:100%; } /* see (*lv50*) overflow-y:scroll; is causing problem on the Ctrl+P preview only with Edge */
+
+div.sms-status		{  }
+/* div.sms-sema		{ width:17px; height:17px; border-radius:8px; margin-top:0px; margin-left:13px; box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.4), inset -1px -1px 1px rgba(0, 0, 0, 0.2); } */
+div.sms-sema		{  }
+
+div.sms_nomobile	{ color: silver; 	}
+div.sms_disabled	{ color: gray; 		}
+div.sms_outdated	{ color: crimson; 	}
+div.sms_nosms		{ color: red; 		}
+div.sms_created 	{ color: lightblue; }
+div.sms_retry 		{ color: orange; 	}
+div.sms_handled 	{ color: gold; 		}
+div.sms_pending 	{ color: orange; 	}
+div.sms_delivered 	{ color: yellowgreen; }
+div.sms_discarded 	{ color: crimson; 	}
+div.sms_retained 	{ color: orange; 	}
+div.sms_iso 		{ color: dimgray; 	}
+div.sms_error 		{ color: maroon; 	}
+div.sms_dead_numb 	{ color: red; 		}
+
+
+
+/* ******************************************************************************************************************************* */
+/*                                                                                                                                 */
+/*                    P_Sticker's                                                                                                  */
+
+
+div.sticker { /* the outer div */
+	cursor: pointer; position:absolute;
+	/* overflow:hidden; */
+	border:none;
+	border-radius: 6px 0 16px 0;
+	opacity: 0.8;
+	vertical-align:top;
+	/* outline: 4px solid rgba(255, 135, 55, 0.0); outline-offset: 5px; -moz-outline-radius:1em; */
+	transition: outline 0.4s; -moz-transition: outline 0.4s; -webkit-transition: outline 0.4s;
+	text-align:left;
+	/* transition: height 100ms ease, min-height 100ms ease, width 100ms ease; Does not work with upper handle because the sticker is positionned top left */ 
+}
+
+div.sticker-inset { padding:0; white-space:normal; display:flex; justify-content:center; align-items:center; height:100%; overflow-wrap:anywhere; overflow:hidden; }
+div.sticker.resa div.sticker-inset { white-space:normal; display:block; } /* flex; justify-content:flex-start; align-items:start; flex-direction:row; flex-wrap: wrap; row-gap:0px; */
+div.sticker.resa {  }
+
+div.sticker.starter div.sticker-inset { display:flex; justify-content:left; align-items:end; }
+div.sticker.starter div.sticker-inset > div { padding-bottom:3px; }
+
+div.sticker.shadow, div.sticker.timebox { text-align:center; }
+div.sticker.shadow.sticker-inset { font-size:90%; vertical-align:middle; }
+div.sticker.shadow.idle { pointer-events:none; }
+
+/* div.sticker.timebox:hover { outline: 2px solid rgba(var(--mob-lime-bckgr), 0.8); outline-offset: 3px;  -moz-outline-radius:1em; } */
+
+table.sticker-font0 div.sticker.resa div.sticker-inset { letter-spacing:-0.04em; line-height:0.88em; font-size:0.88em; }
+table.sticker-font1 div.sticker.resa div.sticker-inset { letter-spacing:-0.03em; line-height:0.92em; font-size:0.94em; }
+table.sticker-font2 div.sticker.resa div.sticker-inset { letter-spacing:-0.02em; line-height:.96em; font-size:1em; }
+table.sticker-font3 div.sticker.resa div.sticker-inset { letter-spacing:-0.01em; line-height:1em; font-size:1.06em; }
+
+div.sticker.easy-dragging { opacity:0.3; } /* applied by C_iDRAG on the clicked object, to fade it while it moves */
+div.sticker.drag-image { outline: 3px solid rgba(255, 108, 0, 0.4); outline-offset: 5px; } /* the moving sticker image that goes from drop zone to drop zone */
+
+div.sticker.resa {
+	transform: scale(1,1);
+	opacity: .8;
+	outline: 0px solid transparent; outline-offset: 6px;
+	transition: transform 400ms ease-in, opacity 300ms ease-out, outline 1s ease-out;
+	/* border:1px solid yellow; */
+}
+/* div.sticker.resa:hover, div.sticker.resa-hover { /* div.sticker.resa:hover this class is programaticaly togglee from here (*tg01*) */ 
+
+div.sticker.resa:not(.trimlate):not(.trimsoon):hover,
+div.sticker.resa:not(.trimlate):not(.trimsoon).resa-hover {
+	outline: 10px solid rgba(55, 135, 255, 0.4); outline-offset: 6px;
+	/* outline: 1px solid red; outline-offset: 10px; */
+	/* transition: outline 0.5s;  */
+	/* position:relative; z-index:+15; */
+	transform: translate(-2px, -2px);
+	transition: transform .1s ease-out, opacity 150ms ease-in, outline 0.2s ease-in;
+	box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.25);
+	opacity:.9;
+	z-index:+10;
+	/* border:1px solid cyan; */
+}
+
+div.sticker.resa.trimlate:hover, div.sticker.resa.trimlate.resa-hover,
+div.sticker.resa.trimsoon:hover, div.sticker.resa.trimsoon.resa-hover
+{
+	/* outline: 0px solid transparent; outline-offset: 6px; */
+	opacity:.5;
+}
+
+div.horizontal-section div.sticker.resa.final { /* when they get removed from screen */
+	opacity: 0.05;
+	transition: transform 500ms ease-in, opacity 400ms ease-out, outline 1s ease-out;
+	transform: scale(0,1); /* translateX(calc(-1 * max(100%, 100px))) */
+}
+div.horizontal-section div.sticker.resa.final.right-ff {transform: scale(0,.5) rotateX(90deg) translateX(-300px) translateY(50px); transform-origin: bottom left; }
+div.horizontal-section div.sticker.resa.final.right-s { transform: scale(0,1) translateX(-100px); transform-origin: center left; }
+div.horizontal-section div.sticker.resa.final.left-s { 	transform: scale(0,1) translateX(100px); transform-origin: center right; }
+div.horizontal-section div.sticker.resa.final.left-ff { transform: scale(0,.5) rotateX(-90deg) translateX(300px) translateY(-50px); transform-origin: top right; }
+
+
+/* div.horizontal-section div.sticker.resa.final.right-ff {transform: scale(0,1) translateX(calc(-1 * max(300%, 300px))); } */
+/* div.horizontal-section div.sticker.resa.final.right-s { transform: scale(0,1) translateX(calc(-1 * max(100% , 100px))); } */
+/* div.horizontal-section div.sticker.resa.final.left-s { 	transform: scale(0,1) translateX(calc( 1 * max(100% , 100px))); } */
+/* div.horizontal-section div.sticker.resa.final.left-ff { transform: scale(0,1) translateX(calc( 1 * max(300%, 300px))); } */
+
+div.vertical-section div.sticker.resa.final { /* when they get removed from screen */
+	opacity: 0.05;
+	transition: transform 500ms ease-in, opacity 400ms ease-out, outline 1s ease-out;
+	transform: scale(1,0) translateY(max(100%, 60px));
+}
+div.vertical-section div.sticker.resa.final.right-ff {transform: scale(0,.5) translateX(-300px) translateY(100px); transform-origin: bottom left;}
+div.vertical-section div.sticker.resa.final.right-s { transform: scale(0,1) translateX(-100px); transform-origin: center left;}
+div.vertical-section div.sticker.resa.final.left-s { 	transform: scale(0,1) translateX(100px); transform-origin: center right;}
+div.vertical-section div.sticker.resa.final.left-ff { transform: scale(0,.5) translateX(300px) translateY(-100px); transform-origin: top right; }
+
+
+/* paperclips on stickers containing files */
+
+div.sticker.resa.hasfile:after, div.sticker.resa.hasfiles:after { /* paperclips see (*pc01*) */
+	/* font-family:'Font Awesome 5 Duotone'; */
+	/*content: "\10f0c6\10f0c6";*/
+	font-family:'fawesome'; /* the regular Fawsome, not duotone */
+	content: "\f0c6\f0c6"; /*  fa-paperclip in faws.css  fa-plus  */
+	position:absolute; 
+	font-size:12pt;
+	pointer-events:none;
+	top:-8px; right:8px;
+	opacity: 0.9;
+	z-index: 100;
+}
+
+div.sticker.resa.hasfile:after { /* paperclips see (*pc01*) */
+	/* content: "\10f0c6"; */
+	content: "\f0c6"; /*  fa-paperclip in faws.css  */
+}
+
+/* backgrounds featuring white text color need a text-shadow in the paperclip to re-inforce visibility, those classes are in defined colors_2023.css */
+
+div.sticker.resa.hasfile:is( .c111, .c98, .c99, .c109, .c114, .c123, .c124, .c133, .c134, .c143, .c144, .c153, .c154, .c163, .c164, .c173, .c174, .c183, .c184, .c222, .c225, .c232, .c234, .c265, .c266, .c267, .c286, .c287, .c294, .c295, .c296, .c297)::after,
+div.sticker.resa.hasfiles:is( .c111, .c98, .c99, .c109, .c114, .c123, .c124, .c133, .c134, .c143, .c144, .c153, .c154, .c163, .c164, .c173, .c174, .c183, .c184, .c222, .c225, .c232, .c234, .c265, .c266, .c267, .c286, .c287, .c294, .c295, .c296, .c297)::after {
+  text-shadow: 0 0 2px rgba(0,0,0,1);
+}
+
+
+/* shadow */
+
+
+div.sticker.shadow { border-radius:1.2em; opacity: 0.7; }
+div.P_vertical div.sticker.shadow { pointer-events:none; }
+div.horizontal-section div.sticker.shadow { pointer-events:none; }
+div.P_hourly div.sticker.shadow { pointer-events:all; }
+
+div.sticker.shadow div.handletop, div.sticker.timebox div.handletop,
+div.sticker.shadow div.handlebottom, div.sticker.timebox div.handlebottom {
+	min-height:6px; height:6px; 
+	background-image: linear-gradient( to bottom, transparent 0%, transparent calc(50% - 2px), rgba(255, 255, 255, 0.6) 50%,  rgba(0, 0, 0, 0.6) calc(50% + 1px), transparent calc(50% + 2px), transparent 100%  );
+}
+div.sticker.timebox div.sticker-time.upper {
+	font-size:1.1em; padding-top:.4em;
+}
+div.sticker.timebox div.sticker-time.footer {
+	padding-bottom:.4em; font-size:1.1em; 
+}
+
+
+
+div.sticker.resa-new { /* is a brother of (*css01*) that displays this info on the calendar */
+	/* outline: 10px solid rgba(255, 0, 0, 0.4); */
+	outline: 10px solid rgba(255, 0, 0, 0.4);
+	outline-offset: 6px;
+	transition: outline 0.2s; 
+}
+
+div.sticker.slot-preview { outline: 6px solid rgba(255, 0, 0, 0.4); }
+
+div.sticker.resa-hover { /* div.sticker.resa:hover this class is programaticaly togglee from here (*tg01*) */ 
+	/* outline: 5px solid rgba(55, 135, 255, 0.6); outline-offset: 10px; */
+	/* outline: 1px solid red; outline-offset: 10px; */
+	/* transition: outline 0.5s;  */
+	/* position:relative; z-index:+15; */
+	/* transform: translate(-2px, -2px); */
+	/* transition: translate 0.5s ease-out; */
+	/* box-shadow: 4px 5px 5px 5px rgba(0, 0, 0, 0.3); */
+}
+div.sticker.resa-copypaste, div.sticker.resa-copypaste:hover { 
+	outline: 10px solid rgba(255, 255, 255, 0.7); outline-offset: 6px;
+}
+
+div.h-axis div.sticker.trimsoon { border-top-left-radius:0; border-bottom-left-radius:0; }
+div.h-axis div.sticker.trimlate { border-top-right-radius:0; border-bottom-right-radius:0; }
+div.h-axis div.sticker.timebox { border-radius: 0 0 0.5em 0.5em; opacity: 0.7; }
+div.h-axis div.sticker.timebox div.sticker-inset { justify-content:center; align-items:center; padding:0; font-size:80%; line-height:.8em; padding:0; }
+
+
+
+
+div.v-axis div.sticker.trimsoon { border-top-left-radius:0; border-top-right-radius:0; }
+div.v-axis div.sticker.trimsoon  div.sticker-inset { align-items:normal; } /* lets the text flow from the top */
+div.v-axis div.sticker.trimsoon  div.sticker-inset div.caption { padding:44px 0 0 0; } /* contains the catpion of this shadow, padding see (*pv02*)  */
+
+div.v-axis div.sticker.trimlate { border-bottom-left-radius:0; border-bottom-right-radius:0; }
+div.v-axis div.sticker.trimlate  div.sticker-inset { align-items:flex-end; } /* lets the text flow from the bottom */
+div.v-axis div.sticker.trimlate  div.sticker-inset div.caption { padding:0 0 .6em 0; } /* contains the catpion of this shadow, padding see (*pv02*)  */
+
+div.v-axis div.sticker.trimlate.trimsoon  div.sticker-inset { align-items:center; } /* keeps the text middle aligned vertically */
+div.v-axis div.sticker.trimlate.trimsoon  div.sticker-inset div.caption { padding:0 0 0 0; } /* contains the catpion of this shadow, padding see (*pv02*)  */
+
+div.v-axis div.sticker.timebox { border-radius:1em 0 0 1em; opacity: 0.7; }
+div.v-axis div.sticker.timebox div.sticker-inset { justify-content:center; align-items:center; font-size:80%; padding:0; line-height:.8em; }
+
+div.P_Vertical div.vertical-section div.v-axis div.sticker.resa > div.sticker-inset { /* border:1px solid lime;*/  }
+
+
+div.P_Vertical div.vertical-section div.v-axis div.sticker.trimsoon > div.sticker-inset { padding-top:60px; }
+div.P_hourly   div.vertical-section div.v-axis div.sticker.trimsoon {  }
+
+
+div.sticker.trimsoon.trimlate {  /* this one is a closed day */
+	border-radius:0 0 0 0;
+} 
+
+	/* shades on hourly stickers */
+
+table.P_horiz div.sticker.trimsoon.trimlate::after {
+	pointer-events:none;
+	content:""; position:absolute; inset:0;		
+	opacity:1;
+	/* background: linear-gradient(to right, rgba(250,250,250,.6) 0%, rgba(250,250,250,.15) 40px, rgba(250,250,250,.4) 50%, rgba(250,250,250,.15) calc(100% - 40px), rgba(250,250,250,.6) 100%); */
+}
+table.P_horiz div.sticker.trimsoon::after {
+	pointer-events:none;
+	content:""; position:absolute; inset:0;		
+	opacity:1;
+	/* background: linear-gradient(to right, rgba(250,250,250,.6) 0%, rgba(250,250,250,.15) 40px, rgba(250,250,250,.15) 100%); */
+}
+table.P_horiz div.sticker.trimlate::after {
+	pointer-events:none;
+	content:""; position:absolute; inset:0;		
+	opacity:1;
+	/* background: linear-gradient(to left, rgba(250,250,250,.5) 0%, rgba(250,250,250,.15) 40px, rgba(250,250,250,.15) 100%); */
+}
+
+
+div.P_Vertical td.P_column div.sticker.trimsoon.trimlate::after {
+	pointer-events:none;
+	content:""; position:absolute; inset:0;		
+	opacity:1;
+	/* background: linear-gradient(to bottom, rgba(250,250,250,.6) 0%, rgba(250,250,250,.15) 50px, rgba(250,250,250,.4) 50%, rgba(250,250,250,.15) calc(100% - 30px), rgba(250,250,250,.6) 100%); */
+}
+div.P_Vertical td.P_column div.sticker.trimsoon::after {
+	pointer-events:none;
+	content:""; position:absolute; inset:0;		
+	opacity:1;
+	/* background: linear-gradient(to bottom, rgba(250,250,250,.6) 0%, rgba(250,250,250,.15) 50px, rgba(250,250,250,.15) 100%); */
+}
+div.P_Vertical td.P_column div.sticker.trimlate::after {
+	pointer-events:none;
+	content:""; position:absolute; inset:0;		
+	opacity:1;
+	/* background: linear-gradient(to top, rgba(250,250,250,.6) 0%, rgba(250,250,250,.15) 30px, rgba(250,250,250,.15) 100%); */
+}
+
+
+
+
+	/* when sliding on free slots: */
+div.h-axis div.sticker.touching, 
+div.v-axis div.sticker.touching 
+	{ 	opacity:1;
+		box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.15);
+		box-sizing: border-box; 
+		overflow:visible;
+		background:linear-gradient(to right, rgba(255,255,255,.8) 0%, transparent 50%, rgba(255,255,255,.8) 100%);
+		
+		z-index:12;
+		backdrop-filter: blur(8px);
+	}
+	
+div.h-axis div.sticker.touching div.sticker-inset, 
+div.v-axis div.sticker.touching div.sticker-inset
+	{ 	
+		color:red; font-weight:bold; font-size:90%; overflow-wrap:normal; /* see div.sticker-inset{} */
+	}
+div.h-axis div.sticker.touching  {
+	background:linear-gradient(to right, rgba(255,255,255,.8) 0%, transparent 50%, rgba(255,255,255,.8) 100%);
+}
+div.v-axis div.sticker.touching  {
+	background:linear-gradient(to bottom, rgba(255,255,255,.8) 0%, transparent 50%, rgba(255,255,255,.8) 100%);
+}
+
+
+
+/* C_iPLAN */
+
+
+
+div.desk-grid { /* this draws the separation from the notes/chats/tasks (called desk-console) and calendar display areas (desk-planning) */
+	display: grid;
+	grid-template-rows: auto 1fr;
+	grid-template-areas: "top" "bottom";
+	/* grip-template-rows: 100%; */
+}
+div.desk-grid > div.desk-console {
+	grid-area: top; /* this area has an auto height, so the height fits the content, it contains the notes/chats/tasks and calendar displays */
+	position:relative;
+	width:100vw; max-width:100vw;
+}
+div.desk-grid > div.desk-planning {
+	grid-area: bottom; /* this area uses the remaining space under the console,  we draw the planning in this area */
+}
+
+
+
+div.single-layout { /* this is nested inside div.desk-planning */
+	display: grid;
+	grid-template-columns: /*1*/ 1fr /*2*/ auto /*3*/;
+	grid-template-rows: /*1*/ auto /*2*/ auto /*3*/ 1fr /*4*/;
+	/*border:3px solid blue;*/
+}
+div.single-layout > div.datenav {
+	grid-row: 1 / 2;
+	grid-column: span 2;
+	/*border:3px solid green;*/
+}
+
+
+div.list-layout > div.agenda-header,
+div.single-layout > div.agenda-header {
+	grid-row: 2 / 3;
+	grid-column: span 2;
+	width: calc(100vw - 5px); min-width: calc(100vw - 5px);
+	
+	/* border:4px solid red; */
+	/* height: var(--topbar-h); */
+	/* box-sizing: border-box; */
+
+	/* grid-template-columns: minmax(0, max-content) minmax(0, 1fr) max-content; */
+	/* align-items: center; */
+}
+
+div.list-layout > div.agenda-header > div.agenda-header-wrap,
+div.single-layout > div.agenda-header > div.agenda-header-wrap {
+	display: grid;
+	width: 100%;
+	height: var(--topbar-h);
+	box-sizing: border-box;
+
+	/* left group | spacer | right group */
+	grid-template-columns: minmax(0, max-content) minmax(0, 1fr) max-content;
+	align-items: center;
+
+	& > div.topbar-right {
+		justify-self: end;
+		min-width: 0;
+	}
+	& > div.topbar-left-pack, & > div.topbar-right-pack {
+		display: flex;
+		align-items: center;
+		gap:0px;      /* optional spacing between left items */
+		min-width: 0;
+		& > div.topbar-item {
+			display: flex; align-items: center; justify-content:center;
+			min-width:0; height:30px;
+			text-align:center; 
+		}
+	}
+}
+
+
+div.single-layout > div.vertical-left {
+	grid-row: 3 / 4;
+	grid-column: 1 / 2;
+	/* border:2px solid magenta; */
+}
+div.single-layout > div.vertical-right {
+	grid-row: 3 / 4;
+	grid-column: 2 / 3;
+	/* border:2px solid cyan; */
+	/* width:44em; */
+	/* max-width:44em; */
+	
+	min-width:40vw; /* for very small devices */
+	padding-right:0px;
+	
+	@media (min-width: 1000px) { min-width:40vw; width:auto; max-width:50vw; padding-right:10px; }
+	@media (min-width: 1600px) { min-width:30vw; width:auto; max-width:40vw; padding-right:10px; }
+}
+
+
+
+div.list-layout { /* this is nested inside div.desk-planning */
+	display: grid;
+	grid-template-columns: /*1*/ 1fr /*2*/;
+	grid-template-rows: /*1*/ auto /*2*/ auto /*3*/ 1fr /*4*/;
+	/*border:3px solid blue;*/
+}
+div.list-layout > div.datenav {
+	grid-row: 1 / 2;
+	grid-column: span 1;
+	/*border:3px solid green;*/
+}
+
+
+
+/* css for R_search */
+
+.ac-remote { font-size: 1.2em; }
+
+div.remote-outset { }
+body.single div.remote-outset { width:auto; }  /* vertical view */
+body.multi  div.remote-outset { width:calc(100vw - 10%); margin:0 auto; } /* horizontal view */
+
+
+div.remote-shape {  }
+div.remote-inset { padding-top: .6em; }
+body.single div.remote-inset { padding-left:1em; padding-right:0; }
+
+
+
+div.remote-headerpane { /* is the header section of the search assistent, containing visitor and workcode selection */
+	display:flex; 
+	margin:0 auto 0 auto; min-height:6em; border-radius:.6em; padding:.8em .8em 1.2em .8em;
+	background:oklch(from var(--account-color-code) 80% .02 h /.3);
+	
+	> div:first-child { margin-right:0 auto 0 0; }
+	> div:last-child { margin-left:0 0 0 auto; }
+}
+body.gray div.remote-headerpane { background:rgb(230 230 235); }
+
+
+
+
+
+
+
+div.remote-searchpane {
+	padding-top:1em; padding-bottom:1em;
+	display:flex;
+	align-items:flex-start;
+	flex-wrap: wrap;
+	justify-content:space-between;
+}
+div.remote-searchpane:has(> :only-child) {
+  justify-content: flex-end;
+}
+
+div.remote-bottompane { }
+
+div.remote-bodypane table.C_iAMPM.right-padded { border-right:1.2em solid transparent; }
+	
+
+body.multi div.remote-bodypane > table > tbody > tr  > td { border-left:10px solid transparent; }
+	@media (min-width: 1300px) { body.multi div.remote-bodypane { padding:0 8em; } }
+	@media (min-width: 2000px) { body.multi div.remote-bodypane { padding:0 20em; } }
+
+.remote-ac { font-size:120%; }
+
+
+
+/* css for C_iSLOT */
+
+
+body.touch.single  div.vertical-right { border-left:none; }
+
+body.mouse.single  div.vertical-right {  }
+
+.remote-above { /* border:1px solid red; margin-top:1em; */ }
+.remote-under { /* border:1px solid green; margin-bottom:1em; */ }
+
+body.mouse .remote-above { 
+	width:100%; margin:0 auto 0 auto; border-radius: .5em .5em 0 0; /* max-height:220px; */
+}
+body.mouse .remote-under { 
+	width:100%; margin:0 auto 0 auto;	border-radius: 0 0 .5em .5em; /* max-height:220px;*/
+}
+
+
+div.vertical-right.remote-wrap {
+	/*display: grid;
+	grid-template-rows: 20vh auto 20vh;
+	grid-template-columns: 1fr;
+	grid-template-areas: "top" "middle" "bottom"; */
+	/* grip-template-rows: 100%; 
+	display:flex; justify-content: center; align-items: center; flex-direction: column; */
+}
+div.vertical-right.remote-wrap > div.remote-above {
+	/* border:1px solid green; */
+}
+div.vertical-right.remote-wrap > div > div.remote-above.closed { display:none; }
+div.vertical-right.remote-wrap > div > div.remote-above.opened { 
+	min-height:150px;
+	/* background:linear-gradient(to right, transparent 0%, rgba(0,0,20,.05) 10%, rgba(0,0,10,.01) 20%, transparent 100%); */
+	background: transparent;
+}
+
+div.vertical-right.remote-wrap > div > div.remote-outset.clear { 
+	border-top:10em solid transparent;
+}
+div.vertical-right.remote-wrap > div { margin-top:auto; margin-bottom:0; }
+div.vertical-right.remote-wrap > div > div.remote-under {
+	/* border:1px solid blue; */
+}
+div.vertical-right.remote-wrap > div > div.remote-under.closed { display:none; }
+div.vertical-right.remote-wrap > div > div.remote-under.opened { 
+	min-height:150px;
+	background:linear-gradient(to left, transparent 0%, rgba(0,0,20,.05) 10%, rgba(0,0,10,.01) 20%, transparent 100%);
+}
+
+/*
+body.mouse .remote-above > div { height:360px; min-height:360px; }
+body.mouse .remote-under > div { height:260px; min-height:260px; }
+*/
+
+table.slot-result { /* border-left: 1em solid transparent; border-top: 1em solid transparent; border-bottom: 1em solid transparent; */ }
+table.slot-result td { padding:0; border-top: .5px dotted #00000055; }
+table.slot-result tr:hover { background: linear-gradient(to right, rgba(117,149,175,.3) 0px, rgba(117,149,175,.2) 14em, rgba(117,149,175,.1) 95%, transparent 100%); }
+table.slot-result a { padding:0 0.7em 0 0; cursor:pointer; }
+table.slot-result a:hover { background: rgba(164, 179, 87, 0.5); }
+
+/* when pre-viewing a slot search result by hovering the mouse pointer over availabilities */
+div.sticker.slot-preview { outline: 6px solid rgba(255 0 0 /0.6); }
+
+span.slot-preview { outline: 3px solid rgba(255 0 0 /0.6); outline-offset:3px; border-radius:2px 0 6px 0; } /* hovering an available searched slot while the right day stands on the planning */
+
+
+
+
+/* for future use: background patterns in css instead of gif images */
+
+
+.microperforation {
+background:
+radial-gradient(rgba(0, 0, 0, .6) 15%, transparent 16%) 0 0,
+radial-gradient(rgba(0, 0, 0, .6) 15%, transparent 16%) 5px 5px,
+radial-gradient(rgba(0, 0, 0, .2) 14%, transparent 22%) 0 1px,
+radial-gradient(rgba(0, 0, 0, .2) 14%, transparent 22%) 5px 6px;
+background-color:rgba(255, 255, 255, 0.4);;
+background-size:10px 10px;
+}
+.microbial {
+background:
+radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, rgba(0, 0, 0, 0.2) 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+radial-gradient(at 100% 100%, rgba(96, 16, 48, 0) 9px, rgba(0, 0, 0, 0.2) 10px, rgba(96, 16, 48, 0) 11px), rgba(255,255,255,.1);
+background-size: 20px 20px;
+}
+.woodfloor {
+background:
+linear-gradient(135deg, transparent 2.7px, rgba(0, 0, 0, 0.4) 2.9px, rgba(0, 0, 0, 0.4) 3px, transparent 3px, transparent 8.4px, rgba(0, 0, 0, 0.4) 8.4px, rgba(0, 0, 0, 0.4) 8.6px, transparent 8.6px),
+linear-gradient(225deg, transparent 2.7px, rgba(0, 0, 0, 0.4) 2.9px, rgba(0, 0, 0, 0.4) 3px, transparent 3px, transparent 8.4px, rgba(0, 0, 0, 0.4) 8.4px, rgba(0, 0, 0, 0.4) 8.6px, transparent 8.6px)0 8px;
+background-color:transparent;
+background-size: 8px 16px;
+}
+
+
+.checkerboard {
+background-color: rgba(255, 255, 255, 0.4);
+background-image: 
+linear-gradient(45deg, rgba(0, 0, 0, 0.2) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.2) 75%, rgba(0, 0, 0, 0.2)),
+linear-gradient(45deg, rgba(0, 0, 0, 0.2) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.2) 75%, rgba(0, 0, 0, 0.2));
+background-size: 14px 14px;
+background-position: 0 0, 7px 7px;	
+}
+.losanges {
+background-color: rgba(255, 255, 255, 0.4);
+background-image: 
+linear-gradient(45deg, rgba(0, 0, 0, 0.2) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.2) 75%, rgba(0, 0, 0, 0.2)),
+linear-gradient(-45deg, rgba(0, 0, 0, 0.2) 25%, transparent 25%, transparent 75%, rgba(0, 0, 0, 0.2) 75%, rgba(0, 0, 0, 0.2));
+background-size: 9px 9px;	
+}
+.jacquard {
+background-color: rgba(0, 0, 0, 0.01);
+background-image:
+repeating-linear-gradient(120deg, rgba(255,255,255,.6), rgba(255,255,255,.6) 1px, transparent 1px, transparent 12px),
+repeating-linear-gradient(60deg, rgba(255,255,255,.6), rgba(255,255,255,.6) 1px, transparent 1px, transparent 12px),
+linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+background-size: 14px 24px;
+}
+
+
+.downhash {
+background-color: transparent;
+background-image: repeating-linear-gradient(45deg , rgba(255,255,255,.4) -3px, rgba(255,255,255,.4) -1px, rgba(0, 0, 0, 0.2) -1px, rgba(0, 0, 0, 0.2) 1px, rgba(255,255,255,.4) 1px, rgba(255,255,255,.4) 3px);
+background-size: 2002.6px 2002.6px;
+}
+
+.risehash {
+background-color: transparent;
+background-image: repeating-linear-gradient(-45deg , rgba(255,255,255,.4) -3px, rgba(255,255,255,.4) -1px, rgba(0, 0, 0, 0.2) -1px, rgba(0, 0, 0, 0.2) 1px, rgba(255,255,255,.4) 1px, rgba(255,255,255,.4) 3px);
+background-size: 2002.6px 2002.6px;
+}
+
+
+.slide-right { animation: slide-right 300s linear infinite; }
+.slide-left { animation: slide-left 300s linear infinite; }
+.slide-up { animation: slide-up 300s linear infinite; }
+.slide-down { animation: slide-down 300s linear infinite; }
+
+.slide-right:hover, .slide-left:hover, .slide-up:hover, .slide-down:hover { animation-play-state: paused; }
+
+@keyframes slide-right {
+    from { background-position: 0 0; }
+    to { background-position: 4000px 0; }
+}
+@keyframes slide-left {
+    from { background-position: 0 0; }
+    to { background-position: -4000px 0; }
+}
+@keyframes slide-up {
+    from { background-position: 0 0; }
+    to { background-position: 0 -4000px; }
+}
+@keyframes slide-down {
+    from { background-position: 0 0; }
+    to { background-position: 0 4000px; }
+}
+
+
+.verticalhash {
+background-color: rgba(255, 255, 255, 0.4);
+background-image: linear-gradient(90deg, transparent 50%, rgba(0, 0, 0, 0.2) 50%);
+background-size: 6px 6px;
+}
+
+.horizontalhash {
+background-color: rgba(255, 255, 255, 0.4);
+background-image: linear-gradient(0deg, transparent 50%, rgba(0, 0, 0, 0.2) 50%);
+background-size: 6px 6px;
+}
+.tablecloth {
+background-color:rgba(255, 255, 255, 0.4);
+background-image: linear-gradient(90deg, rgba(0,0,0,.1) 50%, transparent 50%),
+linear-gradient(rgba(0,0,0,.1) 50%, transparent 50%);
+background-size:7px 7px;
+}
+.verticalwaves {
+background:
+radial-gradient(circle at 100% 50%, transparent 20%, rgba(0, 0, 0, 0.2) 21%, rgba(0, 0, 0, 0.2) 34%, transparent 35%, transparent),
+radial-gradient(circle at 0% 50%, 	transparent 20%, rgba(0, 0, 0, 0.2) 21%, rgba(0, 0, 0, 0.2) 34%, transparent 35%, transparent) 0 -5px;
+background-color: rgba(255, 255, 255, 0.4);
+background-size:7.5px 10px;
+}
+
+
+
+.triangles {
+background-color: rgba(255, 255, 255, 0.4);
+background-image: linear-gradient(45deg, transparent 50%, rgba(0, 0, 0, 0.2) 50%);
+background-size: 8px 8px;
+}
+.pyramids { 
+background: linear-gradient(315deg, transparent 75%, rgba(0, 0, 0, 0.05) 0)-5px 0,
+linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.05) 0)-5px 0,
+linear-gradient(135deg, rgba(255, 255, 255, 0.1) 50%, transparent 0) 0 0,
+linear-gradient(45deg, rgba(0, 0, 0, 0.2) 50%, rgba(255, 255, 255, 0.2) 0) 0 0 transparent;
+background-size: 10px 10px;
+}
+.shippo {
+	background-color:rgba(255, 255, 255, 0.4);
+background-image: radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.2) 99%), radial-gradient(closest-side, transparent 98%, rgba(0,0,0,.2) 99%);
+background-size:8px 8px;
+background-position:0 0, 4px 4px;
+}
+
+
+
+.dotslittle {
+background-color:rgba(0, 0, 0, 0.1);
+background-image: radial-gradient(rgba(255, 255, 255, 0.5) 30%, transparent 31%), radial-gradient(rgba(255, 255, 255, 0.5) 30%, transparent 31%);
+background-size: 20px 20px;
+background-position: 0 0, 10px 10px;
+}
+.dotsmedium {
+background-color:rgba(0, 0, 0, 0.1);
+background-image: radial-gradient(rgba(255, 255, 255, 0.5) 30%, transparent 31%), radial-gradient(rgba(255, 255, 255, 0.5) 30%, transparent 31%);
+background-size: 26px 26px;
+background-position: 0 0, 13px 13px;
+}
+.dotsbig {
+background-color:rgba(0, 0, 0, 0.1);
+background-image: radial-gradient(rgba(255, 255, 255, 0.5) 40%, transparent 41%), radial-gradient(rgba(255, 255, 255, 0.5) 40%, transparent 41%);
+background-size: 30px 30px;
+background-position: 0 0, 15px 15px;
+}
+
+
+.circleslittle {
+background:
+radial-gradient(transparent, transparent 10%, rgba(0, 0, 0, .5) 11%, rgba(0, 0, 0, .5) 20%, transparent 21%) 0 0,
+radial-gradient(transparent, transparent 10%, rgba(0, 0, 0, .5) 11%, rgba(0, 0, 0, .5) 20%, transparent 21%) 9px 9px;
+background-color:rgba(255, 255, 255, 0.4);
+background-size:18px 18px;
+}
+.circlesmedium {
+background:
+radial-gradient(transparent, transparent 14%, rgba(0, 0, 0, .5) 15%, rgba(0, 0, 0, .5) 25%, transparent 26%) 0 0,
+radial-gradient(transparent, transparent 14%, rgba(0, 0, 0, .5) 15%, rgba(0, 0, 0, .5) 25%, transparent 26%) 10px 10px;
+background-color:rgba(255, 255, 255, 0.4);
+background-size:20px 20px;
+}
+.circlesbig {
+background:
+radial-gradient(transparent, transparent 25%, rgba(0, 0, 0, .5) 26%, rgba(0, 0, 0, .5) 36%, transparent 37%) 0 0,
+radial-gradient(transparent, transparent 25%, rgba(0, 0, 0, .5) 26%, rgba(0, 0, 0, .5) 36%, transparent 37%) 11px 11px;
+background-color:rgba(255, 255, 255, 0.4);
+background-size:22px 22px;
+}
+
+
+	
+
+
+

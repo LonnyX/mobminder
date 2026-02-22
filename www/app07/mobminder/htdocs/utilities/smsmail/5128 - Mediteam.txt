@@ -1,0 +1,11 @@
+<french>{dear} {gender} {lname},
+
+Votre médecin ORL, Dr Grenier, est absente jusqu'au 31/08/2026 pour une mission professionnelle à l'étranger.
+Durant cette période, elle est remplacée par sa consoeur Dr Toorens.
+
+La prise de RDV peut se faire via:
+booking.mobminder.com/mediteamgrenier/
+
+Mediteam
+
+(Ceci est un message automatique, SVP n'enregistrez pas ce numéro)</french>

@@ -1,0 +1,1103 @@
+
+/* COLOR PALETTE
+
+	!! this is not a dumby re-programming of the standard color palettes, because
+	IT RULES THE CONTRASTING TEXT COLOR !! */
+
+
+/* {{ (object.invoice_user_id.email_formatted or object.company_id.email_formatted or user.email_formatted) }} */
+/* Main color palette definition */
+
+:root {
+	--mob-bckg-white-20: 249 249 249;
+	--mob-bckg-modals-20: 252 252 252;
+	/* --mob-bckg-white-20: 245 245 245; */
+	
+	/* grey scale */
+	--main-text-lightest: rgba(0,0,0,.15); /* very light shade */ 
+	
+	--main-text-lighter: rgba(0,0,0,.35); /* a lighter version of the main text color, used on field labels and disabled items */ 
+	--main-text-lighty: rgba(0,0,0,.55); /* a lighter version of the main text color, used on field labels and disabled items */ 
+	--main-text-color: rgba(0,0,0,.7); /* main scripting display color, most spread among webapp */
+	--main-text-darker: rgba(0,0,0,.8);	/* a darker version of the main text color (used on planning stickers, and calendar headers) */ 
+	--main-text-darkest: rgba(0,0,0,.9); /* a very contrasted version of the main text color */ 
+  
+	--main-text-white: rgba(255,255,255,.9); /* a white version of the main text color (used on planning stickers) */
+  
+  
+	--mob-txt-blue: 104,151,191; 	/* a blue color for text writing */
+	--mob-txt-blue-20: 104 151 191; 	/* a blue color for text writing */
+	--mob-txt-dark-blue: 84,133,159; 	/* a blue color for text writing */
+	--mob-txt-lime: 175,197,60; 	/* a lime color for text writing */
+	--mob-txt-lime-20: 175 197 60; 	/* a lime color for text writing */
+	
+	--mob-lime-light: rgb(194,226,73); 	/* a light lime color */
+	--mob-lime-light-20: 194 226 73; 	/* a light lime color */
+	
+	
+	--mob-lime-thick: 137,169,90; 		/* resas, a lime color for heavier text writing (bigger font sizes) */
+	--mob-blue-thick: rgb(117,149,175); 	/* visis, a blue color for heavier text writing (bigger font sizes) */
+	--mob-blue-thick-20: 117 149 175; 	/* visis, a blue color for heavier text writing (bigger font sizes) */
+	/*--mob-orange-thick: rgb(255,128,64); */	/* chats */
+	--mob-orange-thick: rgb(255,143,92); 	/* chats */
+	
+	--mob-brown-thick: rgb(184,134,11,1); 	/* tasks */
+	/*--mob-brown-thick: rgb(177,116,15); */	/* tasks */
+	
+	/*--mob-purple-thick: rgb(185,85,211); */	/* notes */
+	--mob-purple-thick: rgb(166,100,122); 	/* notes */
+	
+	--mob-red-thick: rgb(220,20,60); 		/* chats blinking indicator */
+	
+	--mob-lime-bckgr: 137,169,90; 		/* resas, a lime color for heavier text writing (bigger font sizes) */
+	--mob-lime-bckgr-20: 137 169 90; 		/* resas, a lime color for heavier text writing (bigger font sizes) */
+	
+	--mob-blue-bckgr: 117,149,175; 	/* blue */
+	--mob-orange-bckgr: 220,127,80; 	/* chats */
+	--mob-orange-bckgr-20: 220 127 80; 	/* chats */
+	--mob-brown-bckgr: rgba(184,134,11,.3); 	/* tasks */
+	--mob-purple-bckgr: rgba(216,191,216,.3); 	/* notes */
+	
+	
+	--main-placeholder-text: rgba(105,117,33,0.6); /* a lime color for placeholders */
+	
+	--input-fields-radius: 6px;
+} 
+
+
+:root { /* dev help */
+	/*  use this when trying to identify what pre-defined color var is displayed somewhere in the app
+	--main-text-color: red;
+	--main-text-lighter: orange;
+	--main-text-darker: darkred;
+	--main-text-darkest: purple;
+  
+	--main-text-white: yellow;
+  
+  
+	--main-placeholder-text: rgba(105,117,33,0.6);
+
+	*/
+}
+
+
+/* Text and background colors */
+
+.mobtext { color:rgb(var(--mob-txt-blue)); } /* blue mobminder  for text on white background*/
+.mindertext { color:rgb(var(--mob-txt-lime)); } /* middle lime  for text on white background */
+
+.mob-txt-blue { color:rgb(var(--mob-txt-blue)); 	} /* rgb(104,151,191) blue mobminder for normal sized text */
+.mob-txt-blue-soft { color:rgb(104, 151, 191,.6); 	}
+.mob-txt-lime { color:rgb(var(--mob-txt-lime)); 	} /* rgb(195,217,73) light mobminder for normal sized text */
+.mob-txt-lime-thick { color:rgba(var(--mob-lime-thick),1); }
+
+.mobcolor { color:#85A5BF; } /* blue mobminder for backgrounds*/
+.mindercolor { color:#c2e249; } /* light lime for backgrounds */
+.minder-background { background-color:#c2e249; color:white; }
+.orange { color:orangered !important; }
+
+:root { --hdr-red: rgb(255,0,0); } /*  PVH2025: not yet available when tested */
+.red { color:var(--hdr-red !important); }
+@media (dynamic-range: high) or (color-gamut: p3) {
+  :root { --hdr-red: color(display-p3 1 0 0); }
+}
+
+.yellow { color:orange !important; }
+.transparent { color: transparent !important; }
+
+.mob-txt-gray_xl { color:rgba(10,30,15,0.1); }  
+.mob-txt-gray_l { color:rgba(10,30,15,0.3); text-shadow: -1px -1px 2px rgba(255,255,255,.4); } 
+.mob-txt-gray_m { color:rgba(10,30,15,0.5); text-shadow: -1px -1px 2px rgba(255,255,255,.5); }
+.mob-txt-gray_d { color:rgba(10,30,15,0.6); text-shadow: -1px -1px 2px rgba(255,255,255,.6); }
+
+.txt-usual { color:var(--main-text-color) }
+
+.txt-gray_l { color:rgba(10,30,15,0.4); }  /* to be used with duotone */
+.txt-gray_m { color:rgba(10,30,15,0.5); }
+.txt-gray_d { color:rgba(10,30,15,0.6); }
+
+.txt-transparent { color:white; }
+.txt-white { color:white; }
+.txt-orange { color:orange; }
+.txt-red { color:#DD0000; }  /* see (*css05*) */ 
+
+.textcolor-light { color:var(--main-text-lighter); } /* applies to picker headers when they lay on the remote pad */
+.blueprint { font-size:90%; color:rgb(var(--mob-txt-blue)); }	
+	.blueprint.big { font-size:100%; }	
+
+
+.text-disabled { color:white; text-shadow:1px 1px 1px rgba(0,0,0,.4), -1px -1px 1px rgba(255,255,255,.4); }
+
+/* in the following section, we have selected colors and shades for the following objects: 
+		1. reservations (either event or appointment)
+		2. visitors
+		3. notes
+		4. tasks
+		5. chats
+	
+   The color scheme affects the following displays:
+		A. main modal title
+		B. disabled tabs in the modal
+		C. title appearing in the bottom bar of drawers (this applies only to notes, tasks and chats)
+		D. shaded background of the bottom bar drawers (this applies only to notes, tasks and chats)
+		E. C_iARRAY headline background
+		F. blinking counter indications (this applies only to notes, tasks and chats)
+*/
+
+
+
+div.i-array table tr th.iARRAY_header_archived {
+	width:2.4em;
+}
+
+div.i-array table tr td.iARRAY_cell_archived.figure {
+	width:2.4em;
+	text-align:center;
+}
+
+
+
+/* D. defining the bottom-pane bar backgrounds, see planning.js */
+.resas-bar-color { } /* green title, washed green tabs background and C_iARRAY  */
+.visis-bar-color { } /* blue */
+.notes-bar-color { background: linear-gradient( to left, var(--mob-purple-bckgr) 0%, var(--mob-purple-bckgr) 20%, transparent 100% ); }
+.tasks-bar-color { background: linear-gradient( to left, var(--mob-brown-bckgr) 0%, var(--mob-brown-bckgr) 20%, transparent 100% ); }
+.chats-bar-color { background: linear-gradient( to left, rgba(var(--mob-orange-bckgr),.1) 0%, rgba(var(--mob-orange-bckgr),.1) 20%, transparent 100% ); }
+
+/* E. defining the C_iARRAY headline backgrounds */
+div.i-array.reservations 	table tr.see { /* background:rgba(var(--mob-lime-bckgr),.1); this was ugly */ }
+div.i-array.visitors 		table tr.see { background:rgba(var(--mob-blue-bckgr),.1); }
+div.i-array.notes-archive 	table tr.see { background:var(--mob-purple-bckgr); }
+div.i-array.tasks-archive 	table tr.see { background:var(--mob-brown-bckgr); }
+div.i-array.chats-archive 	table tr.see { background:rgba(var(--mob-orange-bckgr),.1); }
+
+/* A. modal title: h1 title color in the header of modals */
+/* C. defining the bottom-pane bar title colors, see planning.js */
+h1.modal-resa, .resas-title-color, 
+h1.modal-customcss-h1-event, .modal-customcss-h1-resa { color:rgba(var(--mob-lime-thick),.9); }
+
+h1.modal-visi, .visis-title-color, .modal-customcss-h1-visitor { color:var(--mob-blue-thick); } /* example of usage here (*mc02*) */
+
+h1.modal-note, .notes-title-color, .modal-customcss-h1-note { color:var(--mob-purple-thick); }
+h1.modal-task, .tasks-title-color, .modal-customcss-h1-task { color:var(--mob-brown-thick); }
+h1.modal-chat, .chats-title-color, .modal-customcss-h1-chat { color:var(--mob-orange-thick); }
+
+h1.modal-workcode, .workcodes-title-color, .modal-customcss-h1-workcode { color:rgb(100,166,144); }
+h1.modal-product, .products-title-color, .modal-customcss-h1-product { color:rgb(111,100,166); }
+h1.modal-timeboxing, .timeboxings-title-color { color:var(--main-text-lighter); } /* example of usage here (*mc02*) */
+
+
+/* B. defining the washed color effect on disabled tabs, they reflect the title color */
+/*table.tabs.modal-resa td.tab > div { background:var(--mob-lime-bckgr); } */
+table.tabs.modal-resa td.tab > div { background:rgba(var(--mob-lime-bckgr),.3); }
+table.tabs.modal-visi td.tab > div { background:rgba(var(--mob-blue-bckgr),.3); } /* example of usage here (*mc01*) */
+table.tabs.modal-note td.tab > div { background:var(--mob-purple-bckgr); }
+table.tabs.modal-task td.tab > div { background:var(--mob-brown-bckgr); }
+table.tabs.modal-chat td.tab > div { background:rgba(var(--mob-orange-bckgr),.3); }
+
+table.tabs.modal-workcode td.tab > div { background:rgba(100,166,144,.3); }
+table.tabs.modal-product td.tab > div { background:rgba(111,100,166,.3); }
+
+/* F. blinking counter indications (this applies only to notes, tasks and chats) */
+.resas-blink-color { color:rgb(var(--mob-lime-thick)); }
+.visis-blink-color { color:var(--mob-blue-thick); } /* example of usage here (*mc02*) */
+.notes-blink-color { color:var(--mob-purple-thick); }
+.tasks-blink-color { color:var(--mob-brown-thick); }
+.chats-blink-color { color:var(--mob-red-thick); } /* note that the blink for chats is made here more like red */
+
+
+
+/* dev helpers, border any element so to highlight it */
+
+.bred { border:1px solid orange; }
+.bgreen { border:1px solid green; }
+.bblue { border:1px solid blue; }
+.bpurple { border:1px solid purple; }
+.bshowred { border:1px solid orange; border-radius:.2em; }
+.bshowgreen { border:1px solid darkgreen; border-radius:.2em; }
+
+
+/*   W A R N I N G
+
+Before changing anything inside this file OR changing this file name, check this class: C_cssNameToHexaColor
+
+*/
+	
+	
+/* PATTERNS PALETTE 'patterns'  KEEP THIS AT THE END OF THE FILE <= so it overrules the previous rules */
+
+:root {
+	--main-patterns-shade: rgba(0,0,0,.08);
+	--main-patterns-highlight: rgba(255,255,255,.08); 
+	--main-patterns-highlighter: rgba(255,255,255,.04); 
+	--main-patterns-lightest: rgba(255,255,255,.02); 
+}
+ 
+.p800:not(.zi-modal-inset), .zi-modal-inset.p800::after { /* diagonal uprising strips and sliding */ 
+  
+  background-image: repeating-linear-gradient( -45deg, var(--main-patterns-highlight), var(--main-patterns-highlight) 25%, var(--main-patterns-shade) 25%, var(--main-patterns-shade) 50%  );
+  background-size: 10px 10px;
+}
+
+
+.p801:not(.zi-modal-inset), .zi-modal-inset.p801::after { /* diagonal downgoing strips and sliding */ 
+  
+  background-image: repeating-linear-gradient( 45deg, var(--main-patterns-highlight), var(--main-patterns-highlight) 25%, var(--main-patterns-shade) 25%, var(--main-patterns-shade) 50% ),
+					repeating-linear-gradient(-45deg, var(--main-patterns-highlight), var(--main-patterns-highlight) 25%, var(--main-patterns-shade) 25%, var(--main-patterns-shade) 50%  );
+  background-size: 12px 12px;
+}
+
+
+.p802:not(.zi-modal-inset), .zi-modal-inset.p802::after { /* vertical strips sliding to the right */ 
+  
+  background-image: linear-gradient( 90deg, var(--main-patterns-highlight) 50%, var(--main-patterns-shade)  50% );
+  background-size: 8px 8px;
+}
+
+
+.p803:not(.zi-modal-inset), .zi-modal-inset.p803::after { /* horizontal strips sliding to bottom */ 
+  
+  background-image: linear-gradient( 0deg, var(--main-patterns-highlight) 50%, var(--main-patterns-shade)  50% );
+  background-size: 8px 8px;
+}
+
+
+.p804:not(.zi-modal-inset), .zi-modal-inset.p804::after { /* diagonal uprising strips and sliding */ 
+  background-image: repeating-linear-gradient( -45deg, var(--main-patterns-highlight), var(--main-patterns-highlight) 25%, var(--main-patterns-shade) 25%, var(--main-patterns-shade) 50%  );
+  background-size: 10px 10px;
+  animation: slide-yx 2s infinite;
+  animation-timing-function: linear;
+}
+@keyframes slide-yx { 100% { background-position-x: 10px; background-position-y: 10px; } }
+
+
+.p805:not(.zi-modal-inset), .zi-modal-inset.p805::after { /* diagonal downgoing strips and sliding */ 
+  
+  background-image: repeating-linear-gradient( 45deg, var(--main-patterns-highlight), var(--main-patterns-highlight) 25%, var(--main-patterns-shade) 25%, var(--main-patterns-shade) 50%  );
+  background-size: 10px 10px;
+  animation: slide-xy 2s infinite;
+  animation-timing-function: linear;
+}
+@keyframes slide-xy { 100% { background-position-x: 10px; background-position-y: -10px; } }
+
+
+.p806:not(.zi-modal-inset), .zi-modal-inset.p806::after { /* vertical strips sliding to the right */ 
+  
+  background-image: linear-gradient( 90deg, rgba(255,255,255,.3) 50%, var(--main-patterns-shade)  50% );
+  background-size: 8px 8px;
+  animation: slide-x 1s infinite;
+  animation-timing-function: linear;
+}
+@keyframes slide-x { 100% { background-position-x: 8px; } }
+
+
+.p807:not(.zi-modal-inset), .zi-modal-inset.p807::after { /* horizontal strips sliding to bottom */ 
+  
+  background-image: linear-gradient( 0deg, var(--main-patterns-highlight) 50%, var(--main-patterns-shade)  50% );
+  background-size: 8px 8px;
+  animation: slide-y 1s infinite;
+  animation-timing-function: linear;
+}
+@keyframes slide-y { 100% { background-position-y: 8px; } }
+
+
+.p810:not(.zi-modal-inset), .zi-modal-inset.p810::after { /* tiles (or table cover pattern) */
+  
+  background-image: linear-gradient( 0deg, var(--main-patterns-highlight) 50%, var(--main-patterns-shade) 50% ),
+					linear-gradient( 90deg, var(--main-patterns-highlight) 50%, var(--main-patterns-shade) 50% );
+  background-size: 10px 10px;
+  background-position: 4px;
+}
+
+
+.p811:not(.zi-modal-inset), .zi-modal-inset.p811::after {
+  background-image: 
+    linear-gradient(45deg, var(--main-patterns-shade) 25%, var(--main-patterns-highlight) 25%, var(--main-patterns-highlight) 75%, var(--main-patterns-shade) 75%, var(--main-patterns-shade) 100%),
+    linear-gradient(45deg, var(--main-patterns-shade) 25%, var(--main-patterns-highlight) 25%, var(--main-patterns-highlight) 75%, var(--main-patterns-shade) 75%, var(--main-patterns-shade) 100%);
+  background-position: 0 0, 5px 5px;
+  background-size: 10px 10px;
+  background-repeat: repeat;
+}
+
+
+.p812:not(.zi-modal-inset), .zi-modal-inset.p812::after {
+  background-image: 
+    linear-gradient(45deg, var(--main-patterns-shade) 25%, var(--main-patterns-highlight) 25%, var(--main-patterns-highlight) 75%, var(--main-patterns-shade) 75%, var(--main-patterns-shade) 100%),
+    linear-gradient(45deg, var(--main-patterns-shade) 25%, var(--main-patterns-highlight) 25%, var(--main-patterns-highlight) 75%, var(--main-patterns-shade) 75%, var(--main-patterns-shade) 100%);
+  background-position: 0 0, 8px 8px;
+  background-size: 16px 16px;
+  background-repeat: repeat;
+}
+
+
+/*.p813 { 
+  background-image: linear-gradient( -45deg, var(--main-patterns-highlight) 75%, var(--main-patterns-shade) 75% ),
+    linear-gradient(45deg, var(--main-patterns-highlight) 75%, var(--main-patterns-shade) 75%),
+    linear-gradient(-135deg, var(--main-patterns-highlight) 75%, var(--main-patterns-shade) 75%),
+    linear-gradient(135deg, var(--main-patterns-highlight) 75%, var(--main-patterns-shade) 75%);
+  background-size: 10px 10px;
+}*/
+
+.p813:not(.zi-modal-inset), .zi-modal-inset.p813::after { /* diamond chess pattern */
+  background-image: linear-gradient( -45deg, var(--main-patterns-highlight) 75%, var(--main-patterns-shade) 75% ),
+					linear-gradient(45deg, var(--main-patterns-highlight) 75%, var(--main-patterns-shade) 75%),
+					linear-gradient(-135deg, var(--main-patterns-highlight) 75%, var(--main-patterns-shade) 75%),
+					linear-gradient(135deg, var(--main-patterns-highlight) 75%, var(--main-patterns-shade) 75%);
+  background-size: 12px 12px,12px 12px,12px 12px,12px 12px;
+  background-position: 0 0, 0 12px, 12px 0, 12px 12px;
+}
+
+
+.p820:not(.sticker-tip) { /* top left shade tab */
+  background-image: linear-gradient( 150deg, var(--main-patterns-highlight) 12px, var(--main-text-lighter) 13px, var(--main-text-lighter) 17px, var(--main-patterns-highlight) 18px );
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+#tipOutset.sticker-tip.p820 > #tipInset::after { /* bottom right shade tab */
+  position:absolute; inset:0; content:"";
+  background-image: linear-gradient( 150deg, var(--main-patterns-highlight) 30px, var(--main-text-lighter) 33px, var(--main-text-lighter) 45px, var(--main-patterns-highlight) 48px );
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  pointer-events:none;
+}
+	.zi-modal-inset.p820 { /* bottom right tab */
+	  background-image: linear-gradient( 150deg, var(--main-patterns-highlight) 100px, var(--main-text-lighter) 110px, var(--main-text-lighter) 140px, var(--main-patterns-highlight) 150px );
+	}
+	.zi-modal-inset.p820 div.modal-header::after { /* bottom right tab */
+	  position:absolute; inset:0; content:"";
+	  background-image: linear-gradient( 150deg, var(--main-patterns-highlighter) 86px, var(--main-text-lightest) 96px, var(--main-text-lightest) 123px, var(--main-patterns-highlighter) 139px );
+	  pointer-events:none;
+	}
+	
+
+.p821:not(.sticker-tip) { /* bottom right shade tab */
+  background-image: linear-gradient( 330deg, var(--main-patterns-highlight) 10px, var(--main-text-lighter) 11px, var(--main-text-lighter) 15px, var(--main-patterns-highlight) 16px );
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+#tipOutset.sticker-tip.p821 > #tipInset::after { /* bottom right shade tab */
+  position:absolute; inset:0; content:"";
+  background-image: linear-gradient( 330deg, var(--main-patterns-highlight) 30px, var(--main-text-lighter) 33px, var(--main-text-lighter) 45px, var(--main-patterns-highlight) 48px );
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  pointer-events:none;
+}
+	.zi-modal-inset.p821::after { /* bottom right tab */
+	  background-image: linear-gradient( 330deg, var(--main-patterns-highlight) 100px, var(--main-text-lighter) 110px, var(--main-text-lighter) 140px, var(--main-patterns-highlight) 150px );
+	}
+	.zi-modal-inset.p821 div.modal-body::after { /* bottom right tab */
+	  position:absolute; inset:0; content:"";
+	  background-image: linear-gradient( 330deg, var(--main-patterns-highlighter) 86px, var(--main-text-lightest) 96px, var(--main-text-lightest) 123px, var(--main-patterns-highlighter) 139px );
+	  pointer-events:none;
+	}
+
+
+.p822:not(.sticker-tip) { /* shade at top */
+  background-image: linear-gradient( 190deg, var(--main-text-color) 0px, var(--main-patterns-highlight) 20px );
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+}
+#tipOutset.sticker-tip.p822 > #tipInset::after { /* bottom right shade tab */
+	position:absolute; inset:0; content:"";
+	background-image: linear-gradient( 190deg, transparent 0px, var(--main-text-lighty) 8px, var(--main-patterns-highlight) 60px, transparent 200px );
+	pointer-events:none;
+}
+	.zi-modal-inset.p822, .zi-modal-inset.p822::after { /* bottom right tab */
+	  background-image: linear-gradient( 190deg, var(--main-text-lightest) 0px, var(--main-patterns-highlight) 20%);
+	}
+	.zi-modal-inset.p822::after { /* bottom right tab */
+	  background-image: linear-gradient( 190deg, var(--main-text-lighter) 0px, var(--main-patterns-highlight) 20%);
+	}
+
+
+.p823:not(.sticker-tip) { /* shade at bottom  */
+  background-image: linear-gradient( 10deg, var(--main-text-color) 0px, var(--main-patterns-highlight) 20px );
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+}
+#tipOutset.sticker-tip.p823 > #tipInset::after { /* bottom right shade tab */
+	position:absolute; inset:0; content:"";
+	background-image: linear-gradient( 10deg, transparent 0px, var(--main-text-lighty) 10px, var(--main-patterns-highlight) 60px, transparent 200px );
+  pointer-events:none;
+}
+	.zi-modal-inset.p823, .zi-modal-inset.p823::after { /* bottom right tab */
+		background-image: linear-gradient( 10deg, var(--main-text-lightest) 0px, var(--main-patterns-highlight) 20%);
+		z-index:+3; 
+	}
+	.zi-modal-inset.p823::after { /* bottom right tab */
+		background-image: linear-gradient( 10deg, var(--main-text-lighter) 0px, var(--main-patterns-highlight) 20%);
+	}
+
+
+
+/* SYMBOLS PALETTE for STATUS (this is a special cast for our iconic "patterns" that are actually not patterns but iconic) */
+
+.p900:not(.sticker-tip)::after, .p901:not(.sticker-tip)::after, .p902:not(.sticker-tip)::after, .p903:not(.sticker-tip)::after, /* see also (*mi01*) */
+.p910:not(.sticker-tip)::after, .p911:not(.sticker-tip)::after, .p912:not(.sticker-tip)::after, .p913:not(.sticker-tip)::after { /* symbol upper right in the planning sticker */
+	pointer-events:none; background: transparent; /*rgba(99,22,55,.5); /* viewport */
+	position:absolute; top:1px; right:1px; min-height:1.2em; min-width:1.2em; 
+	text-align:center; line-height:1.2em; font-family:'fawesome'; /* see faws.css */
+    font-style: normal; font-weight:400; font-variant:normal; text-rendering:auto; -webkit-font-smoothing:antialiased;
+}
+#tipOutset.sticker-tip.p900 > #tipInset::after
+, #tipOutset.sticker-tip.p901 > #tipInset::after
+, #tipOutset.sticker-tip.p902 > #tipInset::after
+, #tipOutset.sticker-tip.p903 > #tipInset::after
+, #tipOutset.sticker-tip.p910 > #tipInset::after
+, #tipOutset.sticker-tip.p911 > #tipInset::after
+, #tipOutset.sticker-tip.p912 > #tipInset::after
+, #tipOutset.sticker-tip.p913  > #tipInset::after { /* bottom right shade tab */
+	pointer-events:none; background: transparent; /*rgba(99,22,55,.5); /* viewport */
+	position:absolute; top:0px; right:0px; min-height:1.2em; min-width:1.2em; 
+	text-align:center; line-height:1.2em; font-family:'fawesome'; /* see faws.css */
+    font-style: normal; font-weight:400; font-variant:normal; text-rendering:auto; -webkit-font-smoothing:antialiased;
+}
+
+/* iconic patterns, see (*ip01*). They are single icons appearing instead of a full background */
+.p900:not(.sticker-tip)::after, div.zi-modal-inset.p900::after, #tipOutset.sticker-tip.p900 > #tipInset::after { z-index:+3; content:"\f00c"; /* fa-check, see faws (*fw01*) */ }
+.p901:not(.sticker-tip)::after, div.zi-modal-inset.p901::after, #tipOutset.sticker-tip.p901 > #tipInset::after { z-index:+3; content:"\f00d"; /* fa-times, see faws (*fw02*) */ }
+.p902:not(.sticker-tip)::after, div.zi-modal-inset.p902::after, #tipOutset.sticker-tip.p902 > #tipInset::after { z-index:+3; content:"\f192"; /* fa-dot-circle, see faws (*fw03*) */ }
+.p903:not(.sticker-tip)::after, div.zi-modal-inset.p903::after, #tipOutset.sticker-tip.p903 > #tipInset::after { z-index:+3; content:"\f05e"; /* fa-ban, see faws (*fw04*) */ }
+
+.p910:not(.sticker-tip)::after, div.zi-modal-inset.p910::after, #tipOutset.sticker-tip.p910 > #tipInset::after { z-index:+3; content:"\f01e"; /*font-size:90%;*/ /* fa-redo, see faws (*fw10*) */ }
+.p911:not(.sticker-tip)::after, div.zi-modal-inset.p911::after, #tipOutset.sticker-tip.p911 > #tipInset::after { z-index:+3; content:"\f968"; /*font-size:110%;*/ /* fa-people-arrows, see faws (*fw11*) */ }
+.p912:not(.sticker-tip)::after, div.zi-modal-inset.p912::after, #tipOutset.sticker-tip.p912 > #tipInset::after { z-index:+3; content:"\f34a"; /*font-size:110%;*/ /* fa-arrow-alt-to-bottom, see faws (*fw12*) */ }
+.p913:not(.sticker-tip)::after, div.zi-modal-inset.p913::after, #tipOutset.sticker-tip.p913 > #tipInset::after { z-index:+3; content:"\f34c"; /*font-size:110%;*/ /* fa-arrow-alt-to-right, see faws (*fw13*) */ }
+
+/* No pattern */ 
+.p999, .p0 { background-color: white; border:1px solid #AAA;  } /* status for no status (default value of C_dS_cssSpecStatus.css) */
+.c999 { background-color: white; border:1px solid #AAA; } /* status for no status (default value of C_dS_cssSpecStatus.css) */
+
+div.skin-face::after {
+    position: relative;
+    padding: 0 .3em 0 .8em;
+}
+
+.zi-modal-inset.p900::after, .zi-modal-inset.p901::after, .zi-modal-inset.p902::after, .zi-modal-inset.p903::after,
+.zi-modal-inset.p910::after, .zi-modal-inset.p911::after, .zi-modal-inset.p912::after, .zi-modal-inset.p913::after { /* symbol down left in the modal */
+	font-size:2.6em; color:var(--main-text-lighter); /* text-align:right; padding-top:1.4em; padding-right:.8em; */
+	border-radius:0;
+	bottom:auto; left:auto; right:calc(50% - .5em); top:18px; width:1em; height:1em;
+}
+#tipOutset.sticker-tip.p900 > #tipInset::after, #tipOutset.sticker-tip.p901 > #tipInset::after, #tipOutset.sticker-tip.p902 > #tipInset::after, #tipOutset.sticker-tip.p903 > #tipInset::after,
+#tipOutset.sticker-tip.p910 > #tipInset::after, #tipOutset.sticker-tip.p911 > #tipInset::after, #tipOutset.sticker-tip.p912 > #tipInset::after, #tipOutset.sticker-tip.p913 > #tipInset::after {
+	/* font-size:1.4em; color:var(--main-text-normal); text-align:right; padding-top:1.4em; padding-right:.8em; */
+	font-size:1.4em; /* text-align:right; padding-top:1.4em; padding-right:.8em; */
+	border-radius:0;
+	bottom:auto; left:auto; left:5em; top:16px; width:1em; height:1em; line-height:1em;
+}
+
+/*div.bullet::after {  }*/ /* inherits the contrasting text color defined in .c### classes */
+
+div.bullet.p900::after, div.bullet.p901::after, /* when iconic pattern is displayed, let's adjust the icon a little bit see also (*bp01*) */
+div.bullet.p902::after, div.bullet.p903::after, 
+div.bullet.p910::after, div.bullet.p911::after, 
+div.bullet.p912::after, div.bullet.p913::after  { font-size:7pt; color:inherit; top:1px; right:1px; } 
+
+div.top-front td.p900::after, div.top-front td.p901::after, /* when iconic pattern is displayed, let's adjust the icon a little bit see also (*bp01*) */
+div.top-front td.p902::after, div.top-front td.p903::after, 
+div.top-front td.p910::after, div.top-front td.p911::after, 
+div.top-front td.p912::after, div.top-front td.p913::after  { font-size:8pt; color:white; top:2px; right:2px; } 
+
+
+
+
+div.bullet { position:relative; }
+div.c1000.p1000:not(.fa):not(.fad) { width:0em; } /* none of patterns nor color, and not having any faw iconic */
+
+
+/* div.sticker appears on planning display */
+div.sticker.p900::after, div.sticker.p901::after, div.sticker.p902::after, div.sticker.p903::after, /* emphasize lisitbility by using shadows */
+div.sticker.p910::after, div.sticker.p911::after, div.sticker.p912::after, div.sticker.p913::after { font-size:1.1em; text-shadow:.5px .5px .5px rgba(0,0,0,.4), -.5px -.5px .5px rgba(255,255,255,.4); }
+
+div.bullet.account::after /* user accessible accounts display pane */
+	/*, div.bullet.workcode::after*/ /* wordcode select in M_RESA, and appears in the pluslist of the setup on workcodes tab */
+	/*, table.plus.workcodes div.bullet::after */ /* workcodes plus list in C_backPREFS  */
+	{ color:inherit; /*text-shadow:.5px .5px .5px rgba(0,0,0,.4)*/ }
+
+
+/* div.skin-face appears in the pattern application control C_iSKIN from controls.js */
+div.skin-face::after { position:relative !important; padding: 0 .3em 0 .8em; font-size:1.1em; }
+
+/* plus list in the C_backPREFS where patterns can be set up */
+table.plus.patterns div.bullet::after { color:var(--main-text-color); font-size:1.1em; line-height:1.1em; top:1px; right:8px; }
+
+table.skin-picker.patterns td { position:relative; }
+table.skin-picker.patterns td::after { color:var(--main-text-lighter); font-size:1.6em; line-height:1.6em;  }
+
+table.C_iCSS.menu-table div.bullet.p900, table.C_iCSS.menu-table div.bullet.p901, 
+table.C_iCSS.menu-table div.bullet.p902, table.C_iCSS.menu-table div.bullet.p903, 
+table.C_iCSS.menu-table div.bullet.p910, table.C_iCSS.menu-table div.bullet.p911, 
+table.C_iCSS.menu-table div.bullet.p912, table.C_iCSS.menu-table div.bullet.p913  { 
+	color:var(--main-text-color);
+	line-height:1.1em; font-size:1.1em; 
+	color:inherit; top:0px; right:5px; 
+}
+
+table.C_iCSS.menu-table div.bullet::after { color:var(--main-text-color); font-size:1.1em; line-height:1.1em; top:-1px;  }
+
+
+ /* when iconic pattern is displayed, let's push left the tag a little bit see also (*bp01*) */
+div.bullet.p900, div.bullet.p901,
+div.bullet.p902, div.bullet.p903, 
+div.bullet.p910, div.bullet.p911, 
+div.bullet.p912, div.bullet.p913  {   } /*   text-align:left; padding-left:.2em;  */
+
+
+
+
+/* COLOR PALETTE 'colors' (*mb01*), see also (*md04*) */
+
+.c0 { background: rgba(20, 20, 20, 0.01); box-shadow: inset 3px 0px 3px rgba(0, 0, 0, 0.03), inset -1px -1px 0px rgba(0, 0, 0, 0.03); } /* no color id, default DB value */
+
+.c100, div.top-front.c100::before { background-color:#9BFF9B; color: var(--main-text-darker) } .zi-modal-inset.bc100::before { border-image: linear-gradient( -30deg, #9BFF9BFF 0%, #9BFF9B00 35%, #9BFF9B00 65%, #9BFF9B99 100%); border-image-slice: 1; } /*   	*/ 
+.c101, div.top-front.c101::before { background-color:#BBE6FF; color: var(--main-text-darker) } .zi-modal-inset.bc101::before { border-image: linear-gradient( -30deg, #BBE6FFFF 0%, #BBE6FF00 35%, #BBE6FF00 65%, #BBE6FF99 100%); border-image-slice: 1; } /*   	*/ 
+.c103, div.top-front.c103::before { background-color:#FF8040; color: var(--main-text-darker) } .zi-modal-inset.bc103::before { border-image: linear-gradient( -30deg, #FF8040FF 0%, #FF804000 35%, #FF804000 65%, #FF804099 100%); border-image-slice: 1; } /*   	*/ 
+.c104, div.top-front.c104::before { background-color:#C1AD84; color: var(--main-text-darker) } .zi-modal-inset.bc104::before { border-image: linear-gradient( -30deg, #C1AD84FF 0%, #C1AD8400 35%, #C1AD8400 65%, #C1AD8499 100%); border-image-slice: 1; } /*   	*/ 
+.c106, div.top-front.c106::before { background-color:#FF9FFF; color: var(--main-text-darker) } .zi-modal-inset.bc106::before { border-image: linear-gradient( -30deg, #FF9FFFFF 0%, #FF9FFF00 35%, #FF9FFF00 65%, #FF9FFF99 100%); border-image-slice: 1; } /*   	*/ 
+.c107, div.top-front.c107::before { background-color:#C49DF7; color: var(--main-text-darker) } .zi-modal-inset.bc107::before { border-image: linear-gradient( -30deg, #C49DF7FF 0%, #C49DF700 35%, #C49DF700 65%, #C49DF799 100%); border-image-slice: 1; }/*   	*/ 
+.c108, div.top-front.c108::before { background-color:#8080FF; color: var(--main-text-darker) } .zi-modal-inset.bc108::before { border-image: linear-gradient( -30deg, #8080FFFF 0%, #8080FF00 35%, #8080FF00 65%, #8080FF99 100%); border-image-slice: 1; }/*   	*/ 
+.c110, div.top-front.c110::before { background-color:#FFFF00; color: var(--main-text-darker) } .zi-modal-inset.bc110::before { border-image: linear-gradient( -30deg, #FFFF00FF 0%, #FFFF0000 35%, #FFFF0000 65%, #FFFF0099 100%); border-image-slice: 1; }/* superyellow */ 
+.c111, div.top-front.c111::before { background-color:#707070; color: var(--main-text-white) } .zi-modal-inset.bc111::before { border-image: linear-gradient( -30deg, #707070FF 0%, #70707000 35%, #70707000 65%, #70707099 100%); border-image-slice: 1; } /*   	*/ 
+
+/* codes 90, 91, 97, 98, 99 are never present in DB, they are programmatic */
+.c90, div.top-front.c90::before { background-color:#F2F2F2; color: var(--main-text-darker) } .zi-modal-inset.bc90::before { border-image: linear-gradient( -30deg, #F2F2F2FF 0%, #F2F2F200 35%, #F2F2F200 65%, #F2F2F299 100%); border-image-slice: 1; } 	/* color_code_free  	GRAY DEGRADE */ 
+.c91, div.top-front.c91::before { background-color:#D8D8D8; color: var(--main-text-darker) } .zi-modal-inset.bc91::before { border-image: linear-gradient( -30deg, #D8D8D8FF 0%, #D8D8D800 35%, #D8D8D800 65%, #D8D8D899 100%); border-image-slice: 1; } 	/* color_code_note  	*/ 
+.c97, div.top-front.c97::before { background-color:#BFBFBF; color: var(--main-text-darker) } .zi-modal-inset.bc97::before { border-image: linear-gradient( -30deg, #BFBFBFFF 0%, #BFBFBF00 35%, #BFBFBF00 65%, #BFBFBF99 100%); border-image-slice: 1; } 	/* color_code_norm  	*/ 
+.c98, div.top-front.c98::before { background-color:#A5A5A5; color: var(--main-text-white) }  .zi-modal-inset.bc98::before { border-image: linear-gradient( -30deg, #A5A5A5FF 0%, #A5A5A500 35%, #A5A5A500 65%, #A5A5A599 100%); border-image-slice: 1; }	/* color_code_excp  	*/ 
+.c99, div.top-front.c99::before { background-color:#7F7F7F; color: var(--main-text-white) }  .zi-modal-inset.bc99::before { border-image: linear-gradient( -30deg, #7F7F7FFF 0%, #7F7F7F00 35%, #7F7F7F00 65%, #7F7F7F99 100%); border-image-slice: 1; }	/* color_code_event 	*/ 
+
+.c113, div.top-front.c113::before { background-color:#FFFFC0; color: var(--main-text-darker) } .zi-modal-inset.bc113::before { border-image: linear-gradient( -30deg, #FFFFC0FF 0%, #FFFFC000 35%, #FFFFC000 65%, #FFFFC099 100%); border-image-slice: 1; }	/*  GOLDEN DEGRADE 		*/ 
+
+.c102, div.top-front.c102::before { background-color:#FFF0A0; color: var(--main-text-darker) } .zi-modal-inset.bc102::before { border-image: linear-gradient( -30deg, #FFF0A0FF 0%, #FFF0A000 35%, #FFF0A000 65%, #FFF0A099 100%); border-image-slice: 1; }	/*   		INTENSE COLORS */ 
+.c105, div.top-front.c105::before { background-color:#FEE283; color: var(--main-text-darker) } .zi-modal-inset.bc105::before { border-image: linear-gradient( -30deg, #FEE283FF 0%, #FEE28300 35%, #FEE28300 65%, #FEE28399 100%); border-image-slice: 1; }	/*   	*/ 
+.c109, div.top-front.c109::before { background-color:#BB9600; color: var(--main-text-white) }  .zi-modal-inset.bc109::before { border-image: linear-gradient( -30deg, #BB9600FF 0%, #BB960000 35%, #BB960000 65%, #BB960099 100%); border-image-slice: 1; } 	/*   	*/ 
+.c114, div.top-front.c114::before { background-color:#998200; color: var(--main-text-white) }  .zi-modal-inset.bc114::before { border-image: linear-gradient( -30deg, #998200FF 0%, #99820000 35%, #99820000 65%, #99820099 100%); border-image-slice: 1; }	/*   	*/ 
+
+.c120, div.top-front.c120::before { background-color:#DDD9C3; color: var(--main-text-darker) } .zi-modal-inset.bc120::before { border-image: linear-gradient( -30deg, #DDD9C3FF 0%, #DDD9C300 35%, #DDD9C300 65%, #DDD9C399 100%); border-image-slice: 1; }	/*   		GREEN/BROWN DEGRADE */ 
+.c121, div.top-front.c121::before { background-color:#C4BD97; color: var(--main-text-darker) } .zi-modal-inset.bc121::before { border-image: linear-gradient( -30deg, #C4BD97FF 0%, #C4BD9700 35%, #C4BD9700 65%, #C4BD9799 100%); border-image-slice: 1; }/*   	*/ 
+.c122, div.top-front.c122::before { background-color:#938953; color: var(--main-text-darker) } .zi-modal-inset.bc122::before { border-image: linear-gradient( -30deg, #938953FF 0%, #93895300 35%, #93895300 65%, #93895399 100%); border-image-slice: 1; }	/*   	*/ 
+.c123, div.top-front.c123::before { background-color:#494429; color: var(--main-text-white) }  .zi-modal-inset.bc123::before { border-image: linear-gradient( -30deg, #494429FF 0%, #49442900 35%, #49442900 65%, #49442999 100%); border-image-slice: 1; }	/*   	*/ 
+.c124, div.top-front.c124::before { background-color:#1D1B10; color: var(--main-text-white) }  .zi-modal-inset.bc124::before { border-image: linear-gradient( -30deg, #1D1B10FF 0%, #1D1B1000 35%, #1D1B1000 65%, #1D1B1099 100%); border-image-slice: 1; }	/*   	*/ 
+
+.c130, div.top-front.c130::before { background-color:#DBE5F1; color: var(--main-text-darker) } .zi-modal-inset.bc130::before { border-image: linear-gradient( -30deg, #DBE5F1FF 0%, #DBE5F100 35%, #DBE5F100 65%, #DBE5F199 100%); border-image-slice: 1; }	/*   		BLUE DEGRADE */ 
+.c131, div.top-front.c131::before { background-color:#B8CCE4; color: var(--main-text-darker) } .zi-modal-inset.bc131::before { border-image: linear-gradient( -30deg, #B8CCE4FF 0%, #B8CCE400 35%, #B8CCE400 65%, #B8CCE499 100%); border-image-slice: 1; }	/*   	*/ 
+.c132, div.top-front.c132::before { background-color:#95B3D7; color: var(--main-text-darker) } .zi-modal-inset.bc132::before { border-image: linear-gradient( -30deg, #95B3D7FF 0%, #95B3D700 35%, #95B3D700 65%, #95B3D799 100%); border-image-slice: 1; }	/*   	*/ 
+.c133, div.top-front.c133::before { background-color:#366092; color: var(--main-text-white) }  .zi-modal-inset.bc133::before { border-image: linear-gradient( -30deg, #366092FF 0%, #36609200 35%, #36609200 65%, #36609299 100%); border-image-slice: 1; }	/*   	*/ 
+.c134, div.top-front.c134::before { background-color:#244061; color: var(--main-text-white) }  .zi-modal-inset.bc134::before { border-image: linear-gradient( -30deg, #244061FF 0%, #24406100 35%, #24406100 65%, #24406199 100%); border-image-slice: 1; }	/*   	*/
+
+.c140, div.top-front.c140::before { background-color:#F2DCDB; color: var(--main-text-darker) } .zi-modal-inset.bc140::before { border-image: linear-gradient( -30deg, #F2DCDBFF 0%, #F2DCDB00 35%, #F2DCDB00 65%, #F2DCDB99 100%); border-image-slice: 1; }	/*   		ARGILE DEGRADE*/ 
+.c141, div.top-front.c141::before { background-color:#E5B9B7; color: var(--main-text-darker) } .zi-modal-inset.bc141::before { border-image: linear-gradient( -30deg, #E5B9B7FF 0%, #E5B9B700 35%, #E5B9B700 65%, #E5B9B799 100%); border-image-slice: 1; }	/*   	*/ 
+.c142, div.top-front.c142::before { background-color:#D99694; color: var(--main-text-darker) } .zi-modal-inset.bc142::before { border-image: linear-gradient( -30deg, #D99694FF 0%, #D9969400 35%, #D9969400 65%, #D9969499 100%); border-image-slice: 1; }	/*   	*/ 
+.c143, div.top-front.c143::before { background-color:#953734; color: var(--main-text-white) }  .zi-modal-inset.bc143::before { border-image: linear-gradient( -30deg, #953734FF 0%, #95373400 35%, #95373400 65%, #95373499 100%); border-image-slice: 1; }	/*   	*/ 
+.c144, div.top-front.c144::before { background-color:#632423; color: var(--main-text-white) }  .zi-modal-inset.bc144::before { border-image: linear-gradient( -30deg, #632423FF 0%, #63242300 35%, #63242300 65%, #63242399 100%); border-image-slice: 1; }	/*   	*/ 
+
+.c150, div.top-front.c150::before { background-color:#EBF1DD; color: var(--main-text-darker) } .zi-modal-inset.bc150::before { border-image: linear-gradient( -30deg, #EBF1DDFF 0%, #EBF1DD00 35%, #EBF1DD00 65%, #EBF1DD99 100%); border-image-slice: 1; }	/*   		GREEN DEGRADE */ 
+.c151, div.top-front.c151::before { background-color:#D7E3BC; color: var(--main-text-darker) } .zi-modal-inset.bc151::before { border-image: linear-gradient( -30deg, #D7E3BCFF 0%, #D7E3BC00 35%, #D7E3BC00 65%, #D7E3BC99 100%); border-image-slice: 1; }	/*   	*/ 
+.c152, div.top-front.c152::before { background-color:#B5D088; color: var(--main-text-darker) } .zi-modal-inset.bc152::before { border-image: linear-gradient( -30deg, #B5D088FF 0%, #B5D08800 35%, #B5D08800 65%, #B5D08899 100%); border-image-slice: 1; }	/*   	*/ 
+.c153, div.top-front.c153::before { background-color:#76923C; color: var(--main-text-white) }  .zi-modal-inset.bc153::before { border-image: linear-gradient( -30deg, #76923CFF 0%, #76923C00 30%, #76923C00 52%, #76923C99 100%); border-image-slice: 1; }	/*   	*/ 
+.c154, div.top-front.c154::before { background-color:#4F6128; color: var(--main-text-white) }  .zi-modal-inset.bc154::before { border-image: linear-gradient( -30deg, #4F6128FF 0%, #4F612800 35%, #4F612800 65%, #4F612899 100%); border-image-slice: 1; }	/*   	*/ 
+
+.c160, div.top-front.c160::before { background-color:#E5E0EC; color: var(--main-text-darker) } .zi-modal-inset.bc160::before { border-image: linear-gradient( -30deg, #E5E0ECFF 0%, #E5E0EC00 35%, #E5E0EC00 65%, #E5E0EC99 100%); border-image-slice: 1; }	/*   		PURPLE DEGRADE */ 
+.c161, div.top-front.c161::before { background-color:#CCC1D9; color: var(--main-text-darker) } .zi-modal-inset.bc161::before { border-image: linear-gradient( -30deg, #CCC1D9FF 0%, #CCC1D900 35%, #CCC1D900 65%, #CCC1D999 100%); border-image-slice: 1; }	/*   	*/ 
+.c162, div.top-front.c162::before { background-color:#B2A2C7; color: var(--main-text-darker) } .zi-modal-inset.bc162::before { border-image: linear-gradient( -30deg, #B2A2C7FF 0%, #B2A2C700 35%, #B2A2C700 65%, #B2A2C799 100%); border-image-slice: 1; }	/*   	*/ 
+.c163, div.top-front.c163::before { background-color:#5F497A; color: var(--main-text-white) }  .zi-modal-inset.bc163::before { border-image: linear-gradient( -30deg, #5F497AFF 0%, #5F497A00 35%, #5F497A00 65%, #5F497A99 100%); border-image-slice: 1; }	/*   	*/ 
+.c164, div.top-front.c164::before { background-color:#3F3151; color: var(--main-text-white) }  .zi-modal-inset.bc164::before { border-image: linear-gradient( -30deg, #3F3151FF 0%, #3F315100 35%, #3F315100 65%, #3F315199 100%); border-image-slice: 1; }/*   	*/ 
+
+.c170, div.top-front.c170::before { background-color:#DBEEF3; color: var(--main-text-darker) } .zi-modal-inset.bc170::before { border-image: linear-gradient( -30deg, #DBEEF3FF 0%, #DBEEF300 35%, #DBEEF300 65%, #DBEEF399 100%); border-image-slice: 1; }	/*   		TURQUOISE DEGRADE*/ 
+.c171, div.top-front.c171::before { background-color:#B7DDE8; color: var(--main-text-darker) } .zi-modal-inset.bc171::before { border-image: linear-gradient( -30deg, #B7DDE8FF 0%, #B7DDE800 35%, #B7DDE800 65%, #B7DDE899 100%); border-image-slice: 1; }	/*   	*/ 
+.c172, div.top-front.c172::before { background-color:#92CDDC; color: var(--main-text-darker) } .zi-modal-inset.bc172::before { border-image: linear-gradient( -30deg, #92CDDCFF 0%, #92CDDC00 35%, #92CDDC00 65%, #92CDDC99 100%); border-image-slice: 1; }	/*   	*/ 
+.c173, div.top-front.c173::before { background-color:#31859B; color: var(--main-text-white) }  .zi-modal-inset.bc173::before { border-image: linear-gradient( -30deg, #31859BFF 0%, #31859B00 35%, #31859B00 65%, #31859B99 100%); border-image-slice: 1; }	/*   	*/ 
+.c174, div.top-front.c174::before { background-color:#205867; color: var(--main-text-white) }  .zi-modal-inset.bc174::before { border-image: linear-gradient( -30deg, #205867FF 0%, #20586700 35%, #20586700 65%, #20586799 100%); border-image-slice: 1; }	/*   	*/ 
+
+.c180, div.top-front.c180::before { background-color:#FDEADA; color: var(--main-text-darker) } .zi-modal-inset.bc180::before { border-image: linear-gradient( -30deg, #FDEADAFF 0%, #FDEADA00 35%, #FDEADA00 65%, #FDEADA99 100%); border-image-slice: 1; }	/*   		ORANGE DEGRADE */ 
+.c181, div.top-front.c181::before { background-color:#FBD5B5; color: var(--main-text-darker) } .zi-modal-inset.bc181::before { border-image: linear-gradient( -30deg, #FBD5B5FF 0%, #FBD5B500 35%, #FBD5B500 65%, #FBD5B599 100%); border-image-slice: 1; }	/*   	*/ 
+.c182, div.top-front.c182::before { background-color:#FAC08F; color: var(--main-text-darker) } .zi-modal-inset.bc182::before { border-image: linear-gradient( -30deg, #FAC08FFF 0%, #FAC08F00 35%, #FAC08F00 65%, #FAC08F99 100%); border-image-slice: 1; }	/*   	*/ 
+.c183, div.top-front.c183::before { background-color:#E36C00; color: var(--main-text-white) }  .zi-modal-inset.bc183::before { border-image: linear-gradient( -30deg, #E36C00FF 0%, #E36C0000 35%, #E36C0000 65%, #E36C0099 100%); border-image-slice: 1; }	/*   	*/ 
+.c184, div.top-front.c184::before { background-color:#974806; color: var(--main-text-white) }  .zi-modal-inset.bc184::before { border-image: linear-gradient( -30deg, #974806FF 0%, #97480600 35%, #97480600 65%, #97480699 100%); border-image-slice: 1; }	/*   	*/ 
+
+
+.c200, div.top-front.c200::before { background-color:#FEFEFFCC; color: var(--main-text-darker) }  .zi-modal-inset.b::before { border-image: linear-gradient( -30deg, #FEFEFFFF 0%, #FEFEFF00 35%, #FEFEFF00 65%, #FEFEFF99 100%); border-image-slice: 1; } 	/* ICE WHITE */ 
+
+.c210, div.top-front.c210::before { background-color:#F8F8FF; color: var(--main-text-darker) }  .zi-modal-inset.bc210::before { border-image: linear-gradient( -30deg, #F8F8FFFF 0%, #F8F8FF00 35%, #F8F8FF00 65%, #F8F8FF99 100%); border-image-slice: 1; } 	/* ghostwhite  	- WHITES */ 
+.c211, div.top-front.c211::before { background-color:#F0FFF0; color: var(--main-text-darker) }  .zi-modal-inset.bc211::before { border-image: linear-gradient( -30deg, #F0FFF0FF 0%, #F0FFF000 35%, #F0FFF000 65%, #F0FFF099 100%); border-image-slice: 1; }	/* honeydew */
+.c212, div.top-front.c212::before { background-color:#FFF0F5; color: var(--main-text-darker) }  .zi-modal-inset.bc212::before { border-image: linear-gradient( -30deg, #FFF0F5FF 0%, #FFF0F500 35%, #FFF0F500 65%, #FFF0F599 100%); border-image-slice: 1; }	/* lavenderblush */
+.c213, div.top-front.c213::before { background-color:#FFF5EE; color: var(--main-text-darker) }  .zi-modal-inset.bc213::before { border-image: linear-gradient( -30deg, #FFF5EEFF 0%, #FFF5EE00 35%, #FFF5EE00 65%, #FFF5EE99 100%); border-image-slice: 1; }	/* seashell */
+.c214, div.top-front.c214::before { background-color:#FAF0E6; color: var(--main-text-darker) }  .zi-modal-inset.bc214::before { border-image: linear-gradient( -30deg, #FAF0E6FF 0%, #FAF0E600 35%, #FAF0E600 65%, #FAF0E699 100%); border-image-slice: 1; }	/* linen */
+.c215, div.top-front.c215::before { background-color:#FFFFF0; color: var(--main-text-darker) }  .zi-modal-inset.bc215::before { border-image: linear-gradient( -30deg, #FFFFF0FF 0%, #FFFFF000 35%, #FFFFF000 65%, #FFFFF099 100%); border-image-slice: 1; } 	/* ivory */
+.c216, div.top-front.c216::before { background-color:#FFFAF0; color: var(--main-text-darker) }  .zi-modal-inset.bc216::before { border-image: linear-gradient( -30deg, #FFFAF0FF 0%, #FFFAF000 35%, #FFFAF000 65%, #FFFAF099 100%); border-image-slice: 1; } 	/* floralwhite */
+.c217, div.top-front.c217::before { background-color:#E6E6FA; color: var(--main-text-darker) }  .zi-modal-inset.bc217::before { border-image: linear-gradient( -30deg, #E6E6FAFF 0%, #E6E6FA00 35%, #E6E6FA00 65%, #E6E6FA99 100%); border-image-slice: 1; } 	/* lavender */
+
+.c220, div.top-front.c220::before { background-color:#DB7093; color: var(--main-text-darker) }  .zi-modal-inset.bc220::before { border-image: linear-gradient( -30deg, #DB7093FF 0%, #DB709300 35%, #DB709300 65%, #DB709399 100%); border-image-slice: 1; }	/* palevioletred - VIOLETS */ 
+.c221, div.top-front.c221::before { background-color:#BA55D3; color: var(--main-text-darker) }  .zi-modal-inset.bc221::before { border-image: linear-gradient( -30deg, #BA55D3FF 0%, #BA55D300 35%, #BA55D300 65%, #BA55D399 100%); border-image-slice: 1; }	/* mediumorchid */
+.c222, div.top-front.c222::before { background-color:#C71585; color: var(--main-text-white) }  .zi-modal-inset.bc222::before { border-image: linear-gradient( -30deg, #C71585FF 0%, #C7158500 35%, #C7158500 65%, #C7158599 100%); border-image-slice: 1; }	/* mediumvioletred */
+.c223, div.top-front.c223::before { background-color:#EE82EE; color: var(--main-text-darker) }  .zi-modal-inset.bc223::before { border-image: linear-gradient( -30deg, #EE82EEFF 0%, #EE82EE00 35%, #EE82EE00 65%, #EE82EE99 100%); border-image-slice: 1; }	/* violet */
+.c224, div.top-front.c224::before { background-color:#6A5ACD; color: var(--main-text-darker) }  .zi-modal-inset.bc224::before { border-image: linear-gradient( -30deg, #6A5ACDFF 0%, #6A5ACD00 35%, #6A5ACD00 65%, #6A5ACD99 100%); border-image-slice: 1; }	/* slateblue */
+.c225, div.top-front.c225::before { background-color:#8A2BE2; color: var(--main-text-white) }   .zi-modal-inset.bc225::before { border-image: linear-gradient( -30deg, #8A2BE2FF 0%, #8A2BE200 35%, #8A2BE200 65%, #8A2BE299 100%); border-image-slice: 1; }		/* blueviolet */
+.c226, div.top-front.c226::before { background-color:#9370DB; color: var(--main-text-darker) }  .zi-modal-inset.bc226::before { border-image: linear-gradient( -30deg, #9370DBFF 0%, #9370DB00 35%, #9370DB00 65%, #9370DB99 100%); border-image-slice: 1; }	/* mediumpurple */
+.c227, div.top-front.c227::before { background-color:#7B68EE; color: var(--main-text-darker) }  .zi-modal-inset.bc227::before { border-image: linear-gradient( -30deg, #7B68EEFF 0%, #7B68EE00 35%, #7B68EE00 65%, #7B68EE99 100%); border-image-slice: 1; }	/* mediumslateblue */
+ 
+.c230, div.top-front.c230::before { background-color:#F08080; color: var(--main-text-darker) }  .zi-modal-inset.bc230::before { border-image: linear-gradient( -30deg, #F08080FF 0%, #F0808000 35%, #F0808000 65%, #F0808099 100%); border-image-slice: 1; }	/* lightcoral 	- REDS */
+.c231, div.top-front.c231::before { background-color:#FA8072; color: var(--main-text-darker) }  .zi-modal-inset.bc231::before { border-image: linear-gradient( -30deg, #FA8072FF 0%, #FA807200 35%, #FA807200 65%, #FA807299 100%); border-image-slice: 1; }	/* salmon */
+.c232, div.top-front.c232::before { background-color:#CD5C5C; color: var(--main-text-white) }   .zi-modal-inset.bc232::before { border-image: linear-gradient( -30deg, #CD5C5CFF 0%, #CD5C5C00 35%, #CD5C5C00 65%, #CD5C5C99 100%); border-image-slice: 1; } 	/* indianred */
+.c233, div.top-front.c233::before { background-color:#A52A2A; color: var(--main-text-white) }   .zi-modal-inset.bc233::before { border-image: linear-gradient( -30deg, #A52A2AFF 0%, #A52A2A00 35%, #A52A2A00 65%, #A52A2A99 100%); border-image-slice: 1; }		/* brown */
+.c234, div.top-front.c234::before { background-color:#8B0000; color: var(--main-text-white) }   .zi-modal-inset.bc234::before { border-image: linear-gradient( -30deg, #8B0000FF 0%, #8B000000 35%, #8B000000 65%, #8B000099 100%); border-image-slice: 1; } 	/* darkred */
+.c235, div.top-front.c235::before { background-color:#B22222; color: var(--main-text-darker) }  .zi-modal-inset.bc235::before { border-image: linear-gradient( -30deg, #B22222FF 0%, #B2222200 35%, #B2222200 65%, #B2222299 100%); border-image-slice: 1; } 	/* firebrick */
+.c236, div.top-front.c236::before { background-color:#DC143C; color: var(--main-text-darker) }  .zi-modal-inset.bc236::before { border-image: linear-gradient( -30deg, #DC143CFF 0%, #DC143C00 35%, #DC143C00 65%, #DC143C99 100%); border-image-slice: 1; }	/* crimson */
+.c237, div.top-front.c237::before { background-color:#FF4500; color: var(--main-text-darker) }  .zi-modal-inset.bc237::before { border-image: linear-gradient( -30deg, #FF4500FF 0%, #FF450000 35%, #FF450000 65%, #FF450099 100%); border-image-slice: 1; }	/* orangered */
+
+.c240, div.top-front.c240::before { background-color:#7FFFD4; color: var(--main-text-darker) }  .zi-modal-inset.bc240::before { border-image: linear-gradient( -30deg, #7FFFD4FF 0%, #7FFFD400 35%, #7FFFD400 65%, #7FFFD499 100%); border-image-slice: 1; } 	/*  aquamarine - GREEN	*/ 
+.c241, div.top-front.c241::before { background-color:#00FA9A; color: var(--main-text-darker) }  .zi-modal-inset.bc241::before { border-image: linear-gradient( -30deg, #00FA9AFF 0%, #00FA9A00 35%, #00FA9A00 65%, #00FA9A99 100%); border-image-slice: 1; }	/* mediumspringgreen */
+.c242, div.top-front.c242::before { background-color:#00FF7F; color: var(--main-text-darker) }  .zi-modal-inset.bc242::before { border-image: linear-gradient( -30deg, #00FF7FFF 0%, #00FF7F00 35%, #00FF7F00 65%, #00FF7F99 100%); border-image-slice: 1; }	/* springgreen */
+.c243, div.top-front.c243::before { background-color:#98FB98; color: var(--main-text-darker) }  .zi-modal-inset.bc243::before { border-image: linear-gradient( -30deg, #98FB98FF 0%, #98FB9800 35%, #98FB9800 65%, #98FB9899 100%); border-image-slice: 1; }	/* palegreen */
+.c244, div.top-front.c244::before { background-color:#90EE90; color: var(--main-text-darker) }  .zi-modal-inset.bc244::before { border-image: linear-gradient( -30deg, #90EE90FF 0%, #90EE9000 35%, #90EE9000 65%, #90EE9099 100%); border-image-slice: 1; }	/* lightgreen */
+.c245, div.top-front.c245::before { background-color:#32CD32; color: var(--main-text-darker) }  .zi-modal-inset.bc245::before { border-image: linear-gradient( -30deg, #32CD32FF 0%, #32CD3200 35%, #32CD3200 65%, #32CD3299 100%); border-image-slice: 1; } 	/* limegreen */
+.c246, div.top-front.c246::before { background-color:#7FFF00; color: var(--main-text-darker) }  .zi-modal-inset.bc246::before { border-image: linear-gradient( -30deg, #7FFF00FF 0%, #7FFF0000 35%, #7FFF0000 65%, #7FFF0099 100%); border-image-slice: 1; }	/* chartreuse */
+.c247, div.top-front.c247::before { background-color:#ADFF2F; color: var(--main-text-darker) }  .zi-modal-inset.bc247::before { border-image: linear-gradient( -30deg, #ADFF2FFF 0%, #ADFF2F00 35%, #ADFF2F00 65%, #ADFF2F99 100%); border-image-slice: 1; }	/* greenyellow */
+
+.c250, div.top-front.c250::before { background-color:#FFFFE0; color: var(--main-text-darker) }  .zi-modal-inset.bc250::before { border-image: linear-gradient( -30deg, #FFFFE0FF 0%, #FFFFE000 35%, #FFFFE000 65%, #FFFFE099 100%); border-image-slice: 1; } 	/* lemonchiffon - YELLOWS */
+.c251, div.top-front.c251::before { background-color:#FFFACD; color: var(--main-text-darker) }  .zi-modal-inset.bc251::before { border-image: linear-gradient( -30deg, #FFFACDFF 0%, #FFFACD00 35%, #FFFACD00 65%, #FFFACD99 100%); border-image-slice: 1; } 	/* lightyellow*/
+.c252, div.top-front.c252::before { background-color:#EEE8AA; color: var(--main-text-darker) }  .zi-modal-inset.bc252::before { border-image: linear-gradient( -30deg, #EEE8AAFF 0%, #EEE8AA00 35%, #EEE8AA00 65%, #EEE8AA99 100%); border-image-slice: 1; } 	/* palegoldenrod	 */
+.c253, div.top-front.c253::before { background-color:#FEF273; color: var(--main-text-darker) }  .zi-modal-inset.bc253::before { border-image: linear-gradient( -30deg, #FEF273FF 0%, #FEF27300 35%, #FEF27300 65%, #FEF27399 100%); border-image-slice: 1; }  	/* brightyellow */
+.c254, div.top-front.c254::before { background-color:#FFCC00; color: var(--main-text-darker) }  .zi-modal-inset.bc254::before { border-image: linear-gradient( -30deg, #FFCC00FF 0%, #FFCC0000 35%, #FFCC0000 65%, #FFCC0099 100%); border-image-slice: 1; } 	/* midyellow */
+.c255, div.top-front.c255::before { background-color:#FFA500; color: var(--main-text-darker) }  .zi-modal-inset.bc255::before { border-image: linear-gradient( -30deg, #FFA500FF 0%, #FFA50000 35%, #FFA50000 65%, #FFA50099 100%); border-image-slice: 1; }  	/* orange */
+.c256, div.top-front.c256::before { background-color:#FF8C00; color: var(--main-text-darker) }  .zi-modal-inset.bc256::before { border-image: linear-gradient( -30deg, #FF8C00FF 0%, #FF8C0000 35%, #FF8C0000 65%, #FF8C0099 100%); border-image-slice: 1; }  	/* darkorange */
+.c257, div.top-front.c257::before { background-color:#DD9900; color: var(--main-text-darker) }  .zi-modal-inset.bc257::before { border-image: linear-gradient( -30deg, #DD9900FF 0%, #DD990000 35%, #DD990000 65%, #DD990099 100%); border-image-slice: 1; } 	/* lowyellow */
+
+.c260, div.top-front.c260::before { background-color:#FAFAD2; color: var(--main-text-darker) }  .zi-modal-inset.bc260::before { border-image: linear-gradient( -30deg, #FAFAD2FF 0%, #FAFAD200 35%, #FAFAD200 65%, #FAFAD299 100%); border-image-slice: 1; } 	/* lightgoldenrodyellow	- KHAKI	*/ 
+.c261, div.top-front.c261::before { background-color:#F0E68C; color: var(--main-text-darker) }  .zi-modal-inset.bc261::before { border-image: linear-gradient( -30deg, #F0E68CFF 0%, #F0E68C00 35%, #F0E68C00 65%, #F0E68C99 100%); border-image-slice: 1; } 	/* khaki*/
+.c262, div.top-front.c262::before { background-color:#BDB76B; color: var(--main-text-darker) }  .zi-modal-inset.bc262::before { border-image: linear-gradient( -30deg, #BDB76BFF 0%, #BDB76B00 35%, #BDB76B00 65%, #BDB76B99 100%); border-image-slice: 1; } 	/* darkkhaki */
+.c263, div.top-front.c263::before { background-color:#8FBC8F; color: var(--main-text-darker) }  .zi-modal-inset.bc263::before { border-image: linear-gradient( -30deg, #8FBC8FFF 0%, #8FBC8F00 35%, #8FBC8F00 65%, #8FBC8F99 100%); border-image-slice: 1; } 	/* darkseegreen */
+.c264, div.top-front.c264::before { background-color:#3CB371; color: var(--main-text-darker) }  .zi-modal-inset.bc264::before { border-image: linear-gradient( -30deg, #3CB371FF 0%, #3CB37100 35%, #3CB37100 65%, #3CB37199 100%); border-image-slice: 1; }  	/* mediumseagreen */
+.c265, div.top-front.c265::before { background-color:#2E8B57; color: var(--main-text-white) }   .zi-modal-inset.bc265::before { border-image: linear-gradient( -30deg, #2E8B57FF 0%, #2E8B5700 35%, #2E8B5700 65%, #2E8B5799 100%); border-image-slice: 1; } 	/* seagreen */
+.c266, div.top-front.c266::before { background-color:#556B2F; color: var(--main-text-white) }   .zi-modal-inset.bc266::before { border-image: linear-gradient( -30deg, #556B2FFF 0%, #556B2F00 35%, #556B2F00 65%, #556B2F99 100%); border-image-slice: 1; }		/* darkolivegreen */
+.c267, div.top-front.c267::before { background-color:#006400; color: var(--main-text-white) }   .zi-modal-inset.bc267::before { border-image: linear-gradient( -30deg, #006400FF 0%, #00640000 35%, #00640000 65%, #00640099 100%); border-image-slice: 1; } 	/* darkgreen */
+
+.c270, div.top-front.c270::before { background-color:#FFF8DC; color: var(--main-text-darker) }  .zi-modal-inset.bc270::before { border-image: linear-gradient( -30deg, #FFF8DCFF 0%, #FFF8DC00 35%, #FFF8DC00 65%, #FFF8DC99 100%); border-image-slice: 1; } 	/* cornsilk		- BEIGES */ 
+.c271, div.top-front.c271::before { background-color:#F5F5DC; color: var(--main-text-darker) }  .zi-modal-inset.bc271::before { border-image: linear-gradient( -30deg, #F5F5DCFF 0%, #F5F5DC00 35%, #F5F5DC00 65%, #F5F5DC99 100%); border-image-slice: 1; }	/* beige */
+.c272, div.top-front.c272::before { background-color:#FAEBD7; color: var(--main-text-darker) }  .zi-modal-inset.bc272::before { border-image: linear-gradient( -30deg, #FAEBD7FF 0%, #FAEBD700 35%, #FAEBD700 65%, #FAEBD799 100%); border-image-slice: 1; }	/* antiquewhite */
+.c273, div.top-front.c273::before { background-color:#FFE4B5; color: var(--main-text-darker) }  .zi-modal-inset.bc273::before { border-image: linear-gradient( -30deg, #FFE4B5FF 0%, #FFE4B500 35%, #FFE4B500 65%, #FFE4B599 100%); border-image-slice: 1; }	/* moccasin */
+.c274, div.top-front.c274::before { background-color:#FFDEAD; color: var(--main-text-darker) }  .zi-modal-inset.bc274::before { border-image: linear-gradient( -30deg, #FFDAB9FF 0%, #FFDAB900 35%, #FFDAB900 65%, #FFDAB999 100%); border-image-slice: 1; }	/* navajowhite */
+.c275, div.top-front.c275::before { background-color:#FFDAB9; color: var(--main-text-darker) }  .zi-modal-inset.bc275::before { border-image: linear-gradient( -30deg, #FFDAB9FF 0%, #FFDAB900 35%, #FFDAB900 65%, #FFDAB999 100%); border-image-slice: 1; }	/* peachpuff */ 
+.c276, div.top-front.c276::before { background-color:#F4DDB2; color: var(--main-text-darker) }  .zi-modal-inset.bc276::before { border-image: linear-gradient( -30deg, #F4DDB2FF 0%, #F4DDB200 35%, #F4DDB200 65%, #F4DDB299 100%); border-image-slice: 1; }	/* wheat */ 
+.c277, div.top-front.c277::before { background-color:#D2B48C; color: var(--main-text-darker) }  .zi-modal-inset.bc277::before { border-image: linear-gradient( -30deg, #D2B48CFF 0%, #D2B48C00 35%, #D2B48C00 65%, #D2B48C99 100%); border-image-slice: 1; }	/* tan */
+
+.c280, div.top-front.c280::before { background-color:#F5DEB3; color: var(--main-text-darker) }  .zi-modal-inset.bc280::before { border-image: linear-gradient( -30deg, #F5DEB3FF 0%, #F5DEB300 35%, #F5DEB300 65%, #F5DEB399 100%); border-image-slice: 1; } 	/* weat			- 	BROWNS */ 
+.c281, div.top-front.c281::before { background-color:#DEB887; color: var(--main-text-darker) }  .zi-modal-inset.bc281::before { border-image: linear-gradient( -30deg, #DEB887FF 0%, #DEB88700 35%, #DEB88700 65%, #DEB88799 100%); border-image-slice: 1; }	/* burlywood */
+.c282, div.top-front.c282::before { background-color:#BC8F8F; color: var(--main-text-darker) }  .zi-modal-inset.bc282::before { border-image: linear-gradient( -30deg, #BC8F8FFF 0%, #BC8F8F00 35%, #BC8F8F00 65%, #BC8F8F99 100%); border-image-slice: 1; }	/* rosybrown */
+.c283, div.top-front.c283::before { background-color:#B8860B; color: var(--main-text-darker) }  .zi-modal-inset.bc283::before { border-image: linear-gradient( -30deg, #B8860BFF 0%, #B8860B00 35%, #B8860B00 65%, #B8860B99 100%); border-image-slice: 1; } 	/* darkgoldenrod */
+.c284, div.top-front.c284::before { background-color:#D2691E; color: var(--main-text-darker) }  .zi-modal-inset.bc284::before { border-image: linear-gradient( -30deg, #D2691EFF 0%, #D2691E00 35%, #D2691E00 65%, #D2691E99 100%); border-image-slice: 1; } 	/* chocolate */
+.c285, div.top-front.c285::before { background-color:#CD853F; color: var(--main-text-darker) }  .zi-modal-inset.bc285::before { border-image: linear-gradient( -30deg, #CD853FFF 0%, #CD853F00 35%, #CD853F00 65%, #CD853F99 100%); border-image-slice: 1; } 	/* peru */
+.c286, div.top-front.c286::before { background-color:#A0522D; color: var(--main-text-white) }   .zi-modal-inset.bc286::before { border-image: linear-gradient( -30deg, #A0522DFF 0%, #A0522D00 35%, #A0522D00 65%, #A0522D99 100%); border-image-slice: 1; }  	/* sienna*/
+.c287, div.top-front.c287::before { background-color:#8B4513; color: var(--main-text-white) }   .zi-modal-inset.bc287::before { border-image: linear-gradient( -30deg, #8B4513FF 0%, #8B451300 35%, #8B451300 65%, #8B451399 100%); border-image-slice: 1; } 	/* saddlebrown */
+
+.c290, div.top-front.c290::before { background-color:#F0F8FF; color: var(--main-text-darker) }  .zi-modal-inset.bc290::before { border-image: linear-gradient( -30deg, #F0F8FFFF 0%, #F0F8FF00 35%, #F0F8FF00 65%, #F0F8FF99 100%); border-image-slice: 1; } 	/* aliceblue		- BLUES	*/ 
+.c291, div.top-front.c291::before { background-color:#B0E0E6; color: var(--main-text-darker) }  .zi-modal-inset.bc291::before { border-image: linear-gradient( -30deg, #B0E0E6FF 0%, #B0E0E600 35%, #B0E0E600 65%, #B0E0E699 100%); border-image-slice: 1; }	/* powderblue 	*/ 
+.c292, div.top-front.c292::before { background-color:#ADD8E6; color: var(--main-text-darker) }  .zi-modal-inset.bc292::before { border-image: linear-gradient( -30deg, #ADD8E6FF 0%, #ADD8E600 35%, #ADD8E600 65%, #ADD8E699 100%); border-image-slice: 1; }	/* lightblue  	*/ 
+.c293, div.top-front.c293::before { background-color:#B0C4DE; color: var(--main-text-darker) }  .zi-modal-inset.bc293::before { border-image: linear-gradient( -30deg, #B0C4DEFF 0%, #B0C4DE00 35%, #B0C4DE00 65%, #B0C4DE99 100%); border-image-slice: 1; }	/* lightsteelblue */
+.c294, div.top-front.c294::before { background-color:#6495ED; color: var(--main-text-white) }   .zi-modal-inset.bc294::before { border-image: linear-gradient( -30deg, #6495EDFF 0%, #6495ED00 35%, #6495ED00 65%, #6495ED99 100%); border-image-slice: 1; }		/* cornflowerblue */  
+.c295, div.top-front.c295::before { background-color:#4682B4; color: var(--main-text-white) }   .zi-modal-inset.bc295::before { border-image: linear-gradient( -30deg, #4682B4FF 0%, #4682B400 35%, #4682B400 65%, #4682B499 100%); border-image-slice: 1; } 	/* steelblue 	*/ 
+.c296, div.top-front.c296::before { background-color:#5F9EA0; color: var(--main-text-white) }   .zi-modal-inset.bc296::before { border-image: linear-gradient( -30deg, #5F9EA0FF 0%, #5F9EA000 35%, #5F9EA000 65%, #5F9EA099 100%); border-image-slice: 1; }  	/* cadetblue  	*/ 
+.c297, div.top-front.c297::before { background-color:#4169E1; color: var(--main-text-white) }   .zi-modal-inset.bc297::before { border-image: linear-gradient( -30deg, #4169E1FF 0%, #4169E100 35%, #4169E100 65%, #4169E199 100%); border-image-slice: 1; } 	/* royalblue	*/ 
+
+
+
+
+
+
+
+
+/* ---------------------------------------------------------------------------------------------------------------------  */
+
+div.sticker-tip.c100 { background-color:transparent; } div.sticker-tip.c100::after { background-image: linear-gradient( +0deg,  transparent 0%, #9BFF9BFF 16px, #9BFF9B33 50px, #9BFF9B00 calc(100% - 100px), #9BFF9BAA calc(100% - 35px), transparent 100%); } /*   	*/ 
+div.sticker-tip.c101 { background-color:transparent; } div.sticker-tip.c101::after { background-image: linear-gradient( +0deg,  transparent 0%, #BBE6FFFF 16px, #BBE6FF33 50px, #BBE6FF00 calc(100% - 100px), #BBE6FFAA calc(100% - 35px), transparent 100%); } /*   	*/ 
+div.sticker-tip.c103 { background-color:transparent; } div.sticker-tip.c103::after { background-image: linear-gradient( +0deg,  transparent 0%, #FF8040FF 16px, #FF804033 50px, #FF804000 calc(100% - 100px), #FF8040AA calc(100% - 35px), transparent 100%); } /*   	*/ 
+div.sticker-tip.c104 { background-color:transparent; } div.sticker-tip.c104::after { background-image: linear-gradient( +0deg,  transparent 0%, #C1AD84FF 16px, #C1AD8433 50px, #C1AD8400 calc(100% - 100px), #C1AD84AA calc(100% - 35px), transparent 100%); } /*   	*/ 
+div.sticker-tip.c106 { background-color:transparent; } div.sticker-tip.c106::after { background-image: linear-gradient( +0deg,  transparent 0%, #FF9FFFFF 16px, #FF9FFF33 50px, #FF9FFF00 calc(100% - 100px), #FF9FFFAA calc(100% - 35px), transparent 100%); } /*   	*/ 
+div.sticker-tip.c107 { background-color:transparent; } div.sticker-tip.c107::after { background-image: linear-gradient( +0deg,  transparent 0%, #C49DF7FF 16px, #C49DF733 50px, #C49DF700 calc(100% - 100px), #C49DF7AA calc(100% - 35px), transparent 100%); }/*   	*/ 
+div.sticker-tip.c108 { background-color:transparent; } div.sticker-tip.c108::after { background-image: linear-gradient( +0deg,  transparent 0%, #8080FFFF 16px, #8080FF33 50px, #8080FF00 calc(100% - 100px), #8080FFAA calc(100% - 35px), transparent 100%); }/*   	*/ 
+div.sticker-tip.c110 { background-color:transparent; } div.sticker-tip.c110::after { background-image: linear-gradient( +0deg,  transparent 0%, #FFFF00FF 16px, #FFFF0033 50px, #FFFF0000 calc(100% - 100px), #FFFF00AA calc(100% - 35px), transparent 100%); }/* superyellow */ 
+div.sticker-tip.c111 { background-color:transparent; } div.sticker-tip.c111::after { background-image: linear-gradient( +0deg,  transparent 0%, #707070FF 16px, #70707033 50px, #70707000 calc(100% - 100px), #707070AA calc(100% - 35px), transparent 100%); } /*   	*/ 
+
+
+div.sticker-tip.c90 { background-color:transparent; } div.sticker-tip.c90::after { background-image: linear-gradient( +0deg,  transparent 0%, #F2F2F2FF 16px, #F2F2F233 50px, #F2F2F200 calc(100% - 100px), #F2F2F2AA calc(100% - 35px), transparent 100%); } 	/* color_code_frAA  	GRAY DEGRADE */ 
+div.sticker-tip.c91 { background-color:transparent; } div.sticker-tip.c91::after { background-image: linear-gradient( +0deg,  transparent 0%, #D8D8D8FF 16px, #D8D8D833 50px, #D8D8D800 calc(100% - 100px), #D8D8D8AA calc(100% - 35px), transparent 100%); } 	/* color_code_note  	*/ 
+div.sticker-tip.c97 { background-color:transparent; } div.sticker-tip.c97::after { background-image: linear-gradient( +0deg,  transparent 0%, #BFBFBFFF 16px, #BFBFBF33 50px, #BFBFBF00 calc(100% - 100px), #BFBFBFAA calc(100% - 35px), transparent 100%); } 	/* color_code_norm  	*/ 
+div.sticker-tip.c98 { background-color:transparent; } div.sticker-tip.c98::after { background-image: linear-gradient( +0deg,  transparent 0%, #A5A5A5FF 16px, #A5A5A533 50px, #A5A5A500 calc(100% - 100px), #A5A5A5AA calc(100% - 35px), transparent 100%); }	/* color_code_excp  	*/ 
+div.sticker-tip.c99 { background-color:transparent; } div.sticker-tip.c99::after { background-image: linear-gradient( +0deg,  transparent 0%, #7F7F7FFF 16px, #7F7F7F33 50px, #7F7F7F00 calc(100% - 50px), #7F7F7FFF calc(100% - 35px), transparent 100%); }	/* color_code_event 	*/ 
+
+div.sticker-tip.c113 { background-color:transparent; } div.sticker-tip.c113::after { background-image: linear-gradient( +0deg,  transparent 0%, #FFFFC0FF 16px, #FFFFC033 50px, #FFFFC000 calc(100% - 100px), #FFFFC0AA calc(100% - 35px), transparent 100%); }	/*  GOLDEN DEGRADE 		*/ 
+
+div.sticker-tip.c102 { background-color:transparent; } div.sticker-tip.c102::after { background-image: linear-gradient( +0deg,  transparent 0%, #FFF0A0FF 16px, #FFF0A033 50px, #FFF0A000 calc(100% - 100px), #FFF0A0AA calc(100% - 35px), transparent 100%); }	/*   		INTENSE COLORS */ 
+div.sticker-tip.c105 { background-color:transparent; } div.sticker-tip.c105::after { background-image: linear-gradient( +0deg,  transparent 0%, #FEE283FF 16px, #FEE28333 50px, #FEE28300 calc(100% - 100px), #FEE283AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c109 { background-color:transparent; } div.sticker-tip.c109::after { background-image: linear-gradient( +0deg,  transparent 0%, #BB9600FF 16px, #BB960033 50px, #BB960000 calc(100% - 100px), #BB9600AA calc(100% - 35px), transparent 100%); } 	/*   	*/ 
+div.sticker-tip.c114 { background-color:transparent; } div.sticker-tip.c114::after { background-image: linear-gradient( +0deg,  transparent 0%, #998200FF 16px, #99820033 50px, #99820000 calc(100% - 100px), #998200AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c120 { background-color:transparent; } div.sticker-tip.c120::after { background-image: linear-gradient( +0deg,  transparent 0%, #DDD9C3FF 16px, #DDD9C333 50px, #DDD9C300 calc(100% - 100px), #DDD9C3AA calc(100% - 35px), transparent 100%); }	/*   		GREEN/BROWN DEGRADE */ 
+div.sticker-tip.c121 { background-color:transparent; } div.sticker-tip.c121::after { background-image: linear-gradient( +0deg,  transparent 0%, #C4BD97FF 16px, #C4BD9733 50px, #C4BD9700 calc(100% - 100px), #C4BD97AA calc(100% - 35px), transparent 100%); }/*   	*/ 
+div.sticker-tip.c122 { background-color:transparent; } div.sticker-tip.c122::after { background-image: linear-gradient( +0deg,  transparent 0%, #938953FF 16px, #93895333 50px, #93895300 calc(100% - 100px), #938953AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c123 { background-color:transparent; } div.sticker-tip.c123::after { background-image: linear-gradient( +0deg,  transparent 0%, #494429FF 16px, #49442933 50px, #49442900 calc(100% - 100px), #494429AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c124 { background-color:transparent; } div.sticker-tip.c124::after { background-image: linear-gradient( +0deg,  transparent 0%, #1D1B10FF 16px, #1D1B1033 50px, #1D1B1000 calc(100% - 100px), #1D1B10AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c130 { background-color:transparent; } div.sticker-tip.c130::after { background-image: linear-gradient( +0deg,  transparent 0%, #DBE5F1FF 16px, #DBE5F133 50px, #DBE5F100 calc(100% - 100px), #DBE5F1AA calc(100% - 35px), transparent 100%); }	/*   		BLUE DEGRADE */ 
+div.sticker-tip.c131 { background-color:transparent; } div.sticker-tip.c131::after { background-image: linear-gradient( +0deg,  transparent 0%, #B8CCE4FF 16px, #B8CCE433 50px, #B8CCE400 calc(100% - 100px), #B8CCE4AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c132 { background-color:transparent; } div.sticker-tip.c132::after { background-image: linear-gradient( +0deg,  transparent 0%, #95B3D7FF 16px, #95B3D733 50px, #95B3D700 calc(100% - 100px), #95B3D7AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c133 { background-color:transparent; } div.sticker-tip.c133::after { background-image: linear-gradient( +0deg,  transparent 0%, #366092FF 16px, #36609233 50px, #36609200 calc(100% - 100px), #366092AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c134 { background-color:transparent; } div.sticker-tip.c134::after { background-image: linear-gradient( +0deg,  transparent 0%, #244061FF 16px, #24406133 50px, #24406100 calc(100% - 100px), #244061AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c140 { background-color:transparent; } div.sticker-tip.c140::after { background-image: linear-gradient( +0deg,  transparent 0%, #F2DCDBFF 16px, #F2DCDB33 50px, #F2DCDB00 calc(100% - 100px), #F2DCDBAA calc(100% - 35px), transparent 100%); }	/*   		ARGILE DEGRADE*/ 
+div.sticker-tip.c141 { background-color:transparent; } div.sticker-tip.c141::after { background-image: linear-gradient( +0deg,  transparent 0%, #E5B9B7FF 16px, #E5B9B733 50px, #E5B9B700 calc(100% - 100px), #E5B9B7AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c142 { background-color:transparent; } div.sticker-tip.c142::after { background-image: linear-gradient( +0deg,  transparent 0%, #D99694FF 16px, #D9969433 50px, #D9969400 calc(100% - 100px), #D99694AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c143 { background-color:transparent; } div.sticker-tip.c143::after { background-image: linear-gradient( +0deg,  transparent 0%, #953734FF 16px, #95373433 50px, #95373400 calc(100% - 100px), #953734AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c144 { background-color:transparent; } div.sticker-tip.c144::after { background-image: linear-gradient( +0deg,  transparent 0%, #632423FF 16px, #63242333 50px, #63242300 calc(100% - 100px), #632423AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c150 { background-color:transparent; } div.sticker-tip.c150::after { background-image: linear-gradient( +0deg,  transparent 0%, #EBF1DDFF 16px, #EBF1DD33 50px, #EBF1DD00 calc(100% - 100px), #EBF1DDAA calc(100% - 35px), transparent 100%); }	/*   		GREEN DEGRADE */ 
+div.sticker-tip.c151 { background-color:transparent; } div.sticker-tip.c151::after { background-image: linear-gradient( +0deg,  transparent 0%, #D7E3BCFF 16px, #D7E3BC33 50px, #D7E3BC00 calc(100% - 100px), #D7E3BCAA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c152 { background-color:transparent; } div.sticker-tip.c152::after { background-image: linear-gradient( +0deg,  transparent 0%, #B5D088FF 16px, #B5D08833 50px, #B5D08800 calc(100% - 100px), #B5D088AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c153 { background-color:transparent; } div.sticker-tip.c153::after { background-image: linear-gradient( +0deg,  transparent 0%, #76923CFF 16px, #76923C00 50px, #76923C00 calc(100% - 100px), #76923CAA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c154 { background-color:transparent; } div.sticker-tip.c154::after { background-image: linear-gradient( +0deg,  transparent 0%, #4F6128FF 16px, #4F612833 50px, #4F612800 calc(100% - 100px), #4F6128AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c160 { background-color:transparent; } div.sticker-tip.c160::after { background-image: linear-gradient( +0deg,  transparent 0%, #E5E0ECFF 16px, #E5E0EC33 50px, #E5E0EC00 calc(100% - 100px), #E5E0ECAA calc(100% - 35px), transparent 100%); }	/*   		PURPLE DEGRADE */ 
+div.sticker-tip.c161 { background-color:transparent; } div.sticker-tip.c161::after { background-image: linear-gradient( +0deg,  transparent 0%, #CCC1D9FF 16px, #CCC1D933 50px, #CCC1D900 calc(100% - 100px), #CCC1D9AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c162 { background-color:transparent; } div.sticker-tip.c162::after { background-image: linear-gradient( +0deg,  transparent 0%, #B2A2C7FF 16px, #B2A2C733 50px, #B2A2C700 calc(100% - 100px), #B2A2C7AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c163 { background-color:transparent; } div.sticker-tip.c163::after { background-image: linear-gradient( +0deg,  transparent 0%, #5F497AFF 16px, #5F497A33 50px, #5F497A00 calc(100% - 100px), #5F497AAA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c164 { background-color:transparent; } div.sticker-tip.c164::after { background-image: linear-gradient( +0deg,  transparent 0%, #3F3151FF 16px, #3F315133 50px, #3F315100 calc(100% - 100px), #3F3151AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c170 { background-color:transparent; } div.sticker-tip.c170::after { background-image: linear-gradient( +0deg,  transparent 0%, #DBEEF3FF 16px, #DBEEF333 50px, #DBEEF300 calc(100% - 100px), #DBEEF3AA calc(100% - 35px), transparent 100%); }	/*   		TURQUOISE DEGRADE*/ 
+div.sticker-tip.c171 { background-color:transparent; } div.sticker-tip.c171::after { background-image: linear-gradient( +0deg,  transparent 0%, #B7DDE8FF 16px, #B7DDE833 50px, #B7DDE800 calc(100% - 100px), #B7DDE8AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c172 { background-color:transparent; } div.sticker-tip.c172::after { background-image: linear-gradient( +0deg,  transparent 0%, #92CDDCFF 16px, #92CDDC33 50px, #92CDDC00 calc(100% - 100px), #92CDDCAA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c173 { background-color:transparent; } div.sticker-tip.c173::after { background-image: linear-gradient( +0deg,  transparent 0%, #31859BFF 16px, #31859B33 50px, #31859B00 calc(100% - 100px), #31859BAA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c174 { background-color:transparent; } div.sticker-tip.c174::after { background-image: linear-gradient( +0deg,  transparent 0%, #205867FF 16px, #20586733 50px, #20586700 calc(100% - 100px), #205867AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+
+div.sticker-tip.c180 { background-color:transparent; } div.sticker-tip.c180::after { background-image: linear-gradient( +0deg,  transparent 0%, #FDEADAFF 16px, #FDEADA33 50px, #FDEADA00 calc(100% - 100px), #FDEADAAA calc(100% - 35px), transparent 100%); }	/*   		ORANGE DEGRADE */ 
+div.sticker-tip.c181 { background-color:transparent; } div.sticker-tip.c181::after { background-image: linear-gradient( +0deg,  transparent 0%, #FBD5B5FF 16px, #FBD5B533 50px, #FBD5B500 calc(100% - 100px), #FBD5B5AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c182 { background-color:transparent; } div.sticker-tip.c182::after { background-image: linear-gradient( +0deg,  transparent 0%, #FAC08FFF 16px, #FAC08F33 50px, #FAC08F00 calc(100% - 100px), #FAC08FAA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c183 { background-color:transparent; } div.sticker-tip.c183::after { background-image: linear-gradient( +0deg,  transparent 0%, #E36C00FF 16px, #E36C0033 50px, #E36C0000 calc(100% - 100px), #E36C00AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+div.sticker-tip.c184 { background-color:transparent; } div.sticker-tip.c184::after { background-image: linear-gradient( +0deg,  transparent 0%, #974806FF 16px, #97480633 50px, #97480600 calc(100% - 100px), #974806AA calc(100% - 35px), transparent 100%); }	/*   	*/ 
+
+div.sticker-tip.c210 { background-color:transparent; } div.sticker-tip.c210::after { background-image: linear-gradient( +0deg,  transparent 0%, #F8F8FFFF 16px, #F8F8FF33 50px, #F8F8FF00 calc(100% - 100px), #F8F8FFAA calc(100% - 35px), transparent 100%); } 	/* ghostwhite  	- WHITES */ 
+div.sticker-tip.c211 { background-color:transparent; } div.sticker-tip.c211::after { background-image: linear-gradient( +0deg,  transparent 0%, #F0FFF0FF 16px, #F0FFF033 50px, #F0FFF000 calc(100% - 100px), #F0FFF0AA calc(100% - 35px), transparent 100%); }	/* honeydew */
+div.sticker-tip.c212 { background-color:transparent; } div.sticker-tip.c212::after { background-image: linear-gradient( +0deg,  transparent 0%, #FFF0F5FF 16px, #FFF0F533 50px, #FFF0F500 calc(100% - 100px), #FFF0F5AA calc(100% - 35px), transparent 100%); }	/* lavenderblush */
+div.sticker-tip.c213 { background-color:transparent; } div.sticker-tip.c213::after { background-image: linear-gradient( +0deg,  transparent 0%, #FFF5EEFF 16px, #FFF5EE33 50px, #FFF5EE00 calc(100% - 100px), #FFF5EEAA calc(100% - 35px), transparent 100%); }	/* seashell */
+div.sticker-tip.c214 { background-color:transparent; } div.sticker-tip.c214::after { background-image: linear-gradient( +0deg,  transparent 0%, #FAF0E6FF 16px, #FAF0E633 50px, #FAF0E600 calc(100% - 100px), #FAF0E6AA calc(100% - 35px), transparent 100%); }	/* linen */
+div.sticker-tip.c215 { background-color:transparent; } div.sticker-tip.c215::after { background-image: linear-gradient( +0deg,  transparent 0%, #FFFFF0FF 16px, #FFFFF033 50px, #FFFFF000 calc(100% - 100px), #FFFFF0AA calc(100% - 35px), transparent 100%); } 	/* ivory */
+div.sticker-tip.c216 { background-color:transparent; } div.sticker-tip.c216::after { background-image: linear-gradient( +0deg,  transparent 0%, #FFFAF0FF 16px, #FFFAF033 50px, #FFFAF000 calc(100% - 100px), #FFFAF0AA calc(100% - 35px), transparent 100%); } 	/* floralwhite */
+div.sticker-tip.c217 { background-color:transparent; } div.sticker-tip.c217::after { background-image: linear-gradient( +0deg,  transparent 0%, #E6E6FAFF 16px, #E6E6FA33 50px, #E6E6FA00 calc(100% - 100px), #E6E6FAAA calc(100% - 35px), transparent 100%); } 	/* lavender */
+
+div.sticker-tip.c220 { background-color:transparent; } div.sticker-tip.c220::after { background-image: linear-gradient( +0deg,  transparent 0%, #DB7093FF 16px, #DB709333 50px, #DB709300 calc(100% - 100px), #DB7093AA calc(100% - 35px), transparent 100%); }	/* palevioletred - VIOLETS */ 
+div.sticker-tip.c221 { background-color:transparent; } div.sticker-tip.c221::after { background-image: linear-gradient( +0deg,  transparent 0%, #BA55D3FF 16px, #BA55D333 50px, #BA55D300 calc(100% - 100px), #BA55D3AA calc(100% - 35px), transparent 100%); }	/* mediumorchid */
+div.sticker-tip.c222 { background-color:transparent; } div.sticker-tip.c222::after { background-image: linear-gradient( +0deg,  transparent 0%, #C71585FF 16px, #C7158533 50px, #C7158500 calc(100% - 100px), #C71585AA calc(100% - 35px), transparent 100%); }	/* mediumvioletred */
+div.sticker-tip.c223 { background-color:transparent; } div.sticker-tip.c223::after { background-image: linear-gradient( +0deg,  transparent 0%, #EE82EEFF 16px, #EE82EE33 50px, #EE82EE00 calc(100% - 100px), #EE82EEAA calc(100% - 35px), transparent 100%); }	/* violet */
+div.sticker-tip.c224 { background-color:transparent; } div.sticker-tip.c224::after { background-image: linear-gradient( +0deg,  transparent 0%, #6A5ACDFF 16px, #6A5ACD33 50px, #6A5ACD00 calc(100% - 100px), #6A5ACDAA calc(100% - 35px), transparent 100%); }	/* slateblue */
+div.sticker-tip.c225 { background-color:transparent; } div.sticker-tip.c225::after { background-image: linear-gradient( +0deg,  transparent 0%, #8A2BE2FF 16px, #8A2BE233 50px, #8A2BE200 calc(100% - 100px), #8A2BE2AA calc(100% - 35px), transparent 100%); }		/* blueviolet */
+div.sticker-tip.c226 { background-color:transparent; } div.sticker-tip.c226::after { background-image: linear-gradient( +0deg,  transparent 0%, #9370DBFF 16px, #9370DB33 50px, #9370DB00 calc(100% - 100px), #9370DBAA calc(100% - 35px), transparent 100%); }	/* mediumpurple */
+div.sticker-tip.c227 { background-color:transparent; } div.sticker-tip.c227::after { background-image: linear-gradient( +0deg,  transparent 0%, #7B68EEFF 16px, #7B68EE33 50px, #7B68EE00 calc(100% - 100px), #7B68EEAA calc(100% - 35px), transparent 100%); }	/* mediumslateblue */
+
+div.sticker-tip.c230 { background-color:transparent; } div.sticker-tip.c230::after { background-image: linear-gradient( +0deg,  transparent 0%, #F08080FF 16px, #F0808033 50px, #F0808000 calc(100% - 100px), #F08080AA calc(100% - 35px), transparent 100%); }	/* lightcoral 	- REDS */
+div.sticker-tip.c231 { background-color:transparent; } div.sticker-tip.c231::after { background-image: linear-gradient( +0deg,  transparent 0%, #FA8072FF 16px, #FA807233 50px, #FA807200 calc(100% - 100px), #FA8072AA calc(100% - 35px), transparent 100%); }	/* salmon */
+div.sticker-tip.c232 { background-color:transparent; } div.sticker-tip.c232::after { background-image: linear-gradient( +0deg,  transparent 0%, #CD5C5CFF 16px, #CD5C5C33 50px, #CD5C5C00 calc(100% - 100px), #CD5C5CAA calc(100% - 35px), transparent 100%); } 	/* indianred */
+div.sticker-tip.c233 { background-color:transparent; } div.sticker-tip.c233::after { background-image: linear-gradient( +0deg,  transparent 0%, #A52A2AFF 16px, #A52A2A33 50px, #A52A2A00 calc(100% - 100px), #A52A2AAA calc(100% - 35px), transparent 100%); }		/* brown */
+div.sticker-tip.c234 { background-color:transparent; } div.sticker-tip.c234::after { background-image: linear-gradient( +0deg,  transparent 0%, #8B0000FF 16px, #8B000033 50px, #8B000000 calc(100% - 100px), #8B0000AA calc(100% - 35px), transparent 100%); } 	/* darkred */
+div.sticker-tip.c235 { background-color:transparent; } div.sticker-tip.c235::after { background-image: linear-gradient( +0deg,  transparent 0%, #B22222FF 16px, #B2222233 50px, #B2222200 calc(100% - 100px), #B22222AA calc(100% - 35px), transparent 100%); } 	/* firebrick */
+div.sticker-tip.c236 { background-color:transparent; } div.sticker-tip.c236::after { background-image: linear-gradient( +0deg,  transparent 0%, #DC143CFF 16px, #DC143C33 50px, #DC143C00 calc(100% - 100px), #DC143CAA calc(100% - 35px), transparent 100%); }	/* crimson */
+div.sticker-tip.c237 { background-color:transparent; } div.sticker-tip.c237::after { background-image: linear-gradient( +0deg,  transparent 0%, #FF4500FF 16px, #FF450033 50px, #FF450000 calc(100% - 100px), #FF4500AA calc(100% - 35px), transparent 100%); }	/* orangered */
+
+div.sticker-tip.c240 { background-color:transparent; } div.sticker-tip.c240::after { background-image: linear-gradient( +0deg,  transparent 0%, #7FFFD4FF 16px, #7FFFD433 50px, #7FFFD400 calc(100% - 100px), #7FFFD4AA calc(100% - 35px), transparent 100%); } 	/*  aquamarine - GREEN	*/ 
+div.sticker-tip.c241 { background-color:transparent; } div.sticker-tip.c241::after { background-image: linear-gradient( +0deg,  transparent 0%, #00FA9AFF 16px, #00FA9A33 50px, #00FA9A00 calc(100% - 100px), #00FA9AAA calc(100% - 35px), transparent 100%); }	/* mediumspringgreen */
+div.sticker-tip.c242 { background-color:transparent; } div.sticker-tip.c242::after { background-image: linear-gradient( +0deg,  transparent 0%, #00FF7FFF 16px, #00FF7F33 50px, #00FF7F00 calc(100% - 100px), #00FF7FAA calc(100% - 35px), transparent 100%); }	/* springgreen */
+div.sticker-tip.c243 { background-color:transparent; } div.sticker-tip.c243::after { background-image: linear-gradient( +0deg,  transparent 0%, #98FB98FF 16px, #98FB9833 50px, #98FB9800 calc(100% - 100px), #98FB98AA calc(100% - 35px), transparent 100%); }	/* palegreen */
+div.sticker-tip.c244 { background-color:transparent; } div.sticker-tip.c244::after { background-image: linear-gradient( +0deg,  transparent 0%, #90EE90FF 16px, #90EE9033 50px, #90EE9000 calc(100% - 100px), #90EE90AA calc(100% - 35px), transparent 100%); }	/* lightgreen */
+div.sticker-tip.c245 { background-color:transparent; } div.sticker-tip.c245::after { background-image: linear-gradient( +0deg,  transparent 0%, #32CD32FF 16px, #32CD3233 50px, #32CD3200 calc(100% - 100px), #32CD32AA calc(100% - 35px), transparent 100%); } 	/* limegreen */
+div.sticker-tip.c246 { background-color:transparent; } div.sticker-tip.c246::after { background-image: linear-gradient( +0deg,  transparent 0%, #7FFF00FF 16px, #7FFF0033 50px, #7FFF0000 calc(100% - 100px), #7FFF00AA calc(100% - 35px), transparent 100%); }	/* chartreuse */
+div.sticker-tip.c247 { background-color:transparent; } div.sticker-tip.c247::after { background-image: linear-gradient( +0deg,  transparent 0%, #ADFF2FFF 16px, #ADFF2F33 50px, #ADFF2F00 calc(100% - 100px), #ADFF2FAA calc(100% - 35px), transparent 100%); }	/* greenyellow */
+
+div.sticker-tip.c250 { background-color:transparent; } div.sticker-tip.c250::after { background-image: linear-gradient( +0deg,  transparent 0%, #FFFFE0FF 16px, #FFFFE033 50px, #FFFFE000 calc(100% - 100px), #FFFFE0AA calc(100% - 35px), transparent 100%); } 	/* lemonchiffon - YELLOWS */
+div.sticker-tip.c251 { background-color:transparent; } div.sticker-tip.c251::after { background-image: linear-gradient( +0deg,  transparent 0%, #FFFACDFF 16px, #FFFACD33 50px, #FFFACD00 calc(100% - 100px), #FFFACDAA calc(100% - 35px), transparent 100%); } 	/* lightyellow*/
+div.sticker-tip.c252 { background-color:transparent; } div.sticker-tip.c252::after { background-image: linear-gradient( +0deg,  transparent 0%, #EEE8AAFF 16px, #EEE8AA33 50px, #EEE8AA00 calc(100% - 100px), #EEE8AAAA calc(100% - 35px), transparent 100%); } 	/* palegoldenrod	 */
+div.sticker-tip.c253 { background-color:transparent; } div.sticker-tip.c253::after { background-image: linear-gradient( +0deg,  transparent 0%, #FEF273FF 16px, #FEF27333 50px, #FEF27300 calc(100% - 100px), #FEF273AA calc(100% - 35px), transparent 100%); }  	/* brightyellow */
+div.sticker-tip.c254 { background-color:transparent; } div.sticker-tip.c254::after { background-image: linear-gradient( +0deg,  transparent 0%, #FFCC00FF 16px, #FFCC0033 50px, #FFCC0000 calc(100% - 100px), #FFCC00AA calc(100% - 35px), transparent 100%); } 	/* midyellow */
+div.sticker-tip.c255 { background-color:transparent; } div.sticker-tip.c255::after { background-image: linear-gradient( +0deg,  transparent 0%, #FFA500FF 16px, #FFA50033 50px, #FFA50000 calc(100% - 100px), #FFA500AA calc(100% - 35px), transparent 100%); }  	/* orange */
+div.sticker-tip.c256 { background-color:transparent; } div.sticker-tip.c256::after { background-image: linear-gradient( +0deg,  transparent 0%, #FF8C00FF 16px, #FF8C0033 50px, #FF8C0000 calc(100% - 100px), #FF8C00AA calc(100% - 35px), transparent 100%); }  	/* darkorange */
+div.sticker-tip.c257 { background-color:transparent; } div.sticker-tip.c257::after { background-image: linear-gradient( +0deg,  transparent 0%, #DD9900FF 16px, #DD990033 50px, #DD990000 calc(100% - 100px), #DD9900AA calc(100% - 35px), transparent 100%); } 	/* lowyellow */
+
+div.sticker-tip.c260 { background-color:transparent; } div.sticker-tip.c260::after { background-image: linear-gradient( +0deg,  transparent 0%, #FAFAD2FF 16px, #FAFAD233 50px, #FAFAD200 calc(100% - 100px), #FAFAD2AA calc(100% - 35px), transparent 100%); } 	/* lightgoldenrodyellow	- KHAKI	*/ 
+div.sticker-tip.c261 { background-color:transparent; } div.sticker-tip.c261::after { background-image: linear-gradient( +0deg,  transparent 0%, #F0E68CFF 16px, #F0E68C33 50px, #F0E68C00 calc(100% - 100px), #F0E68CAA calc(100% - 35px), transparent 100%); } 	/* khaki*/
+div.sticker-tip.c262 { background-color:transparent; } div.sticker-tip.c262::after { background-image: linear-gradient( +0deg,  transparent 0%, #BDB76BFF 16px, #BDB76B33 50px, #BDB76B00 calc(100% - 100px), #BDB76BAA calc(100% - 35px), transparent 100%); } 	/* darkkhaki */
+div.sticker-tip.c263 { background-color:transparent; } div.sticker-tip.c263::after { background-image: linear-gradient( +0deg,  transparent 0%, #8FBC8FFF 16px, #8FBC8F33 50px, #8FBC8F00 calc(100% - 100px), #8FBC8FAA calc(100% - 35px), transparent 100%); } 	/* darkseegreen */
+div.sticker-tip.c264 { background-color:transparent; } div.sticker-tip.c264::after { background-image: linear-gradient( +0deg,  transparent 0%, #3CB371FF 16px, #3CB37133 50px, #3CB37100 calc(100% - 100px), #3CB371AA calc(100% - 35px), transparent 100%); }  	/* mediumseagreen */
+div.sticker-tip.c265 { background-color:transparent; } div.sticker-tip.c265::after { background-image: linear-gradient( +0deg,  transparent 0%, #2E8B57FF 16px, #2E8B5733 50px, #2E8B5700 calc(100% - 100px), #2E8B57AA calc(100% - 35px), transparent 100%); } 	/* seagreen */
+div.sticker-tip.c266 { background-color:transparent; } div.sticker-tip.c266::after { background-image: linear-gradient( +0deg,  transparent 0%, #556B2FFF 16px, #556B2F33 50px, #556B2F00 calc(100% - 100px), #556B2FAA calc(100% - 35px), transparent 100%); }		/* darkolivegreen */
+div.sticker-tip.c267 { background-color:transparent; } div.sticker-tip.c267::after { background-image: linear-gradient( +0deg,  transparent 0%, #006400FF 16px, #00640033 50px, #00640000 calc(100% - 100px), #006400AA calc(100% - 35px), transparent 100%); } 	/* darkgreen */
+
+div.sticker-tip.c270 { background-color:transparent; } div.sticker-tip.c270::after { background-image: linear-gradient( +0deg,  transparent 0%, #FFF8DCFF 16px, #FFF8DC33 50px, #FFF8DC00 calc(100% - 100px), #FFF8DCAA calc(100% - 35px), transparent 100%); } 	/* cornsilk		- BEIGES */ 
+div.sticker-tip.c271 { background-color:transparent; } div.sticker-tip.c271::after { background-image: linear-gradient( +0deg,  transparent 0%, #F5F5DCFF 16px, #F5F5DC33 50px, #F5F5DC00 calc(100% - 100px), #F5F5DCAA calc(100% - 35px), transparent 100%); }	/* beige */
+div.sticker-tip.c272 { background-color:transparent; } div.sticker-tip.c272::after { background-image: linear-gradient( +0deg,  transparent 0%, #FAEBD7FF 16px, #FAEBD733 50px, #FAEBD700 calc(100% - 100px), #FAEBD7AA calc(100% - 35px), transparent 100%); }	/* antiquewhite */
+div.sticker-tip.c273 { background-color:transparent; } div.sticker-tip.c273::after { background-image: linear-gradient( +0deg,  transparent 0%, #FFE4B5FF 16px, #FFE4B533 50px, #FFE4B500 calc(100% - 100px), #FFE4B5AA calc(100% - 35px), transparent 100%); }	/* moccasin */
+div.sticker-tip.c274 { background-color:transparent; } div.sticker-tip.c274::after { background-image: linear-gradient( +0deg,  transparent 0%, #FFDAB9FF 16px, #FFDAB933 50px, #FFDAB900 calc(100% - 100px), #FFDAB9AA calc(100% - 35px), transparent 100%); }	/* navajowhite */
+div.sticker-tip.c275 { background-color:transparent; } div.sticker-tip.c275::after { background-image: linear-gradient( +0deg,  transparent 0%, #FFDAB9FF 16px, #FFDAB933 50px, #FFDAB900 calc(100% - 100px), #FFDAB9AA calc(100% - 35px), transparent 100%); }	/* peachpuff */ 
+div.sticker-tip.c276 { background-color:transparent; } div.sticker-tip.c276::after { background-image: linear-gradient( +0deg,  transparent 0%, #F4DDB2FF 16px, #F4DDB233 50px, #F4DDB200 calc(100% - 100px), #F4DDB2AA calc(100% - 35px), transparent 100%); }	/* wheat */ 
+div.sticker-tip.c277 { background-color:transparent; } div.sticker-tip.c277::after { background-image: linear-gradient( +0deg,  transparent 0%, #D2B48CFF 16px, #D2B48C33 50px, #D2B48C00 calc(100% - 100px), #D2B48CAA calc(100% - 35px), transparent 100%); }	/* tan */
+
+div.sticker-tip.c280 { background-color:transparent; } div.sticker-tip.c280::after { background-image: linear-gradient( +0deg,  transparent 0%, #F5DEB3FF 16px, #F5DEB333 50px, #F5DEB300 calc(100% - 100px), #F5DEB3AA calc(100% - 35px), transparent 100%); } 	/* weat			- 	BROWNS */ 
+div.sticker-tip.c281 { background-color:transparent; } div.sticker-tip.c281::after { background-image: linear-gradient( +0deg,  transparent 0%, #DEB887FF 16px, #DEB88733 50px, #DEB88700 calc(100% - 100px), #DEB887AA calc(100% - 35px), transparent 100%); }	/* burlywood */
+div.sticker-tip.c282 { background-color:transparent; } div.sticker-tip.c282::after { background-image: linear-gradient( +0deg,  transparent 0%, #BC8F8FFF 16px, #BC8F8F33 50px, #BC8F8F00 calc(100% - 100px), #BC8F8FAA calc(100% - 35px), transparent 100%); }	/* rosybrown */
+div.sticker-tip.c283 { background-color:transparent; } div.sticker-tip.c283::after { background-image: linear-gradient( +0deg,  transparent 0%, #B8860BFF 16px, #B8860B33 50px, #B8860B00 calc(100% - 100px), #B8860BAA calc(100% - 35px), transparent 100%); } 	/* darkgoldenrod */
+div.sticker-tip.c284 { background-color:transparent; } div.sticker-tip.c284::after { background-image: linear-gradient( +0deg,  transparent 0%, #D2691EFF 16px, #D2691E33 50px, #D2691E00 calc(100% - 100px), #D2691EAA calc(100% - 35px), transparent 100%); } 	/* chocolate */
+div.sticker-tip.c285 { background-color:transparent; } div.sticker-tip.c285::after { background-image: linear-gradient( +0deg,  transparent 0%, #CD853FFF 16px, #CD853F33 50px, #CD853F00 calc(100% - 100px), #CD853FAA calc(100% - 35px), transparent 100%); } 	/* peru */
+div.sticker-tip.c286 { background-color:transparent; } div.sticker-tip.c286::after { background-image: linear-gradient( +0deg,  transparent 0%, #A0522DFF 16px, #A0522D33 50px, #A0522D00 calc(100% - 100px), #A0522DAA calc(100% - 35px), transparent 100%); }  	/* sienna*/
+div.sticker-tip.c287 { background-color:transparent; } div.sticker-tip.c287::after { background-image: linear-gradient( +0deg,  transparent 0%, #8B4513FF 16px, #8B451311 50px, #8B451322 calc(100% - 100px), #8B4513AA calc(100% - 35px), transparent 100%); } 	/* saddlebrown */
+
+div.sticker-tip.c290 { background-color:transparent; } div.sticker-tip.c290::after { background-image: linear-gradient( +0deg,  transparent 0%, #F0F8FFFF 16px, #F0F8FF33 50px, #F0F8FF00 calc(100% - 100px), #F0F8FFAA calc(100% - 35px), transparent 100%); } 	/* aliceblue		- BLUES	*/ 
+div.sticker-tip.c291 { background-color:transparent; } div.sticker-tip.c291::after { background-image: linear-gradient( +0deg,  transparent 0%, #B0E0E6FF 16px, #B0E0E633 50px, #B0E0E600 calc(100% - 100px), #B0E0E6AA calc(100% - 35px), transparent 100%); }	/* powderblue 	*/ 
+div.sticker-tip.c292 { background-color:transparent; } div.sticker-tip.c292::after { background-image: linear-gradient( +0deg,  transparent 0%, #ADD8E6FF 16px, #ADD8E633 50px, #ADD8E600 calc(100% - 100px), #ADD8E6AA calc(100% - 35px), transparent 100%); }	/* lightblue  	*/ 
+div.sticker-tip.c293 { background-color:transparent; } div.sticker-tip.c293::after { background-image: linear-gradient( +0deg,  transparent 0%, #B0C4DEFF 16px, #B0C4DE33 50px, #B0C4DE00 calc(100% - 100px), #B0C4DEAA calc(100% - 35px), transparent 100%); }	/* lightsteelblue */
+div.sticker-tip.c294 { background-color:transparent; } div.sticker-tip.c294::after { background-image: linear-gradient( +0deg,  transparent 0%, #6495EDFF 16px, #6495ED33 50px, #6495ED00 calc(100% - 100px), #6495EDAA calc(100% - 35px), transparent 100%); }		/* cornflowerblue */  
+div.sticker-tip.c295 { background-color:transparent; } div.sticker-tip.c295::after { background-image: linear-gradient( +0deg,  transparent 0%, #4682B4FF 16px, #4682B433 50px, #4682B400 calc(100% - 100px), #4682B4AA calc(100% - 35px), transparent 100%); } 	/* steelblue 	*/ 
+div.sticker-tip.c296 { background-color:transparent; } div.sticker-tip.c296::after { background-image: linear-gradient( +0deg,  transparent 0%, #5F9EA0FF 16px, #5F9EA033 50px, #5F9EA000 calc(100% - 100px), #5F9EA0AA calc(100% - 35px), transparent 100%); }  	/* cadetblue  	*/ 
+div.sticker-tip.c297 { background-color:transparent; } div.sticker-tip.c297::after { background-image: linear-gradient( +0deg,  transparent 0%, #4169E1FF 16px, #4169E133 50px, #4169E100 calc(100% - 100px), #4169E1AA calc(100% - 35px), transparent 100%); } 	/* royalblue	*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* RIBBON */
+
+.ribbon {
+	font-size:40px;
+	width: 160px;
+	height: 160px;
+	overflow: hidden;
+	position: absolute;
+}
+	@media only screen and (max-width:576px){ .ribbon { font-size:30px; width: 120px; height: 120px; }}
+
+.ribbon span {
+	box-shadow: 1px 2px 12px rgba(0, 0, 0, 0.2);
+	position: absolute;
+	display: block;
+	line-height:60px;            
+	width: 250px;
+	background-color:#F4732A;
+	color: #fff;
+	text-align: center;
+}
+
+@media only screen and (max-width:576px){ .ribbon span { line-height:45px; width: 180px; }}
+
+	.ribbon-top-left {
+		top: 0px;
+		left: 0px;
+	}
+	.ribbon-top-left span {
+		right: -20px;
+		top: 20px;
+		transform: rotate(-45deg);
+	}
+	@media only screen and (max-width:576px){ .ribbon-top-left span { right: -8px; top: 8px;}}
+
+.ribbon i { transform: rotate(+45deg); }
+
+
+div.message-box img.account-right-img {
+	max-height:490px;
+	height: 100%;
+	position: absolute;
+	right:-80px;
+	bottom:0;
+}
+
+/* MOB LOGO - screen saver */ 
+
+
+/* bitmapless mobminder logo */ /* see (*cl01*), see also (*css02*) */
+
+
+div.moblogo-em {
+	/* font-size:4em; line-height:3em; /* this is where you scale the complete drawing. To be specified in the element hard style */
+	margin:0; display:inline-block; /* places the logo middle centered in the containing div */
+	color: white; /* text color */
+	width:4em; height:3em; /* preset a convenient size surrounding the text when the clock is not used */
+	text-align:center; 
+	background: rgba(77,129,179,1); /* mob blue, makes the main foreground phylactery */
+	box-shadow: 1em 0em 0em -.16em rgba(182,225,34,1); /* minder lime, makes the hidden phylactery */
+	border-radius: 50%; /* makes it a potato */
+	position: relative; /* handles before and after positions */
+	transform: rotate(-8deg); -webkit-transform: rotate(-8deg);
+}
+div.moblogo-em:before, div.moblogo-em:after {
+	content:''; border:none; position:absolute;
+}
+div.moblogo-em:after { /* main foreground phylactery arrow, works with border display, the rest is transparent */
+	background:transparent; 
+	right: auto; top:auto; left:-.18em; bottom:-.3em;
+	width:1.6em; height:2.6em; z-index: -1;
+	border-radius: 1.6em 2.8em 0em 3.6em;
+	border-left: 0.8em solid rgba(77,129,179,1); /* mob blue, makes the main foreground arrow */
+	transform: rotate(20deg);  -webkit-transform: rotate(20deg);
+	/* border:1px solid blue; */
+}
+div.moblogo-em:before { /* background phylactery arrow, works with border, the rest is transparent */
+	background:transparent; 
+	left: auto; top:auto; right:-0.90em; bottom:-.1em;
+	width:1.6em; height:2.8em; z-index: -2;
+	border-radius: 0em 2.8em 3.2em 1.6em;
+	border-right: 0.64em solid rgba(182,225,34,1); /* minder lime, makes the hidden phylactery arrow */
+	transform: rotate(-8deg); -webkit-transform: rotate(-10deg);
+}
+
+
+
+
+/* MOB CLOCK, that is the white wallclock styled circle inside the phylactery */
+ 
+div.mobsides.o3-9:after, div.mobsides.o3-9:before {
+	content:""; position: absolute;
+	width:0.04em; height:0.2em; 
+	border-radius: 0.02em; /* make a circle */
+	transform-origin: 0.02em 0%; -webkit-transform-origin: 0.02em 0%;
+}
+div.mobsides.o3-9:before { /* 9am */
+	transform:rotate(90deg); -webkit-transform:rotate(90deg);
+	left:1.98em; top:0.88em; background:white;
+}
+div.mobsides.o3-9:after { /* 3am */
+	transform:rotate(270deg); -webkit-transform:rotate(270deg);
+	left:-0.22em; top:0.88em; background:white;
+}
+
+
+div.mobsides.o6-12:after, div.mobsides.o6-12:before { 
+	content:""; position: absolute;
+	width:0.04em; height:0.2em; 
+	border-radius: 0.02em; /* make a circle */
+	transform-origin: 0.02em 0%; -webkit-transform-origin: 0.02em 0%;
+}
+div.mobsides.o6-12:before { /* 12am */
+	transform:rotate(90deg); -webkit-transform:rotate(0deg);
+	left:0.88em; top:1.80em; background:white;
+}
+div.mobsides.o6-12:after { /* 6am */
+	transform:rotate(270deg); -webkit-transform:rotate(180deg);
+	left:0.88em; top:0.00em; background:white;
+}
+
+
+
+div.mobclock {
+	
+	display:inline-block; /* makes it centered */
+	top:0.5em; /* makes it vertical middle */
+	border:0.12em solid white;
+	width:1.8em; height:1.8em; /* border:1px solid red;*/
+	border-radius:50%; /* make a circle */
+	transform: rotate(+188deg); -webkit-transform: rotate(+188deg); /* 8deg from logo rotation + 180deg so to have 0deg at top for time clock arrows */
+	position:relative;
+	
+	--hours-rotation: 0deg; --minutes-rotation: 0deg; --seconds-rotation: 0deg;
+	
+	&:before, &:after { /* both arrows */
+		content:''; position: absolute; left:0.84em; top:0.9em;
+		width:0.12em;
+		border-radius: 0.06em; /* make a circle */
+		background: white; /* make minutes arrow */
+		transform-origin: 0.06em 0%; -webkit-transform-origin: 0.06em 0%;
+		transform:rotate(0deg); -webkit-transform:rotate(0deg);
+	}
+	
+	&:before { height:0.6em; transform:rotate(var(--hours-rotation));  -webkit-transform:rotate(var(--hours-rotation)); } /* hours arrow */
+	&:after { height:0.85em; transform:rotate(var(--minutes-rotation));  -webkit-transform:rotate(var(--minutes-rotation)); } /* minutes arrow */
+}
+
+div.mobseconds { /* makes seconds arrow */
+	display:inline-block; /* makes it centered */
+	top:0em; left:0em; /* makes it vertical middle */
+	border:none;
+	width:1.8em; height:1.8em; /* border:1px solid red;*/
+	position:relative;
+	
+	&:after {
+		content:''; position: absolute; left:0.87em; top:0.9em;
+		width:0.06em;
+		border-radius: 0.03em; /* make a circle */
+		background: rgba(255,255,255,.5); /* makes seconds arrow */
+		transform-origin: 0.03em 0%; -webkit-transform-origin: 0.03em 0%;
+		transform:rotate(0deg); -webkit-transform:rotate(0deg);
+		height:1.2em; background:rgba(0,0,0,.2);
+		transform:rotate(var(--seconds-rotation));  -webkit-transform:rotate(var(--seconds-rotation));
+	}
+}
+
+
+.pvh-3dcontainer { perspective:600px; transform-style:preserve-3d; padding:40px; }
+
+
+/* Spinning 3D cards */
+
+.pvh-plane {
+	margin: 0 auto;
+	height: 200px; width: 200px; border-radius: 15px;
+	
+	position: relative;
+	
+	transition: all 2s ease;
+	transform-style: preserve-3d;
+}
+.pvh-plane.spinned { transform: rotateY(-180deg); }
+
+.pvh-contents {
+	width: 100%; height: 100%; 	position: absolute; top: 0; left: 0;
+	border-radius: 25px;
+	display: flex; justify-content: center; align-items: center; flex-direction: column;
+	text-align: center;
+	backface-visibility: hidden;
+}
+	.pvh-contents.pvh-front {
+		/* background: linear-gradient(to top left, #3a6186, #89253e); */
+		
+		/* box-shadow: inset 50px 50px 100px 40px rgba(0,0,0,.2);	*/
+		transform-style: preserve-3d;
+	}
+	.pvh-contents.pvh-back {
+		/* box-shadow: inset 50px 50px 100px 40px rgba(0,0,0,.2);	*/
+		transform-style: preserve-3d;
+		transform: rotateY(180deg);
+	}
+
+.pvh-depth { /* add some depth to each side of the card */
+	transform: translateZ(100px);
+	transform-style: preserve-3d;
+	perspective: inherit;
+}
+
+
+.pvh-contents.bordered { border: 4px solid silver; }
+	.pvh-contents.bordered.blue { border-color: lightblue; }
+	
+	
+

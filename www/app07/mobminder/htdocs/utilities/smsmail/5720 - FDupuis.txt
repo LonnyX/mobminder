@@ -1,0 +1,12 @@
+<french>{dear} {gender} {lname},
+
+Ce message pour vous annoncer le déménagement de mes consultations à partir du 17 novembre.
+
+Nouvelle adresse:
+Rue de l'Eglise 57 à 1410 Waterloo
+
+Cordialement,
+Florence Dupuis, Ostéopathe D.O.
+Agenda en ligne: booking.mobminder.com/dupuis
+
+Pour tout contact: 0477231449</french>

@@ -1,0 +1,17 @@
+<french>{dear} {gender} {lname},
+La Polyclinique Neutre de Charleroi a repris ses activités.
+Si vous souhaitez un rendez-vous, n’hésitez pas à nous contacter au
+071205301
+tous les jours de 8h à 16h30.
+Vous pouvez également prendre rendez-vous sur place, merci de noter que le port du masque est obligatoire.
+Merci et prenez soin de vous,
+Le secrétariat de la
+Polyclinique
+Neutre
+de Charleroi,
+Avenue de Waterloo 19,
+6000 Charleroi,
+Tél: 071205301
+.
+(SVP, ne répondez pas à ce SMS, nous ne pouvons pas lire les réponses aux SMS. Utilisez uniquement le numéro indiqué ci-dessus)
+</french>

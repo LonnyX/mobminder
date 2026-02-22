@@ -1,0 +1,12 @@
+<french>{dear} {gender} {lname},
+
+Nous vous informons que Mr Desmet a pris sa retraite.
+Ses consultations seront dorénavant assurées par Mme Christine Deltomme, pédicure médicale.
+
+Cordialement,
+Polyclinique Spécialisée de Jette
+024274865
+
+(SVP ne répondez pas à ce sms, contactez nous uniquement via le 024274865)
+</french>
+

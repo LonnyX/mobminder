@@ -1,0 +1,4 @@
+﻿<french>{dear} {gender} {lname}, 
+Reprise des activités du cabinet de Madame Maenhoudt le 5 mai. Vous pouvez dès à présent me recontacter pour la prise de RDV au 064449336.
+C. Maenhoudt.
+(Ne répondez pas à ce SMS, Svp utilisez uniquement le numéro fourni ci-dessus)</french>

@@ -1,0 +1,11 @@
+<french>{dear} {gender} {lname},
+Le Docteur Catherine Rousseau, dermatologue, espère que vous allez bien!
+Les consultations peuvent reprendre progressivement.
+Vous pouvez contacter le secrétariat au 081600525 (du lundi au vendredi de 7h30 à 19h) afin de refixer votre RDV qui avait été annulé lors du confinement.
+Priorité sera donnée aux patients qui présentent certaines pathologies comme suivi de tumeurs cutanées, bouton suspect, éruption, eczéma, acné sous traitement.
+Pour les verrues, les acnés modérées, les chutes de cheveux, les consultations de confort, le rendez-vous sera fixé à la fin de l'été (mais vous pouvez déjà nous contacter).
+ATTENTION:
+En cas de symptômes COVID (toux, température, frissons, douleurs musculaires, perte de goût ou d'odorat) ou si une personne est atteinte dans votre entourage, veuillez annuler et postposer votre RDV par téléphone au 081600525
+Restons positifs mais vigilants!
+.
+(SVP ne répondez pas à ce SMS. Utilisez uniquement le numéro fourni ci-dessus)</french>

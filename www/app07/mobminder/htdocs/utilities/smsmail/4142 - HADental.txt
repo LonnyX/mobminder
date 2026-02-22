@@ -1,0 +1,8 @@
+<french>{dear} {gender} {lname},
+Ha Dental Clinic vous souhaite une heureuse année 2021 pleine de bonheur, de joie, de prospérité, et de réussite.
+Notre équipe est toujours aussi enthousiaste à vous satisfaire et à vous apporter la meilleure qualité de service possible.
+.
+HA DENTAL CLINIC
++32 2 649 45 25
+www.hadentalbrussels.be
+</french>

@@ -1,0 +1,4 @@
+remoteId;lastname;firstname;gender;address;city;zipCode;phone;mobile;email;note;rcolor
+1000;BAUDOUIN;Leroy;1;rue;cité;1000;026621800(maman);+32497401626;;;
+1001;BAUDOUX;Maurice;1;rue;cité;1001;026621801;0497401626;;;BL
+1002;BAUDRUCHE;Rebecca;0;rue;cité;1002;026621802;026621800;;;NP

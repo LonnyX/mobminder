@@ -1,0 +1,11 @@
+﻿<french>{dear} {gender} {lname},
+Bonjour,
+Le cabinet d‘imagerie du sein (Corps Seins) reprendra ses consultations à partir du 4 mai avec toutes les mesures d'hygiène appropriées.
+Vous pouvez dès lors reprendre dès à présent votre rendez-vous de mammographie, échographie et radiographie.
+Merci d'arriver à l'heure pile du RDV et de vous munir d’un masque.
+Si vous etes malade (toux, température, frissons, douleurs musculaires, perte de gout ou d’odorat), alors ne venez pas et annulez svp votre RDV par téléphone.
+Je peux aussi répondre à vos questions par mail (imageriedusein@gmail.com).
+Restons positifs mais vigilants!
+Dr Van Wilder et toute l'équipe,
+Rue de la Station 11, à Jumet 6040
+Tél: 071375733</french>

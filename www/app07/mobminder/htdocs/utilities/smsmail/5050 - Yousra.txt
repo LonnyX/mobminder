@@ -1,0 +1,11 @@
+<french>{dear} {gender} {lname},
+
+Nous vous informons de la réouverture du cabinet dentaire de la dentiste Pauline Leroy, repris par la dentiste Yousra Farhat.
+
+Votre cabinet est toujours situé Place de la station 5A, Flobecq.
+
+La prise de RDV peut se faire en ligne via www.dentistefarhat.be ou au 0473853990 .
+
+En espérant vous y voir, nous vous souhaitons un excellent week-end.
+
+Secrétariat de la dentiste Farhat</french>

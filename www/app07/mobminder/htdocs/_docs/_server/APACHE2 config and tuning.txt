@@ -1,0 +1,229 @@
+
+
+Written by Pascal. Last update 2020/03/01
+
+
+1. HOW TO DETERMINE THE VERSION OF APACHE AND THE MPM WORKMODE
+
+[root@app04 /home/pascal]|PRODUCTION|# source /etc/apache2/envvars
+[root@app04 /home/pascal]|PRODUCTION|# apache2 -V
+
+AH00112: Warning: DocumentRoot [/var/www/mobminder/htdocs/touch] does not exist
+Server version: Apache/2.4.10 (Debian)
+Server built:   Jul 20 2016 06:48:18
+Server's Module Magic Number: 20120211:37
+Server loaded:  APR 1.5.1, APR-UTIL 1.5.4
+Compiled using: APR 1.5.1, APR-UTIL 1.5.4
+Architecture:   64-bit
+Server MPM:     prefork
+  threaded:     no
+    forked:     yes (variable process count)
+Server compiled with....
+ -D APR_HAS_SENDFILE
+ -D APR_HAS_MMAP
+ -D APR_HAVE_IPV6 (IPv4-mapped addresses enabled)
+ -D APR_USE_SYSVSEM_SERIALIZE
+ -D APR_USE_PTHREAD_SERIALIZE
+ -D SINGLE_LISTEN_UNSERIALIZED_ACCEPT
+ -D APR_HAS_OTHER_CHILD
+ -D AP_HAVE_RELIABLE_PIPED_LOGS
+ -D DYNAMIC_MODULE_LIMIT=256
+ -D HTTPD_ROOT="/etc/apache2"
+ -D SUEXEC_BIN="/usr/lib/apache2/suexec"
+ -D DEFAULT_PIDLOG="/var/run/apache2.pid"
+ -D DEFAULT_SCOREBOARD="logs/apache_runtime_status"
+ -D DEFAULT_ERRORLOG="logs/error_log"
+ -D AP_TYPES_CONFIG_FILE="mime.types"
+ -D SERVER_CONFIG_FILE="apache2.conf"
+
+
+List the modules that are loaded by apache2 :
+
+	# apache2ctl -M
+	Loaded Modules:
+ 	core_module (static)
+ 	so_module (static)
+ 	watchdog_module (static)
+ 	http_module (static)
+ 	log_config_module (static)
+ 	logio_module (static)
+ 	version_module (static)
+ 	unixd_module (static)
+ 	access_compat_module (shared)
+ 	alias_module (shared)
+ 	auth_basic_module (shared)
+ 	authn_core_module (shared)
+ 	authn_file_module (shared)
+ 	authz_core_module (shared)
+ 	authz_host_module (shared)
+ 	authz_user_module (shared)
+ 	autoindex_module (shared)
+ 	deflate_module (shared)
+ 	dir_module (shared)
+ 	env_module (shared)
+ 	filter_module (shared)
+ 	mime_module (shared)
+ 	mpm_prefork_module (shared)
+ 	negotiation_module (shared)
+ 	php5_module (shared)
+ 	rewrite_module (shared)
+ 	setenvif_module (shared)
+ 	socache_shmcb_module (shared)
+ 	ssl_module (shared)
+ 	status_module (shared)
+
+
+Server load, always start with executing top
+	# top
+
+Display global parameters of RAM and CPU usage:
+https://www.binarytides.com/linux-command-check-memory-usage/
+
+
+Restart the apache2 service:
+
+	# service apache2 restart
+
+	Read the config file (MaxClients settings are at the bottom of the config file)
+	# cat /etc/apache2/apache2.conf
+
+List connexions on the network interface that relate to port 80 (apache), or 443 (https apache)
+	Note that port 80 is used by the smsgateaway - satellites api
+
+	# netstat -tn 2>/dev/null | grep :80  | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort
+	# netstat -tn 2>/dev/null | grep :443 | awk '{print $5}' | cut -d: -f1 | sort | uniq -c | sort
+
+	- list how many connections are in which state (together ports 80 and 443):
+	# netstat -nat | awk '{print $6}' | sort | uniq -c | sort -n
+
+
+List apache2 processes, showing their size
+
+	# ps aux | grep 'apache2' | awk '{print $6/1024 " MB in " $11;} END {print " COUNT " NR " processes";}'
+
+
+List apache2 processes, showing their start time (it is good to know that Mobminder chat system uses persistent http calls, so note processes that are running for a long time)
+
+	# ps -ef --sort=start_time | grep 'apache2' | awk '{ print NR " - " $8 " started on " $5;}'
+
+
+If you want to calculate the average on-the-fly, try the command
+
+	# ps aux | grep 'apache2' | awk '{print $6/1024;}' | awk '{avg += ($1 - avg) / NR;} END {print " AVERAGE " avg " MB through " NR " processes";}'
+	AVERAGE 18.9985 MB through 133 processes
+
+	# ps aux | grep 'apache2' | awk '{print $6/1024;}' | awk '{total += ($1);} END {print " TOTAL " total " MB in " NR " processes";}'
+	# TOTAL 2179.89 MB in 112 processes (1*)
+
+	Note: November 2018 on app04, the average size was 20Mb, the highest was 24MB and all other were under 22Mb
+
+
+To see the amount of memory used by mySQL, use this command:
+
+	# ps aux | grep 'mysql' | awk '{print $6/1024 " MB";}'
+
+
+
+RAM usage audit:
+
+	# free
+	# cat /proc/meminfo
+
+	How can I see which processes consume the most memory?
+
+	# ps -e -orss=,args= | sort -nr | head | awk '{print $1/1024 " MB in " $2;}'
+
+
+So if we are running around 120 processes (1*) consumming each 20Mb, the RAM must be 2,4Gb
+
+Now let's check if MaxClients is set large enough:
+
+	Check the current value
+	# grep -r -e MaxClients -e anothervalue -e anothervalue2 /etc/apache2/ | grep -v \#
+
+
+
+	MaxClients is defined 3 times in apache2.conf
+
+		In the case of Unix, the decision as to which MPM is installed is based on two questions:
+
+			1. Does the system support threads?
+			2. Does the system support thread-safe polling (Specifically, the kqueue and epoll functions)?
+
+		If the answer to both questions is 'yes', the default MPM is event.
+
+		If The answer to #1 is 'yes', but the answer to #2 is 'no', the default will be worker.
+		If the answer to both questions is 'no', then the default MPM will be prefork.
+
+		In practical terms, this means that the default will almost always be event, as all modern operating systems support these two features.
+
+
+consider reading these articles: 
+		https://www.jeffgeerling.com/blog/3-small-tweaks-make-apache-fly
+		https://stackoverflow.com/questions/18761239
+		http://www.yann.com/fr/optimiser-la-configuration-dapache-20/05/2011.html
+
+	To assess if PHP is working in CLI mode of php_mod mode, use this command: (app03/04 is running in CLI)
+		# php -i | grep 'Server API'
+		# Server API => Command Line Interface
+
+	
+
+On 2018/10/29 I have chosen the following parameters to avoid the monday slow performance issue: (please check if the same settings are applied to app03)
+
+Our server work with the Prefork MPM (Multi-Processing-Module)
+
+This link gives definitions for MaxRequestWorkers and MaxRequestsPerChild 
+https://httpd.apache.org/docs/2.4/fr/mod/mpm_common.html
+https://httpd.apache.org/docs/2.4/fr/mod/prefork.html
+
+
+# prefork MPM
+# StartServers: number of server processes to start
+# MinSpareServers: minimum number of server processes which are kept spare
+# MaxSpareServers: maximum number of server processes which are kept spare
+# MaxClients: maximum number of server processes allowed to start
+# MaxRequestsPerChild: maximum number of requests a server process serves
+<IfModule mpm_prefork_module>
+    StartServers        400 <- number of sleeping apache childs when no activity at all
+    MinSpareServers     100 <- number of apache prepared idle in case of rush, above the start servers
+    MaxSpareServers     300
+    #MaxClients         1000 <- MaxClients has been renamed to MaxRequestWorkers
+    MaxRequestWorkers 	700  <- Maximum parallel connexions
+    ServerLimit 	700  <- should be the same as MaxRequestWorkers 
+    MaxRequestsPerChild 3000  <- before recycling an apache child
+</IfModule>
+
+
+
+2020 / March - ISSUE WITH LARGE NUMBER OF TIME_WAIT connections
+
+was solved by following this article :
+https://www.linux.org/threads/reduce-your-apache-time_wait-connections.4505/
+
+
+https://www.jeffgeerling.com/blog/3-small-tweaks-make-apache-fly
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

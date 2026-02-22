@@ -1,0 +1,5 @@
+<french>Bonjour {gender} {lname},
+Afin de compléter le sms du 13/08 et d'améliorer votre prise en charge, votre Ostéopathe Lucie Buffon recoit les jeudis et vendredis au 25 route d'Arlon à Steinfort.
+Ceci offrira un choix plus confortable.
+RDV sur agenda.mobminder.com/depeauw
+Cordialement, O. DEPEAUW</french>

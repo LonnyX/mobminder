@@ -1,0 +1,64 @@
+
+
+Monitoring: htop 
+
+Pour voir le Name server associé à mobminder.com: dig mobminder.com NS
+
+
+Topics to be considered at server setup:
+----------------------------------------
+
+* Cron tasks
+
+* Firewall
+- Quand changement de fournisseur SMS, adaptation de Firewall
+
+* Sub-domains routing
+
+* Monitoring
+
+
+Kernel LINUX: uname -a (2.6.32)
+=> prendre Debian Stable
+
+Voir état HDD: df -h   (-h = human size)
+
+du -a /home | sort -n -r | head -n 10 (donne les 10 plus gros dossiers)
+
+Lire la taille d'un dossier : du -hs .
+
+Voir l'état d'une machine virtuelle: virsh, ensuite dominfo app01 (ou bus01) => help pour voir toutes les commande de virsh
+
+o Les fichiers images des VM sont dans /srv/vm  (réservation totale? !! pas de correspondance avec les taille de disque vues depuis app01)
+
+o Voir tous les devices installé: aller sur /dev, puis faire ls
+
+o Le process qui produit le RAID logiciel: MDADM
+
+o /srv/syst/backup.sh <= exécuté par la cron tous les jours à 5h du matin
+	/etc/cron.d <= mob-backup
+
+La plupart des setup sont dans /etc, pour kvm, c'est /etc/kvm
+=> vérifier l'utilité de kvm-ifup
+=> Vérifier la config du RAID etc/mdadm/
+=> Vérifier l'autostart des VM (pour le cas d'un reboot) => virsh autostart app01
+=> Les cron ne doivent pas tourner sur le serveur de backup, mais il faut les mettre en route en cas de crise
+=> Remettre en service le serveur mail, sur l'hyperviseur (le serveur mail s'appelle "postfix")
+
+=> Vérifier le lancement des dropbox
+
+Caractéristique Machine de backup: 
+- Attention: Il ne faut pas faire de backup dropbox sur les machines standby
+
+
+Questions à poser à François: 
+
+1. Pourquoi il y a un DNS sur hpvs01 ?
+
+Ajouter une clé publique ssh sur le serveur:
+http://coolestguidesontheplanet.com/make-passwordless-ssh-connection-osx-10-9-mavericks-linux/
+
+
+
+
+

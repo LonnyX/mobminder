@@ -1,0 +1,7 @@
+﻿<french>{dear} {gender} {lname},
+Le Dr Micheline Dejardin-d’Horne vous informe de la cessation de ses activités.
+Si vous le souhaitez, vous pouvez prendre rdv chez le Dr Véronique Dejardin (au 081840533), les dossiers médicaux étant en sa possession.
+Elle vous remercie de votre confiance.
+Dr d'Horne.
+SVP ne répondez pas à ce SMS (nous ne pouvons pas lire les réponses à ce SMS, utilisez SVP uniquement le numéro 081840533)</french>
+

@@ -1,0 +1,9 @@
+<french>{dear} {gender} {lname},
+mon cabinet fait peau neuve au 54b Rue des Hêtres à Linkebeek.
+Pour y accéder il est impératif de venir par la chée d'Alsemberg puis rue du Hoek afin d'éviter un plot.
+Utilisez Google maps ou Waze pour l'itinéraire.
+Parking à disposition.
+Prise de rdv et infos sur mon site www.marinedevicq.be
+Bonnes fêtes de fin d'année.
+Très cordialement.
+Dr de Vicq Marine</french>

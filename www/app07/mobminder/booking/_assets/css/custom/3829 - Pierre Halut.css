@@ -1,0 +1,38 @@
+
+/* 3801 Medeo - Pierre Halut */
+
+body { background: white;  }
+h2, div.e-bullet-caption { color:rgb(76,80,80); }
+section.s-h1 { margin:0; padding:1em 0;}
+	section.s-h1 h1 { color:white; margin:0; }
+
+section.s-img { padding:0em; margin-top:0; }
+	section.s-img div { padding:0; }
+		section.s-img div img { max-height:15em !important; }
+	
+section.s-info { background:white; padding:1em; color:silver; }
+
+section.s-action {  }
+section.s-directions { }
+section.s-footer, 
+	section.s-h1, 
+	section.s-img
+	{ background:rgb(156,191,61);  }
+
+
+section.s-img { 
+	padding-bottom: 50px;
+	background-color: red;
+	background-image: url("../logos/3829-medeo-backg.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
+	}
+
+section.s-footer { margin-top:10em; } 
+	
+div.e-bullet, input.e-button { background:rgb(106,167,0);  }
+
+div.action { color:white; background:rgb(106,167,0); } /* this is the orange on buttons */
+
+

@@ -1,0 +1,14 @@
+<french>{dear} {gender} {fname} {lname},
+
+C'est avec joie que j'ai repris le chemin du cabinet ce lundi 6 février 2023.
+
+Vous pouvez prendre rendez-vous via mon site www.cabinet-levecq-maissin.be ou par téléphone au 0477091351.
+
+Au plaisir de vous retrouver,
+Dr Levecq Céline
+Rue de Bouzanton 11, 7000 Mons
+
+
+(SVP ne répondez pas à ce SMS, utilisez uniquement le 0477091351)</french>
+
+

@@ -1,0 +1,7 @@
+<french>{dear} {gender} {lname},
+La réservation en ligne n'est plus possible actuellement. 
+La consultation sur RDV reste accessible en contactant le secrétariat au 043741562, tous les jours ouvrables. 
+Merci, prenez soin de vous.
+Dr Piron.
+-
+(Ne répondez pas à ce SMS, nous ne lisons pas les réponses aux SMS. Merci d'utiliser uniquement le numéro fourni ci-dessus)</french>

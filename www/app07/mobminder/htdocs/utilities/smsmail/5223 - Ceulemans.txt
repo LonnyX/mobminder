@@ -1,0 +1,22 @@
+<french>{dear} {gender} {lname},
+
+Nous vous informons du déménagement du Dr Ceulemans, Dermatologue.
+Nouvelle adresse: Av. Winston Churchill 225, 1180 Uccle
+
+Dr Ceulemans a aussi un agenda en ligne pour la prise de RDV:
+www.benedicteceulemans.be
+
+Cordialement,
+
+(SMS automatique, n'enregistrez pas ce numéro)</french>
+<english>{dear} {gender} {lname},
+
+We inform you of the relocation of Dr Ceulemans, Dermatologist.
+New address: Av. Winston Churchill 225, 1180 Uccle
+
+Dr Ceulemans also has an online agenda through which booking is easier:
+www.benedicteceulemans.be
+
+Regards,
+
+(Automated msg, do not record the number)</english>

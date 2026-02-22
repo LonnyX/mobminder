@@ -1,0 +1,55 @@
+﻿
+/* global rules */
+
+body { 
+	color: /*blue;*/ #444;
+	font-family: verdana, Arial, Helvetica, sans-serif; 
+	margin:0; 
+	
+	background: white; 
+	position: relative;
+	font-size: 0.8em; 
+	overflow-y:scroll;
+	-webkit-font-smoothing:antialiased;
+	
+	width:96%; margin: 1em auto; 
+}
+
+input, textarea { 
+	color: /*red;*/ #556; /* note that the color specified for the body does not apply to input elements, hence this statement */
+	background-color: white;
+	padding-left:0.5em; 
+	
+	border-radius:3px;
+    border:1px solid rgba(0,0,0, 0.2);
+	
+	outline:none;
+    transition: box-shadow 0.25s ease-in-out;
+    -webkit-transition: box-shadow 0.25s ease-in-out;
+    -moz-transition: box-shadow 0.25s ease-in-out;
+
+	-webkit-appearance: none; /* rmoves the inner shadow on mobile devices on Safari */
+} 
+
+input:focus, textarea:focus {
+    box-shadow: 		0 0 5px rgba(20, 21, 255, 0.6);
+	border:				1px solid rgba(20, 21, 255, 0.5); 
+}
+
+textarea { font-size: 1.4em; } /* this setting makes input and textarea being equal font sized */
+input { font-size: 1.2em }
+table { border-collapse:collapse; border:none; margin:0; padding:0; border-spacing: 0; }
+
+h1 {	margin:0 0 1em 0; font-size:2em; color:#85A5BF; font-weight: normal; letter-spacing:-0.04em; }
+h2 {	margin:0em 0 1em 0; font-size: 1.4em; color: #a4b357; font-weight: normal }									
+h3 {	margin:0; font-size:1em; color:red; }
+	
+a {	margin:10em; text-decoration: none; cursor:pointer; font-size:1.1em; font-weight:bold; color:red;
+	border:1px solid #85A5BF; border-radius:0.3em; padding:0.2em 2em;
+	}
+	
+
+.smaller { font-size:smaller; }
+
+div.button { 	display:inline-block; background:white; border:1px solid orange; border-radius:0.3em; margin:1em 1em 2em 1em; box-shadow: 3px 3px 10px rgba(0,0,0,0.2); 	}
+div.button a {	margin:0; color:orangered; border:none; padding:1em 2em; line-height:3em; 	}

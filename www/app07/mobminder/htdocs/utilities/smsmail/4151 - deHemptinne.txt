@@ -1,0 +1,11 @@
+<french>{dear} {gender} {lname},
+Mes consultations de cardiologie vont pouvoir reprendre avec certaines adaptations afin de respecter les règles de sécurité.
+Le nombre de rdv s'en verra restreint. 
+Vous pouvez à nouveau prendre rdv en ligne sur www.cardiobxl.com
+Veuillez dans la mesure du possible vous munir d'un masque lors des consultations.
+Je reste disponible par mail ou téléphone pour les urgences.
+Dr Quentin de Hemptinne.
+email: cardio.qdh@gmail.com
+tél: 0460214202
+(Ne répondez pas à ce SMS, SVP utilisez uniquement les moyens de communication fournis ci-dessus)</french>
+

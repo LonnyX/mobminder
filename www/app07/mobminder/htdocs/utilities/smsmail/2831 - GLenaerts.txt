@@ -1,0 +1,7 @@
+<french>Bonjour {gender} {lname},
+Je vous informe que le cabinet d'Ixelles déménage au 93 Rue de l'Abbaye.
+Je ne vais plus avoir de secrétariat, SVP privilégiez la prise de rdv via www.lenaerts-osteopathie.be
+ou par sms ou appel au 0495877473
+
+Votre dévoué,
+Gauthier Lenaerts DO</french>

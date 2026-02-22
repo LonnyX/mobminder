@@ -1,0 +1,6 @@
+﻿<french>{dear} {gender} {lname},
+Suite à l'annonce du Conseil National de Sécurité de ce vendredi, nous vous informons de la reprise progressive des consultations à partir de ce lundi 4 mai.
+La permanence téléphonique est assurée dès ce mardi 28 avril au 02 850 69 12, ainsi que la prise de RDV en ligne via https://www.centremedicallillois.be/notre-equipe
+A bientot,
+L'équipe du Centre médical de Lillois.</french>
+

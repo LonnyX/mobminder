@@ -1,0 +1,307 @@
+mobile_weekday1_full|monday|lundi|poniedziałek|maandag|Montag|lunedì|lunes|segunda-feira|Méindeg
+mobile_weekday2_full|tuesday|mardi|wtorek|dinsdag|Dienstag|martedì|martes|terça-feira|Dënschdeg
+mobile_weekday3_full|wednesday|mercredi|środa|woensdag|Mittwoch|mercoledì|miércoles|quarta-feira|Mëttwoch
+mobile_weekday4_full|thursday|jeudi|czwartek|donderdag|Donnerstag|giovedì|jueves|quinta-feira|Donneschdeg
+mobile_weekday5_full|friday|vendredi|piątek|vrijdag|Freitag|venerdì|viernes|sexta-feira|Freideg
+mobile_weekday6_full|saturday|samedi|sobota|zaterdag|Samstag|sabato|sábado|sábado|Samschdeg
+mobile_weekday7_full|sunday|dimanche|niedziela|zondag|Sonntag|domenica|domingo|domingo|Sonndeg
+mobile_weekday1_abr|mon|lun|pn|maa|mon|lun|lun|seg|Méin
+mobile_weekday2_abr|tue|mar|wt|din|die|mar|mar|ter|Dëns
+mobile_weekday3_abr|wed|mer|śr|woe|mit|mer|mié|qua|Mëtt
+mobile_weekday4_abr|thu|jeu|czw|don|don|gio|jue|qui|Donn
+mobile_weekday5_abr|fri|ven|pt|vri|fre|ven|vie|sex|Fre
+mobile_weekday6_abr|sat|sam|so|zat|sam|sab|sáb|sáb|Sams
+mobile_weekday7_abr|sun|dim|nie|zon|son|dom|dom|dom|Sonn
+mobile_weekday1_min|mo|lu|pn|ma|mo|lu|lu|se|Mé
+mobile_weekday2_min|tu|ma|wt|di|di|ma|ma|te|Dë
+mobile_weekday3_min|wd|me|śr|wo|mi|me|mi|qua|Më
+mobile_weekday4_min|th|je|cz|do|do|gi|ju|qui|Do
+mobile_weekday5_min|fr|ve|pt|vr|fr|ve|vi|sex|Fr
+mobile_weekday6_min|sa|sa|so|za|sa|sa|sá|sáb|Sa
+mobile_weekday7_min|su|di|n|zo|so|do|do|dom|So
+mobile_month1_full|january|janvier|styczeń|januari|januar|Gennaio|Enero|janeiro|Januar
+mobile_month2_full|february|février|Luty|februari|februar|febbraio|febrero|fevereiro|Februar
+mobile_month3_full|march|mars|marzec|maart|märz|marzo|marzo|março|Mäerz
+mobile_month4_full|april|avril|Kwiecień|april|april|aprile|abril|abril|Abrëll
+mobile_month5_full|may|mai|maj|mei|mai|maggio|mayo|maio|Mee
+mobile_month6_full|june|juin|Czerwiec|juni|juni|Giugno|junio|junho|Juni
+mobile_month7_full|july|juillet|Lipiec|juli|juli|Luglio|julio|julho|Juli
+mobile_month8_full|august|août|sierpień|augustus|august|agosto|agosto|agosto|August
+mobile_month9_full|september|septembre|Wrzesień|september|september|settembre|septiembre|setembro|September
+mobile_month10_full|october|octobre|Październik|oktober|oktober|ottobre|octubre|outubro|Oktober
+mobile_month11_full|november|novembre|Listopad|november|november|novembre|noviembre|novembro|November
+mobile_month12_full|december|décembre|Grudzień|december|dezember|dicembre|diciembre|dezembro|Dezember
+mobile_month1_abr|jan|jan|sty|jan|jan|Gen|Ene|jan|Jan
+mobile_month2_abr|feb|fév|Lu|feb|feb|feb|feb|fev|Feb
+mobile_month3_abr|mar|mar|mar|mrt|mar|mar|mar|mar|Mär
+mobile_month4_abr|apr|avr|Kw|apr|apr|apr|abr|abr|Abr
+mobile_month5_abr|may|mai|maj|mei|mai|mag|may|mai|Mee
+mobile_month6_abr|jun|jun|Cze|jun|jun|Giu|jun|jun|Jun
+mobile_month7_abr|jul|jul|Lip|jul|jul|Lug|jul|jul|Jul
+mobile_month8_abr|aug|aoû|sie|aug|aug|ago|ago|ago|Aug
+mobile_month9_abr|sep|sep|Wrz|sep|sep|set|sep|set|Sep
+mobile_month10_abr|oct|oct|Pa|okt|okt|ott|oct|out|Okt
+mobile_month11_abr|nov|nov|Lis|nov|nov|nov|nov|nov|Nov
+mobile_month12_abr|dec|déc|Gru|dec|dec|dic|dic|dez|Dez
+male|Mr.|M.|Pan|Mr|Herr|Sig|Señor|Sr.|Här
+female|Mrs.|Mme|Pani|Mvr|Frau|Sig.ra|Señora|Sra.|Madame
+sa|aS|SA|SA|NV|aG|SA|SA|SA|SA
+sprl|Ltd|Sprl|Sp.z o.o.|Bvba|Pgbh|Ltd|SRL|SARL|S.à r.l.
+miss|Miss|Mlle|Tęsknić|Juffr|Ms|Sig.na|Señorita|Menina|Joffer
+boy|Boy|Garçon|Chłopak|Jhr|Junge|Ragazzo|Niño|Rapaz|Bouf
+girl|Girl|Fille|Córka|Dchtr|Mädchen|Ragazza|Niña|Rapariga|Meedchen
+othergender|other|autre|inna|anders|anders|altro|otro|outro|aner
+ok|Ok|Ok|Ok|Ok|Ok|Ok|Ok|Ok|Ok
+yes|Yes|Oui|Tak|Ja|Ja|Sì|Si|Sim|Jo
+no|No|Non|Nie|Nee|Nein|No|No|Não|Nee
+or|or|ou|lub|of|oder|o|o|ou|oder
+fromdate|from|du|od|vanaf|von|dal|desde|de|vun
+todate|to|au|do|tot|bis|a|a|até|bis
+ondate|on|le|do|op|am|il|el|o|um
+fromtime|from|de|o|van|von|da|desde|de|vun
+at|at|à|o|om|um|a|a|a|um
+for|for|pour|dla|voor|für|per|para|para|fir
+abr days|days|jrs|dni|dagen|Tage|gg.|días|dias|Deeg
+abr day|day|jr|dzień|dag|Tag|g.|día|dia|Dag
+weekday|weekday|jour|dzień|weekdag|wochentag|feriale|día|dia|Wochendag
+weekdays|weekdays|jours|dzień|weekdagen|wochentage|feriali|días|dias|Wochendeeg
+local time|local time|heure locale|czas lokalny|lokale tijd|Ortszeit|ora locale|hora local|horário local|Lokalzäit
+account preferences|Settings & Preferences|Réglages & Préférences|Ustawienia i Ustawienia|instellingen & Voorkeuren|Einstellungen & Präferenzen |Impostazioni e Preferenze|Configuraciones y Preferencias|Configurações e Preferências|Astellungen & Präferenzen
+error occured|an error occured|une erreur est survenue|wystąpił błąd|er is een fout opgetreden|ein Fehler ist aufgetreten|si è verificato un errore|ocurrió un error|um erro ocorreu|e Feeler ass geschitt
+account settings changed|account settings were changed|les réglages de votre agenda ont changés|ustawienia konta zostały zmienione|accountinstellingen zijn gewijzigd|Kontoeinstellungen wurden geändert|le impostazioni dell'account sono state modificate|la configuración de la cuenta fue cambiada|as configurações da conta foram alteradas|Kontoeinstellungen goufen geännert
+sw update title|application update|mise à jour de l'application|aktualizacja oprogramowania|software-update|Software-Aktualisierung|aggiornamento del software|actualización de software|atualização de software|Applikatiounsaktualiséierung
+please update|a new version of Mobminder is available, please follow the link below to update your application|une nouvelle version de Mobminder est disponible, SVP suivez le lien suivant pour mettre à jour votre application|dostępna jest nowa wersja Mobmindera, skorzystaj z poniższego łącza, aby zaktualizować swoją aplikację|er is een nieuwe versie van Mobminder beschikbaar, volg de onderstaande link om uw applicatie bij te werken|Eine neue Version von Mobminder ist verfügbar. Bitte folgen Sie dem Link unten, um Ihre Anwendung zu aktualisieren|è disponibile una nuova versione di Mobminder, segui il link sottostante per aggiornare la tua applicazione|una nueva versión de Mobminder está disponible, siga el enlace a continuación para actualizar su aplicación|uma nova versão do Mobminder está disponível, siga o link abaixo para atualizar seu aplicativo|Eng nei Versioun vu Mobminder ass verfügbar, w.e.g. verfollegt de Link hei ënnen fir Är Uwendung z'aktualiséieren
+note|Note|Note|Notatka|Notitie|Notiz|Nota|Nota|Nota|Notiz
+alt mandatory|Type a title or select a reference|Indiquez un titre ou choisir une référence|Wpisz tytuł lub wybierz odniesienie|Typ een titel of selecteer een referentie|Titel eingeben oder Referenz auswählen|Indichi un titolo o scelga una referenza|Indique un título o escoja una referencia|Insira um título ou escolha uma referência|Tippt en Titel oder wielt eng Referenz
+copy chat thread|copy entire chat|copier la conversation|skopiuj rozmowę|gesprek kopieren|Konversation kopieren|copia conversazione|copiar conversación|copiar conversa
+copy phylactery|copy this speech bubble|copier ce phylactère|skopiuj ten dymek|kopieer deze tekstballon|Kopieren Sie diese Sprechblase|copia questo fumetto|copia este bocadillo|copie este balão de fala
+chat ban evacuate|You have been excluded from this conversation.|Vous avez été exclu de cette conversation.|Zostałeś wykluczony z tej rozmowy.|U bent uitgesloten van dit gesprek.|Sie wurden von diesem Gespräch ausgeschlossen.|Sei stato escluso da questa conversazione.|Ha sido excluido de esta conversación.|Você foi excluído desta conversa.
+chat|Chat session|Conversation|Rozmowa|Chatsessie|Unterhaltung|Conversazione|Conversación|Conversa|Chatsëtzung
+no chat|No chat|Pas de conversation|Brak rozmowa|Geen chatsessie|Keine Unterhaltungen|Nessuna conversazione|Ninguna conversación|Sem conversa|Keng Chats
+answer here|answer here|Répondre ici|Odpowiedź tutaj|Hier aantwoorden|Hier antworten|Rispondere qui|Contestar aquí|Responda aqui|Äntwert hei
+archived|archived|archivée|archiwizowane|Gearchiveerd|archiviert|archiviato|Guardado|Guardado|Archivéiert
+see archives|see archives|voir les archives|zobacz archiwa|archieven zien|siehe die Archive|vedere gli archivi|ver los archivos|veja os arquivos|kuckt d'Archive
+archived chats|archived chats|conversations archivées|zarchiwizowane czaty|gearchiveerde chats|archivierte Chats|chat archiviate|chats archivados|chats arquivados|archivéiert Chats
+archived chat|archived chat|conversation archivée|zarchiwizowany czat|gearchiveerde chat|archivierte Chat|chat archiviata|chat archivado|chat arquivado|archivéiert Chat
+archived and deleted chats|archived and deleted chats|conversations archivées et effacées|zarchiwizowane i usunięte czaty|gearchiveerde en verwijderde chats|archivierte und gelöschte Chats|chat archiviate ed eliminate|chats archivados y eliminados|bate-papos arquivados e excluídos|archivéiert an geläschte Chats
+deleted chat|deleted chat|conversation effacée|usunięty czat|verwijderde chat|Chat gelöscht|chat eliminata|chat eliminado|bate-papo excluído|geläschte Chat
+more options|more options|plus d'options|więcej opcji|meer opties|Mehr Optionen|più opzioni|mas opcione|mais opções|Méi Optiounen
+account usechat|Use instant messaging|Utiliser la messagerie|Skorzystaj z czatu|Instant messaging gebruiken|Kurzmitteilungen nutzen|Usare la funzione messaggi|Utilizar la mensajería|Usar o serviço de mensagens|Instant Messaging notzen
+log me in|log me in|me connecter|zalogować się|inloggen|einloggen |accedere|conectarse|entrar|aloggen
+logout current|Close this session|Fermer cette session|Zamknij sesję|Sluit deze sessie|Diese Sitzung schließen|Chiudere questa sessione|Cerrar esta sesión|Encerrar esta sessão|Dës Sessioun zoumaachen
+other options|Other options:|autres options:|Inne opcje:|andere opties:|Weitere Optionen|altre opzioni|Otras opciones|Outras opções:|Aner Optiounen:
+timeboxing labels|Timeboxing labels|Libellés des blocs horaire|Nazwy pól czasu|Namen van tijd boxen|Titel der Zeitfenster|Formulazione dei blocchi orari|Enunciado de las bandas horarias|Rótulos dos blocos horários|Beschrëftunge vun de Bléck Zäit
+display details|Display details|Détails d'affichage|Pokaż szczegóły|Weergavedetails|ansichtsinformationen|Dettagli di visualizzazione|Detalles de visualización|Detalhes da visualização|Weis Detailer
+company|Company|Entreprise|Firma|Firma|Firma|azienda|Empresa|Empresa|Entreprise
+gender|Title|Civ.|Godność|Gesl.|anspr.|Titolo|Tratamiento|Forma de tratamento|Titel
+firstname|First name|Prénom|Imię|Voornaam|Vorname|Nome|Nombre|Nome|Virnumm
+lastname|Last name|Nom|Nazwisko|Naam|Nachname|Cognome|apellido|apelido|Familljennumm
+residence|Residence|Résidence|Rezydencja|Residentie|Wohnsitz|Residenza|Residencia|Residência|Wunnsëtz
+address|address|adresse|adres|adres|adresse|Indirizzo|Dirección|Morada|Adress
+zipCode|Zip code|Code postal|Kod pocztowy|Postcode|Postleitzahl|Codice postale|Código postal|Código postal|Postleitzuel
+no address|No address|pas d'adresse|Brak adresu|geen adres|Keine Adresse|Nessun indirizzo|Sin direccion|Sem endereço|Keng Adress
+name|name|nom|nazwa|naam|Name|nome|nombre|nome|Numm
+city|City|Ville|Miejscowość|Stad|Stadt|Città|Ciudad|Localidade|Stad
+country|Country|Pays|Województwo|Land|Land|Paese|País|País|Land
+email|e-mail|e-mail|e-mail|e-mail|e-mail|e-mail|e-mail|e-mail|E-Mail
+no email|Has no e-mail|N'a pas d'e-mail|Nie e-mail|Heeft geen e-mail|Hat keine E-mail|Non ha email|No tiene email|Não tem e-mail|Keng E-Mail
+mobile|Mobile number|portable|Komórkowy|GSM|Mobilnummer|Cellulare|Móvil|Telemóvel|Handysnummer
+no mobile|No mobile number|pas de portable|Brak telefonu komórkowego|Geen GSM nummer|Kein Mobilnummer|Niente cellulare|Sin móvil|Sem telemóvel|Keng Handysnummer
+phone|Phone number|téléphone|Telefon|Telefoon|Telefon|Telefono|Teléfono|Telefone|Telefonsnummer
+no phone|no phone number|pas de téléphone|brak telefonu|Geen telefoon nummer|Kein Handy|Nessun telefono|Sin teléfono|Sem telefone|Keng Telefonsnummer
+language|language|langue|język|taal|Sprache|lingua|idioma|idioma|Sprooch
+birthdate|Birthdate|naissance|Data urodzenia|Geboortedatum|Geburtsdatum|Data di nascita|Fecha de nacimiento|Nascimento|Gebuertsdatum
+registration|Registration|Matricule|Znaczek|Register|Registrieren|Matricola|Matrícula|Matrícula|Umeldung
+reference|Reference|référence|Odniesienie|Referentie|Referenz|Riferimento|Referencia|Referência|Referenz
+cssColor|Color|couleur|Kolor|Kleur|Farbe|Colore|Color|Cor|Faarf
+cssPattern|Status|statut|Status|Status|Status|Status|Estado|Estado|Status
+prev apps|Previous|Passés|Poprzednie wizyty|Verleden|Vorherige|Passati|Pasados|Passados|Virrunnen
+next apps|Planned|Planifiés|Zaplanowane wizyty|Toekomstige|Geplante|Pianificati|Planeados|Planeados|Geplangten
+version|version|version|wersja|versie|ausführung|versione|versión|versão|Versioun
+appointments|appointments|rendez-vous|nominacje|afspraken|termine|appuntamenti|citas|compromissos|Rendez-vous
+communication|Communication|Communication|Komunikat|Communicatie|Kommunikation|Comunicazione|Comunicación|Comunicação|Kommunikatioun
+agenda|agenda|agenda|programie|agenda|Tagesordnung|agenda|agenda|agenda|Agenda
+audit|Tracking|audit|audyt|Opvolging|audit|audit|auditoría|auditoria|Audit
+reservation|appointement|Réservation|rezerwacja|Reservering|Reservierung|Prenotazione|Reserva|Reserva|Reservatioun
+appointment|appointement|Rendez-vous|Wizyta|afspraak|Termin|appuntamento|Cita|Compromissos|Rendez-vous
+event|Unavailability|Indisponibilité|Brak wolnych terminów|Onbeschikbaarheid|Nichtverfügbarkeit|Indisponibilità|Indisponibilidad|Indisponibilidade|Onverfügbarkeet
+none|None|aucun|żaden|Geen|Kein|Nessuno|Ninguno|Nenhum|Keen
+none ff|None|aucune|żaden|Geen|Keine|Nessuna|Ninguna|Nenhuma|Keen
+default|by default|par défaut|Zaocznie|standaard|standard|predefinito|por defecto|predefinição|Standard
+with|with|avec|z|met|mit|con|con|com|mat
+resources|resources|ressources|Zasoby|resources|Ressourcen|risorse|recursos|recursos|Ressourcen
+workrooms|workrooms|salles de travail|pracownie|werkzalen|arbeitsräume|sale di lavoro|espacios de trabajo|espaços de trabalho|Aarbechtsraim
+workplaces|workplaces|postes de travail|stanowiska|werkplaatsen|arbeitsorte|spazi di lavoro|estaciones de trabajo|estações de trabalho|Aarbechtsplazen
+classrooms|classrooms|classes de cours|sale lekcyjne|klaslokalen|Klassenräume|aule corsi|clases de cursos|espaço de aulas|Klasseräim
+carerooms|care rooms|salles de soin|pokoje zabiegowe|zorgkamers|pflegeräume|sale di trattamenti|salas de tratamientos|salas de tratamento|Pflegeraumen
+collaborators|collaborators|collaborateurs|pracownicy|medewerkers|Mitarbeiter|collaboratori|colaboradores|colaboradores|Mataarbechter
+assistants|assistants|assistants|asystenci|assistenten|assistenten|assistenti|asistentes|assistentes|Assistenten
+rdoctors|doctors|Docteurs|Lekarze|artsen|Ärzte|medici|médicos|médicos|Dokteren
+dentists|dentists|dentistes|dentystami|tandartsen|Zahnärzte|dentisti|dentistas|dentistas|Zänndokteren
+salesmen|salesmen|commerciaux|sprzedawcy|verkopers|Verkäufer|venditori|gente de ventas|vendedores|Verkeefer
+teachers|teachers|professeurs|nauczycielami|leraren|Lehrer|insegnanti|maestros|professores|Schoulmeeschteren
+practitioners|practitioners|praticiens|praktycy|behandelaar|Praktiker|praticante|practicante|praticante|Praktikanten
+technicians|Technicians|Techniciens|Techników|Technicussen|Techniker|Tecnici|Técnicos|Técnicos|Techniker
+consultants|Consultants|Consultants|Konsultanci|Consultants|Berater|Consulenti|Consultores|Consultores|Beroder
+instructors|Instructors|Moniteurs|Instruktorzy|Instructeurs|ausbilder|Istruttori|Instructores|Monitores|Moniteuren
+experts|Experts|Experts|Eksperci|Deskundigen|Experten|Periti|Peritos|Peritos|Experten
+equipments|Equipments|Equipements|Urządzenia|apparaten|Geräte|attrezzature|Equipamientos|Equipamentos|Ausrëschtung
+offices|Offices|Bureaux|Biura|Kantoren|Büroräume|Uffici|Oficinas|Secretárias|Büroen
+companies|Companies|Entreprises|Firmy|Firmas|Firmen|aziende|Empresas|Empresas|Firmen
+tools|Tools|Outils|Narzędzia|Gereedschap|Instrumente|Utensili|Herramientas|Ferramentas|Handwierksgeschir
+vehicules|Vehicules|Véhicules|Pojazdów|Voertuigen|Fahrzeuge|Veicoli|Vehículos|Veículos|Gefierer
+attendance|attendance|assignations|attendance|Toegewezen|Zuweisung|Convocazioni|asignaciones|atribuições|Präsenz
+confirm|Confirm|Confirmer|Potwierdź|Bevestigen|Bestätigen|Confermare|Confirmar|Confirmar|Bestätegen
+cancel|Cancel|annuler|anulować|annuleren|abbrechen|Cancellare|Cancelar|anular|Ofbriechen
+smapp warn chatquit|Quit conversation ?|Sortir de la conversation ?|Zakończ rozmowę ?|Gesprek verlaten ?|Unterhaltung verlassen ?|Lasciare la conversazione ?|Salir de la conversación ?|Sair da conversa ?|Gespréich verloossen ?
+smapp warn chat archive|archive for all participants ?|Sortir tous les participants et archiver ?|Usuń wszystkich uczestników i zarchiwizuj ?|Schakel alle deelnemers uit en archiveer ?|Nehmen Sie alle Teilnehmer heraus und archivieren Sie ?|Elimina tutti i partecipanti e l'archivio ?|Sacar a todos los participantes y archivar ?|Retire todos os participantes e arquive ?|Archiv fir all Participanten ?
+status|Status|Statut|Stan|Staat|Status|Status|Estado|Estado|Status
+color|Color|Couleur|Kolor|Kleur|Farbe|Colore|Color|Cor|Faarf
+tags|Tags|Tags|Tags|Tags|Tags|Tags|Tags|Tags|Tags
+dd-mm-yyyy|dd-mm-yyyy|jj-mm-aaaa|dd-mm-yyyy|dd-mm-jjjj|tt-mm-jjjj|gg-mm-aaaa|dd-mm-aaaa|dd-mm-aaaa|dd-mm-yyyy
+delete confirm|are you sure you want to delete ?|Etes-vous certain de vouloir supprimer ?|Czy na pewno chcesz usunąć ?|Bent U zeker van te willen schrappen ?|Sind Sie sicher, dass Sie löschen möchten?|È sicuro di volere sopprimere ?|Está seguro de querer borrar ?|Tem a certeza de que deseja apagar?|Sidd Dir sécher datt Dir wëllt läschen?
+invalid form|Some fields are not appropriately filled in, please correct them, or cancel|Certains champs ne sont pas correctement remplis, corrigez les ou annuler|Popraw błędnie wypełnione pola lub anuluj|Sommige velden zijn onterecht ingevuld|Einige Felder wurden nicht richtig ausgefüllt, bitte korrigieren oder abbrechen|alcuni campi non sono riempiti correttamente, per favore li corregga o li cancelli|algunas casillas no están llenadas correctamente, por favor corríjalas o cancélelas|alguns campos não foram devidamente preenchidos. Por favor corrija-os ou anule.|E puer Felder sinn net korrekt ausgefëllt, korrigéiert se w.e.g. oder annulléiert
+connection failed|The server is unreachable, check your internet connection first, then please try again.|Le serveur est inaccessible, vérifiez votre connexion Internet, puis s'il vous plaît essayer à nouveau.|Serwer jest niedostępny, sprawdź połączenie internetowe, następnie spróbuj ponownie.|De server lijkt onbereikbaar te zijn, controleer dan eerst uw internetverbinding, dan kunt u het opnieuw proberen.|Der Server ist nicht erreichbar, bitte überprüfen Sie Ihre internetverbinding und versuchen Sie es erneut|Il server è inaccessibile, verifichi la Sua connessione internet e provi di nuovo per favore.|El servidor está inaccesible, verifique su conexión a internet e inténtelo de nuevo por favor.|O servidor encontra-se inacessível. Verifique a sua ligação à internet e tente novamente por favor.|De Server ass net erreechbar, kontrolléiert w.e.g. Är Internetverbindung a probéiert nach eng Kéier
+no reference for|No reference for|Pas de référence pour|Brak odniesienia do|Geen verwijzing naar|Keine Referenz für|Nessun riferimento per|Ninguna referencia para|Sem referência para|Keng Referenz fir
+today|today|aujourd'hui|Dzisiaj|Vandaag|Heute|Oggi|Hoy|Hoje|Haut
+yesterday|yesterday|hier|wczoraj|gisteren|gestern|ieri|ayer|ontem|Gëschter
+schedule|Schedule|Timing|Harmonogram|afspraak|Uhrzeit|Timing|Planificación|Timing|Zeitplang
+duration|Duration|Durée|Jak długo|Duurtijd|Dauer|Durata|Duración|Duração|Dauer
+min|min|min|min|min|min|min|min|min|min
+data class|Data class|Classe|Dane klasy|Class data|Datenklasse|Classe|Clase|Classe|Donnéeklass
+data id|Data id|Identifiant|Identyfikator|Identificatie|Kennung|Identificativo|Nombre de usuario|Identificador|Donnée-Id
+created on|Created on|Créé le|Wpis|Invoering op|Erstellt am|Creato il|Creado el|Criado em|Erstallt den
+changed on|Updated on|Modifié le|Zmiana|aangepast op|Geändert am|Modificato il|Modificado el|Modificado em|Geännert den
+deleted on|Deleted on|Effacé le|Wymazany|Gewist op|Gelöscht am|Cancellato il|Borrado el|apagado em|Geläscht den
+rescheduled on|rescheduled on|reporté le|przesuwany|verplaatst op|Verschoben am|Riprogrammato il|aplazado el|comunicado em|Neigeplangt den
+created by|Created by|Créé par|Stworzony przez|Invoering door|Erstellt von|Creato da|Creado por|Criado por|Erstallt vun
+changed by|Updated by|Modifié par|Edytowany przez|aangepast door|Geändert von|Modificato da|Modificado por|Modificado por|Geännert vun
+deleted by|Deleted by|Effacé par|Zdaje przez|Gewist door|Gelöscht von|Cancellato da|Borrado por|apagado por|Geläscht vun
+rescheduled by|rescheduled by|reporté par|Przełożony przez|verplaatst door|Verschoben von|Riprogrammato da|aplazado por|relatado por|Neigeplangt vun
+deleted|Deleted|Effacé|Wymazany|Gewist|Gelöscht|Cancellato|Borrado|apagado|Geläscht
+rescheduled|rescheduled|reporté|rzełożony|verplaatst|Verschoben|Riprogrammato|aplazado|relatado|Neigeplangt
+new|New|Nouveau|Nowy|Nieuwe|Neu|Nuovo|Nuevo|Novo|Nei
+never|Never|Jamais|Nigdy|Nooit|Niemals|Mai|Nunca|Nunca|Niemols
+no one|No one|Personne|Nikt|Niemand|Niemand|Nessuno|Ningún|Pessoa|Keen
+you overload the agenda|You are going to overload the agenda|Vous allez surcharger l'agenda|Będziesz przeciążać programu|U gaat de agenda overbelasten|Der Kalender wird überlastet|Sta per sovraccaricare l'agenda|Está a punto de sobrecargar el calendario|Vai sobrecarregar o calendário|Dir gitt den Agenda iwwerlaascht
+reservations are covered|reservations are covered:|reservations seront couvertes:|zastrzeżenia te są objęte:|reserveringen worden gedekt:|Reservierungen sind gedeckt|prenotazioni coperte|las reservas estarán cubiertas|as reservas serão abordadas:|Reservatiounen sinn ofgedeckt:
+another reservation is covered|another reservation is covered:|une réservation sera couverte:|pokryte jest rezerwacja:|één reservering wordt gedekt:|eine weitere Reservierung wird gedeckt:|una prenotazione sarà coperta|otra reserva está cubierta|uma reserva será abordada:|eng aner Reservatioun ass ofgedeckt:
+unavailable|Unavailable|Indisponible|Niedostępny|Niet beschikbaar|Nicht verfügbar|Indisponibile|No disponible|Indisponível|Net verfügbar
+unavailability|Unavailability|Indisponibilité|Niedostępność|Onbeschikbaarheid|Nichtverfügbarkeit|Indisponibilità|Indisponibilidad|Indisponibilidade|Netverfügbaarkeet
+account|account|Compte|Konto|account|Konto|Conto|Cuenta|Conta|Kont
+workcodes|Performances|Prestations|Usług|Prestaties|Leistungen|Prestazioni|Servicios|Prestações|Leeschtungen
+inclusive|Inclusive|Inclus|Włącznie|Inbegrepen|Inklusiv|Incluso|Incluido|Incluído|Inklusiv
+ep-perfs total|total according to rates|total selon tarif|suma według ceny|totaal volgens tarief|insgesamt nach Preis|totale in base al prezzo|total segun precio|total de acordo com o preço|Total no Tarif
+ep-charged|total to charge|total à perçevoir|łączna należność|totaal te berekenen|insgesamt zu sammeln|totale credito|cuentas por cobrar totales|total a receber|Total ze verrechnen
+ep-already paid|already paid|déjà payé|już zapłacone|al betaald|bereits bezahlt|già pagato|ya pagado|já pago|Schonn bezuelt
+ep-balance|balance|reste à payer|pozostało do zapłaty|nog te betalen|Noch zu zahlen|saldo da pagare|saldo por pagar|saldo por pagar|Saldo
+ep-payments-list|payments|paiements|płatności|betalingen|Zahlungen|pagamenti|pagos|pagamentos|Bezuelungen
+amount|amount|montant|kwota|bedrag|Betrag (EUR)|importo|importe|valor|Montant
+mtitle new payment|new payment|nouveau paiement|nowa płatność|nieuwe betaling|neue Zahlung|nuovo pagamento|nuevo pago|novo pagamento|nei Bezuelung
+mtitle payment|payment|paiement|Zapłata|betaling|Zahlung|pagamento|pago|pagamento|Bezuelung
+ep-tab qrcode|QR code|QR code|QR code|QR code|QR code|QR code|QR code|QR code|QR Code
+ep-paytype not set|new payment|nouveau paiement|nowa płatność|nieuwe betaling|neue Zahlung|nuovo pagamento|nuevo pago|novo pagamento|nei Bezuelung
+ep-paytype cash|cash|espèce|gotówka|contant|Kasse|contanti|dinero|dinheiro|Boergeld
+ep-paytype sepa qr|SEPA transaction|virement SEPA|przelew SEPA|SEPA overschrijving|SEPA-Überweisung|bonifico SEPA|transferencia SEPA|transferência SEPA|SEPA Transaktioun
+ep-paytype payconiq|payconiq|payconiq|payconiq|payconiq|payconiq|payconiq|payconiq|payconiq|Payconiq
+ep-paytype cards|bank card|cartes bancaire|karta bankowa|bankpas|Bankkarte|Carta di credito|tarjeta bancaria|cartão do banco|Bankkaart
+ep-paytype softpos|SoftPOS (bankcard)|SoftPOS (carte bancaire)|SoftPOS (karta bankowa)|SoftPOS (bankpas)|SoftPOS (Bankkarte)|SoftPOS (Carta di credito)|SoftPOS (tarjeta bancaria)|SoftPOS (cartão do banco)|SoftPOS (Bankkaart)
+ep-paytype hardpos|Terminal (bankcard)|Terminal (carte bancaire)|Terminal (karta bankowa)|Terminal (bankpas)|Terminal (Bankkarte)|Terminal (Carta di credito)|Terminal (tarjeta bancaria)|Terminal (cartão do banco)|Terminal (Bankkaart)
+ep-paytype onlinepayco|Payconiq Online|Payconiq Online|Payconiq Online|Payconiq Online|Payconiq Online|Payconiq Online|Payconiq Online|Payconiq Online|Payconiq Online
+ep-paytype onlinecards|Cards Online|Par carte Online|Cards Online|Bankpas Online|Bankkarte Online|Cards Online|Cards Online|Cards Online|Kaarte Online
+ep-paytype onlinebancontact|Bancontact Online|Bancontact Online|Bancontact Online|Bancontact Online|Bancontact Online|Bancontact Online|Bancontact Online|Bancontact Online|Bancontact Online
+ep-operator status|operator status|status operateur|status operatora|operatorstatus|Betreiber-ID|stato dell'operatore|estado del operador|status do operador|Bedreiwerstatus
+ep-operator transid|operator ident|identifiant opérateur|identyfikator operatora|operator-ID|Betreiberstatus|ID operatore|ident del operador|ID do operador|Bedreiwer-ID
+ep-st-isnew|new|nouveau|nowa|nieuwe|Neu|nuovo|nuevo|novo|Nei
+ep-st-unauthorized|unauthorized|non autorisé|nieautoryzowana|ongeautoriseerd|Nicht autorisiert|non autorizzato|no autorizado|não autorizado|Net autoriséiert
+ep-st-identified|scanned|scanné|zeskanowana|gescand|Gescannt|scansionato|escaneado|digitalizado|Gescannt
+ep-st-pending|pending|en cours|oczekująca|in behandeling|Ausstehend|in sospeso|pendiente|pendente|Am Gaangen
+ep-st-success|paid|encaissé|powodzenie|geslaagd|Erfolgreich|riuscito|correcto|bem-sucedido|Bezuelt
+ep-st-refund|refund|remboursé|zwrócone|terugbetaald|erstattet|rimborsato|reembolsada|reembolsado|Zréckbezuelung
+ep-st-expired|expired|expiré|wygasła|verlopen|Abgelaufen|scaduto|caducado|expirado|Verfall
+ep-st-failed|failed|échoué|nieudana|mislukt|Fehlgeschlagen|non riuscito|fallido|com falha|Gescheitert
+ep-st-cancelled|cancelled|annulé|anulowana|geannuleerd|Abgebrochen|annullato|cancelado|cancelado|Ofgesot
+ep-operator-unavailable|this payment method is temporarily not available|ce moyen de paiement est temporairement indisponible|ta metoda płatności jest chwilowo niedostępna|deze betaalwijze is tijdelijk niet beschikbaar|diese Zahlungsmethode ist vorübergehend nicht verfügbar|questo metodo di pagamento è temporaneamente non disponibile|este método de pago no está disponible temporalmente|este método de pagamento está temporariamente indisponível|Dëse Bezuelmethod ass temporär net verfügbar
+qr online payment|Online payment|Paiement en ligne|Płatność online|Online betaling|Onlinebezahlung|Pagamento online|Pago en línea|Pagamento online|Online Bezuelung
+qr amount|Amount (EUR)|Montant (EUR)|Kwota (EUR)|Bedrag (EUR)|Betrag (EUR)|Importo (EUR)|Importe (EUR)|Valor (EUR)|Betrag (EUR)
+qr communication|Communication|Communication|Komunikacja|Communicatie|Kommunikation|Comunicazione|Comunicación|Comunicação|Kommunikatioun
+qr beneficiary name|Beneficiary name|Nom bénéficiaire|Nazwa odbiorcy|Naam begunstigde|Name des Begünstigten|Nome del beneficiario|Nombre del Beneficiario|Nome do beneficiário|Numm vum Beneficiaire
+qr beneficiary account|Beneficiary account IBAN|IBAN du compte bénéficiaire|Konto beneficjenta (IBAN)|Begunstigdenrekening (IBAN)|Empfängerkonto (IBAN)|Conto beneficiario (IBAN)|Cuenta de beneficiario (IBAN)|Conta do beneficiário (IBAN)|IBAN vum Beneficiaire
+CCBC-IBAN-IBAN-IBAN|GB98 MIDL 0700 9312 3456 78|FR76 3000 6000 0112 3456 7890 189|PL10 1050 0099 7603 1234 5678 9123|BE71 0961 2345 6769|DE91 1000 0000 0123 4567 89|IT79 2100 0813 6101 2345 6789|ES79 2100 0813 6101 2345 6789|PT50 0033 0000 5013 1901 229 05|LU05 0020 7077 3052 1000
+lookup visitor|lookup a visitor|rechercher un visitor|wyszukaj visitor|zoek een visitor|einen visitor suchen|cercare un visitor|buscar un visitor|procurar um visitor|e visitor sichen
+create a visitor file|create a visitor |créer un visitor|utwórz visitor|maak een visitor|einen visitor erstellen|creare un visitor|crear un visitor|criar um visitor|e visitor erstellen
+message|Message|Message|Wiadomość|Boodschap|Nachricht|Messaggio|Mensaje|Mensagem|Noriicht
+resa serie|Series|Série|Seria|reeks|Serie|Serie|Serie|Série|Serie
+week|week|semaine|tydzień|week|Woche|settimana|semana|semana|Woch
+from resa serie|Is part of a serie|Fait partie d'une série|Jest częścią serii|Behoort tot een serie|ist Teil einer Serie|fa parte di una serie|forma parte de una serie|Faz parte de uma série|Ass Deel vun enger Serie
+login|Login|Login|Użytkownik|Login|Login|Login|Login|Início de sessão|Login
+pass|Password|Mot de passe|Hasło|Passwoord|Passwort|Password|Contraseña|Palavra-passe|Passwuert
+al-admin|administrator|administrateur|administrator|Beheerder|administrator|amministratore|administrador|administrador|Administrator
+al-seller|representative|Délégué|Przedstawiciel|afgevaardigd|Vetreter|Rappresentante|Delegado|Delegado|Representant
+al-manager|Manager|responsable|Kierownik|Verantwoordelijk|Manager|responsabile|responsable|responsável|Manager
+al-supervisor|Supervisor|Superviseur|Nadzorca|Opzichter|Betreuer|Supervisore|Supervisor|Supervisor|Superviseur
+al-operator|Operator|Opérateur|Operator|operator|anwender|Operatore|Operador|Operador|Bedreiwer
+al-eresa|Web-page|Page Web|Strona internetowa|Web-pagina|Webseite|Pagina web|Página web|Página web|Websäit
+al-synchro|Machines|Machines|Maszyny|Machines|Maschinen|Macchine|Máquinas|Máquinas|Maschinnen
+accounts|accounts|Comptes|Rachunki|accounts|Konten|Conti|Cuentas|Contas|Konten
+synchro|Synchronization|Synchronisation|Synchronizacja|Synchronisatie|Synchronisation|Sincronizzazione|Sincronización|Sincronização|Synchronisatioun
+performance|performance|prestation|świadczenie|prestatie|leistung|prestazione|servicio|prestação|Leeschtung
+performances|performances|prestations|świadczenia|prestaties|leistungen|prestazioni|servicios|prestações|Leeschtungen
+e-reservable|e-reservable|e-reservable|e-reservable|e-reservable|e-reservierbar|e-Prenotabile|e-reservable|e-reserva|e-Reservéierbar
+{bcode}|booking code|code de réservation|kod rezerwacji|boekingscode|Buchungscode|codice di prenotazione|código de reserva|código de reserva|Buchungscode
+resa-cueIn|start time|heure de début|Czas rozpoczęcia|Starttijd|anfangszeit|ora inizio|hora de inicio|hora de começo|Startzäit
+resa-cueOut|end time|heure de fin|Czas zakończenia|Eindtijd|Endzeit|ora fine|hora fin|hora de fim|Endzäit
+invalid login|invalid login/password, try again|login ou mot de passe invalide, essayez à nouveau|niepoprawny login/hasło, powtórz ponownie|onjuist login/wachtwoord, probeer opnieuw|ungültige Login/Passwort, versuchen Sie es noch einmal|login/password non validi, riprovare|login o contraseña no válidos, inténtelo de nuevo|Login ou palavra-passe inválidos, por favor tente novamente.|Ongëltege Login/Passwuert, probéiert nach eng Kéier.
+I am new to Mobminder|I am new to Mobminder|je suis nouveau sur Mobminder|jestem nowy w Mobminder|ik ben nieuw bij Mobminder|Ich bin neu bei Mobminder|sono nuovo di Mobminder|Soy nuevo en Mobminder|sou novo no Mobminder|ech sinn nei bei Mobminder
+smappmenu notifications|Notifications|Notifications|Powiadomienia|Meldingen|Benachrichtigungen|Notificazioni|Notificaciones|Notificações|Notifikatiounen
+smappmenu display options|Display options|Options d'affichage|opcje wyświetlania|weergaveopties|anzeigeoptionen|Opzioni di visualizzazione|opciones de visualización|opções da visualização|Optioune weisen
+smappmenu chats|chat sessions|conversations|rozmowy|chatsessies|unterhaltungen|conversazioni|conversaciones|conversas|Chats
+smappmenu agenda|agenda|agenda|programie|agenda|Tagesordnung|agenda|agenda|agenda|Agenda
+smappmenu notif none|no notification|pas de notification|brak powiadomienia|geen melding|keine Benachrichtigung|nessuna notifica|sin notificación|sem notificação|Keng Notifikatioun
+smappmenu notif in day|changes in the current day|modifications dans le jour courant|zmiany w bieżącym dniu|veranderingen in de huidige dag|Änderungen am aktuellen Tag|cambiamenti nel giorno corrente|cambios en el día actual|mudanças no dia atual|Ännerungen um aktuellen Dag
+smappmenu notif in week|changes in the current week|modifications dans la semaine courante|zmiany w bieżącym tygodniu|veranderingen in de huidige week|Änderungen in der aktuellen Woche|cambiamenti nella settimana corrente|cambios en la semana actual|mudanças na semana atual|Ännerungen an der aktueller Woch
+chnlname apptm|appointments|rendez-vous|nominacje|afspraken|termine|appuntamenti|citas|compromissos|Rendez-vous
+chnlname chats|chat sessions|conversations|rozmowy|chatsessies|unterhaltungen|conversazioni|conversaciones|conversas|Chats
+chnldesc apptm|changes in your agenda|changements dans votre agenda|zmiany w Twoim programie|veranderingen in uw agenda|Änderungen in Ihrer Agenda|cambiamenti nella tua agenda|cambios en tu agenda|mudanças na sua agenda|Ännerungen an Ärer Agenda
+chnldesc chats|new chat messages|nouveaux messages chat|nowe wiadomości na czacie|nieuwe chat berichten|neue Chat-Nachrichten|nuovi messaggi di chat|nuevos mensajes de chat|novas mensagens de chat|Nei Chat-Noriichten
+manychanges apptm|many changes appeared|plusieurs changement sont apparus|pojawiło się zmian|er zijn veranderingen opgetreden|Änderungen erschienen|apparvero molti cambiamenti|aparecieron cambios|mudanças apareceram|Vill Ännerungen sinn erschéngen
+notif same day app added|an appointment was added at {0}|un rendez-vous a été ajouté à {0}|termin został dodany o godzinie {0}|een afspraak werd toegevoegd om {0}|Ein Termin wurde um {0} hinzugefügt|è stato aggiunto un appuntamento alle {0}|se agregó una cita a las {0}|um compromisso foi adicionado às {0}|En Rendez-vous gouf ëm {0} derbäigesat
+notif same day app cancelled|the {0} appointment has been canceled|le rendez-vous de {0} a été annulé|spotkanie o godzinie {0} zostało odwołane|de afspraak van {0} is geannuleerd|Der Termin um {0} wurde abgesagt|l'appuntamento delle {0} è stato annullato|la cita de las {0} ha sido cancelada|o compromisso das {0} foi cancelado|Den Rendez-vous um {0} gouf ofgesot
+notif same day app changed|the {0} appointment has been modified|le rendez-vous de {0} a été modifié|spotkanie {0} zostało zmienione|de afspraak van {0} is gewijzigd|Der Termin um {0} wurde geändert|l'appuntamento delle {0} è stata modificata|la cita de las {0} ha sido cambiada|a compromisso das {0} foi alterada|Den Rendez-vous um {0} gouf geännert
+notif same day app postponed|the {0} appointment has been postponed|le rendez-vous de {0} a été postposé|spotkanie o godzinie {0} zostało przełożone|de afspraak van {0} is uitgesteld|Der Termin um {0} wurde verschoben|l'appuntamento delle {0} è stato rinviato|la reunión de las {0} ha sido pospuesta|a compromisso das {0} foi adiada|Den Rendez-vous um {0} gouf verréckelt
+notif same day app moved|the {0} appointment has been moved|le rendez-vous de {0} a été déplacé|spotkanie o 15:00 zostało przeniesione|de afspraak van {0} is verplaatst|Der Termin um {0} wurde verschoben|l'appuntamento delle {0} è stata spostata|la cita de las {0} se ha movido|{0} compromisso foi movido|Den Rendez-vous um {0} gouf geplënnert
+notif diff day app added|an appointment was added next {1} at {0}|un rendez-vous a été ajouté le {1} à {0}|termin został dodany w {1} o {0}|er is een afspraak toegevoegd op {1} om {0}|Ein Termin wurde am {1} um {0} Uhr hinzugefügt.|è stato aggiunto un appuntamento {1} alle ore {0}|Se agregó una cita el {1} a las {0}.|um compromisso foi adicionado no {1} às {0}.|En Rendez-vous gouf op {1} um {0} derbäigesat
+notif diff day app cancelled|the appointment on {1} at {0} has been canceled|le rendez-vous du {1} à {0} a été annulé|wizyta w {1} godz. {0} została odwołana|de afspraak van {1} om {0} is geannuleerd|Das Termin am {1} um {0} wurde abgesagt|l'appuntamento di {1} alle {0} è stato annullato|la cita del {1} a las {0} ha sido cancelada|o compromisso de {1} às {0} foi cancelado|Den Rendez-vous um {0} den {1} gouf ofgesot
+notif diff day app changed|the appointment on {1} at {0} has been modified|le rendez-vous du {1} à {0} a été modifié|termin na {1} godz. {0} został zmieniony|de afspraak van {1} om {0} is gewijzigd|Das Termin am {1} um {0} wurde geändert|l'appuntamento di {1} alle {0} è stato modificato|Se ha modificado la cita del {1} a las {0}.|a compromisso de {1} às {0} foi alterado|Den Rendez-vous um {0} den {1} gouf geännert
+notif diff day app postponed|the appointment originaly on {1} at {0} has been postponed|le rendez-vous du {1} à {0} a été postposé|termin na {1} godz. {0} został przełożony|de afspraak van {1} om {0} is uitgesteld|Das Termin am {1} um {0} wurde verschoben|l'appuntamento di {1} alle {0} è stato rinviato|la del {1} a las {0} ha sido pospuesta|a compromisso de {1} às {0} foi adiada|Den Rendez-vous um {0} den {1} gouf verréckelt
+notif diff day app moved|the appointment on {1} at {0} has been moved|le rendez-vous du {1} à {0} a été déplacé|termin na {1} godz. {0} został przesunięty|de afspraak van {1} om {0} is verplaatst|Das Termin am {1} um {0} wurde verschoben|l'appuntamento di {1} alle {0} è stata spostata|Se ha trasladado la cita del {1} a las {0}|o compromisso de {1} às {0} foi movida|Den Rendez-vous um {0} den {1} gouf geplënnert
+chats-title|Title|Titre|Tytuł|Title|Titel|Titolo|Título|Título|Titel
+200_new visitor|New patient|Nouveau patient|Nowy pacjent|Nieuwe patiënt|Neuer Patient|Nuovo paziente|Nuevo paciente|Novo paciente|Neie Patient
+200_visitor|patient|patient|pacjent|patiënt|patient|paziente|paciente|paciente|Patient
+200_visitors|patients|patients|pacjentów|patiënten|patienten|pazienti|pacientes|pacientes|Patienten
+200_many visitors|Several patients|Plusieurs patients|Kilku pacjentów|Meerdere patiënten|Mehrere Patienten|Vari pazienti|varios pacientes|Vários pacientes|E puer Patienten
+200_visitor name|Patient name|Nom du patient|Imię i nazwisko pacjenta|Patiënt naam|Patientname|Nome del paziente|Nombre del paciente|Nome do paciente|Numm vum Patient
+200_visitor birth|Patient date of birth|Naissance patient|Data urodzenia pacjenta|Patiënt geboortedatum|Patienten Geburtsdatum|Data di nascita paziente|Fecha de nacimiento paciente|Data de nascimento do paciente|Gebuertsdatum vum Patient
+200_visitor info|Patient Information|Information Patient|Dane pacjenta|Patiënt gegevens|Patienteninformationen|Informazione paziente|Datos paciente|Dados do paciente|Informatiounen iwwer de Patient
+200_visitors register|Patients Registry|Registre des patients|Rejestru pacjenta|Patiëntenregister|Patientenverzeichnis|Registro dei pazienti|Registro de los pacientes|Registo do paciente|Register vun de Patienten
+200_copy from visitor|Copy from another patient|Copier depuis un autre patient|Skopiować z innego pacjenta|Kopiëren van een andere patiënt|Von einem anderen Patienten kopieren|Copiare da un altro paziente|Copiar de otro paciente|Copiar de outro paciente|Kopie vun engem anere Patient
+100_new visitor|New Client|Nouveau Client|Nowy Klient|Nieuwe klant|Neuer Kunde|Nuovo cliente|Nuevo cliente|Novo cliente|Neie Client
+100_visitor|client|client|klient|klant|kunde|cliente|cliente|cliente|Client
+100_visitors|clients|clients|klienci|klanten|kunden|clienti|clientes|clientes|Clienten
+100_many visitors|Several clients|Plusieurs clients|Kilku klientów|Meerdere klanten|Mehrere Kunden|Vari clienti|Varios clientes|Vários clientes|E puer Clienten
+100_visitor name|Client name|Nom du client|Nazwa klienta|Klant naam|Kundenname|Nome del cliente|Nombre del cliente|Nome do cliente|Numm vum Client
+100_visitor birth|Client date of birth|Naissance client|Data urodzenia klienta|Klant geboortedatum|Kunden Geburtsdatum|Data di nascita cliente|Fecha de nacimiento cliente|Data de nascimento do cliente|Gebuertsdatum vum Client
+100_visitor info|Client Information|Information Client|Dane klienta|Klant gegevens|Kundeninformationen|Informazione cliente|Datos cliente|Dados do cliente|Informatiounen iwwer de Client
+100_visitors register|Clients Registry|Registre clients|Rejestru klientów|Klantenregister|Kundenverzeichnis|Registro dei clienti|Registro de los clientes|Registo do cliente|Register vun de Clienten
+100_copy from visitor|Copy from another client|Copier depuis un autre client|Skopiować z innego klienta|Kopiëren van een andere klant|Von einem anderen Kunden kopieren|Copiare da un altro cliente|Copiar de otro cliente|Copiar de outro cliente|Kopie vun engem anere Client
+150_new visitor|New participant|Nouveau participant|Nowy uczestnik|Nieuwe deelnemer|Neuer Teilnehmer|Nuovo partecipante|Nuevo participante|Novo participante|Neie Participanten
+150_visitor|participant|participant|uczestnik|deelnemer|teilnehmer|partecipante|participante|participante|Participanten
+150_visitors|participants|participants|uczestnicy|deelnemers|teilnehmer|partecipanti|participantes|participantes|Participanten
+150_many visitors|Several participants|Plusieurs participants|Kilku uczestników|Meerdere deelnemers|Mehrere Teilnehmer|Vari partecipanti|Varios participantes|Vários participantes|E puer Participanten
+150_visitor name|Participant's name|Nom du participant|Nazwa Uczestnik|Deelnemer naam|Teilnehmername|Nome del partecipante|Nombre participante|Nome do participante|Numm vum Participanten
+150_visitor birth|Participant date of birth|Naissance participant|Uczestnik urodzenie|Deelnemer geboortedatum|Teilnehmer Geburtsdatum|Data di nascita partecipante|Fecha de nacimiento participante|Data de nascimento do participante|Gebuertsdatum vum Participanten
+150_visitor info|Participant Information|Information Participant|Informacje uczestnika|Deelnemer gegevens|Teilnehmerinformationen|Informazione partecipante|Datos participante|Dados do participante|Informatiounen iwwer de Participanten
+150_visitors register|Participants Registry|Registre participants|Rejestru uczestników|Deelnemersregister|Teilnehmerverzeichnis|Registro dei partecipanti|Registro participantes|Registo dos participantes|Register vun de Participanten
+150_copy from visitor|Copy from another participant|Copier depuis un autre participant|Skopiować z innego uczestnika|Kopiëren van een andere deelnemer|Von anderem Teilnehmer kopieren|Copiare da un altro partecipante|Copiar de otro participante|Copiar de outro participante|Kopie vun engem anere Participanten
+online tuto|Online tutorial|Tutoriel en ligne|Samouczek online|Online tutorial|Online-Tutorial|Tutorial online|Tutorial en línea|Tutorial online|Online-tutorium
+talk with moby|Talk with Moby|Parler avec Moby|Porozmawiaj z Moby|Praat met Moby|Sprich mit Moby|Parlare con Moby|Hablar con Moby|Falar com Moby|Schwätzen mam Moby

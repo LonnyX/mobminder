@@ -1,0 +1,11 @@
+﻿<french>{dear} {gender} {lname},
+Mesures dans le cadre de la crise COVID-19:
+1) Toutes les questions concernant une éventuelle infection au coronavirus doivent se régler par téléphone exclusivement (081/615503)
+A cette fin je reste un maximum disponible, y compris les Weekend avant un recours au service de garde 081/848433
+2) Les consultations jugées INDISPENSABLES après contact par téléphone pourront avoir lieu sur RDV et un seul patient à la fois.
+3) Les visites et consultations de suivis chroniques sont maintenues par téléphone. La nécessité d'un contact physique sera évaluée au cas par cas.
+4) Prenez soin de vous et des autres, MAIS n'oubliez pas que tout n'est pas coronavirus et donc restez vigilants aux autres symptômes également et contactez-moi au moindre doute.
+Dr NOTTE Dominique.
+TEL: 081/615503
+Ne répondez pas à ce SMS, nous ne pouvons pas lire les réponses aux SMS automatiques.</french>
+

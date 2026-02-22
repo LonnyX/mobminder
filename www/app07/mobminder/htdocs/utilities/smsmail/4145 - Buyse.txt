@@ -1,0 +1,8 @@
+﻿<french>{dear} {gender} {lname},
+Suite aux mesures progressives de déconfinement, je vous informe que je suis à nouveau en mesure de vous recevoir en consultation depuis ce lundi 4 mai.
+Tout est mis en oeuvre pour vous garantir les meilleures conditions sanitaires. 
+Pour plus d'infos ou pour une prise de RDV: www.osteobuyse.be
+A très bientot,
+Catherine Buyse, 
+Ostéopathe D.O.
+(SVP ne répondez pas au SMS, je ne pourrai pas lire votre message)</french>

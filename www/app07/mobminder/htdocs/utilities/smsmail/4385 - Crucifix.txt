@@ -1,0 +1,11 @@
+<french>{dear} {gender} {lname},
+Nous vous informons que notre cabinet poursuivra ses activités malgré le confinement.
+Ceci résulte des mesures de sécurité mises en œuvre depuis plusieurs mois : désinfection de l'air par UVC, filtres HEPA, aspirateurs de particules, bain de bouches H2O2, EPI,..
+En cas de contrôle, le sms ou mail de confirmation du RDV peut être produit comme preuve de 'déplacement essentiel pour soins de santé'.
+Si vous avez un RDV planifié, celui-ci est donc bien maintenu et nous serons heureux de vous recevoir dans les meilleures conditions.
+Si vous souhaitez prendre un RDV, n'hésitez pas à nous contacter au 027620481 ou à visiter notre site www.woluwedentiste.be pour une prise de RDV en ligne.
+Prenez soin de vous et de vos proches.
+Vos dentistes,
+Stéphane Crucifix et Claire Houssiau
+(Prière de ne pas répondre à ce sms)
+</french>

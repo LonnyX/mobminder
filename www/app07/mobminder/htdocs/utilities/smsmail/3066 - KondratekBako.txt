@@ -1,0 +1,8 @@
+<french>{gender},
+le cabinet dentaire Kondratek déménage et devient Bako santé.
+Nous vous retrouvons dès le 01/11/21 au 1 rue des Frères Pierseaux 1400 nivelles.
+Notre numéro reste le 067556436.
+Plus d'informations sont disponibles ici www.bako-sante.be
+En vous remerciant,
+Antoni Kondratek
+</french>

@@ -1,0 +1,6 @@
+<french>{dear} {gender} {lname},
+Cap sur ✴ 2021 ✴ De la part du Dr Christian SMULDERS et de sa famille.
+Nous vous souhaitons une belle et heureuse année 2021 pleine d'énergie et de beaux projets.
+Je profite de ces bons vœux pour vous remercier sincèrement de votre fidélité tout au long de cette année compliquée en raison du contexte sanitaire Covid-19.
+Nous n'avons rien lâché et ensemble nous surmonterons cette crise.
+Un immense merci</french>

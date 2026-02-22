@@ -1,0 +1,647 @@
+﻿
+
+/*   W A R N I N G
+
+	This file is used by Mobminder smartApp also !!
+*/
+	
+
+
+
+/* global rules */
+
+body { 
+	color: /*blue;*/ #444;
+	font-family: verdana, Arial, Helvetica, sans-serif; 
+	margin:0; 
+	
+	background: white; 
+	position: relative;
+	font-size: 0.8em; 
+	overflow-y:scroll;
+	-webkit-font-smoothing:antialiased;
+	
+	width:96%; margin: 1em auto; 
+}
+
+textarea { font-size: 1.4em; } /* this setting makes input and textarea being equal font sized */
+input { font-size: 1.2em }
+table { border-collapse:collapse; border:none; margin:0; padding:0; border-spacing: 0; }
+
+h1 {	margin:1em 0 1em 0; font-size:2em; color:#85A5BF; font-weight: normal; letter-spacing:-0.04em; }
+h2 {	margin:1em 0 1em 0; font-size: 1.5em; color: #a4b357; font-weight: normal; padding-left:1em; }									
+h3 {	margin:1em 0 1em 0; font-size:1.1em; color:grey;  font-weight: bold;  padding-left:3em; }							
+h4 {	margin:1em 0 1em 0; font-size:1.05em; color:#999;  font-weight: bold;  padding-left:5em; }							
+a {	text-decoration: none; border:none; cursor:pointer; font-size:1.0em; font-weight:normal; color:steelblue; padding:0.2em 2em; }
+a:visited, a:hover { text-decoration: none;  border:none; }
+
+div.fa { display:inline-block; padding-left:.6em; }
+
+/* accounts, resources */
+/* ambulance, cars, plane, shopping-cart, ufo, car-building, shuttle-van, toolbox, sunglasses */
+
+
+/* visitors, apps, tasks, notes */
+/* flask-poison, phone-slash, poo, toolbox, calendar-edit, photo-video, wrench, head-side-mask, virus, sunglasses, allergies
+, people-arrows, user-injured, user-check */
+
+
+/* timeboxing */
+/* bells, comment-exclamation, history, inbox-in, inbox-out, random, redo, repeat-1, download, upload, wrench, people-arrows */
+
+
+/* resources */
+/* head-side-headphones, toolbox, user-hard-hat, people-arrows, users-medical, user-headset */
+
+/* workcodes */
+/* flask-poison, mind-share, projector, toolbox, photo-video, wrench, people-arrows
+	, head-side-mask, virus, crutch, money-check-edit, analytics, sunglasses */
+
+/*
+
+	//			V I S I T O R S   /   A P P O I N T M E N T S   /  T A S K S    /  N O T E S   
+	//
+	//		PEOPLE							ORGANS							SMILEYS								MISC SYMBOLS						MONEY									COMMUNICATION						GENDER									ANIMALS
+agenda:[
+[{c:'fa fa-male',v:'1001'}			,{c:'fa fa-tooth',v:'1010'}			,{c:'fa fa-grin',v:'1020'}			,{c:'fa fa-ban',v:'1024'}			,{c:'fa fa-warning',v:'1027'}			,{c:'fa fa-at',v:'1028'}			,{c:'fa fa-birthday-cake',v:'1008'}	,{c:'fa fa-cat',v:'1070'}		],
+[{c:'fa fa-female',v:'1002'}		,{c:'fa fa-wheelchair',v:'1011'}	,{c:'fa fa-smile',v:'1021'}			,{c:'fa fa-calculator',v:'1031'}	,{c:'fa fa-closed-captioning',v:'1041'}	,{c:'fa fa-stethoscope',v:'1051'}	,{c:'fa fa-venus',v:'1061'}			,{c:'fa fa-dog',v:'1071'}		],
+[{c:'fa fa-child',v:'1003'}			,{c:'fa fa-eye',v:'1012'}			,{c:'fa fa-frown',v:'1022'}			,{c:'fa fa-calendar',v:'1032'}		,{c:'fab fa-cc-mastercard',v:'1042'}	,{c:'fa fa-thumbs-up',v:'1025'}		,{c:'fa fa-mars',v:'1062'}			,{c:'fa fa-crow',v:'1072'}		],
+[{c:'fa fa-users',v:'1004'}			,{c:'fa fa-heartbeat',v:'1013'}		,{c:'fa fa-meh',v:'1023'}			,{c:'fa fa-paperclip',v:'1033'}		,{c:'fa fa-sync',v:'1043'}				,{c:'fa fa-thumbs-down',v:'1026'}	,{c:'fa fa-venus-mars',v:'1063'}	,{c:'fa fa-horse',v:'1073'}		],
+[{c:'fa fa-person-carry',v:'1000'}	,{c:'fa fa-ear',v:'1014'}			,{c:'fa fa-flushed',v:'1124'}		,{c:'fa fa-pencil',v:'1034'}		,{c:'fab fa-cc-visa',v:'1044'}			,{c:'fa fa-hand-point-up',v:'1054'}	,{c:'fa fa-venus-double',v:'1064'}	,{c:'fa fa-ram',v:'1074'}		],
+[{c:'fa fa-user',v:'1005'}			,{c:'fa fa-link',v:'1015'}			,{c:'fa fa-grimace',v:'1125'}		,{c:'fa fa-tag',v:'1035'}			,{c:'fa fa-credit-card',v:'1045'}		,{c:'fa fa-university',v:'1055'}	,{c:'fa fa-mars-double',v:'1065'}	,{c:'fa fa-fish',v:'1075'}		],
+[{c:'fa fa-user-md',v:'1006'}		,{c:'fa fa-smoking',v:'1016'}		,{c:'fa fa-angry',v:'1126'}			,{c:'fa fa-biohazard',v:'1036'}		,{c:'fa fa-money-bill',v:'1046'}		,{c:'fa fa-flask',v:'1057'}			,{c:'fa fa-mercury',v:'1066'}		,{c:'fa fa-cow',v:'1076'}		],
+[{c:'fa fa-baby',v:'1007'}			,{c:'fa fa-utensils',v:'1017'}		,{c:'fa fa-dizzy',v:'1127'}			,{c:'fa fa-envelope',v:'1037'}		,{c:'fa fa-euro-sign',v:'1047'}			,{c:'fa fa-tablet-alt ',v:'1069'}	,{c:'fa fa-transgender',v:'1067'}	,{c:'fa fa-pig',v:'1077'}		],
+[{c:'fa fa-procedures',v:'1108'}	,{c:'fa fa-wine-glass-alt',v:'1018'},{c:'fa fa-grin-beam-sweat',v:'1128'},{c:'fa fa-edit',v:'1038'}			,{c:'fa fa-dollar-sign',v:'1048'}		,{c:'fa fa-phone',v:'1058'}			,{c:'fa fa-neuter',v:'1068'}		,{c:'fa fa-monkey',v:'1078'}		],
+[{c:'fa fa-user-friends',v:'1109'}	,{c:'fa fa-pills',v:'1019'}			,{c:'fa fa-smile-wink',v:'1129'}	,{c:'fa fa-camera-alt ',v:'1039'}	,{c:'fa fa-ticket-alt',v:'1049'}		,{c:'fa fa-mobile-alt',v:'1059'}	,{c:'fa fa-recycle',v:'1056'}		,{c:'fa fa-rabbit',v:'1079'}	],
+[{c:'fa fa-street-view',v:'1100'}	,{c:'fa fa-kidneys',v:'1110'}		,{c:'fa fa-grin-alt',v:'1120'}		,{c:'fa fa-coffin ',v:'1130'}		,{c:'fa fa-file-signature',v:'1140'}	,{c:'fa fa-sms',v:'1150'}			,{c:'fa fa-yin-yang',v:'1160'}		,{c:'fa fa-unicorn',v:'1170'}	]
+],
+
+*/
+
+.t1001:before { content:"\f183"; value:1001; category:fa; } /* fa-male */
+.t1002:before { content:"\f182"; value:1002; category:fa; } /* fa-female */
+.t1003:before { content:"\f1ae"; value:1003; category:fa; } /* fa-child */
+.t1004:before { content:"\f0c0"; value:1004; category:fa; } /* fa-users */
+.t1000:before { content:"\f4cf"; value:1000; category:fa; } /* fa-person-carry */
+.t1005:before { content:"\f007"; value:1005; category:fa; } /* fa-user */
+.t1006:before { content:"\f0f0"; value:1006; category:fa; } /* fa-user-md */
+.t1007:before { content:"\f77c"; value:1007; category:fa; } /* fa-baby */
+.t1108:before { content:"\f487"; value:1108; category:fa; } /* fa-procedures */
+.t1109:before { content:"\f500"; value:1109; category:fa; } /* fa-user-friends */
+.t1100:before { content:"\f21d"; value:1100; category:fa; } /* fa-street-view */
+
+.t1101:before { content:"\f968"; value:1101; category:fa; } /* fa-people-arrows */
+.t1102:before { content:"\f4fc"; value:1102; category:fa; } /* fa-user-check */
+
+
+.t1010:before { content:"\f5c9"; value:1010; category:fa; } /* fa-tooth */
+.t1011:before { content:"\f193"; value:1011; category:fa; } /* fa-wheelchair */
+.t1012:before { content:"\f06e"; value:1012; category:fa; } /* fa-eye */
+.t1013:before { content:"\f21e"; value:1013; category:fa; } /* fa-heartbeat */
+.t1014:before { content:"\f5f0"; value:1014; category:fa; } /* fa-ear */
+.t1015:before { content:"\f0c1"; value:1015; category:fa; } /* fa-link */
+.t1016:before { content:"\f48d"; value:1016; category:fa; } /* fa-smoking */
+.t1017:before { content:"\f2e7"; value:1017; category:fa; } /* fa-utensils */
+.t1018:before { content:"\f5ce"; value:1018; category:fa; } /* fa-wine-glass-alt */
+.t1019:before { content:"\f484"; value:1019; category:fa; } /* fa-pills */
+.t1110:before { content:"\f5fb"; value:1110; category:fa; } /* fa-kidneys */
+
+.t1111:before { content:"\f974"; value:1111; category:fa; } /* fa-virus */
+.t1112:before { content:"\f461"; value:1112; category:fa; } /* fa-allergies */
+
+
+.t1020:before { content:"\f580"; value:1020; category:fa; } /* fa-grin */
+.t1021:before { content:"\f118"; value:1021; category:fa; } /* fa-smile */
+.t1022:before { content:"\f119"; value:1022; category:fa; } /* fa-frown */
+.t1023:before { content:"\f11a"; value:1023; category:fa; } /* fa-meh */
+.t1124:before { content:"\f579"; value:1124; category:fa; } /* fa-flushed */
+.t1125:before { content:"\f57f"; value:1125; category:fa; } /* fa-grimace */
+.t1126:before { content:"\f556"; value:1126; category:fa; } /* fa-angry */
+.t1127:before { content:"\f567"; value:1127; category:fa; } /* fa-dizzy */
+.t1128:before { content:"\f583"; value:1128; category:fa; } /* fa-grin-beam-sweat */
+.t1129:before { content:"\f4da"; value:1129; category:fa; } /* fa-smile-wink */
+.t1120:before { content:"\f581"; value:1120; category:fa; } /* fa-grin-alt */
+
+.t1121:before { content:"\f552"; value:1121; category:fa; } /* fa-toolbox */
+.t1122:before { content:"\f728"; value:1122; category:fa; } /* fa-user-injured */
+
+
+.t1024:before { content:"\f05e"; value:1024; category:fa; } /* fa-ban */
+.t1031:before { content:"\f1ec"; value:1031; category:fa; } /* fa-calculator */
+.t1032:before { content:"\f133"; value:1032; category:fa; } /* fa-calendar */
+.t1033:before { content:"\f0c6"; value:1033; category:fa; } /* fa-paperclip */
+.t1034:before { content:"\f040"; value:1034; category:fa; } /* fa-pencil */
+.t1035:before { content:"\f02b"; value:1035; category:fa; } /* fa-tag */
+.t1036:before { content:"\f780"; value:1036; category:fa; } /* fa-biohazard */
+.t1037:before { content:"\f0e0"; value:1037; category:fa; } /* fa-envelope */
+.t1038:before { content:"\f044"; value:1038; category:fa; } /* fa-edit */
+.t1039:before { content:"\f332"; value:1039; category:fa; } /* fa-camera-alt */
+.t1130:before { content:"\f6c6"; value:1130; category:fa; } /* fa-coffin */
+
+.t1131:before { content:"\f333"; value:1131; category:fa; } /* fa-calendar-edit */
+.t1132:before { content:"\f892"; value:1132; category:fa; } /* fa-sunglasses */
+
+
+.t1027:before { content:"\f071"; value:1027; category:fa; } /* fa-warning */
+.t1041:before { content:"\f20a"; value:1041; category:fa; } /* fa-closed-captioning */
+.t1042:before { content:"\f1f1"; value:1042; category:fab; } /* fa-cc-mastercard */
+.t1043:before { content:"\f021"; value:1043; category:fa; } /* fa-sync */
+.t1044:before { content:"\f1f0"; value:1044; category:fab; } /* fa-cc-visa */
+.t1045:before { content:"\f09d"; value:1045; category:fa; } /* fa-credit-card */
+.t1046:before { content:"\f0d6"; value:1046; category:fa; } /* fa-money-bill */
+.t1047:before { content:"\f153"; value:1047; category:fa; } /* fa-euro-sign */
+.t1048:before { content:"\f155"; value:1048; category:fa; } /* fa-dollar-sign */
+.t1049:before { content:"\f3ff"; value:1049; category:fa; } /* fa-ticket-alt */
+.t1140:before { content:"\f573"; value:1140; category:fa; } /* fa-file-signature */
+
+.t1141:before { content:"\f87c"; value:1141; category:fa; } /* fa-photo-video */
+.t1142:before { content:"\f0ad"; value:1142; category:fa; } /* fa-wrench */
+
+
+.t1028:before { content:"\f1fa"; value:1028; category:fa; } /* fa-at */
+.t1051:before { content:"\f0f1"; value:1051; category:fa; } /* fa-stethoscope */
+.t1025:before { content:"\f164"; value:1025; category:fa; } /* fa-thumbs-up */
+.t1026:before { content:"\f165"; value:1026; category:fa; } /* fa-thumbs-down */
+.t1054:before { content:"\f0a6"; value:1054; category:fa; } /* fa-hand-point-up */
+.t1055:before { content:"\f19c"; value:1055; category:fa; } /* fa-university */
+.t1057:before { content:"\f0c3"; value:1057; category:fa; } /* fa-flask */
+.t1069:before { content:"\f3fa"; value:1069; category:fa; } /* fa-tablet-alt */
+.t1058:before { content:"\f095"; value:1058; category:fa; } /* fa-phone */
+.t1059:before { content:"\f3cd"; value:1059; category:fa; } /* fa-mobile-alt */
+.t1150:before { content:"\f7cd"; value:1150; category:fa; } /* fa-sms */
+
+.t1151:before { content:"\f67d"; value:1151; category:fa; } /* fa-phone-office */
+.t1152:before { content:"\f3dd"; value:1152; category:fa; } /* fa-phone-slash */
+
+
+.t1008:before { content:"\f1fd"; value:1008; category:fa; } /* fa-birthday-cake */
+.t1061:before { content:"\f221"; value:1061; category:fa; } /* fa-venus */
+.t1062:before { content:"\f222"; value:1062; category:fa; } /* fa-mars */
+.t1063:before { content:"\f228"; value:1063; category:fa; } /* fa-venus-mars */
+.t1064:before { content:"\f226"; value:1064; category:fa; } /* fa-venus-double */
+.t1065:before { content:"\f227"; value:1065; category:fa; } /* fa-mars-double */
+.t1066:before { content:"\f223"; value:1066; category:fa; } /* fa-mercury */
+.t1067:before { content:"\f224"; value:1067; category:fa; } /* fa-transgender */
+.t1068:before { content:"\f22c"; value:1068; category:fa; } /* fa-neuter */
+.t1056:before { content:"\f1b8"; value:1056; category:fa; } /* fa-recycle */
+.t1160:before { content:"\f6ad"; value:1160; category:fa; } /* fa-yin-yang */
+
+.t1161:before { content:"\f963"; value:1161; category:fa; } /* fa-head-side-mask */
+.t1162:before { content:"\f643"; value:1162; category:fa; } /* fa-analytics */
+
+
+.t1070:before { content:"\f6be"; value:1070; category:fa; } /* fa-cat */
+.t1071:before { content:"\f6d3"; value:1071; category:fa; } /* fa-dog */
+.t1072:before { content:"\f520"; value:1072; category:fa; } /* fa-crow */
+.t1073:before { content:"\f6f0"; value:1073; category:fa; } /* fa-horse */
+.t1074:before { content:"\f70a"; value:1074; category:fa; } /* fa-ram */
+.t1075:before { content:"\f6fb"; value:1075; category:fa; } /* fa-monkey */
+.t1076:before { content:"\f6c8"; value:1076; category:fa; } /* fa-cow */
+.t1077:before { content:"\f706"; value:1077; category:fa; } /* fa-pig */
+.t1078:before { content:"\f578"; value:1078; category:fa; } /* fa-fish */
+.t1079:before { content:"\f708"; value:1079; category:fa; } /* fa-rabbit */
+.t1170:before { content:"\f727"; value:1170; category:fa; } /* fa-unicorn */
+
+.t1171:before { content:"\f716"; value:1171; category:fa; } /* fa-snake */
+.t1172:before { content:"\f726"; value:1172; category:fa; } /* fa-turtle */
+
+
+
+/*
+	//			A C C O U N T S  
+	//
+
+*/
+
+.t3000:before { content:"\f015"; value:3000; category:fa; } /* fa-home */
+.t3001:before { content:"\f3b3"; value:3001; category:fa; } /* fa-industry-alt */
+.t3002:before { content:"\f47d"; value:3002; category:fa; } /* fa-hospital-alt */
+.t3003:before { content:"\f0f8"; value:3003; category:fa; } /* fa-hospital */
+.t3004:before { content:"\f1ad"; value:3004; category:fa; } /* fa-building */
+.t3005:before { content:"\f64f"; value:3005; category:fa; } /* fa-city */
+.t3006:before { content:"\f594"; value:3006; category:fa; } /* fa-hotel */
+.t3007:before { content:"\f66f"; value:3007; category:fa; } /* fa-landmark */
+.t3008:before { content:"\f859"; value:3008; category:fa; } /* fa-car-building */
+.t3009:before { content:"\f85b"; value:3009; category:fa; } /* fa-cars */
+
+
+.t3010:before { content:"\f5c9"; value:3010; category:fa; } /* fa-tooth */
+.t3011:before { content:"\f193"; value:3011; category:fa; } /* fa-wheelchair */
+.t3012:before { content:"\f0fa"; value:3012; category:fa; } /* fa-medkit */
+.t3013:before { content:"\f501"; value:3013; category:fa; } /* fa-user-graduate */
+.t3014:before { content:"\f21b"; value:3014; category:fa; } /* fa-user-secret */
+.t3015:before { content:"\f0f0"; value:3015; category:fa; } /* fa-user-md */
+.t3016:before { content:"\f6ea"; value:3016; category:fa; } /* fa-head-vr */
+.t3017:before { content:"\f2a8"; value:3017; category:fa; } /* fa-low-vision */
+.t3018:before { content:"\f82c"; value:3018; category:fa; } /* fa-user-hard-hat */
+.t3019:before { content:"\f552"; value:3019; category:fa; } /* fa-toolbox */
+
+
+.t3020:before { content:"\f756"; value:3020; category:fa; } /* fa-person-booth */
+.t3021:before { content:"\f51c"; value:3021; category:fa; } /* fa-chalkboard-teacher */
+.t3022:before { content:"\f5e3"; value:3022; category:fa; } /* fa-car-mechanic */
+.t3023:before { content:"\f206"; value:3023; category:fa; } /* fa-bicycle */
+.t3024:before { content:"\f1b0"; value:3024; category:fa; } /* fa-paw */
+.t3025:before { content:"\f515"; value:3025; category:fa; } /* fa-balance-scale-left */
+.t3026:before { content:"\f5bb"; value:3026; category:fa; } /* fa-spa */
+.t3027:before { content:"\f0c4"; value:3027; category:fa; } /* fa-cut */
+.t3028:before { content:"\f0f9"; value:3028; category:fa; } /* fa-ambulance */
+.t3029:before { content:"\f5b6"; value:3029; category:fa; } /* fa-shuttle-van */
+
+
+.t3030:before { content:"\f2d3"; value:3030; category:fa; } /* fa-times-square */
+.t3031:before { content:"\f2f0"; value:3031; category:fa; } /* fa-times-octagon */
+.t3032:before { content:"\f071"; value:3032; category:fa; } /* fa-exclamation-triangle */
+.t3033:before { content:"\f06a"; value:3033; category:fa; } /* fa-exclamation-circle */
+.t3034:before { content:"\f04c"; value:3034; category:fa; } /* fa-pause */
+.t3035:before { content:"\f1b8"; value:3035; category:fa; } /* fa-recycle */
+.t3036:before { content:"\f146"; value:3036; category:fa; } /* fa-minus-square */
+.t3037:before { content:"\f28d"; value:3037; category:fa; } /* fa-stop-circle */
+.t3038:before { content:"\f496"; value:3038; category:fa; } /* fa-weight */
+.t3039:before { content:"\f21e"; value:3039; category:fa; } /* fa-heartbeat */
+
+
+.t3040:before { content:"\f3c2"; value:3040; category:fa; } /* fa-lock-open-alt */
+.t3041:before { content:"\f30d"; value:3041; category:fa; } /* fa-lock-alt */
+.t3042:before { content:"\f33c"; value:3042; category:fa; } /* fa-arrow-square-up */
+.t3043:before { content:"\f086"; value:3043; category:fa; } /* fa-comments */
+.t3044:before { content:"\f530"; value:3044; category:fa; } /* fa-glasses */
+.t3055:before { content:"\f61c"; value:3055; category:fa; } /* fa-ruler-triangle */
+.t3066:before { content:"\f591"; value:3066; category:fa; } /* fa-highlighter */
+.t3077:before { content:"\f2b5"; value:3077; category:fa; } /* fa-handshake */
+.t3048:before { content:"\f5dc"; value:3048; category:fa; } /* fa-brain */
+.t3049:before { content:"\f77c"; value:3049; category:fa; } /* fa-baby */
+
+
+
+/*
+	//			R E S O U R C E S  
+	//
+
+*/
+
+.t4000:before { content:"\f007"; value:4000; category:fa; } /* fa-user */
+.t4001:before { content:"\f0c0"; value:4001; category:fa; } /* fa-users */
+.t4002:before { content:"\f0f0"; value:4002; category:fa; } /* fa-user-md */
+.t4003:before { content:"\f508"; value:4003; category:fa; } /* fa-user-tie */
+.t4004:before { content:"\f4fe"; value:4004; category:fa; } /* fa-user-cog */
+.t4005:before { content:"\f234"; value:4005; category:fa; } /* fa-user-plus */
+.t4006:before { content:"\f507"; value:4006; category:fa; } /* fa-user-tag */
+.t4007:before { content:"\f502"; value:4007; category:fa; } /* fa-user-lock */
+.t4008:before { content:"\f82c"; value:4008; category:fa; } /* fa-user-hard-hat */
+.t4009:before { content:"\f968"; value:4009; category:fa; } /* fa-people-arrows */
+
+
+.t4010:before { content:"\f5c9"; value:4010; category:fa; } /* fa-tooth */
+.t4011:before { content:"\f06e"; value:4011; category:fa; } /* fa-eye */
+.t4012:before { content:"\f5f0"; value:4012; category:fa; } /* fa-ear */
+.t4013:before { content:"\f604"; value:4013; category:fa; } /* fa-lungs */
+.t4014:before { content:"\f623"; value:4014; category:fa; } /* fa-stomach */
+.t4015:before { content:"\f21e"; value:4015; category:fa; } /* fa-heartbeat */
+.t4016:before { content:"\f5dc"; value:4016; category:fa; } /* fa-brain */
+.t4017:before { content:"\f0b1"; value:4017; category:fa; } /* fa-briefcase */
+.t4018:before { content:"\f830"; value:4018; category:fa; } /* fa-users-medical */
+.t4019:before { content:"\f82d"; value:4019; category:fa; } /* fa-user-headset */
+
+
+.t4020:before { content:"\f756"; value:4020; category:fa; } /* fa-person-booth */
+.t4021:before { content:"\f734"; value:4021; category:fa; } /* fa-booth-curtain */
+.t4022:before { content:"\f63d"; value:4022; category:fa; } /* fa-users-class */
+.t4023:before { content:"\f6a3"; value:4023; category:fa; } /* fa-user-chart */
+.t4024:before { content:"\f51c"; value:4024; category:fa; } /* fa-chalkboard-teacher */
+.t4025:before { content:"\f6c0"; value:4025; category:fa; } /* fa-chair */
+.t4026:before { content:"\f6c1"; value:4026; category:fa; } /* fa-chair-office */
+.t4027:before { content:"\f4cf"; value:4027; category:fa; } /* fa-person-carry */
+.t4028:before { content:"\f8d6"; value:4028; category:fa; } /* fa-projector */
+.t4029:before { content:"\f5b6"; value:4029; category:fa; } /* fa-shuttle-van */
+
+
+.t4030:before { content:"\f0d1"; value:4030; category:fa; } /* fa-truck */
+.t4031:before { content:"\f1b9"; value:4031; category:fa; } /* fa-car */
+.t4032:before { content:"\f1ba"; value:4032; category:fa; } /* fa-taxi */
+.t4033:before { content:"\f566"; value:4033; category:fa; } /* fa-digital-tachograph */
+.t4034:before { content:"\f5e3"; value:4034; category:fa; } /* fa-car-mechanic */
+.t4035:before { content:"\f1b8"; value:4035; category:fa; } /* fa-recycle */
+.t4036:before { content:"\f4b6"; value:4036; category:fa; } /* fa-comments-alt */
+.t4037:before { content:"\f5e7"; value:4037; category:fa; } /* fa-charging-station */
+.t4038:before { content:"\f496"; value:4038; category:fa; } /* fa-weight */
+.t4039:before { content:"\f21e"; value:4039; category:fa; } /* fa-heartbeat */
+
+
+.t4040:before { content:"\f3c2"; value:4040; category:fa; } /* fa-lock-open-alt */
+.t4041:before { content:"\f30d"; value:4041; category:fa; } /* fa-lock-alt */
+.t4042:before { content:"\f0c3"; value:4042; category:fa; } /* fa-flask */
+.t4043:before { content:"\f493"; value:4043; category:fa; } /* fa-vials */
+.t4044:before { content:"\f530"; value:4044; category:fa; } /* fa-glasses */
+.t4045:before { content:"\f6e3"; value:4045; category:fa; } /* fa-hammer */
+.t4046:before { content:"\f48e"; value:4046; category:fa; } /* fa-syringe */
+.t4047:before { content:"\f2b5"; value:4047; category:fa; } /* fa-handshake */
+.t4048:before { content:"\f82f"; value:4048; category:fa; } /* fa-user-nurse */
+.t4049:before { content:"\f77c"; value:4049; category:fa; } /* fa-baby */
+
+
+
+
+
+/*
+	//			W O R K   C O D E S 
+	//
+
+*/
+
+.t6000:before { content:"\f5e4"; value:6000; category:fa; } /* fa-car-side */
+.t6001:before { content:"\f015"; value:6001; category:fa; } /* fa-home */
+.t6002:before { content:"\f47d"; value:6002; category:fa; } /* fa-hospital-alt */
+.t6003:before { content:"\f0f8"; value:6003; category:fa; } /* fa-hospital */
+.t6004:before { content:"\f6c0"; value:6004; category:fa; } /* fa-chair */
+.t6005:before { content:"\f6c1"; value:6005; category:fa; } /* fa-chair-office */
+.t6006:before { content:"\f0b1"; value:6006; category:fa; } /* fa-briefcase */
+.t6007:before { content:"\f487"; value:6007; category:fa; } /* fa-procedures */
+.t6008:before { content:"\f495"; value:6008; category:fa; } /* fa-warehouse-alt */
+.t6009:before { content:"\f6e0"; value:6009; category:fa; } /* fa-flask-poison */
+.t6100:before { content:"\f48e"; value:6100; category:fa; } /* fa-syringe */
+
+
+.t6010:before { content:"\f5c9"; value:6010; category:fa; } /* fa-tooth */
+.t6011:before { content:"\f06e"; value:6011; category:fa; } /* fa-eye */
+.t6012:before { content:"\f5f0"; value:6012; category:fa; } /* fa-ear */
+.t6013:before { content:"\f604"; value:6013; category:fa; } /* fa-lungs */
+.t6014:before { content:"\f623"; value:6014; category:fa; } /* fa-stomach */
+.t6015:before { content:"\f21e"; value:6015; category:fa; } /* fa-heartbeat */
+.t6016:before { content:"\f5dc"; value:6016; category:fa; } /* fa-brain */
+.t6017:before { content:"\f256"; value:6017; category:fa; } /* fa-hand-paper */
+.t6018:before { content:"\f5fb"; value:6018; category:fa; } /* fa-kidneys */
+.t6019:before { content:"\f974"; value:6019; category:fa; } /* fa-virus */
+.t6200:before { content:"\f461"; value:6200; category:fa; } /* fa-allergies */
+
+
+.t6020:before { content:"\f2c2"; value:6020; category:fa; } /* fa-id-card */
+.t6021:before { content:"\f570"; value:6021; category:fa; } /* fa-file-invoice */
+.t6022:before { content:"\f573"; value:6022; category:fa; } /* fa-file-signature */
+.t6023:before { content:"\f733"; value:6023; category:fa; } /* fa-ballot-check */
+.t6024:before { content:"\f5ff"; value:6024; category:fa; } /* fa-layer-plus */
+.t6025:before { content:"\f572"; value:6025; category:fa; } /* fa-file-prescription */
+.t6026:before { content:"\f481"; value:6026; category:fa; } /* fa-notes-medical */
+.t6027:before { content:"\f478"; value:6027; category:fa; } /* fa-file-medical-alt */
+.t6028:before { content:"\f0e0"; value:6028; category:fa; } /* fa-envelope */
+.t6029:before { content:"\f552"; value:6029; category:fa; } /* fa-toolbox */
+.t6300:before { content:"\f3dd"; value:6300; category:fa; } /* fa-phone-slash */
+
+
+.t6030:before { content:"\f2d3"; value:6030; category:fa; } /* fa-times-square */
+.t6031:before { content:"\f7b9"; value:6031; category:fa; } /* fa-radiation */
+.t6032:before { content:"\f071"; value:6032; category:fa; } /* fa-exclamation-triangle */
+.t6033:before { content:"\f1fa"; value:6033; category:fa; } /* fa-at */
+.t6034:before { content:"\f33c"; value:6034; category:fa; } /* fa-arrow-square-up */
+.t6035:before { content:"\f60a"; value:6035; category:fa; } /* fa-map-marker-plus */
+.t6036:before { content:"\f146"; value:6036; category:fa; } /* fa-minus-square */
+.t6037:before { content:"\f28d"; value:6037; category:fa; } /* fa-stop-circle */
+.t6038:before { content:"\f12a"; value:6038; category:fa; } /* fa-exclamation */
+.t6039:before { content:"\f333"; value:6039; category:fa; } /* fa-calendar-edit */
+.t6400:before { content:"\f892"; value:6400; category:fa; } /* fa-sunglasses */
+
+
+.t6040:before { content:"\f0c4"; value:6040; category:fa; } /* fa-cut */
+.t6041:before { content:"\f5e3"; value:6041; category:fa; } /* fa-car-mechanic */
+.t6042:before { content:"\f61e"; value:6042; category:fa; } /* fa-scalpel-path */
+.t6043:before { content:"\f1fb"; value:6043; category:fa; } /* fa-eye-dropper */
+.t6044:before { content:"\f0f1"; value:6044; category:fa; } /* fa-stethoscope */
+.t6045:before { content:"\f03d"; value:6045; category:fa; } /* fa-video */
+.t6046:before { content:"\f591"; value:6046; category:fa; } /* fa-highlighter */
+.t6047:before { content:"\f485"; value:6047; category:fa; } /* fa-prescription-bottle */
+.t6048:before { content:"\f304"; value:6048; category:fa; } /* fa-pen */
+.t6049:before { content:"\f87c"; value:6049; category:fa; } /* fa-photo-video */
+.t6500:before { content:"\f0ad"; value:6500; category:fa; } /* fa-wrench */
+
+
+.t6050:before { content:"\f611"; value:6050; category:fa; } /* fa-monitor-heart-rate */
+.t6051:before { content:"\f2a0"; value:6051; category:fa; } /* fa-phone-volume */
+.t6052:before { content:"\f51c"; value:6052; category:fa; } /* fa-chalkboard-teacher */
+.t6053:before { content:"\f48b"; value:6053; category:fa; } /* fa-shipping-fast */
+.t6054:before { content:"\f0ae"; value:6054; category:fa; } /* fa-tasks */
+.t6055:before { content:"\f6e3"; value:6055; category:fa; } /* fa-hammer */
+.t6056:before { content:"\f4c4"; value:6056; category:fa; } /* fa-hands-helping */
+.t6057:before { content:"\f2b5"; value:6057; category:fa; } /* fa-handshake */
+.t6058:before { content:"\f496"; value:6058; category:fa; } /* fa-weight */
+.t6059:before { content:"\f963"; value:6059; category:fa; } /* fa-head-side-mask */
+.t6600:before { content:"\f728"; value:6600; category:fa; } /* fa-user-injured */
+
+
+.t6060:before { content:"\f21d"; value:6060; category:fa; } /* fa-street-view */
+.t6061:before { content:"\f007"; value:6061; category:fa; } /* fa-user */
+.t6062:before { content:"\f0c0"; value:6062; category:fa; } /* fa-users */
+.t6063:before { content:"\f508"; value:6063; category:fa; } /* fa-user-tie */
+.t6064:before { content:"\f182"; value:6064; category:fa; } /* fa-female */
+.t6065:before { content:"\f1ae"; value:6065; category:fa; } /* fa-child */
+.t6066:before { content:"\f77c"; value:6066; category:fa; } /* fa-baby */
+.t6067:before { content:"\f7bd"; value:6067; category:fa; } /* fa-restroom */
+.t6068:before { content:"\f500"; value:6068; category:fa; } /* fa-user-friends */
+.t6069:before { content:"\f968"; value:6069; category:fa; } /* fa-people-arrows */
+.t6700:before { content:"\f4fc"; value:6700; category:fa; } /* fa-user-check */
+
+
+
+/*
+	//			T I M E   B O X I N G
+	//
+
+*/
+
+.t5000:before { content:"\f5e4"; value:5000; category:fa; } /* fa-car-side */
+.t5001:before { content:"\f015"; value:5001; category:fa; } /* fa-home */
+.t5002:before { content:"\f47d"; value:5002; category:fa; } /* fa-hospital-alt */
+.t5003:before { content:"\f0f8"; value:5003; category:fa; } /* fa-hospital */
+.t5004:before { content:"\f6c0"; value:5004; category:fa; } /* fa-chair */
+.t5005:before { content:"\f4cf"; value:5005; category:fa; } /* fa-person-carry */
+.t5006:before { content:"\f487"; value:5006; category:fa; } /* fa-procedures */
+.t5007:before { content:"\f495"; value:5007; category:fa; } /* fa-warehouse-alt */
+.t5008:before { content:"\f549"; value:5008; category:fa; } /* fa-school */
+.t5009:before { content:"\f310"; value:5009; category:fa; } /* fa-inbox-in */
+.t5100:before { content:"\f311"; value:5100; category:fa; } /* fa-inbox-out */
+
+
+.t5010:before { content:"\f1ae"; value:5010; category:fa; } /* fa-child */
+.t5011:before { content:"\f77c"; value:5011; category:fa; } /* fa-baby */
+.t5012:before { content:"\f0c0"; value:5012; category:fa; } /* fa-users */
+.t5013:before { content:"\f508"; value:5013; category:fa; } /* fa-user-tie */
+.t5014:before { content:"\f500"; value:5014; category:fa; } /* fa-user-friends */
+.t5015:before { content:"\f0f0"; value:5015; category:fa; } /* fa-user-md */
+.t5016:before { content:"\f509"; value:5016; category:fa; } /* fa-users-cog */
+.t5017:before { content:"\f63d"; value:5017; category:fa; } /* fa-users-class */
+.t5018:before { content:"\f4fd"; value:5018; category:fa; } /* fa-user-clock */
+.t5019:before { content:"\f830"; value:5019; category:fa; } /* fa-users-medical */
+.t5200:before { content:"\f82d"; value:5100; category:fa; } /* fa-user-headset */
+
+
+.t5020:before { content:"\f756"; value:5020; category:fa; } /* fa-person-booth */
+.t5021:before { content:"\f6e3"; value:5021; category:fa; } /* fa-hammer */
+.t5022:before { content:"\f5e3"; value:5022; category:fa; } /* fa-car-mechanic */
+.t5023:before { content:"\f0fa"; value:5023; category:fa; } /* fa-medkit */
+.t5024:before { content:"\f0f1"; value:5024; category:fa; } /* fa-stethoscope */
+.t5025:before { content:"\f24e"; value:5025; category:fa; } /* fa-balance-scale */
+.t5026:before { content:"\f5bb"; value:5026; category:fa; } /* fa-spa */
+.t5027:before { content:"\f03d"; value:5027; category:fa; } /* fa-video */
+.t5028:before { content:"\f109"; value:5028; category:fa; } /* fa-laptop */
+.t5029:before { content:"\f8d6"; value:5029; category:fa; } /* fa-projector */
+.t5300:before { content:"\f5b6"; value:5300; category:fa; } /* fa-shuttle-van */
+
+
+.t5030:before { content:"\f252"; value:5030; category:fa; } /* fa-hourglass-half */
+.t5031:before { content:"\f04b"; value:5031; category:fa; } /* fa-play */
+.t5032:before { content:"\f04d"; value:5032; category:fa; } /* fa-stop */
+.t5033:before { content:"\f534"; value:5033; category:fa; } /* fa-infinity */
+.t5034:before { content:"\f04c"; value:5034; category:fa; } /* fa-pause */
+.t5035:before { content:"\f2f2"; value:5035; category:fa; } /* fa-stopwatch */
+.t5036:before { content:"\f2e1"; value:5036; category:fa; } /* fa-watch */
+.t5037:before { content:"\f021"; value:5037; category:fa; } /* fa-sync */
+.t5038:before { content:"\f017"; value:5038; category:fa; } /* fa-clock */
+.t5039:before { content:"\f01e"; value:5039; category:fa; } /* fa-redo */
+.t5400:before { content:"\f365"; value:5400; category:fa; } /* fa-repeat-1 */
+
+
+.t5040:before { content:"\f591"; value:5040; category:fa; } /* fa-highlighter */
+.t5041:before { content:"\f0f4"; value:5041; category:fa; } /* fa-coffee */
+.t5042:before { content:"\f51c"; value:5042; category:fa; } /* fa-chalkboard-teacher */
+.t5043:before { content:"\f79f"; value:5043; category:fa; } /* fa-glass-cheers */
+.t5044:before { content:"\f2a0"; value:5044; category:fa; } /* fa-phone-volume */
+.t5045:before { content:"\f3c2"; value:5045; category:fa; } /* fa-lock-open-alt */
+.t5046:before { content:"\f30d"; value:5046; category:fa; } /* fa-lock-alt */
+.t5047:before { content:"\f2b5"; value:5047; category:fa; } /* fa-handshake */
+.t5048:before { content:"\f4c2"; value:5048; category:fa; } /* fa-hands */
+.t5049:before { content:"\f074"; value:5049; category:fa; } /* fa-random */
+.t5500:before { content:"\f77c"; value:5500; category:fa; } /* fa-baby */
+
+
+.t5050:before { content:"\f1b8"; value:5050; category:fa; } /* fa-recycle */
+.t5051:before { content:"\f61f"; value:5051; category:fa; } /* fa-shapes */
+.t5052:before { content:"\f129"; value:5052; category:fa; } /* fa-info */
+.t5053:before { content:"\f071"; value:5053; category:fa; } /* fa-exclamation-triangle */
+.t5054:before { content:"\f671"; value:5054; category:fa; } /* fa-lightbulb-exclamation */
+.t5055:before { content:"\f05e"; value:5055; category:fa; } /* fa-ban */
+.t5056:before { content:"\f33c"; value:5056; category:fa; } /* fa-arrow-square-up */
+.t5057:before { content:"\f1fa"; value:5057; category:fa; } /* fa-at */
+.t5058:before { content:"\f0ae"; value:5058; category:fa; } /* fa-tasks */
+.t5059:before { content:"\f77f"; value:5059; category:fa; } /* fa-bells */
+.t5600:before { content:"\f4af"; value:5600; category:fa; } /* fa-comment-exclamation */
+
+/*
+	//			L O G I N S   ( tag visible in chat )
+	//
+	//          USER 1						USER'S							 		GENDER 									SMILEY 1							Symbols								Objects									FUN
+[{c:'fa fa-user',v:'7000'}			,{c:'fa fa-user-headset',v:'7010'}		,{c:'fa fa-user-friends',v:'7020'}		,{c:'fa fa-smile',v:'7030'}				,{c:'fa fa-heart',v:'7040'}		,{c:'fa fa-key',v:'7050'}			,{c:'fa fa-paw',v:'7060'}					],
+[{c:'fa fa-user-times',v:'7001'}	,{c:'fa fa-user-shield',v:'7011'}		,{c:'fa fa-users',v:'7021'}				,{c:'fa fa-grin',v:'7031'}				,{c:'fa fa-spade',v:'7041'}		,{c:'fa fa-sunglasses',v:'7051'}	,{c:'fa fa-anchor',v:'7061'}				],
+[{c:'fa fa-user-check',v:'7002'}	,{c:'fa fa-user-graduate',v:'7012'} 	,{c:'fa fa-users-class',v:'7022'}		,{c:'fa fa-grin-tongue-wink',v:'7032'}	,{c:'fa fa-diamond',v:'7042'}	,{c:'fa fa-cocktail',v:'7052'}		,{c:'fa fa-fish',v:'7062'}					],
+[{c:'fa fa-user-minus',v:'7003'}	,{c:'fa fa-user-md',v:'7013'}			,{c:'fa fa-users-cog',v:'7023'}			,{c:'fa fa-grin-beam',v:'7033'}			,{c:'fa fa-club',v:'7043'}		,{c:'fa fa-plane',v:'7053'}			,{c:'fa fa-at',v:'7063'}					],
+[{c:'fa fa-user-cog',v:'7004'}		,{c:'fa fa-user-visor',v:'7014'}		,{c:'fa fa-users-medical',v:'7024'}		,{c:'fa fa-grin-beam-sweat',v:'7034'}	,{c:'fa fa-hexagon',v:'7044'}	,{c:'fa fa-gem',v:'7054'}			,{c:'fa fa-gingerbread-man',v:'7064'}		],
+[{c:'fa fa-user-plus',v:'7005'}		,{c:'fa fa-user-chart',v:'7015'}		,{c:'fa fa-people-arrows',v:'7025'}		,{c:'fa fa-kiss-wink-heart',v:'7035'}	,{c:'fa fa-play',v:'7045'}		,{c:'fa fa-thumbtack',v:'7055'}		,{c:'fa fa-apple-alt',v:'7065'}				],
+[{c:'fa fa-user-tag',v:'7006'}		,{c:'fa fa-chalkboard-teacher',v:'7016'},{c:'fa fa-house-user',v:'7026'}		,{c:'fa fa-laugh-squint ',v:'7036'}		,{c:'fa fa-bookmark',v:'7046'}	,{c:'fa fa-paperclip',v:'7056'}		,{c:'fa fa-mask',v:'7066'}					],
+[{c:'fa fa-user-edit',v:'7007'}		,{c:'fa fa-user-tie',v:'7017'}			,{c:'fa fa-hospital-user',v:'7027'}		,{c:'fa fa-smile-beam',v:'7037'}		,{c:'fa fa-star',v:'7047'}		,{c:'fa fa-cube',v:'7057'}			,{c:'fa fa-infinity',v:'7067'}				],
+[{c:'fa fa-user-clock ',v:'7008'}	,{c:'fa fa-user-nurse',v:'7018'}		,{c:'fa fa-user-alien',v:'7028'}		,{c:'fa fa-smile-wink',v:'7038'}		,{c:'fa fa-comment',v:'7048'}	,{c:'fa fa-flower',v:'7058'}		,{c:'fa fa-spa',v:'7068'}					],
+[{c:'fa fa-user-crown ',v:'7009'}	,{c:'fa fa-user-cowboy',v:'7019'}		,{c:'fa fa-alien',v:'7029'}				,{c:'fa fa-grin-tongue',v:'7039'}		,{c:'fa fa-omega',v:'7049'}		,{c:'fa fa-snowflake',v:'7059'}		,{c:'fa fa-pencil',v:'7069'}				]
+
+*/
+
+
+.t7000:before { content:"\f007"; value:7000; category:fa; } /* fa-user */
+.t7001:before { content:"\f235"; value:7001; category:fa; } /* fa-user-times */
+.t7002:before { content:"\f4fc"; value:7002; category:fa; } /* fa-user-check */
+.t7003:before { content:"\f503"; value:7003; category:fa; } /* fa-user-minus */
+.t7004:before { content:"\f4fe"; value:7004; category:fa; } /* fa-user-cog */
+.t7005:before { content:"\f234"; value:7005; category:fa; } /* fa-user-plus */
+.t7006:before { content:"\f507"; value:7006; category:fa; } /* fa-user-tag */
+.t7007:before { content:"\f4ff"; value:7007; category:fa; } /* fa-user-edit */
+.t7008:before { content:"\f4fd"; value:7008; category:fa; } /* fa-user-clock */
+.t7009:before { content:"\f6a4"; value:7009; category:fa; } /* fa-user-crown */
+
+
+.t7010:before { content:"\f82d"; value:7010; category:fa; } /* fa-user-headset */
+.t7011:before { content:"\f505"; value:7011; category:fa; } /* fa-user-shield */
+.t7012:before { content:"\f501"; value:7012; category:fa; } /* fa-user-graduate */
+.t7013:before { content:"\f0f0"; value:7013; category:fa; } /* fa-user-md */
+.t7014:before { content:"\f94c"; value:7014; category:fa; } /* fa-user-visor */
+.t7015:before { content:"\f6a3"; value:7015; category:fa; } /* fa-user-chart */
+.t7016:before { content:"\f51c"; value:7016; category:fa; } /* fa-chalkboard-teacher */
+.t7017:before { content:"\f508"; value:7017; category:fa; } /* fa-user-tie */
+.t7018:before { content:"\f82f"; value:7018; category:fa; } /* fa-user-nurse */
+.t7019:before { content:"\f8ea"; value:7019; category:fa; } /* fa-user-cowboy */
+
+
+.t7020:before { content:"\f500"; value:7020; category:fa; } /* fa-user-friends */
+.t7021:before { content:"\f0c0"; value:7021; category:fa; } /* fa-users */
+.t7022:before { content:"\f63d"; value:7022; category:fa; } /* fa-users-class */
+.t7023:before { content:"\f509"; value:7023; category:fa; } /* fa-users-cog */
+.t7024:before { content:"\f830"; value:7024; category:fa; } /* fa-users-medical */
+.t7025:before { content:"\f968"; value:7025; category:fa; } /* fa-people-arrows */
+.t7026:before { content:"\f965"; value:7026; category:fa; } /* fa-house-user */
+.t7027:before { content:"\f80d"; value:7027; category:fa; } /* fa-hospital-user */
+.t7028:before { content:"\f94a"; value:7028; category:fa; } /* fa-user-alien */
+.t7029:before { content:"\f8f5"; value:7029; category:fa; } /* fa-alien */
+
+
+.t7030:before { content:"\f118"; value:7030; category:fa; } /* fa-smile */
+.t7031:before { content:"\f580"; value:7031; category:fa; } /* fa-grin */
+.t7032:before { content:"\f58b"; value:7032; category:fa; } /* fa-grin-tongue-wink */
+.t7033:before { content:"\f582"; value:7033; category:fa; } /* fa-grin-beam */
+.t7034:before { content:"\f583"; value:7034; category:fa; } /* fa-grin-beam-sweat */
+.t7035:before { content:"\f598"; value:7035; category:fa; } /* fa-kiss-wink-heart */
+.t7036:before { content:"\f59b"; value:7036; category:fa; } /* fa-laugh-squint */
+.t7037:before { content:"\f5b8"; value:7037; category:fa; } /* fa-smile-beam */
+.t7038:before { content:"\f4da"; value:7038; category:fa; } /* fa-smile-wink */
+.t7039:before { content:"\f589"; value:7039; category:fa; } /* fa-grin-tongue */
+
+
+.t7040:before { content:"\f004"; value:7040; category:fa; } /* fa-heart */
+.t7041:before { content:"\f2f4"; value:7041; category:fa; } /* fa-spade */
+.t7042:before { content:"\f219"; value:7042; category:fa; } /* fa-diamond */
+.t7043:before { content:"\f327"; value:7043; category:fa; } /* fa-club */
+.t7044:before { content:"\f312"; value:7044; category:fa; } /* fa-hexagon */
+.t7045:before { content:"\f04b"; value:7045; category:fa; } /* fa-play */
+.t7046:before { content:"\f02e"; value:7046; category:fa; } /* fa-bookmark */
+.t7047:before { content:"\f005"; value:7047; category:fa; } /* fa-star */
+.t7048:before { content:"\f075"; value:7048; category:fa; } /* fa-comment */
+.t7049:before { content:"\f67a"; value:7049; category:fa; } /* fa-omega */
+
+
+.t7050:before { content:"\f084"; value:7050; category:fa; } /* fa-key */
+.t7051:before { content:"\f892"; value:7051; category:fa; } /* fa-sunglasses */
+.t7052:before { content:"\f561"; value:7052; category:fa; } /* fa-cocktail */
+.t7053:before { content:"\f072"; value:7053; category:fa; } /* fa-plane */
+.t7054:before { content:"\f3a5"; value:7054; category:fa; } /* fa-gem */
+.t7055:before { content:"\f08d"; value:7055; category:fa; } /* fa-thumbtack */
+.t7056:before { content:"\f0c6"; value:7056; category:fa; } /* fa-paperclip */
+.t7057:before { content:"\f1b2"; value:7057; category:fa; } /* fa-cube */
+.t7058:before { content:"\f7ff"; value:7058; category:fa; } /* fa-flower */
+.t7059:before { content:"\f2dc"; value:7059; category:fa; } /* fa-snowflake */
+
+
+.t7060:before { content:"\f1b0"; value:7060; category:fa; } /* fa-paw */
+.t7061:before { content:"\f13d"; value:7061; category:fa; } /* fa-anchor */
+.t7062:before { content:"\f578"; value:7062; category:fa; } /* fa-fish */
+.t7063:before { content:"\f1fa"; value:7063; category:fa; } /* fa-at */
+.t7064:before { content:"\f79d"; value:7064; category:fa; } /* fa-gingerbread-man */
+.t7065:before { content:"\f5d1"; value:7065; category:fa; } /* fa-apple-alt */
+.t7066:before { content:"\f6fa"; value:7066; category:fa; } /* fa-mask */
+.t7067:before { content:"\f534"; value:7067; category:fa; } /* fa-infinity */
+.t7068:before { content:"\f5bb"; value:7068; category:fa; } /* fa-spa */
+.t7069:before { content:"\f040"; value:7069; category:fa; } /* fa-pencil */
+
+
+.t7070:before { content:"\f5c9"; value:7070; category:fa; } /* fa-tooth */
+.t7071:before { content:"\f0fa"; value:7071; category:fa; } /* fa-medkit */
+.t7072:before { content:"\f0c4"; value:7072; category:fa; } /* fa-cut */
+.t7073:before { content:"\f2a8"; value:7073; category:fa; } /* fa-low-vision */
+.t7074:before { content:"\f515"; value:7074; category:fa; } /* fa-balance-scale-left */
+.t7075:before { content:"\f5e3"; value:7075; category:fa; } /* fa-car-mechanic */
+.t7076:before { content:"\f193"; value:7076; category:fa; } /* fa-wheelchair */
+.t7077:before { content:"\f6ea"; value:7077; category:fa; } /* fa-head-vr */
+.t7078:before { content:"\f530"; value:7078; category:fa; } /* fa-glasses */
+.t7079:before { content:"\f21b"; value:7079; category:fa; } /* fa-user-secret */
+
+
+
+
+
+
+
+
+

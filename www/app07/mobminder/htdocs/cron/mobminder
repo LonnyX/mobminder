@@ -1,0 +1,29 @@
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+MAILTO="pascal@mobminder.com"
+
+# every midnite
+0 0 * * * root [ -f /home/master.info ] && [ -x /usr/bin/php5 ] && [ -f /var/www/mobminder/htdocs/cron/midnite.php ] && /usr/bin/php5 /var/www/mobminder/htdocs/cron/midnite.php >> /var/log/mobminder-crons/midnite.log 2>&1
+
+# every hour (SMS traffic)
+0 * * * *  root [ -f /home/master.info ] && [ -x /usr/bin/php5 ] && [ -f /var/www/mobminder/htdocs/cron/hourly.php ] && /usr/bin/php5 /var/www/mobminder/htdocs/cron/hourly.php >> /var/log/mobminder-crons/hourly.log 2>&1
+
+# every hour and a half (Visitor's birthday)
+30 * * * *  root [ -f /home/master.info ] && [ -x /usr/bin/php5 ] && [ -f /var/www/mobminder/htdocs/cron/halfs.php ] && /usr/bin/php5 /var/www/mobminder/htdocs/cron/halfs.php >> /var/log/mobminder-crons/halfs.log 2>&1
+
+# every ten minutes (connections monitoring)
+9,19,29,39,49,59 * * * * root [ -f /home/master.info ] && [ -x /usr/bin/php5 ] && [ -f /var/www/mobminder/htdocs/cron/tens.php ] && /usr/bin/php5 /var/www/mobminder/htdocs/cron/tens.php >> /var/log/mobminder-crons/tens.log 2>&1
+
+# every five minutes (H-x appointments notifications)
+0,5,10,15,20,25,30,35,40,45,50,55 * * * *  root [ -f /home/master.info ] && [ -x /usr/bin/php5 ] && [ -f /var/www/mobminder/htdocs/cron/fivy.php ] && /usr/bin/php5 /var/www/mobminder/htdocs/cron/fivy.php >> /var/log/mobminder-crons/fivy.log 2>&1
+
+# every minute (delayed notifications)
+* * * * * root [ -f /home/master.info ] && [ -x /usr/bin/php5 ] && [ -f /var/www/mobminder/htdocs/cron/minute.php ] && /usr/bin/php5 /var/www/mobminder/htdocs/cron/minute.php >> /var/log/mobminder-crons/minute.log 2>&1
+
+# every week on sunday at 1am (archiving)
+0 1 * * Sun   root [ -f /home/master.info ] && [ -x /usr/bin/php5 ] && [ -f /var/www/mobminder/htdocs/cron/weekly.php ] && /usr/bin/php5 /var/www/mobminder/htdocs/cron/weekly.php >> /var/log/mobminder-crons/weekly.log 2>&1
+
+# every week on sunday at 3am (stats generation)
+0 3 * * Sun   root [ -f /home/master.info ] && [ -x /usr/bin/php5 ] && [ -f /var/www/mobminder/htdocs/cron/stats.php ] && /usr/bin/php5 /var/www/mobminder/htdocs/cron/stats.php >> /var/log/mobminder-crons/stats.log 2>&1
+
+

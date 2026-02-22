@@ -1,0 +1,335 @@
+﻿
+/*   CSS FOR SMALL DEVICES INTERFACE   */
+
+* {
+	-webkit-box-sizing: border-box; /* iScroll */
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html, body, #wrapper { margin:0; padding:0;  }
+
+html { height:100%; width:100%; overflow:hidden; position:fixed; } /* position: fixed prevents complete document bouncing is full screen on IOS (*bn1*) */
+body { height:100%; width:100%; overflow:hidden; -webkit-overflow-scrolling:touch; }
+
+#wrapper { height:100%; position:relative; }
+#topper, #viewport { width:100%; position:absolute; }
+#topper { height:2.5em; } #viewport { top:2.5em; bottom:0; } /* watch the height */
+
+#topper { background:black; color:white; }
+
+/* general sizing */
+
+body, ul, li { padding: 0; margin: 0; border: 0; } /* iScroll */
+
+html { font-size:12pt; line-height: 1.2em; } /* rules the overall font-size except input size */
+/* h2 { font-size:1.0em; color:steelblue; 	font-weight:normal;	margin:0; padding:0; 	text-align:center; 	 }*/
+
+
+h1 { line-height:2.2em; font-size:1.1em; font-weight:normal; margin:0; padding-left:1em; text-align:left; }
+h1.modal {	width:100%; max-width:100%; margin:0; padding:0; text-align:center; font-size:1.3em; color:#85A5BF; font-weight:normal; white-space:nowrap; overflow:hidden; }
+h2 {	margin:0; text-align:left; font-size: 1.4em; color: #a4b357; font-weight: normal }									
+h3 {	margin:0; text-align:left; font-size:1.2em; color:#85A5BF; font-weight: normal; padding: 2em 0 0.5em 0; }
+
+input, textarea { font-size: 1em; }
+
+div.e-bullet { font-size:2em; }
+div.e-bullet-caption { font-size:1.1em; }
+
+span.topper-surfer { padding-left:1em; font-size:80%; }
+
+html { -ms-touch-action: none; } /* iScroll */
+
+/* global rules */
+body { 
+	color: #444;
+	font-family: verdana, Arial, Helvetica, sans-serif;
+	background: white; 
+	position: relative;
+	-webkit-font-smoothing:antialiased;
+	/* overflow: hidden; /* iScroll - this is important to prevent the whole page to bounce (bullshit :) */
+}
+
+
+/* viewport Carousel */
+
+
+.iScroller {
+	position: absolute;
+	/*z-index: 1;*/
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+	background-color: #red;
+}
+
+.iSlide {
+	text-align:center;
+	position:relative; /* so you can inbed an absolute positionning div that relies on top:0, bottom0, width:100%, like P_Vertical would display */
+	/* border:2px solid blue;*/
+}
+
+.slide-footer { background:transparent; box-shadow: inset 0em -1em 1em 0em rgba(255, 255, 255, 1); }
+
+
+
+
+/* css for C_iFIELD & C_iNOTE */
+
+input, textarea {
+	color: /*red;*/ #575; /* note that the color specified for the body does not apply to input elements, hence this statement */
+	background-color: white;
+}
+
+input, textarea, div.like-input { 
+	padding-left:0.5em; 
+	text-align: left;
+	
+	font-family: verdana, Arial, Helvetica, sans-serif; /* does NOT inherit body setting, MUST stay explicit here*/
+	
+	border-radius:3px;
+    border:1px solid rgba(0,0,0, 0.2);
+	padding: 0.1em 0.5em; /* same padding in buttons!! <> so they have equal height */ 
+	
+	outline:none;
+    transition: box-shadow 0.25s ease-in-out;
+    -webkit-transition: box-shadow 0.25s ease-in-out;
+    -moz-transition: box-shadow 0.25s ease-in-out;
+
+	-webkit-appearance: none; /* removes the inner shadow on mobile devices on Safari */
+} 
+
+input:-moz-placeholder { color:#999; } ::-webkit-input-placeholder  { color:#999; }
+
+/* input[type="text"] { margin: 0 1em 1em 0 } */
+textarea { margin:0 auto; resize:none; overflow-y:auto; width:90%; }
+
+
+table { border-collapse:collapse; border:none; margin:0; padding:0; border-spacing: 0; }
+table td { padding:0; }
+
+
+
+p { margin:0; }
+
+/* span, a, p, div, input, textarea {font-size:inherit;}  looking for the reason why iphone treats font size strangely */ 
+
+
+tr.resapop-row { border-top:.1em solid transparent; text-align:left;  }
+tr.resapop-row td { padding-right:0; white-space:normal; }
+tr.resapop-row.nextitem { border-top:.9em solid transparent; }
+tr.resapop-row.note { font-size:90%; color:#999; }
+tr.resapop-row.workcodes { font-size:95%; color:#777; }
+tr.resapop-row div.bullet { display:inline-block; }
+tr.resapop-row a.click-default { padding:0 2em 0 0; }
+
+
+table.e-coords { margin-right:0px; color:steelblue; font-weight:bold; }
+table.e-coords tr > td:nth-child(1) { text-align:left; }
+table.e-coords tr > td:nth-child(2) { text-align:right; padding-left:3em }
+
+
+.e-link { font-size:90%; }
+
+div.container {	max-width:900px; margin:0 auto; padding:0; /*border:1px solid blue;*/  } /* !! re-defined @media */
+
+div.tab-container { display:block; margin: 0em 1em; /*border:2px solid yellow;*/ overflow:hidden; }
+div.step-pane { width:100%; max-width:900px; margin:0 auto 0 auto; } /* !! re-defined @media */
+	
+article{ margin-bottom: 1em; box-sizing:border-box;	-moz-box-sizing:border-box; -webkit-box-sizing:border-box; text-align: center; }
+article img{ display: block; margin:0 auto; }
+
+
+.fixed{float:none} .rfloat{float:right} .lfloat{float:left} .endfloat{clear:right}
+.left{text-align:left} .right{text-align:right}
+	
+/*
+.e-title { text-align:center; border:1px solid cadetblue; border-radius:0.5em; padding:0.5em }
+.e-note { text-align:left; border:1px solid cadetblue; border-radius:0.5em; padding:0.5em }
+.e-msg { margin:.5em 0; }
+.e-warner { color:firebrick; font-weight:bold; }
+
+section.e-bullet { padding-left:1em; }
+
+div.e-bullet { 
+	display:table-cell; vertical-align:middle; height:2em; width:2em; text-align:center;
+	background-color:steelblue; font-weight:bold; color:white; border-radius:3em;
+}
+
+
+div.e-bullet-caption { display:table-cell; vertical-align:middle; color:steelblue; font-weight:bold; padding-left:1em; }
+div.e-step { margin-top:1em; }
+
+*/
+
+div.modal-busy { /* overlays the planning screen */
+	border-radius: 20px 0px 20px 0px; /* must stay equal to .modal-inset */
+	background: rgba(255, 255, 255, 0.8) url(spinner-128px.gif) center center no-repeat;
+}
+div.modal-button { font-size:1.5em; } /* cartouche buttons located in modal headers */
+
+
+/* C_iFIELD for touch devices */
+
+
+div.avatar {  /* is the static user interface that replaces the editable one from the web App */
+	/* border:1px solid red; */
+	line-height:140%;
+	min-height:1.6em;
+	min-width:16em;
+}
+
+/* td.label { font-size:70%; }*/
+
+.centered { text-align:center; }
+.disabled { opacity: 0.2; filter:alpha(opacity=20); cursor:default; } /* grays out */
+
+
+/* css for C_iCLIK */
+
+div.touch-in, td.touch-in, input.touch-in, a.touch-in, span.touch-in { 
+	/* when the .click element is pushed-in, this rule will overule the one set in .click (*TRAN1) */
+	-webkit-transition-duration:0s;
+	-moz-transition-duration:0s;
+	transition-duration:0s;
+	background-color: rgba(224, 239, 117, 0.7)!important;
+}
+
+.textcolor-light { color:#999; font-size:.7em; } /* applies to picker headers when they lay on the remote pad */
+	input:-moz-placeholder { color:#999; } ::-webkit-input-placeholder  { color:#999; }
+
+
+
+
+
+/* css for C_iBUTTON */
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; } /* removes the ugly dotted gray line when element gets the focus */
+.action, .e-button { background-color:steelblue; font-weight:bold; color:white; }
+
+.button { cursor:pointer; text-align:center; border-radius:0.2em; border:1px solid rgba(0,0,0, 0.1); }
+	textarea.button { vertical-align:middle; display:inline-block; }
+	
+.button.button-busy { background: url(loading.gif) center center no-repeat; }
+	
+
+
+	
+	
+/* css for C_iLABEL and C_iMENU */
+
+table.menu-table td.menu-label { vertical-align:center; padding-left:1em; }
+	body.mouse table.menu-table td.menu-label { padding-right:2em; }
+	body.mouse table.menu-table.centered td.menu-label { padding:0 0 0 0; } /* e.g. ampm weekdays */
+
+table.menu-table td.menu-label.highlight { background:orange;  /* (*TRAN1) */
+	transition-property:background; transition-duration:0.1s; transition-timing-function:cubic-bezier(0, 1, 0, 1);
+}
+table.menu-table td.menu-label.selected { font-weight:bold;  }
+table.menu-table td.menu-label.section { font-weight:bold; pointer-events:none; } /* section separator */
+
+
+
+
+
+/* css for C_iSLIDE */
+
+.slider-wrappy 	{ border:1px solid silver; width:99%; }
+.slider-drawer 	{ box-shadow: inset 0px 10px 10px rgba(255, 255, 255, 0.3), inset -0px -10px 10px rgba(255, 255, 255, 0.3); }
+.slider-above 	{ background: #EEE; 	}
+.slider-under 	{ background:orange; 	}
+.slider-busy, div.click.slider-busy:hover 	{ background: rgba(255, 255, 255, 0.8); }
+
+
+
+/* css for C_iTIP */
+
+	/* generic for all tooltips: */
+#tipInset {
+	padding: 0.2em 1em;
+	/* box-shadow: inset 0px 10px 10px rgba(255, 255, 255, 0.3), inset -0px -10px 10px rgba(255, 255, 255, 0.3); */
+}
+#tipOutset { box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.3); display:block; }
+
+
+
+/* css for C_iSLOT */
+
+table.slots tr { vertical-align:top; border-top: 1px dotted rgba(0,0,0,0.3); }
+table.slots td { padding:0 0 1em 0;  }
+table.slots span { line-height: 160%; }
+table.slots a { padding:0 0.7em 0 0; }
+
+table.v-coords tr td { padding:0.5em 2em 0 0; }
+
+
+/* css for C_iDP */
+
+td.sDP-button { width:3em; height:2em; cursor:pointer; vertical-align:middle; }
+td.sDP-date { font-weight:bold; }
+div.backgnd-light { background:rgba(0,0,0,.05); }
+
+div.busy { background: url(spinner-64px.gif) center center no-repeat; } /* when bouncing up or down */
+
+
+table.dpicker-month th.dpicker-monthname {  color:silver; letter-spacing:+0.05em; }
+table.dpicker-month td.selectday.today, .dpicker-month td.selectday { border:1px solid #7595AF; color: #7595AF!important; font-weight:bold; }
+
+table.dpicker-month td { padding:.2em .2em; } /* make it wide enough for your big fingers */
+body.small table.dpicker-month td { padding:.3em .4em; } /* make it even wider on small screen */
+
+
+
+table.dpicker-month.todaymonth th.dpicker-monthname ,
+table.dpicker-month.todaymonth th.dpicker-weeknumber.today,
+table.dpicker-month td.dpicker-date.today,
+	.mindertext { color:#a4b357; font-weight:bold; } /* middle lime  for text on white background*/
+
+
+
+
+/* ============================================================= */
+/*             scaling to be device responsive                   */
+
+#topper { background:green; }
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 2)  /* iPad retina landscape */ 
+{
+	#topper { background:purple; }	
+}	
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2)  /* iPad retina portrait */ 
+{
+	#topper { background:lightblue; }	
+}
+
+
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation:landscape) /* iPhone in landscape */
+{	
+
+	#topper { background:red; }
+	
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) /* iPhone in portrait  */
+{	
+
+	#topper { background:orange; }
+	
+}
+

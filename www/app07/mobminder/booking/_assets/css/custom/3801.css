@@ -1,0 +1,31 @@
+
+/* 3801 Medeo - Fugis - SW plomberie */
+
+body.c3801 { background: white;  }
+
+body.c3801 h1, h2, div.e-bullet-caption { color:rgb(0,136,198); }
+body.c3801 div.e-bullet, input.e-button { background:rgb(0,136,198);  }
+
+body.c3801 .action {  } /* this is the orange on buttons */
+body.c3801 .e-button {  }
+body.c3801 section.s-h1 { margin:0; padding:1em 0;}
+	body.c3801 section.s-h1 h1 { margin:0; }
+
+body.c3801 section.s-img { padding:1em; margin-top:0; }
+	body.c3801 section.s-img div { padding:0; }
+		body.c3801 section.s-img div img { max-height:15em !important; }
+	
+body.c3801 section.s-info  { background:white; padding:1em;  }
+
+body.c3801 section.s-action {  }
+body.c3801 section.s-directions { }
+body.c3801 section.s-footer, 
+	body.c3801 section.s-h1, 
+	body.c3801 section.s-img
+	{ background:white;  }
+
+body.c3801 section.s-footer { margin-top:10em; } 
+	
+body.c3801 .e-msg-warning { color:rgb(0,136,198); }
+
+

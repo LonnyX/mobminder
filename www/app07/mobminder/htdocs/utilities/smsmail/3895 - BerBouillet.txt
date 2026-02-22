@@ -1,0 +1,12 @@
+<french>{dear} {gender} {lname},
+
+Le Dr. Bernard BOUILLET, Chirurgien Orthopédiste, vous informe de l'ouverture de son nouveau Cabinet de Consultation au 264, Avenue de Broqueville, 1200 Bruxelles.
+
+Les consultations à Lambermont, Delta, Solbosch et Plasky restent inchangées.
+
+Contact et RDV au 027334931
+
+Cordialement.
+
+
+(SVP ne répondez pas à ce SMS, utilisez uniquement le 027334931)</french>

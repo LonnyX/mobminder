@@ -1,0 +1,5 @@
+{
+    "require": {
+        "cronofy/cronofy": "v0.13.5"
+    }
+}

@@ -1,0 +1,1878 @@
+﻿
+
+/* some global handy classes */
+
+blink.warning { font-size:80%; letter-spacing:-0.1em; }
+
+.bigger, td.label.bigger { font-size:1.2em; }
+.bold { font-weight:bolder; }
+.notbold { font-weight:normal; }
+.strong { font-size:1.2em; font-weight:bold; }
+.top { vertical-align:top; }
+.right { text-align:right; } div.right { margin: 0 0 0 auto; text-align:right; }
+
+td.pad, p.pad, li.pad { padding-bottom:1em; } div.pad { margin-bottom:1em!important; }
+td.padplus, p.padplus, li.padplus { padding-bottom:2em; } div.padplus { margin-bottom:2em!important; }
+td.padair, p.padair, li.padair { padding-bottom:3em; } div.padair { margin-bottom:3em!important; }
+td.padmax, p.padmax, li.padmax { padding-bottom:4em; } div.padmax { margin-bottom:4em!important; }
+
+.airup { margin-top: 1em; }
+.airtop { margin-top: 2em; }
+.airtopmax { margin-top: 4em; }
+.airunder { margin-bottom: 1em; }
+
+td.vtop { vertical-align:top; }
+td.vbottom { vertical-align:bottom; }
+.wide100 { width:100%; }
+.wide90 { width:100%; margin-left:auto; margin-right:auto; }
+.pad-top { padding-top:1em; }
+
+table.centered { margin-left:auto; margin-right:auto; }
+.hand { cursor:pointer; }
+.overead { letter-spacing:1px; }
+
+.fade-bright { background-color: rgba(255, 255, 255, 0.6) }
+.fade-shade { background-color: rgba(0, 0, 0, 0.05) }
+
+.vmarged { margin-top:2em; margin-bottom:2em; }
+
+
+div.touch-in, td.touch-in:not(.idle), input.touch-in, a.touch-in, span.touch-in { /* see also (*ic01*) */
+	transition-duration:0s;
+	/* background-color: white!important; */
+	color:white!important;
+	& > * { color:white!important; opacity:1;  } /* because in some structures, the div.fa is nested inside a td.click */
+}
+
+
+
+.click-default { white-space:nowrap; }
+body.mouse .click-default { padding:0 0.5em; } 
+body.touch .click-default { padding:0 0.6em; }
+
+.showout .click { /* that is highlighting anything clickable, when hovering the blue help ? interrogation point  */
+	background:rgba(195,226,80, 0.2); box-shadow: inset 0px 0px 0px 1px rgba(var(--mob-blue-bckgr),.4); transition:background-color .2s cubic-bezier(.5, 0, 0, 1), box-shadow 1s ease-out;
+} 
+
+
+div.touch-in.touch-red, 	body.mouse div.click.touch-red:hover 	{ background-color: rgba(204, 49, 39, 0.8)!important; color:white; } /* this is used by buttons */
+div.touch-in.touch-green , 	body.mouse div.click.touch-green:hover 		{ background-color: rgba(204, 229, 97, 1)!important; color:black;}
+div.touch-in.touch-black, 	body.mouse div.click.touch-black:hover  	{ background-color: rgba(0, 0, 0, 0.6)!important; color:white; }
+div.touch-in.touch-orange, 	body.mouse div.click.touch-orange:hover  	{ background-color: rgba(255, 185, 100, 1)!important; color:white; }
+div.touch-in.touch-blue, 	body.mouse div.click.touch-blue:hover 		{ background-color: rgba(177, 177, 232, 0.7)!important; color:black; }
+div.touch-in.touch-visitblue, 	body.mouse div.click.touch-visitblue:hover  	{ background-color: var(--mob-blue-thick)!important; color:white; }
+
+	
+/* C_iONOFF  */
+
+div.cursor { 
+	font-size:1.4em; min-height:1em;
+	background-color:white; border-left:1px solid rgba(0 0 0 / 0.2); 
+	margin-left:auto; margin-right:0;
+	border-radius:1em 0em 0em 1em;
+	
+	transition-property:width; transition-duration:.2s; transition-timing-function:ease;
+	width:1em; /* corresponds to ON state */
+}
+	body.touch div.cursor { font-size:1.5em; }
+div.switch { 
+	position:relative; top:.2em;
+			border-radius:1em 1em 1em 1em;
+			display:inline-block; width:4em;
+			overflow: hidden;
+	transition-property:background-color; transition-duration:1.5s; transition-timing-function:cubic-bezier(0, 0, 2, 2);	
+	background-color:#FFFFFF; transition-delay:.31s;
+}
+div.switch.switch-on  { background-color:#c2e249; }
+div.switch.switch-on::after { /* not displayed when printing */
+	content: ""; 
+	position:absolute; inset:0;
+	background: linear-gradient(to bottom, transparent 0%, transparent 20%, rgba(255,255,255,.20) 50%, transparent 90%, rgba(150,150,150,.10) 100%);
+}
+
+div.switch.switch-on.orange  { background-color:orange; }
+div.switch.switch-off div.cursor { width:100%; border-left:1px solid transparent; } /* corresponds to OFF state */
+
+
+
+/* C_iRPOP  */
+table.resapop-table tr.resapop-row { border-left:1em solid transparent; }
+table.resapop-table tr.resapop-row:hover, table.resapop-table tr.resapop-row:nth-child(odd):hover { 
+	background: linear-gradient( to right, rgba(164, 179, 87, 0.05) 0%, rgba(164, 179, 87, 0.3) 10%, rgba(164, 179, 87, 0.1) 80%, rgba(164, 179, 87, 0.03) 100% );
+}
+table.resapop-table tr.resapop-row th { padding-right:2em; text-align:left; white-space:nowrap; font-weight:normal; }
+table.resapop-table tr.resapop-row th { color:#AAA; font-size:80%; padding-bottom:0.6em; }
+table.resapop-table tr.resapop-row td { padding-bottom:0.2em; }
+table.resapop-table tr.resapop-row td.bullet { padding-right:0em; }
+table.resapop-table tr.resapop-row.resa-deleted td { color:#CCC; }
+
+table.resapop-table { min-width:80%; max-width:98%; margin:0 auto; }
+table.resapop-table tr.resapop-row td { vertical-align:top; padding-right:1em; white-space:normal; text-align:left; padding-bottom:.3em; padding-top:.3em; }
+table.resapop-table tr.resapop-row:nth-child(odd), table.resapop-table tr.resapop-row:nth-child(1):hover { 
+	/* content: "";  */
+	/* position:absolute; inset:0; */
+	background: linear-gradient( to right, #00000003 0%, #0000000A 30%, #00000006 80%, #00000001 100% );
+}
+table.resapop-table a.click { padding:.2em .6em; }
+
+/* css for C_iLABEL and C_iMENU */
+
+table.menu-table td.menu-label { vertical-align:middle; padding:0 1em 1px 1em; box-sizing:border-box; white-space:nowrap; max-width:42em; overflow:clip;  }
+	body.mouse table.menu-table td.menu-label {  } /* (*mt02*) */
+	body.mouse table.menu-table.actioncut td.menu-label { padding:.5em 1em .5em 1em; } /* (*mt02*) */
+	body.mouse table.menu-table.centered td.menu-label { padding:0 .1em; line-height:1.6em; } /* e.g. ampm weekdays, see also (*cs01*) */
+
+table.menu-table td.menu-label.highlight { background:orange;  /* (*TRAN1) */
+	padding-left:3em; border-bottom:1px solid white;
+	transition-property:background;
+	transition-duration:0.1s; 
+	transition-timing-function:cubic-bezier(0, 1, 0, 1);
+}
+table.menu-table td.menu-label.selected { font-weight:bold;  }
+body.mouse table.menu-table td.menu-label.section { font-weight:bold; padding:1em 0 .5em .8em; pointer-events:none; } /* section separator */
+body.mouse table.menu-table td.menu-label.section.addresslist_section { font-size:1.4em; padding:.6em 1em .4em .4em; } /* section separator */
+body.mouse table.menu-table td.menu-label.click.section { background-color:transparent; }
+body.mouse table.menu-table td.menu-label.click.section:hover { cursor:default; }
+
+table.menu-table td.menu-label i, /* used to force some sorting order, see (*ac02*) replace display:none; with color:red so you see what it really makes */
+	table.cresta-table div.cresta-label i {  display:none; } /* after selection from the menu, the cresta display should also hide the sorter tag  */
+
+
+body.mouse table.menu-table.backoptions td.menu-label { padding:.5em 2em; }
+
+
+/* Setting line-height for different screens */
+
+body.mouse table.menu-table td.menu-label, 
+	body.mouse table.cresta-table td { font-size: 100%; line-height:1.5em; }
+
+body.touch table.menu-table td.menu-label, 
+	body.touch table.cresta-table td { font-size: 100%; line-height:1.6em; }
+
+body.small-device 	table.menu-table td.menu-label, 
+	body.small-device 	table.cresta-table td { line-height:1.5em; }
+
+			
+
+b.match { color: dodgerblue; }  /* <b></b> tags highlight the matching digits in AutoComplete drop list, see functions inlabel() and subset() */
+
+.staff-layout { margin: 0 auto; } /* the table will x-center in the content div */
+
+
+
+/* css for C_iTEM and C_iCRESTA - see (*C01*) */
+
+
+table.cresta-table 	{ vertical-align:middle; /*margin-bottom:1em;*/ text-align:left; }
+table.cresta-table td 	{ /* border:1px solid red; */ max-width:640px; } /* this max-width limits the width of visitor display on M_RESA and R_search */
+
+	
+table.cresta-table.flipped	{  }
+table.cresta-table.flipped td 	{ width:10em; text-align:right; }
+
+
+.disabled { opacity:0.35; cursor: default; } /* grays out */
+
+
+
+table.cresta-table 		td > div { display:table-row; line-height:1.6em; } /* for C_iAMPM, the same height must be set here (*cs01*) */
+table.cresta-table 		td > div > div { display:table-cell; } /* this is the way we realize full alignment of the insider div's which are the div.ruby and the div.cresta-label */
+
+table.cresta-table 		td > div 			> div.cresta-label 	{  vertical-align:middle; white-space:nowrap; padding-left:.2em; padding-right:1em; }
+table.cresta-table 		td > div 			> div.cresta-label.padder 	{ visibility:hidden; font-weight:bold; position:relative; z-index:-1; }
+table.cresta-table 		td > div.selected 	> div.cresta-label 	{ font-weight:bold; }
+
+/* table.cresta-table 		td > div.highlight { border-radius:0.3em; background: rgba(255, 165, 0, 0.3); } */
+
+table.cresta-table 		td > div.highlight  > div.cresta-check::after { 	
+	pointer-events:none; background:transparent border-box;
+	font-family: 'fawesome'; font-weight:300; content: "\f1da"; /* \f1da which is fa-history, see (*fa02*) */
+	position:absolute; bottom:0px; left:-1em;
+	text-align:left;
+	color: red; /* border-bottom:1px solid red; */
+	width:60px; height:1.2em; line-height:1.2em; font-size:1.2em;
+	z-index:+15;
+	/* opacity:0; transition: opacity 200ms ease-out; /* the timing here should match the rythm of the animation code here (*mb02*) */
+ }
+
+table.cresta-table 		td > div 			> div.cresta-check  { position:relative; vertical-align:middle; min-width:2em; text-align:center; } /* see (*it01*) */
+
+table.cresta-table 		td > div 			> div.cresta-check 	> div.ruby { display:inline-block; height:0.9em; width:0.9em; margin:auto auto; }
+
+table.cresta-table.radios td > div 			> div.cresta-check 	> div.ruby,   
+	table.cresta-table.checks td > div 		> div.cresta-check 	> div.ruby { position:relative; top:.1em; background:rgba(0, 0, 0, .05); } /* default color when not selected, common to checker and radio bullets */
+	
+table.cresta-table.radios td > div 			> div.cresta-check 	> div.ruby { border-radius:50%; }   /* circular radio area */
+table.cresta-table.checks td > div 			> div.cresta-check 	> div.ruby { border-radius:0 0.3em; } /* rectangle checker area */
+
+table.cresta-table.radios	td > div 		> div.pushed 		> div.ruby { box-shadow:inset 0 -0.2em 0.4em rgba(100, 149, 190, 0.8); }
+table.cresta-table.checks	td > div 		> div.pushed 		> div.ruby { box-shadow:inset 0 -0.2em 0.4em rgba(175, 206, 60, 0.8); }
+
+table.cresta-table.radios td > div.selected > div.cresta-check  > div.ruby { background:rgb(120, 169, 200); }
+table.cresta-table.checks td > div.selected > div.cresta-check  > div.ruby { background:rgb(195, 226, 80); }
+
+
+
+
+
+/* css for C_iMODAL: prefixes are { modal, dp, pad } */
+div.zi-modal-inset div.modal-header { cursor:move; }
+div.zi-modal-inset div.modal-header
+	, div#boff div.backprefs-header 
+	, div#boff div.archives-header
+	, div#boff div.visitors-header
+{ 
+	background:radial-gradient( at 50% 90%, rgb(var(--mob-bckg-modals-20)/1) 0%, rgb(var(--mob-bckg-modals-20)/.85) 50%, rgb(var(--mob-bckg-modals-20)/.70) 100%);
+}
+/* div#boff > div.tab-container { background:rgb(254,254,254); position:absolute; top:0; left:0; right:0; bottom:0; border: 2px solid red; } */
+
+div.zi-modal-inset div.modal-header {
+	border-radius: 3px 1.8em 0 0; /*border:1px solid red; /* this draws the shape */
+}
+
+div.zi-modal-inset.p800 div.modal-header, div.zi-modal-inset.p813 div.modal-header,
+	div.zi-modal-inset.p801 div.modal-header, div.zi-modal-inset.p802 div.modal-header, div.zi-modal-inset.p803 div.modal-header,
+	div.zi-modal-inset.p804 div.modal-header, div.zi-modal-inset.p805 div.modal-header, div.zi-modal-inset.p806 div.modal-header,
+	div.zi-modal-inset.p807 div.modal-header, 
+	div.zi-modal-inset.p810 div.modal-header, div.zi-modal-inset.p811 div.modal-header, div.zi-modal-inset.p812 div.modal-header
+	{ 	
+		background:radial-gradient( at bottom left, #EEEEEEFF 0%, #F4F4F4DD 60%, #FEFEFE88 80%, transparent 100%); 
+	}
+
+div.modal-header div.buttons { padding:.8em .8em 1em .8em; }
+div.modal-header div.buttons.air { padding:.8em .8em 3em .8em; }
+div.modal-header div.buttons.airplus { padding:.8em .8em 5em .8em; }
+div.modal-moving { cursor:move; }
+
+div.modal-body { 
+	background:transparent;
+	position:relative;
+	border-top:1px solid transparent; /* in modal-body, the tabs bottom border is drawn on the modal-body itself */
+	border-image: linear-gradient( to right, transparent 0%, rgba(0 0 0 /.2) 20%, rgba(0 0 0 /.2) 80%, transparent 100%); border-image-slice: 1;
+}
+div.modal-header table.tabs td { border-bottom:none; } /* floating tabs are by opposition to modal-header tabs, in this case we need to draw the bottom separation line together on the tabs. Note that floating is the default class, see (*tbs01*) */
+div.modal-header table.tabs td.tab-side:last-child { border-bottom:none; }
+div.modal-header table.tabs td.tab-side:first-child { border-bottom:none; }
+
+
+
+/*   Z I    M O D A L   */
+
+div.zi-modal-inset div.body-wrapper, div.zi-modal-inset div.modal-header { position:relative; }
+div.zi-modal-inset div.body-wrapper::before { /* white rounded background for the tab-containers to display above */
+	position:absolute; inset:0px; content:""; /* right:8px leaves room for the scrollbar */
+	background:rgb(var(--mob-bckg-modals-20) /.95); /* is the background under the body wrapper (under the header and tabs), see also (*css20*) */
+	border-radius: 0 0 4px 100px; /* this sets the shape of the modal body (which is the lower division of the modal) */
+}
+div.zi-modal-inset div.modal-header::after { /* white rounded background for the tab-containers to display above */
+	position:absolute; inset:0px; content:""; /* right:8px leaves room for the scrollbar */
+	background:transparent; pointer-events:none;
+}
+div.zi-modal-outset.M_RESC > div.zi-modal-inset > div.body-wrapper::before, /* those have a larger radius on the bottom left corner */
+	div.zi-modal-outset.M_RESC > div.zi-modal-inset > div.body-wrapper::before,
+	div.zi-modal-outset.M_LOGIN > div.zi-modal-inset > div.body-wrapper::before,
+	div.zi-modal-outset.M_VISI > div.zi-modal-inset > div.body-wrapper::before,
+	div.zi-modal-outset.M_RESA > div.zi-modal-inset > div.body-wrapper::before,
+	div.zi-modal-outset.M_NOTE > div.zi-modal-inset > div.body-wrapper::before,
+	div.zi-modal-outset.M_TASK > div.zi-modal-inset > div.body-wrapper::before,
+	div.zi-modal-outset.M_chat > div.zi-modal-inset > div.body-wrapper::before { border-radius: 0 0 1px 100px; /* 8px is bottom right corner */ }
+	
+div.zi-modal-inset div.body-wrapper::after { /* shades the content approaching the upper edge when scrolling the modal-body */
+	position:absolute; top:1px; left:0; right:8px; height:30px; min-height:30px; content:""; /* see (*bw01*) it must follow the same height, right:8px leaves room so not to shade the scrollbar */
+	background: linear-gradient(to bottom, white 0px, rgb(var(--mob-bckg-modals-20)/.6) 60%, transparent 100%); /* transparent 0 makes the modal-body upper border visible */
+	pointer-events:none;
+}
+
+
+div.zi-modal-shape, div.zi-modal-shape::before, div.zi-modal-shape::after, div.zi-modal-inset, div.zi-modal-inset::before, div.zi-modal-inset::after { 
+	border-radius: 0.8em 2.5em 0.8em 110px; /* this is the outer shape for zi modals */
+	
+} 
+/* div.zi-modal-inset::after { z-index:-3; }*/
+
+div.zi-modal-inset { 
+	z-index:0; position:relative; overflow:hidden;
+	/* padding:11.0px 11.0px 11.0px 11.0px;  */
+	padding:14px 14px 14px 14px; /* this is how we set the width of the modal colored border */
+	/* https://stackoverflow.com/questions/5706963/possible-to-use-border-radius-together-with-a-border-image-which-has-a-gradient */
+
+	&::before { /* ::before is used for madal borders */
+		border:14px solid transparent; /* see (*mb01*), 16px is wide enough to color under the border-radius  */
+		border-image: linear-gradient( -30deg, #FBFBFCFF 0%, #F8F8FC00 35%, #F8F8FC00 65%, #F8F8FCEE 100%); border-image-slice: 1; /* this default border set is visible when .border-on is also applied */
+		z-index:-1;
+		transition: opacity 300ms ease-in; /* this is the border transistion time when appearing on screen, the timing here should match the rythm of the animation code here (*mb02*) */
+	}
+	&.border-on::before { /* this is the border transistion time when going off screen */
+		opacity:1; transition:opacity 1400ms ease-in; /* delay for appearing on screen */
+	}
+	&::after {
+		z-index:-1;
+	}
+	&.pattern-on::after, &.pattern-on div.modal-body::after, &.pattern-on div.modal-header::after {
+		opacity:1; transition:opacity 2000ms ease-in;  /* delay for appearing on screen */
+	}
+}
+
+div.zi-modal-inset::before, div.zi-modal-inset::after, div.zi-modal-inset div.modal-body::after, div.zi-modal-inset div.modal-header::after { /* before is used for the border, after is used for the patterns, see also (*mi01*) */
+	content:""; position:absolute; inset: 0px; pointer-events:none; 
+	opacity:0; 
+}
+div.zi-modal-inset::after, div.zi-modal-inset div.modal-body::after, div.zi-modal-inset div.modal-header::after { /* ::after used for patterns */
+	transition: opacity 300ms ease-out; /* this is the border transistion time when going off screen, the timing here should match the rythm of the animation code here (*mb02*) */
+}
+/*
+div.zi-modal-inset::before { 
+	border:11px solid transparent; 
+	border-image: linear-gradient( -30deg, #FBFBFCFF 0%, #F8F8FC00 35%, #F8F8FC00 65%, #F8F8FCEE 100%); border-image-slice: 1; 
+	z-index:-1;
+	transition: opacity 300ms ease-in;
+}
+*/
+/*
+div.zi-modal-inset.border-on::before { 
+	opacity:1; transition:opacity 1400ms ease-in;
+} */
+
+/*
+div.zi-modal-inset.pattern-on::after,
+div.zi-modal-inset.pattern-on div.modal-body::after,
+div.zi-modal-inset.pattern-on div.modal-header::after{
+	opacity:1; transition:opacity 1000ms ease-in;
+} 
+*/
+
+div.zi-modal-outset.M_RESC > div.zi-modal-inset { padding:20px; }
+div.zi-modal-outset.M_RESC > div.zi-modal-inset::before { border-width:20px; }
+div.zi-modal-outset.M_RESC > div.zi-modal-inset.border-on::before { border-width:20px; /* see (*mb01*) */ }
+
+div.zi-modal-outset.M_RESA > div.zi-modal-inset { padding:14px; }
+div.zi-modal-outset.M_RESA > div.zi-modal-inset::before { border-width:14px; }
+div.zi-modal-outset.M_RESA > div.zi-modal-inset.border-on::before { border-width:14px; /* see (*mb01*) */ }
+
+div.zi-modal-outset.M_LOGIN > div.zi-modal-inset { padding:12px; }
+div.zi-modal-outset.M_LOGIN > div.zi-modal-inset::before { border-width:12px; }
+div.zi-modal-outset.M_LOGIN > div.zi-modal-inset.border-on::before { border-width:12px; /* see (*mb01*) */ }
+
+div.zi-modal-outset.M_CCSS > div.zi-modal-inset { padding:50px; }
+div.zi-modal-outset.M_CCSS > div.zi-modal-inset::before { border-width:24px; }
+div.zi-modal-outset.M_CCSS > div.zi-modal-inset.border-on::before { border-width:24px; /* see (*mb01*) */ }
+
+div.zi-modal-outset.M_WRKCD > div.zi-modal-inset { padding:14px; }
+div.zi-modal-outset.M_WRKCD > div.zi-modal-inset::before { border-width:14px; }
+div.zi-modal-outset.M_WRKCD > div.zi-modal-inset.border-on::before { border-width:14px; /* see (*mb01*) */ }
+
+div.zi-modal-outset.M_TBOXING > div.zi-modal-inset { padding:16px; }
+div.zi-modal-outset.M_TBOXING > div.zi-modal-inset::before { border-width:16px; }
+div.zi-modal-outset.M_TBOXING > div.zi-modal-inset.border-on::before { border-width:16px; /* see (*mb01*) */ }
+
+/* default border shades when no color ( bc1000 ) is applied */
+div.zi-modal-outset.M_VISI > div.zi-modal-inset.bc1000::after { border-image: linear-gradient( -30deg, #DBE5F1FF 0%, #DBE5F100 35%, #DBE5F100 65%, #DBE5F199 100%); border-image-slice: 1; }
+div.zi-modal-outset.M_RESA > div.zi-modal-inset.bc1000::after { border-image: none; /*linear-gradient( -30deg, #EBF1DDFF 0%, #EBF1DD00 35%, #EBF1DD00 65%, #EBF1DD99 100%);*/ border-image-slice: 1; }
+div.zi-modal-outset.M_NOTE > div.zi-modal-inset.bc1000::after { border-image: linear-gradient( -30deg, #E5E0ECFF 0%, #E5E0EC00 35%, #E5E0EC00 65%, #E5E0EC99 100%); border-image-slice: 1; }
+div.zi-modal-outset.M_TASK > div.zi-modal-inset.bc1000::after { border-image: linear-gradient( -30deg, #FFF8DCFF 0%, #FFF8DC00 35%, #FFF8DC00 65%, #FFF8DC99 100%); border-image-slice: 1; }
+div.zi-modal-outset.M_chat > div.zi-modal-inset.bc1000::after { border-image: linear-gradient( -30deg, #FDEADAFF 0%, #FDEADA00 35%, #FDEADA00 65%, #FDEADA99 100%); border-image-slice: 1; }
+
+h1.modal-details { padding-right:1em; }
+
+
+
+/*   M E S S A G E   A N D    I N F O     M O D A L   */
+
+div.zi-message-shape, div.zi-message-inset::after, div.zi-message-inset::before
+, div.zi-info-shape, div.zi-info-inset::after, div.zi-info-inset::before { 
+	border-radius: 1em; /* this is the outer shape for messages modals */
+} 
+div.zi-message-inset, div.zi-info-inset { 
+	z-index:0; position: relative;
+	&::before { /* this is the white background that hides the background of zi-message-outset */
+		transition: box-shadow 400ms ease-out; /* timing at removal*/
+		pointer-events:none; /* background:white border-box; */
+		content:""; position:absolute;
+		top:18px; bottom:18px; left:160px; right:160px; /* check (*mb03*) */
+		border-radius: 1em; /* this sets the inner shape of the modal, that is rectangular for this message modal */
+		border:10px solid transparent; /* see (*mb01*) */
+		z-index:-1;
+	}
+	&::after {
+		pointer-events:none; background:transparent border-box; 
+		content:""; position:absolute; inset:0px; z-index:-1;
+		border-top:18px solid transparent;
+		border-bottom:18px solid transparent;
+		opacity:0; transition: opacity 200ms ease-out; /* the timing here should match the rythm of the animation code here (*mb02*) */
+
+	}
+} /* check (*mb03*), the lefter and right padding must stay tuned */
+
+div.zi-message-inset { padding:40px 150px; }
+div.zi-message-inset.datepicker { padding:20px 0px 15px 0px; }
+div.zi-message-inset.actionpad { padding:20px 80px; }
+div.zi-info-inset { padding:0; }
+
+
+div.zi-message-outset.mmborder-red > div.zi-message-inset::after
+, div.zi-info-outset.mmborder-red > div.zi-info-inset::after {
+	border-image: linear-gradient( to right, transparent 0%, transparent 5%, #FF000030 15%, red 45%, red 55%, #FF000030 85%, transparent 95%, transparent 100%); border-image-slice: 1; /* this default border set is visible when .border-on is also applied */
+}
+div.zi-message-outset.mmborder-green > div.zi-message-inset::after
+, div.zi-info-outset.mmborder-green > div.zi-info-inset::after {
+	border-image: linear-gradient( to right, transparent 0%, transparent 5%, rgba(var(--mob-txt-lime),.2) 15%, rgba(var(--mob-txt-lime),.9) 45%, rgba(var(--mob-txt-lime),.9) 55%, rgba(var(--mob-txt-lime),.2) 85%, transparent 95%, transparent 100%); border-image-slice: 1; /* this default border set is visible when .border-on is also applied */
+}
+div.zi-message-outset.mmborder-blue > div.zi-message-inset::after
+, div.zi-info-outset.mmborder-blue > div.zi-info-inset::after {
+	border-image: linear-gradient( to right, transparent 0%, transparent 5%, rgba(var(--mob-txt-blue),.2) 15%, rgba(var(--mob-txt-blue),.9) 45%, rgba(var(--mob-txt-blue),.9) 55%, rgba(var(--mob-txt-blue),.2) 85%, transparent 95%, transparent 100%); border-image-slice: 1; /* this default border set is visible when .border-on is also applied */
+}
+div.zi-message-outset.mmborder-orange > div.zi-message-inset::after
+, div.zi-info-outset.mmborder-orange > div.zi-info-inset::after {
+	border-image: linear-gradient( to right, transparent 0%, transparent 5%, rgb(var(--mob-orange-bckgr-20) /.25) 15%, orange 45%, orange 55%, rgb(var(--mob-orange-bckgr-20) /.25) 85%, transparent 95%, transparent 100%); border-image-slice: 1; /* this default border set is visible when .border-on is also applied */
+}
+
+div.zi-message-inset.border-on::after, div.zi-info-inset.border-on::after { opacity:1; transition: opacity 500ms ease-in; }
+
+
+
+
+
+div.zi-modal-outset, div.zi-message-outset, div.zi-info-outset { 
+	/* box-shadow: 8px 16px 40px rgba(0, 0, 0, 0.3); /* outset shadow */
+	box-shadow: 0px 0px 400px 100px rgba(0, 0, 0, 0.15); /* outset shadow */
+	background: rgb(255 255 255 /.3); /* is a background that relies all under the borders, the header and the modal body, see also (*css20*) */
+	backdrop-filter: blur(2px); /* keep in mind that backdrop filter does not act on pseudo elements */
+	transition: opacity 119ms linear; /* transition duration at going transparent, that is the default duration for fadeoff */
+	contain:layout paint; /* is supposed to accelarate GPU processing */
+}
+div.zi-message-outset, div.zi-info-outset { 
+	box-shadow: 10px 20px 200px 100px rgba(0, 0, 0, 0.2); /* outset shadow, it is tuned with the rgba(0, 0, 0, 0.##) that follows on the linear background */
+	background: linear-gradient( to right, rgba(180, 180, 180, 0.36) 0%, white 160px, white calc(100% - 160px), rgba(180, 180, 180, 0.36) 100%); /* check (*mb03*) */
+	backdrop-filter: blur(4px);
+}
+
+div.zi-modal-outset.onscreen, div.zi-message-outset.onscreen, div.zi-info-outset.onscreen { opacity:1; }
+div.zi-modal-outset.offscreen, div.zi-message-outset.offscreen, div.zi-info-outset.offscreen { opacity:0; /*transform: scale(.7, .7) PVH2023 */ }
+div.zi-modal-outset.offscreen.fadeslow, div.zi-message-outset.offscreen.fadeslow, div.zi-info-outset.offscreen.fadeslow { transition: opacity 1000ms linear; /* transition duration at going transparent */ }
+
+
+
+div.zi-info-outset.airy {
+	box-shadow: 10px 20px 200px 100px rgba(0, 0, 0, 0.10); /* outset shadow, it is tuned with the rgba(0, 0, 0, 0.##) that follows on the linear background */
+	background: linear-gradient( to right, rgba(220, 220, 220, 0.20) 0%, rgba(250, 250, 250, 0.6) 160px, rgba(255, 255, 255, 0.7) 50%, rgba(250, 250, 250, 0.6) calc(100% - 160px), rgba(220, 220, 220, 0.20) 100%); /* check (*mb03*) */
+}
+
+div.zi-info-outset:before, div.zi-message-outset:before {
+      content: ""; position: absolute; inset: 0;
+      border-radius: 1em;
+	  background-image: url("data:image/svg+xml, %3C!-- svg: first layer --%3E%3Csvg viewBox='0 0 171 171' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.74' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.3;
+}
+
+
+
+/* full screen - for tactile devices */
+
+
+div.fs-modal-shape {} 
+div.fs-modal-inset { padding: 1em; }
+div.fs-modal-outset { background-color: white; }
+
+
+div.modal-overlay { 
+	background-color: rgba(0, 0, 20, 0.08); /* this effect combines with the box-shadow of div.zi-modal-outset */
+	transition: opacity 99ms ease-out;
+	/* pointer-events: none; */ /* if you do this, the layout never catches the event anymore leading to quit the modal... */
+}
+div.modal-overlay.offscreen { opacity:0; }
+div.modal-overlay.offscreen.fadeslow { transition: opacity 1000ms linear; /* transition duration at going transparent */ }
+div.modal-overlay.overlay-privacy { 
+	backdrop-filter: blur(10px);
+}
+
+div.pad-overlay, div.dp-overlay, div.overlay { background:rgba(0, 0, 0, 0.08); transition:opacity 199ms ease-out; } /* simple overlay */
+div.pad-overlay.offscreen, div.dp-overlay.offscreen, div.overlay.offscreen { opacity:0; } /* simple overlay */
+
+
+/* when stuff are busy, or loading */
+
+div.modal-busy /* used for horizontal and vertical planning loading time, and for save/delete of zi-modals */
+ { /* also used by visitors register screen C_backVISI */
+	background-color: transparent;
+	backdrop-filter: blur(4px);
+	opacity:0; transition:opacity 200ms ease-in;
+	pointer-events:none; /* so it is possible to attach this modal as from drawing start and it doesn't influence any other interactivity */
+}
+div.modal-busy.on { opacity:1; background-color:rgba(255, 255, 255, 0.05); transition:opacity 1000ms ease-in; pointer-events:auto; }
+
+
+
+/*  ------------------------------------------------------------------------------------  */
+
+
+
+
+
+
+
+div.spinner { 
+	width:100px; height:100px; border-radius:50%; overflow:hidden;
+	animation: loading 4s linear infinite;		
+	
+	border-top: 12px solid rgba(var(--mob-txt-lime),.5); 
+	border-right: 12px solid transparent; 
+	border-bottom: 12px solid rgba(var(--mob-txt-blue),.5); 
+	border-left: 12px solid transparent;
+}
+div.spinner.fit { 
+	height:100%; aspect-ratio:1/1; border-radius:50%; overflow:hidden;
+	animation: loading 4s linear infinite;		
+	
+	border-top: 3px solid rgba(var(--mob-txt-lime),.5); 
+	border-right: 3px solid transparent; 
+	border-bottom: 3px solid rgba(var(--mob-txt-blue),.5); 
+	border-left: 3px solid transparent;
+}
+
+@keyframes loading {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+input.loading { background: url(loading.gif) center right no-repeat; } /* C_iCLIK::busy(), C_iEDIT::busy() */ 
+.click.loading { background: url(loading.gif) center center no-repeat; } /* C_iCLIK::busy(), C_iEDIT::busy() */ 
+.button.button-busy { background: url(loading.gif) center center no-repeat; }
+
+
+div.busy-64 {	background-image: url(spinner-64px.gif) center right 1em no-repeat; }
+div.busy { background: url(spinner-64px.gif) center center no-repeat; }
+
+
+/* CSS Example 1. using mouse position to translate pseudo-elements and display a moving background effect */
+
+
+:root {
+  --bg: hsl(221, 37%, 10%);
+  --button-text: hsl(200, 60%, 12%);
+  --button-1-surface: hsl(197, 88%, 58%);
+  --button-2-surface: hsl(41, 96%, 56%);
+}
+
+
+.glassy-button {
+  /* min-height: 80vh; */
+  display:flex; justify-content:center; place-items:center; gap:1rem;
+}
+
+.glassy-button {
+  --_padding: 2rem 3rem;
+  
+  --_transition-speed: 300ms;
+  
+  --_frostiness: 0.2;
+  
+  --_hover-offset: 0.25rem;
+  --_hover-opacity: 0.1;
+  --_hover-blurriness: 8px;
+  
+  --_motion-factor: 0.6; /* 0 -> 1 */
+  
+  --_pressed-offset: 0.01rem;
+  --_pressed-opacity: 0.5;
+  --_pressed-blurriness: 4px;
+
+  outline: 0;
+  cursor: pointer;
+  font: inherit;
+  color: var(--button-text);
+  font-weight: 500;
+  padding: 0;
+  border: 0;
+  border-radius: 1rem;
+  background-color: transparent;
+  position: relative;
+
+  span {
+    display: block;
+    overflow: hidden;
+    padding: var(--_padding);
+    border-radius: inherit;
+    background-color: hsl(0 0% 100% / 0);
+    backdrop-filter: blur(0px);
+	box-shadow: none;
+	text-shadow: 0px 0px 5px rgba(255,255,255,1);
+    transition: background-color var(--_transition-speed),
+      backdrop-filter var(--_transition-speed),
+      box-shadow calc(var(--_transition-speed) * 5),
+      translate var(--_transition-speed);
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      /* z-index: -1; */
+      background-image: url("data:image/svg+xml, %3C!-- svg: first layer --%3E%3Csvg viewBox='0 0 171 171' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='3.74' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.5;
+      transition: opacity var(--_transition-speed);
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    /* z-index: -1; */
+    inset: 0;
+    border-radius: inherit;
+    background-color: var(--_surface);
+    transition: scale var(--_transition-speed),
+				translate calc(var(--_transition-speed) * 1);
+    animation: buttonexit forwards calc(var(--_transition-speed) * 1);
+  }
+
+  &:hover,
+  &:focus-visible {
+    span {
+      outline: 1px solid hsl(0 0% 100% / 0.7);
+      background-color: hsl(0 0% 100% / var(--_hover-opacity));
+      backdrop-filter: blur(var(--_hover-blurriness));
+      translate: 0 calc(var(--_hover-offset) * -1);
+	  box-shadow: 5px 5px 12px 2px rgba(0, 0, 0, 0.1);
+
+      &::before {
+        opacity: var(--_frostiness);
+      }
+    }
+    &::before {
+      animation: buttonenter forwards calc(var(--_transition-speed) * 4);
+      scale: 0.25;
+      translate: 0 0.125rem;
+    }
+  }
+
+  &:active { /* button is pushed */
+    span {
+	  transition: box-shadow calc(var(--_transition-speed) * .5);
+      backdrop-filter: blur(var(--_pressed-blurriness));
+      background-color: hsl(0 0% 100% / var(--_pressed-opacity));
+      translate: 0 calc(var(--_pressed-offset) * -1);
+	  box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2);
+    }
+    &::before {
+		transition: scale var(--_transition-speed);
+      scale: 0.98;
+      translate: 0 0;
+    }
+  }
+}
+
+@keyframes buttonenter {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(
+      calc(var(--_x-motion) * var(--_motion-factor) * -1),
+      calc(var(--_y-motion) * var(--_motion-factor) * -1)
+    );
+  }
+}
+
+@keyframes buttonexit {
+  from {
+    transform: translate(
+      calc(var(--_x-motion) * var(--_motion-factor) * -1),
+      calc(var(--_y-motion) * var(--_motion-factor) * -1)
+    );
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+.glassy-button:nth-child(1) {
+  --_surface: var(--button-1-surface);
+}
+
+.glassy-button:nth-child(2) {
+  --_surface: var(--button-2-surface);
+}
+
+
+
+
+
+
+div.overlay-busy-64px {
+	background: rgba(255, 255, 255, 0.8) url(spinner-64px.gif) center center no-repeat;
+	border-right: 10em;
+}
+div.body-busy { background: url(philaspinfast.gif) center center no-repeat; }
+
+
+
+
+/* pad style */
+
+div.zi-pad-shape, div.zi-dp-shape { border-radius: 0 1em 0 1em; }
+div.zi-pad-inset, div.zi-dp-inset  { /* those class names are built programmaticaly here (*md20*) */
+	padding: 1em 0;
+	background-color: transparent;
+}
+div.zi-pad-outset, div.zi-dp-outset  { box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.3); background-color:white; transition: opacity 99ms linear, color 41ms ease-out; /* should have same duration as here (*md02*) */ }
+div.zi-pad-outset.onscreen, div.zi-dp-outset.onscreen { opacity:1; }
+div.zi-pad-outset.offscreen, div.zi-dp-outset.offscreen { opacity:0; color:rgba(0 0 0 /.2); /*transform: scale(.7, .7) PVH2023 */ }
+
+div.pad-body  { padding: 0 .8em 0 .4em; overflow-y:auto; overflow-x:clip; }
+div.dp-body  { padding: 0 2em 0 0; overflow-y: auto; max-height:18em; }
+div.dp-top-body  { padding: 0 2em 0 0; overflow-y: auto; max-height:15em; }
+
+/* touch device drop down style */
+
+div.zi-touchdev-shape { border-radius: 0 0 0 0; }
+div.zi-touchdev-inset  { padding: .1em 0; background-color:transparent; }
+div.zi-touchdev-outset  { background-color:transparent; max-width:100%; overflow-x:hidden; }
+div.touchdev-overlay  { background-color: rgba(255, 255, 255, 0.95); }
+div.touchdev-body  { padding: 0 2em 0 0; overflow-y: auto; }
+
+
+
+
+
+/* css for M_POP_msg */
+
+div.pop-overlay { 
+	/* background: rgba(255, 255, 255, 0.4);*/
+	background: linear-gradient(to bottom, rgba(40,40,50,0.05) 0%, rgba(40,40,50,0.10) 70%, rgba(40,40,50,0.3) 100%);
+	backdrop-filter: blur(5px);
+}
+div.pop-outset { 
+	box-shadow: 8px 16px 40px rgba(0, 0, 0, 0.3); border-radius: 2em;
+}
+
+
+
+
+/* css for C_iMSG // PVH 2023: made obsolete after using font-awesome, see (*faw01*)
+
+table.attention { background: url(attention30.png) center left no-repeat; }
+table.img-email { background: url(email.gif) center left no-repeat; }
+table.img-sms { background: url(sms.png) center left no-repeat; }
+table.img-attention { background: url(attention30.png) center left no-repeat; }
+table.img-question { background: url(q-mark30.png) center left no-repeat; }
+
+*/
+
+/* css for C_iBUTTON */
+
+.button { 
+	text-align:center; border-radius:0.6em;  font-weight:bold;
+	font:16px/1.1 calibri-bold; text-rendering:auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing:grayscale;
+	/* border:1px solid transparent; */
+}
+
+	textarea.button { vertical-align:middle; display:inline-block; }
+	body.touch input.button, body.touch textarea.button { font-size:90%; }
+	body.mouse input.button {	 }
+
+.button.button-left { text-align:center; border-radius:0.6em 0 0 0.6em; margin-right:3px; }
+.button.button-center { text-align:center; border-radius:0em; }
+.button.button-right { text-align:center; border-radius:0 0.6em 0.6em 0; margin-left:3px; }
+
+.button.button-search { width:18em; height:4.5em; max-height:4.5em; }
+body.single .button.button-search { width:12em; }
+.button-search.third { width:6em; line-height:4.5em; }
+body.single .button-search.third { width:4em; }
+
+.button.button-wlist { width:12em; height:4.5em; max-height:4.5em; }
+body.single .button.button-wlist { width:9em; }
+.button-wlist.third { width:4em; line-height:4.5em; }
+body.single .button-wlist.third { width:3em; }
+
+
+
+
+div.modal-button { /* some button that come in the cartouche C_iDQS */
+	font-size:1.4em; 
+	border-radius: 4px; border:none;
+	line-height:40px; text-align:center;
+	min-width:40px; max-width:40px;
+	min-height:40px; max-height:40px;
+}
+div.small-button { /* button with dimension fitting on the right side of an input field */
+	font-size:1.2em;
+	border-radius:3px; border:none;
+	line-height:23px; text-align:center;
+	min-width:28px; max-width:28px;
+	min-height:23px; max-height:23px;
+}
+div.field-button { /* beware that this element is rotated 90degrees */
+	font-size:1.0em;
+	text-align:center;
+	border-radius:3px; border:none;
+	line-height:22px; text-align:center;
+	min-width:22px; max-width:22px; /* so this will actually be the height, after rotation */
+	min-height:22px; max-height:22px; /* so this will actually be the width, after rotation */
+	transform: scale(1.2,1.2); transform-origin: center center;
+}
+div.field-button.fa-rotate-90 {
+	transform: rotate(90deg) scale(1.2,1.2);
+}
+
+div.modal-button.disabled { visibility:hidden; }
+
+table.C_iTABLE.smode div.cresta-label { font-size:80%; line-height:2.4em; }
+
+
+input.button-pushed { box-shadow: inset 3px 0px 4px rgba(20, 21, 255, 0.1), inset -3px -0px 4px rgba(20, 21, 255, 0.2); }
+
+input.button-cartouche { border:none; margin-right:0.8em; font-size: 1em; }
+	body.touch input.button-cartouche { font-size:120%; height:2.1em; width:2.1em; }
+	
+input.button-plus 	{ background-color: white; 	color:gray;	 border-radius:50%; box-shadow: inset 4px 4px 4px rgba(255, 255, 255, 0.6), inset -4px -4px 4px rgba(0, 0, 0, 0.1);	} 
+
+td.cartouche { width:4%; white-space:nowrap; vertical-align:top; } /* makes them as short as possible but no wrapping */
+td.mheader { align:right; width: 90%; padding:.3em 1em 0 1em;} /* the modal header follows usually a cartouche of buttons */
+
+
+/* buttons that are placed aside the Auto-Complete - Search dashboard and M_RESA */
+div.button-ac { font-size:1.1em; line-height:1.6em; border-radius:0.1em; min-width:1.8em; margin-left:0.6em; text-align:center; }
+
+
+/* C_iMSG */
+
+div.button-msg {  font-size:1.1em; text-align:center; border:.5px solid rgba(0 0 0 / 0.3); padding:1em 1em; border-radius:10px; 
+					background:rgba(0 0 0 / 0.03) }
+div.modal-msg { font-size:1.1em; line-height:1.3em; text-align:center; }
+div.modal-msg.left { text-align:left; padding-left:1em; }
+
+
+
+
+			input.button-remote { background-color: rgba(255, 255, 255, 0.6); }	
+body.mouse 	input.button-remote { 
+	font-size:80%; margin-left:0.6em; 	
+	border-right:.5px solid #DDD; border-bottom:.5px solid #DDD;
+	border-left:.5px solid white; border-top:.5px solid white;
+}
+
+
+
+
+/* css for C_iTABS */
+
+	/* tab header */
+
+table.tabs { border-collapse:separate; border-spacing:0; }
+table.tabs tr {  }
+table.tabs td { white-space:nowrap; /*border-bottom:.5px solid rgba(0 0 0 /.2);*/ }
+table.tabs td.tab {  padding:0;  }
+
+table.tabs tr td.tab div.click div.fa.audit { color:rgba(255 255 255 /.7); width:2.4em; min-width:2.4em; font-size:1.3em; line-height:1.1em; } /* some nice colors for the audit tab */
+table.tabs tr td.tab.tab-selected div.click div.fa.audit { color:rgba(0 0 0 /.2); position:relative; top:5px; }
+table.tabs tr td.tab.tab-selected div.click:hover div.fa.audit { color:rgba(var(--mob-txt-lime-20) /.6); }
+
+table.tabs td.tab.tab-selected { border-bottom:transparent; /* box-shadow: 0px -2px 5px 2px rgba(0, 0, 0, 0.03);*/ }
+table.tabs td.tab:not(.tab-selected) {  padding-top:.5em; padding-bottom:.5px;   }
+body.mouse table.tabs td.tab.tab-selected .click:hover { background-color:white; } /* we want a selected tab not to display its interactivity, because clicking it again will any way not chnage anything. */
+
+table.tabs td { border-bottom:.5px solid rgba(0 0 0 /.2); } /* floating tabs are by opposition to modal-header tabs, in this case we need to draw the bottom separation line together on the tabs. Note that floating is the default class, see (*tbs01*) */
+table.tabs td.tab-side:last-child { border-bottom:.5px solid transparent; border-image: linear-gradient(to right,rgba(0 0 0 /.2),rgba(0 0 0 /0)); border-image-slice: 1; }
+table.tabs td.tab-side:first-child { border-bottom:.5px solid transparent; border-image: linear-gradient(to left,rgba(0 0 0 /.2),rgba(0 0 0 /0)); border-image-slice: 1; }
+
+
+table.tabs td.tab > div { 
+	padding: 0 1em 0 1em;
+	height:1.6em; 
+	line-height:2.0em;
+	border-radius:.3em 1em 0 0;
+	text-align:center; 
+	background:rgba(124,124,124,.1); /*linear-gradient(to bottom, rgba(0 0 0 /0.04) 0%, rgba(0 0 0 /0.04) 70%, rgba(0 0 0 /0.15) 100%);*/
+	margin: .1em .2em 0 .2em; 
+	border-color:rgba(0 0 0 /.5); color:var(--main-text-lighter); 
+	&.highlight { color:orangered; }
+}
+table.tabs.tabs-squeeze td.tab > div { padding: 0 .6em .2em .6em; border-bottom:transparent; } /* used when tabs are numerous - lets them appear thinner */
+
+
+table.tabs td.tab.tab-selected > div { 
+	padding:0 1.2em;
+	border:.5px solid rgba(0 0 0 /.2); border-bottom:2px solid white; /* connects the selected tab with the modal-body */
+	font-weight:bold; height:100%;
+	background:white; color:var(--main-text-darkest);
+	position:relative; top:1px; z-index:+1;
+	margin: 0; 
+}
+
+
+
+
+/* css for C_iTIP */
+
+	/* generic for all tooltips: */
+#tipInset {
+	padding: 1em 2em;
+}
+#tipOutset { box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3); display:block; contain:layout paint; }
+
+	
+div.tip {  background-color: rgba(255, 247, 230, 0.90); /* yellow style tooltip */ }
+div.tip, div.tip > div { border-radius: 6px; }
+div.tip hr, div.visi-tip hr, div.sticker-tip hr, div.blueprint hr { 
+	color:transparent; width:100%; margin:0.6em auto 0.6em auto; height:.5px; border-style:solid; border-width:1px 0 0 0;
+	border-image: linear-gradient(to right, transparent 0%, rgba(0,0,150,.2) 40%, rgba(0,0,150,.2) 60%, transparent 100% ); border-image-slice: 1;
+}
+div.visi-tip hr.short { 
+	width:70%; 
+	border-image: linear-gradient(to right, transparent 0%, rgba(0,0,150,.2) 40%, rgba(0,0,150,.3) 80%, transparent 100% ); border-image-slice: 1; }
+#tipOutset.sticker-tip hr.short { 
+	width:70%; 
+	border-image: linear-gradient(to right, transparent 0%, rgba(0,0,150,.2) 40%, rgba(0,0,150,.3) 80%, transparent 100% ); border-image-slice: 1; 
+}
+
+
+
+	/* specific tooltips: sticker-tip is for C_dS_reservation */
+
+#tipOutset.sticker-tip { 
+	text-shadow: 0px 0px 3px rgba(255,255,255,1);
+	background-color: transparent;
+	backdrop-filter: blur(2px);
+}
+#tipOutset.sticker-tip div.resource-label { text-shadow: none; }
+#tipOutset.sticker-tip > #tipInset { 
+	color:var(--main-text-darkest);
+	border-top:6px solid transparent; border-bottom:26px solid transparent;
+	min-width:18em; width:auto; max-width:44em; padding:1em 2em;
+	max-height:80vh; overflow-y:clip; min-height:5em; /* max-height:80vh; prevents the tip to be higher than visible screen height */
+	/* position:relative;  */
+	/* border:1px solid red; */
+} 
+	
+#tipOutset.sticker-tip hr, #tipOutset.timebox-tip hr { 
+	color:transparent; width:100%; margin:0.6em auto 0.6em auto; height:.5px; border-style:solid; border-width:1px 0 0 0;
+	border-image: linear-gradient(to right, transparent 0%, rgba(0,0,150,.2) 30%, rgba(0,0,150,.1) 60%, transparent 100% );
+	border-image-slice: 1; }
+
+
+#tipOutset.sticker-tip::before {
+	position:absolute; inset:0px; content:"";
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 0%, rgba(255, 255, 255, 0.90) 50px, rgba(255, 255, 255, 0.94) calc(100% - 40px), rgba(0, 0, 0, 0.15) 100%); border-radius: inherit;
+	z-index:-1;
+}
+
+
+#tipOutset.sticker-tip::after {
+	position:absolute; inset:0px; content:"";
+	z-index:-2;
+}
+#tipOutset.sticker-tip { box-shadow: 10px 10px 80px 20px rgba(0, 0, 0, 0.3); }
+#tipOutset.sticker-tip::before, #tipOutset.sticker-tip::after, #tipOutset.sticker-tip, #tipOutset.sticker-tip > div, #tipOutset.sticker-tip > #tipInset::after { border-radius: 10px 0px 40px 0px; }
+
+#tipOutset.sticker-tip div.sticker-tip-header-div { width:100%; margin:0; display:flex; justify-content:center; flex-direction:row; font-size:1.1em;  line-height:1.0em; color:#00000099; font-weight:normal; }
+	/* off days see (*sp01*) */
+#tipOutset.sticker-tip div.sticker-tip-header-div > div.sticker-tip-offdays-left { 	display:flex; flex:1 1 auto; justify-content:flex-start; text-align:left; 	align-items:center; padding:0 1em 0 0; }
+#tipOutset.sticker-tip div.sticker-tip-header-div > div.sticker-tip-offdays-right { display:flex; flex:0 0 auto; justify-content:flex-end; 	 text-align:right; 	align-items:center; padding:0 0 0 1em; font-size:1.1em; }
+	/* inner day reseervations see (*sp02*) */
+#tipOutset.sticker-tip div.sticker-tip-header-div > div.sticker-tip-left { 	display:flex; width:4em; 	align-items:center; justify-content:flex-start; text-align:left; padding:0 1em 0 0; font-weight:bold; }
+#tipOutset.sticker-tip div.sticker-tip-header-div > div.sticker-tip-center { display:flex; flex:1; 		justify-content:center;  font-size:1.1em; }
+#tipOutset.sticker-tip div.sticker-tip-header-div > div.sticker-tip-right {	display:flex; width:4em; 	align-items:center; font-size:.9em; justify-content:flex-end; text-align:right; padding:0 0 0 1em; font-weight:bold; }
+
+
+/* we want the left part (div.sticker-tip-offdays-right) to take as much space as possible on the left, while the right part (div.sticker-tip-offdays-left) stays just enough wide to display it's content */
+
+
+
+#tipOutset.timebox-tip {
+	color:rgb(24,113,133);
+	opacity: .95;
+	text-shadow: 0px 0px 3px rgba(255,255,255,1);
+	background-color: transparent;
+	backdrop-filter: blur(2px);
+}
+#tipOutset.timebox-tip > #tipInset { 
+	border-top:0px solid transparent; border-bottom:0px solid transparent;
+	min-width:18em; width:auto; max-width:38em; padding:.3em 2em;
+	max-height:80vh; overflow-y:clip; min-height:1em; /* max-height:80vh; prevents the tip to be higher than visible screen height */
+	position:relative; /* border:1px solid red; */
+} 
+#tipOutset.timebox-tip.timebox-vertical > #tipInset { 
+	border-top:0px solid transparent; border-bottom:0px solid transparent;
+	min-width:4em; width:4em; max-width:8em; padding:0 .4em;
+	height:24em; min-height:24em; overflow-x:clip; /* max-height:80vh; prevents the tip to be higher than visible screen height */
+	position:relative; /* border:1px solid red; */
+} 
+	
+	
+#tipOutset.timebox-tip::before { /* horizontal view, horizontal looking tip */
+	position:absolute; inset:0px; content:"";
+	background: linear-gradient(to right, rgba(0, 0, 0, 0.06) 0%, rgba(255, 255, 255, 0.80) 50px, rgba(255, 255, 255, 0.88) calc(100% - 50px), rgba(0, 0, 0, 0.15) 100%); border-radius: inherit;
+	z-index:-1;
+}
+#tipOutset.timebox-tip.timebox-vertical::before { /* vertical view, vertical looking tip */
+	position:absolute; inset:0px; content:"";
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 0%, rgba(255, 255, 255, 0.80) 60px, rgba(255, 255, 255, 0.88) calc(100% - 60px), rgba(0, 0, 0, 0.15) 100%); border-radius: inherit;
+	z-index:-1;
+}
+
+
+#tipOutset.timebox-tip::after {
+	position:absolute; inset:0px; content:"";
+	z-index:-2;
+}
+#tipOutset.timebox-tip { box-shadow: 10px 10px 80px 20px rgba(0, 0, 0, 0.3); }
+
+
+
+#tipOutset.timebox-tip::before, #tipOutset.timebox-tip::after, #tipOutset.timebox-tip, #tipOutset.timebox-tip > div { border-radius: 0px 0px 30px 30px; }
+#tipOutset.timebox-tip.timebox-vertical::before, #tipOutset.timebox-tip.timebox-vertical::after, #tipOutset.timebox-tip.timebox-vertical, #tipOutset.timebox-tip.timebox-vertical > #tipInset::after, #tipOutset.timebox-tip.timebox-vertical > div { border-radius: 30px 0px 0px 30px; }
+
+
+#tipOutset.timebox-tip div.timebox-tip-div { margin:0; display:flex; justify-content:center; font-size:1.1em;  line-height:1.0em; color:#00000099; font-weight:normal; }
+
+#tipOutset.timebox-tip div.timebox-tip-div.tip-horizontal { align-items: center; flex-direction:row; }
+#tipOutset.timebox-tip div.timebox-tip-div.tip-vertical  	{ height:100%; align-items:stretch; flex-direction:column; text-align:center; justify-content:space-between; }
+
+#tipOutset.timebox-tip div.timebox-tip-div.tip-vertical div.timebox-tip-v-top { 	display:flex; height:1em; 	align-items:top;	 justify-content:center; font-weight:bold; font-weight:bold; padding-top:30px; }
+#tipOutset.timebox-tip div.timebox-tip-div.tip-vertical div.timebox-tip-v-middle { 	display:flex; flex:1; flex-direction:column; justify-content:center; text-align:center; align-items:flex-start; font-size:1em; color:#000000BB; padding:0; }
+#tipOutset.timebox-tip div.timebox-tip-div.tip-vertical div.timebox-tip-v-bottom {	display:flex; height:1em; 	align-items:bottom;	 justify-content:center; font-weight:bold; font-weight:bold; font-size:.9em;  padding-bottom:30px; }
+
+#tipOutset.timebox-tip div.timebox-tip-div.tip-horizontal div.timebox-tip-h-left { 	display:flex; width:4em; 	align-items:center; justify-content:flex-start; text-align:left; padding:0 1em 0 0; font-weight:bold; }
+#tipOutset.timebox-tip div.timebox-tip-div.tip-horizontal div.timebox-tip-h-center {display:flex; flex:1; 		text-align:center;  font-size:1em;  }
+#tipOutset.timebox-tip div.timebox-tip-div.tip-horizontal div.timebox-tip-h-right {	display:flex; width:4em; 	align-items:center; font-size:.9em; justify-content:flex-end; text-align:right; padding:0 0 0 1em; font-weight:bold; }
+
+#tipOutset.timebox-tip .timebox-tip-h-center .bullet.tboxing,
+#tipOutset.timebox-tip .timebox-tip-v-middle .bullet.tboxing { display:inline-block; vertical-align:middle; margin-right:0.3em; }
+
+	
+div.warning { background-color: rgba(255, 55, 55, 1); color: white; }
+div.warning, div.warning > div { border-radius: 2px; }
+
+
+
+div.visi-tip {  
+	background-color: rgba(var(--mob-txt-blue),0.3);  /* blue style tooltip */ 
+	backdrop-filter: blur(2px);
+	
+	position: relative;
+	&:before, &:after {
+		content:''; position: absolute; inset:0;
+		border-radius: inherit; 
+	}
+	
+	&:before { 
+		z-index:-2;
+		background: linear-gradient(to right, rgba(250,250,250,.6), rgba(250,250,250,.9) 10%, rgba(255,255,255,.9) 70%, rgba(250,250,250,.6) 100%);
+		/* border:1px solid white;*/
+	}
+	&:after { 
+		z-index:-1;
+		background: transparent;
+	}
+}
+div.visi-tip, div.visi-tip > div { border-radius:.2em 1.2em;}
+
+
+
+
+
+#tipOutset.help-tip { 
+	color:rgb(var(--mob-txt-dark-blue));
+	text-shadow: 0px 0px 3px rgba(255,255,255,1); border-radius:5px; backdrop-filter: blur(1px);
+	position:relative;
+	/* box-shadow: rgba(50, 50, 93, 0.50) 0px 50px 100px -20px, rgba(0, 0, 0, 0.6) 0px 30px 60px -30px, rgba(10, 37, 64, 0.70) 0px -2px 6px 0px inset; */
+}
+#tipOutset.help-tip > #tipInset { 
+	border-top:30px solid transparent; border-bottom:30px solid transparent;
+	min-width:14em; max-width:32em; padding: 1em 2em;
+	max-height:80vh; overflow-y:clip; } /* max-height:80vh; prevents the tip to be higher than visible screen height */
+#tipOutset.help-tip.guidelines > #tipInset {
+	max-width:90vw; max-height:100vh;
+}
+#tipOutset.help-tip hr { color:transparent; width:100%; margin:0.4em auto 0.3em auto; height:.5px; border-style:solid; border-width:1px 0 0 0; border-image: linear-gradient(to right, transparent 0%, rgba(0,0,150,.2) 40%, rgba(0,0,150,.2) 60%, transparent 100% ); border-image-slice: 1; }
+#tipOutset.help-tip::before {
+	position:absolute; inset:0px; content:"";
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0%, rgba(250, 250, 255, 0.95) 40px, rgba(250, 250, 255, 0.95) calc(100% - 40px), rgba(0, 0, 0, 0.05) 100%); border-radius: inherit;
+	z-index:-1;
+}
+#tipOutset.help-tip::after {
+	position:absolute; inset:0px; content:"";
+	border-width:0px;
+	z-index:-2;
+}
+#tipOutset.help-tip { box-shadow: 0px 0px 80px 20px rgba(0, 0, 0, 0.1); }
+
+
+/* copy-paste overlays come above the sticker while moving it under the mouse, during copy/cut/paste mode, see (*cp01*) */
+
+div.cpoverlay {
+  background-image: repeating-linear-gradient( 45deg, rgba(255,255,255,.04), rgba(255,255,255,.10) 17%, rgba(0 0 0 /.04) 33%, rgba(255,255,255,.04) 50%  );
+  background-size: 50px 50px;
+  animation: slide-overlay-x 3s infinite;
+  animation-timing-function: linear;
+}
+@keyframes slide-overlay-x { 100% { background-position-x: 50px; background-position-y: -50px; } }
+
+div.cpoverlay.cutmode {
+  background-image: repeating-linear-gradient( -45deg, rgba(255,255,255,.04), rgba(255,255,255,.10) 17%, rgba(0 0 0 /.04) 33%, rgba(255,255,255,.04) 50%   );
+  background-size: 100px 100px;
+  animation: slide-overlay-x-cut 4s infinite;
+  animation-timing-function: linear;
+}
+@keyframes slide-overlay-x-cut { 100% { background-position-x: -100px; background-position-y: -100px; } }
+
+
+
+
+#flyingtf {
+	z-index:100; position:absolute; left:-1000; top:0; width:80px; pointer-events:none; /* see (*ftf01*) */
+	background: transparent;
+	
+	color:red; text-shadow: 0px 0px 3px rgba(255,255,255,1); backdrop-filter: blur(1px);
+	&:before, &:after {
+		content:''; position: absolute; inset:0;
+		border-radius: inherit; 
+	}
+	&:before { 
+		z-index:-2;
+		background:transparent; /* transparent 0 makes the modal-body upper border visible */ 
+		background-image: linear-gradient(to right, transparent 0%, rgba(255,255,255,0.7) 25%, rgba(255,255,255,0.7) 75%, transparent 100%);
+
+		/* border:1px solid white;*/
+	}
+	/* &:after { 
+		z-index:-1;
+		background: transparent;
+	} */
+}
+#flyingtf, #flyingtf > div { border-radius:.2em; }
+#flyingtf > div { 	padding:.2em 1em; text-align:center; font-size:90%; }
+
+
+
+/* css for C_iFIELD & C_iNOTE */
+
+textarea.validOK, input.validOK, div.validOK {  }
+textarea.validNOK, input.validNOK, div.validNOK {
+    /* box-shadow: 0 0 3px rgba(255, 21, 20, 0.6) !important;  */
+	border:	1px solid rgba(255, 21, 20, 0.4) !important;  
+}
+
+textarea.alpha100, input.alpha100, div.alpha100 {  width: 100%; overflow: hidden; }
+textarea.alpha080, input.alpha080, div.alpha080 {  width:100%; overflow: auto; }
+textarea.alpha64, input.alpha64 {  width: 64em; overflow: hidden; }
+textarea.alpha48, input.alpha48 {  width: 48em; overflow: auto; }
+textarea.alpha40, input.alpha40, div.alpha40 {  width: 40em; overflow: auto; }
+textarea.alpha36, input.alpha36, div.alpha36 {  width: 36em; overflow: auto; }
+textarea.alpha32, input.alpha32, div.alpha32 {  width: 32em; overflow: auto; }
+	td.alpha32 { max-width:32em; text-wrap:balance; }
+textarea.alpha28, input.alpha28, div.alpha28 {  width: 28em; overflow: auto; }
+textarea.alpha24, input.alpha24, div.alpha24 {  width: 24em; overflow: hidden; }
+textarea.alpha20, input.alpha20, div.alpha20 {  width: 20em; overflow: hidden; }
+textarea.alpha18, input.alpha18, div.alpha18 {  width: 18em; overflow: hidden; }
+textarea.alpha16, input.alpha16, div.alpha16 {  width: 16em; overflow: hidden; }
+textarea.alpha14, input.alpha14, div.alpha14 {  width: 14em; overflow: hidden; }
+.alpha12 {  width: 12em; overflow: hidden; }
+.alpha10 {  width: 10em; overflow: hidden; }
+textarea.alpha06, input.alpha06, div.alpha06 {  width: 6em; overflow: hidden; }
+textarea.alpha04, input.alpha04, div.alpha04 {  width: 4em; overflow: hidden; }
+textarea.alpha02, input.alpha02, div.alpha02 {  width: 2.2em; overflow: hidden; }
+input.alphaCUE {  padding:0; text-align:center; width: 4em; height:1.5em; min-height:1.5em; }
+
+td.label { padding:0.1em 0.5em; text-align:right; font-size:90%; }
+td.note-label{ padding:0.2em 0.5em; white-space:normal; text-align:right; vertical-align:top; font-size:90%; }
+td.note-label > div.note-tip, td.label > div.label-tip { font-size:90%; padding:.5em 1em 0em 0em; white-space:normal; text-align:left;  }
+label.label-in{ margin-left:0.5em; color:#999; }
+/* body.touch .label { font-size:90%; } */
+
+
+
+
+/* css for C_iDP */
+
+table.dpicker-layout { margin: 0 auto; }
+table.dpicker-layout table { padding: 0.5em; text-align:center; border-collapse:separate; }
+table.dpicker-layout td { vertical-align:top; }
+
+.snaps-inline { scroll-padding-inline: 1em; overscroll-behavior-inline: contain; scrollbar-width:none; }
+
+/* .snaps-inline { scroll-snap-type:x mandatory; scroll-padding-inline: 1em; scroll-behavior:smooth; overscroll-behavior-inline: contain; scrollbar-width:none; } */
+/* .snaps-inline > * { scroll-snap-align: center; } */
+
+
+div.top-dp-scroll-viewport { /* viewport - C_iCAL in controls.js */
+	/* border:3px solid cyan;  */
+	position:relative; overflow-x:auto; 
+	contain:layout paint;
+	
+	/* width:calc(100vw - 0px); max-width:calc(100vw - 0px); */
+	width:100%; max-width:100%;
+	margin:0;
+	
+	display:grid;
+	gap:1em; padding:0;
+	grid-auto-flow:column; 
+	
+	grid-auto-columns:auto;
+}
+
+
+div.top-dp-scroll-viewport div.top-dp-scroll-track {
+	/* border:1px solid hotpink; */
+}
+
+
+
+div.top-dp-scroll-viewport div.months-box:nth-child(even),
+body.gray div.top-dp-scroll-viewport div.months-box:nth-child(even) {
+	border-top:none; 
+}
+div.top-dp-scroll-viewport div.months-box { /* monthsboxes group inside C_iCAL, on the main calendar and in a datepicker modal */
+
+	border-top:15px solid oklch(from var(--account-color-code) 60% .19 h /.3);
+	margin-right:20px; 
+	display:grid;
+	gap:1em; padding:0 0 5px 0; /* those 5px leave place for the outline to appear all around without being cut underneath */
+	grid-auto-flow:column; /* contains div.month-table elements */
+	position:relative;
+}
+body.gray div.top-dp-scroll-viewport div.months-box {
+	border-top:15px solid rgb(210 210 210); 
+}
+
+div.top-dp-scroll-viewport div.months-box div.vaxe {
+	/* border:1px solid orange; */
+	position:absolute;
+	left:calc(50%); width:1px; top:0; bottom:0;
+	text-align:center;
+	display:inline-block;
+}
+
+
+
+div.top-dp-scroll-viewport div.months-box div.month-table {
+	/* border:1px solid blue; */
+	text-align:center;
+	display:inline-block;
+}
+
+
+
+
+
+
+
+
+/* centered calendar navigation buttons  <<   <  date  >   >>    */
+
+div.C_iCAL {
+	position:relative;
+	/* border:1px solid hotpink; */
+	
+}
+
+
+div.C_iDNAV-wrap {
+	display:flex;
+	justify-content:center;
+	/* width:100%; all divs are native 100% wide */
+	/* border:1px solid hotpink; */
+}
+div.C_iDNAV-centered {
+	position:relative;
+	/* border:1px solid hotpink; */
+	display:grid;
+	grid-template-columns: 5em 5em auto 5em 5em;
+	align-items:center;
+	column-gap: 10px;
+	padding: 0px 10px 0 10px;
+	/* backdrop-filter: blur(2px); border-radius:6px; */
+}
+
+
+
+
+div.C_iCAL div.leftpadder, div.C_iCAL div.rightpadder {
+	display:flex; justify-content:center; align-items:center; width:300px; height:100%;
+}
+
+
+/********* Main screen navigation buttons **********/
+
+
+div.click.top-dpicker-face {   /*  <<   <  is this -> centered date   >   >> */
+	text-align:center; display:grid; border-radius:6px; white-space:nowrap;
+	width:200px; min-width:200px; height:100%;
+	font:17px/1.15 calibri-bold; text-rendering:auto; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing:grayscale;
+	letter-spacing:+0.05em; 
+}
+
+div.top-button-face, div.chat-button-face { /*     |<<   |<    >|   >>|   <- are those buttons  */
+	min-height:100%; display:grid; place-items:center; font-weight:bold; 	
+}
+
+div.ical-buttons-wrap { /* transparent box on the right when calendar drawer is down */
+	height:100%; position:absolute; right:5px; top:0px; bottom:0px; z-index:+2;
+}
+div.ical-button { /* inside the calendar drawer, on the right side, the 2 calendar navigation buttons */
+	display:inline-block; min-width:40px; height:calc(50% - 6px); display:flex; justify-content:center; align-items:center;	margin:5px;
+}
+
+div.chat-button-face { /* inside the M_chat, on the conversation tab */
+	height:50px; margin-top:auto; margin-bottom:2px;
+}
+div.chat-button-face.send { width:100px; margin-left:2px; }
+div.chat-button-face.copy {	width:50px; }
+
+
+/* those 2 buttons are the waiting list button and the assistant search trigger */ 
+div.click.button.button-search.opaline-lime { }
+div.click.button.button-search.opaline-orange { }
+
+
+
+/* Now animations are common to all div.click.someclasses */
+
+/* Make the custom properties animatable (typed) */
+
+@property --bc-angle { syntax: "<angle>"; inherits: true; initial-value: 0deg; }
+
+@property --circle-xpx { syntax: "<length>"; inherits: true; initial-value: 30px; }
+@property --circle-ypx { syntax: "<length>"; inherits: true; initial-value: -50px; }
+
+.click.std-button { /* any .click tag may */
+	min-width:66px; width:66px; text-align:center;
+}
+div.click {
+	--b: .6px; /* border width */
+	--r: var(--input-fields-radius); /* border-radius, in case we want to change from input fields, here you can  */
+	--rr-off: calc(20% + 15px); /* radial-radius when standby */
+	--rr-hover:calc(10% + 10px); /* radial-radius when hovered */
+	
+	
+	&.ical-button, &.button.button-wlist, &.button.button-search, &.top-button-face, &.chat-button-face { /* see (*ic05*) */
+
+		/* Standby position (50% 100%) */
+		--circle-xpx: calc(50%);
+		--circle-ypx: calc(100%);
+		--bc-angle: 0deg;
+		
+		position:relative; color:white; backdrop-filter: blur(1.5px);
+
+    /* In oklch(from var(--toast-color) 25% c h), C is Chroma (color intensity/saturation, 
+		a number typically 0 to ~0.37) and H is Hue (the actual color shade, a number from 0 to 360 degrees), 
+		while l (lightness) is modified by 25% from the base variable; these values are relative, 
+		making C and H scalars, not degrees or percentages for C, but H is in degrees. */
+		
+		background:transparent;
+		background-image:radial-gradient(circle at var(--circle-xpx) var(--circle-ypx), 
+			/* hsl(from var(--account-color-code) h 35% 60% /.3) 0%,  */
+			/* hsl(from var(--account-color-code) h 30% 50% /.4) var(--rr-off)  */
+			oklch(from var(--account-color-code) 46% .22 h /.15) 0%, /* .3 */
+			oklch(from var(--account-color-code) 47% .175 h /.25) var(--rr-off) /* .5 */
+		);
+		border-radius: var(--r);
+		
+		/* transition velocity when quitting :hover */
+		transition: --circle-ypx 600ms ease-in-out 10ms,  --circle-xpx 600ms ease-in-out 40ms,  --bc-angle 900ms ease-in-out 20ms;
+
+		&:hover, &:focus-visible {
+			background:transparent;
+			/* --circle-xpx: 60%; those are now animated by the js side, see (*ic04*) */
+			/* --circle-ypx: 40%; */
+			--bc-angle: -45deg;
+			 /* transition velocity when entering :hover */
+			transition: --circle-ypx 100ms ease-in-out 0ms,  --circle-xpx 100ms ease-in-out 0ms,  --bc-angle 300ms ease-in-out 0ms;
+			background-image:radial-gradient(circle at var(--circle-xpx) var(--circle-ypx), 
+				rgba(var(--mob-lime-light-20) / .2) 0%, 
+				rgba(var(--mob-lime-light-20) / .6) var(--rr-hover) 
+			);
+		}
+		
+		/*  The conic gradient we need:     */
+		/*                                  */
+		/*      white   black   white       */
+		/*           \    |    /            */
+		/*            \   |   /             */
+		/*             \  |  /              */
+		/*              \ | /               */
+		/*               \|/                */
+		/* black ---------+------- black    */
+		/*               /|\                */
+		/*              / | \               */
+		/*             /  |  \              */
+		/*            /   |   \             */
+		/*           /    |    \            */
+		/*      white   black   white       */
+		
+		&:after { /* is only displaying on the border edge */
+			  content:""; position: absolute; inset: 0; padding: var(--b); border-radius: inherit;
+			  background: conic-gradient( from var(--bc-angle) at var(--circle-xpx) calc(var(--circle-ypx) / 2),
+								rgb(0 0 0 / .02) 0deg,
+								rgb(255 255 255 / .9) 45deg,
+								rgb(0 0 0 / .04) 90deg,
+								rgb(255 255 255 / .9) 135deg,
+								rgb(0 0 0 / .02) 180deg,
+								rgb(255 255 255 / .9) 225deg,
+								rgb(0 0 0 / .04) 270deg,
+								rgb(255 255 255 / .9) 315deg,
+								rgb(0 0 0 / .02) 360deg
+							);
+
+			  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+			  -webkit-mask-composite: xor;
+
+			  mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+			  mask-composite: exclude;
+
+			  pointer-events: none;
+			  z-index: 2; /* above ::after image */
+		}
+	}
+}
+div.click.top-button-face { --b: 0px; } 
+
+/* except for div.click.top-dpicker-face that is the lucky dog having an own animation */
+
+@property --rg-x { syntax: "<percentage>"; inherits: true; initial-value: 10%; }
+@property --rg-y { syntax: "<percentage>"; inherits: true; initial-value: 120%; }
+
+div.click.top-dpicker-face { /* see also (*ic01*)*/
+	
+	/* Standby position (50% 100%) */
+	/* --rg-x: 0%; */
+	/* --rg-y: 0%; */
+	/* --bc-angle: 0deg; */
+
+	position:relative; color:var(--main-text-lighty); backdrop-filter: blur(1px);
+	
+	
+	/* transition velocity when quitting :hover */
+	/* transition: --rg-y 200ms ease-in-out 200ms,  --rg-x 400ms ease-in-out 0ms,  --bc-angle 400ms ease-in 0ms; */
+
+	/* &:hover, &:focus-visible { */
+		/* --rg-x: 65%; */
+		/* --rg-y: 65%; */
+		/* --bc-angle: -90deg; */
+		 /* transition velocity when entering :hover */
+		/* transition: --rg-y 400ms ease-in-out 0ms,  --rg-x 100ms ease-in-out 100ms,  --bc-angle 400ms ease-out 0ms; */
+	/* } */
+	
+}
+
+
+
+/* shaders are used inside the C_iCAL scroller viewport, see (*cal01*) where the width of these guys is set (controls.js)  */
+div.C_iCAL div.whiteleftshader {
+	position:absolute; top:0px; left:0; bottom:0; /* height is adjusted by either the div content or an applied height on the element */
+	background:transparent; /* transparent 0 makes the modal-body upper border visible */ 
+	background-image: linear-gradient(to right, rgb(var(--mob-bckg-white-20)) 0px, transparent 100%);
+	width:140px; pointer-events:none;
+	/* margin-right:8px; */
+	/* border:1px solid blue; */
+	z-index:+1;
+}
+div.C_iCAL div.whiterightshader { 
+	position:absolute; top:0px; right:0; bottom:0; /* height is adjusted by either the div content or an applied height on the element */
+	background:transparent; /* transparent 0 makes the modal-body upper border visible */ 
+	background-image: linear-gradient(to left, rgb(var(--mob-bckg-white-20)) 0px, transparent 100%);
+	width:80px; pointer-events:none;
+	/* margin-right:8px; */
+	/* border:1px solid blue; */
+	 z-index:+1;
+}
+
+
+div.zi-message-inset.datepicker div.C_iCAL div.whiteleftshader { display:none; }
+div.zi-message-inset.datepicker div.C_iCAL div.whiterightshader { display:none; }
+
+
+
+
+
+/* we have this carousel where we would like to programaticaly scroll left or right, acting on the scroll, when the user hits left or right button, from js.
+   we need the carousel to scroll by one entire div.months-box at a time. All this is solved by using the scrollbar (so I think the upper css rules are a good start).
+   
+*/
+
+
+table.dpicker-month tr.dpicker-dayname th { font-size:0.7em; color:var(--main-text-lighter); font-weight:bold; }
+table.dpicker-month tr.dpicker-dayname th.highlight { color:red; }
+table.dpicker-month tr:hover th.dpicker-weeknumber { color:red; font-weight:bold; }
+table.dpicker-month:hover tr th.dpicker-monthname { color:rgba(255 0 0 /.6); }
+
+
+table.dpicker-month th.dpicker-monthname {  
+	font-size:1.3em;
+	color:var(--main-text-lighter); 
+	letter-spacing:+0.3em;
+	white-space:nowrap; 
+}
+table.dpicker-month th.dpicker-weeknumber ,
+	span.weeknumber { font-size:0.8em; color: var(--main-text-darker); font-weight:normal; font-style:italic; }
+table.dpicker-month th.dpicker-weeknumber  { padding-left:0.8em; padding-right:.8em; min-width:1.6em; }
+table.dpicker-month th.dpicker-weeknumber.today { font-size:1em; font-style:normal; font-weight:bold; }
+
+table.dpicker-month td, table.dpicker-month th { position:relative; border:1px solid transparent; padding:.05em .28em; border-radius:3px; }
+
+body.mouse table.dpicker-month td:not(.selectday).aday:hover,
+body.mouse table.year-planning td.aday:hover { 
+	outline: 4px solid rgba(255, 0, 0, 0.6); outline-offset: 1px;
+	border:1px solid transparent;
+}
+
+table.dpicker-month td.dpicker-date.today,
+table.year-planning td.dpicker-date.today { 
+	outline: 4px solid rgba(var(--mob-txt-lime), 1); outline-offset: 1px;
+	border-radius: 4px 4px 0px 0px;
+} 
+table.dpicker-month td.dpicker-date { 
+	cursor:pointer; width:1.5em; min-width:1.5em; font-size:.95rem;
+}
+table.dpicker-month td.selectday.today, table.dpicker-month td.selectday { /* year-planning doesn't have the concept of 'selected day' */
+	outline: 4px solid rgba(var(--mob-blue-thick-20) /.7); outline-offset: 1px;
+	color: var(--mob-blue-thick);
+	font-weight:bold;
+}
+
+body.touch .dpicker-month td { padding:.3em .4em; } /* make it wide enough for your big fingers */
+
+
+
+
+.minder-border { border-top:1px solid #c2e249; }
+.mob-border { border-top:1px solid #85A5BF; }
+	
+
+table.dpicker-month.selectmonth th.dpicker-monthname { color:rgb(var(--mob-txt-blue)); } /* blue mobminder  for text on white background*/
+
+table.dpicker-month.todaymonth th.dpicker-monthname ,
+table.dpicker-month.todaymonth th.dpicker-weeknumber.today,
+table.dpicker-month td.today {
+	color:rgb(var(--mob-txt-lime));
+	font-weight:bold;
+}
+
+table.dpicker-month td.dpicker-date.today.resa-new,
+table.dpicker-month td.dpicker-date.selectday.resa-new,
+table.dpicker-month td.dpicker-date.resa-new { /* is a brother of (*css01*) that displays this info on the planning view */
+	outline: 4px solid rgba(255, 0, 0, 0.4); outline-offset:1px;
+	transition: outline 0.2s; 
+	border-radius: 3px 0px 6px 0px;
+	color:red;
+}
+table.dpicker-month td.dpicker-date.selectday.resa-new {
+	color: var(--mob-blue-thick);
+}
+
+
+/* year-planning appears in M_RESC */
+
+table.year-planning td.daycode0.aday { background: rgba(0 0 0 /0.16); color: white; } /*  see (*tf03*) legacy gray */
+table.year-planning td.daycode1.aday { background: rgba(0 0 0 /0.00)  }
+table.year-planning td.daycode2.aday { background: rgba(0 0 0 /0.04)  }
+table.year-planning td.daycode3.aday { background: rgba(0 0 0 /0.00)  }
+table.year-planning td.daycode4.aday { background: rgba(0 0 0 /0.04)  }
+table.year-planning td.daycode5.aday { background: rgba(0 0 0 /0.00)  }
+table.year-planning td.daycode6.aday { background: rgba(0 0 0 /0.16); color: white; }
+
+
+
+table.year-planning td.daycode0 { border-radius:.1em; } /* sunday */
+table.year-planning td.daycode6 { border-radius:.1em; } /* saturday */
+
+table.year-planning th.daycode0 { background: rgba(0 0 0 /0.16); color: white; border-radius:0 .6em 0 0; } /* sunday */
+table.year-planning th.daycode2 { background: linear-gradient(to bottom, transparent 20%, rgba(0 0 0 /0.04) 60% ) }
+table.year-planning th.daycode4 { background: linear-gradient(to bottom, transparent 20%, rgba(0 0 0 /0.04) 60% ) }
+table.year-planning th.daycode6 { background: rgba(0 0 0 /0.16); color: white; border-radius:.6em 0 0 0; } /* saturday */
+
+
+/* css for C_iYEAR  */
+
+div.year- div table { border-collapse:separate; border-spacing:1px; border:1px solid transparent; }
+div.year- div table th { color: var(mob-txt-color); border-bottom: 3px solid white; min-width:1.8em; }
+div.year- div table td { border:1px solid transparent; }
+div.year- div table tr.trimester-odd { background: rgba(0 0 0 /.05); }
+div.year- div table.year-months tr.trimester-odd { background:linear-gradient(to right, transparent 0%, transparent 50%, rgba(0 0 0 /.05) 100% ); }
+div.year- div table tr.trimester-even { background: white; }
+table.year-planning th { cursor: default; font-size:80%; font-weight:normal; vertical-align: middle; }
+table.year-planning td { border-radius:.3em; cursor: pointer; font-size:90%; text-align: center; }
+table.year-months  td { cursor: default; font-size:90%; color:var(mob-txt-color); }
+table.year-months  th { cursor: pointer; font-size:100%; text-align: center; }
+table.year-planning td.aday:hover { border: 1px solid red; }
+table.year-planning td.aday.dragging { background: rgba(20, 21, 255, 0.16); }
+table.year-planning th.highlight, table.year-months .highlight  { color:red; }
+table.year-planning th.highlight  {  }
+
+table.year-stats { margin:0 auto; border-collapse:separate; border-spacing:1px; border:1px solid transparent; }
+table.year-stats td { min-width:1.8em; text-align: center; }
+
+table.year-planning td.today { color:blue; font-weight:bold; color:rgb(var(--mob-txt-lime)) }
+
+
+
+
+/* --------------- C_iCAL ------- C_iMONTH ------ C_iDAY ------------------   */
+
+/* setting of --account-color-code ? see (*tf02*) */
+
+/*
+table.dpicker-month td.daycode0.aday { background: hsl(from var(--account-color-code) h 40% 55% /.7); color: white; }
+table.dpicker-month td.daycode1.aday { background: transparent;  }
+table.dpicker-month td.daycode2.aday { background: hsl(from var(--account-color-code) h 25% 80% /.5);  }
+table.dpicker-month td.daycode3.aday { background: transparent;  }
+table.dpicker-month td.daycode4.aday { background: hsl(from var(--account-color-code) h 25% 80% /.5);  }
+table.dpicker-month td.daycode5.aday { background: transparent;  }
+table.dpicker-month td.daycode6.aday { background: hsl(from var(--account-color-code) h 60% 90% /.7); }
+*/
+
+table.dpicker-month td.daycode0.aday { background: oklch(from var(--account-color-code) 40% .17 h /.4); color: white; }
+table.dpicker-month td.daycode1.aday { background: transparent;  }
+table.dpicker-month td.daycode2.aday { background: oklch(from var(--account-color-code) 60% .10 h /.16);  }
+table.dpicker-month td.daycode3.aday { background: transparent;  }
+table.dpicker-month td.daycode4.aday { background: oklch(from var(--account-color-code) 60% .10 h /.16);  }
+table.dpicker-month td.daycode5.aday { background: transparent;  }
+table.dpicker-month td.daycode6.aday { background: oklch(from var(--account-color-code) 90% .21 h /.22); }
+
+table.dpicker-month td.today { color:black; }
+table.dpicker-month td.today.aday.selectday { color: var(--mob-blue-thick); outline: 5px solid rgba(var(--mob-txt-lime), 1); outline-offset: 1px; }
+table.dpicker-month td.daycode0.today.aday.selectday { color: white; }
+
+
+body.gray table.dpicker-month td.daycode0.aday { background: rgba(0 0 0 /0.30); color: white; }
+body.gray table.dpicker-month td.daycode1.aday { background: transparent;  }
+body.gray table.dpicker-month td.daycode2.aday { background: rgba(0 0 0 /0.04);  }
+body.gray table.dpicker-month td.daycode3.aday { background: transparent;  }
+body.gray table.dpicker-month td.daycode4.aday { background: rgba(0 0 0 /0.04);  }
+body.gray table.dpicker-month td.daycode5.aday { background: transparent;  }
+/* body.gray table.dpicker-month td.daycode6.aday { background: rgba(0 0 0 /0.08); color: black; } */
+
+
+table.dpicker-month tr.even td.aday::before, /* visualize lines */
+table.dpicker-month tr.even th.dpicker-weeknumber::before
+{ position:absolute; content:""; inset:0; background:rgba(0 0 0 /0.08); z-index:-1; border-radius:3px; }
+
+
+
+
+/* css for C_iAC */
+
+
+div.select-header { line-height:2.4em; text-align:left; padding-left:.6em; white-space:nowrap; } /* C_iCRESTA title */
+div.select-header.centered { text-align:center; padding-left:0; } /* C_iCRESTA title */
+
+
+
+/* C_iDRAG */
+
+body.cursor-dragging-notallowed * { cursor:not-allowed !important; }
+body.cursor-dragging-vertical * { cursor:n-resize !important; }
+body.cursor-dragging-horizontal * { cursor:e-resize !important; }
+body.cursor-dragging-anywhere * { cursor:move !important; }
+body.cursor-dragging-vertical-insert * { cursor:row-resize !important; }
+body.cursor-dragging-horizontal-insert * { cursor:col-resize !important; }
+body.cursor-wait * { cursor:wait !important; }
+
+
+
+/* css for C_iSKIN */
+
+div.skin-face { line-height:1.2em; min-height:1.2em; cursor:pointer; }
+
+table.skin-picker { text-align: left; border-collapse:separate; border-spacing:1px; }
+table.skin-picker td { cursor:pointer; border:1px solid white; display:table-cell !important; transition:transform 0.2s ease; }
+table.skin-picker td val { display:none; } /* this is to some modal flip occurs due to long content in <css></css> and <val></val> */
+table.skin-picker td css { display:none; }
+	table.skin-picker.colors td { width:36px; height:36px; color:transparent; }
+	table.skin-picker.patterns td { width:42px; height:42px; color:transparent; border:4px solid white; }
+	table.skin-picker.tags td { width:2em; font-size:1.5em; vertical-align:middle; text-align:center; padding:.5em .9em; background:transparent; border:1px solid transparent;} /*   */
+	table.skin-picker.e-skins td { width:280px; height:140px; vertical-align:top; padding-top:0.5em; font-size:1.1em; }
+table.skin-picker th.header { color: transparent; border: none;  width: 30px; height: 10px; }
+table.skin-picker td.selected { border: 1px solid black; }
+
+
+table.skin-picker td.point { transform: scale(1.4); }
+	table.skin-picker.colors td.point { border: 1px solid gray; transform: scale(1.3); }
+	table.skin-picker.patterns td.point { border: 1px solid rgb(var(--mob-txt-blue)); transform:scale(1.1); z-index:100; }
+	table.skin-picker.tags td.point { color:rgb(var(--mob-txt-lime)); transform: scale(1.6); }
+	table.skin-picker.e-skins td.point { border: 1px solid gray; transform: scale(1.2); }
+	
+
+table.skin-picker td.allownone { color:gray; text-align:center; height:22px; }
+
+div.e-skin { min-width:120px; min-height:100px; border-radius:3px; border:1px solid rgba(0 0 0 / 0.2); } /* padding-bottom helps the input value text to be vertical-aligned top */
+table.skin-picker td.mobminder ,	.e-mobminder { background: white url(./e-resa/mobminder.jpg) center center no-repeat; color:cadetblue }
+table.skin-picker td.medminder ,	.e-medminder { background: white url(./e-resa/medminder.jpg) center center no-repeat; color:cadetblue }
+table.skin-picker td.doctors ,		.e-doctors { background: white url(./e-resa/doctors.jpg) center center no-repeat; color:cadetblue }
+table.skin-picker td.business,		.e-business { background: white url(./e-resa/business.jpg) center center no-repeat;  color:cadetblue}
+table.skin-picker td.clinics ,		.e-clinics { background: white url(./e-resa/clinics.jpg) center center no-repeat;  color:cadetblue}
+table.skin-picker td.lawyers ,		.e-lawyers { background: white url(./e-resa/lawyers.jpg) center center no-repeat;  color:cadetblue }
+table.skin-picker td.mecas ,		.e-mecas { background: white url(./e-resa/mecas.jpg) center center no-repeat;  color:cadetblue}
+table.skin-picker td.wellness,		.e-wellness { background: white url(./e-resa/wellness.jpg) center center no-repeat;  color:cadetblue }
+table.skin-picker td.edoc,			.e-edoc { background: white url(./e-resa/edoc.jpg) center center no-repeat;  color:cadetblue }
+table.skin-picker td.stetosblue,	.e-stetosblue { background: white url(./e-resa/stetosblue.jpg) center center no-repeat;  color:cadetblue }
+table.skin-picker td.doctortie,	.e-doctortie { background: white url(./e-resa/doctortie.jpg) center center no-repeat;  color:cadetblue }
+table.skin-picker td.emedical,		.e-emedical { background: white url(./e-resa/emedical.jpg) center center no-repeat;  color:cadetblue }
+table.skin-picker td.handpeople,	.e-handpeople { background: white url(./e-resa/handpeople.jpg) center center no-repeat;  color:cadetblue }
+table.skin-picker td.bambstones,	.e-bambstones { background: white url(./e-resa/bambstones.jpg) center center no-repeat;  color:cadetblue }
+table.skin-picker td.stoneleaves,	.e-stoneleaves { background: white url(./e-resa/stoneleaves.jpg) center center no-repeat;  color:cadetblue }
+table.skin-picker td.flowers,		.e-flowers { background: white url(./e-resa/flowers.jpg) center center no-repeat;  color:cadetblue }
+table.skin-picker td.flowerpetals,	.e-flowerpetals { background: white url(./e-resa/flowerpetals.jpg) center center no-repeat;  color:cadetblue }
+table.skin-picker td.caduceus,		.e-caduceus { background: white url(./e-resa/caduceus.jpg) center center no-repeat;  color:cadetblue }
+table.skin-picker td.none,			.e-none { background: white;  color:cadetblue }
+
+
+
+
+
+/* css for C_iCHAT */
+
+table.chat-phyls { }
+
+table.chat-phyls  th { font-size:1em; vertical-align:top; font-weight:normal; }
+/* table.chat-phyls  th div { font-size:.9em; text-align:center; width:3em; overflow:hidden; height:1.3em; line-height:1em; padding:0.3em 0.1em 0.1em 0.1em; border-radius:1em; } */
+table.chat-phyls  th.who-left div.default { background-color: #85A5BF; color:white; }  /* default appearence when no color is defined at login level */
+table.chat-phyls  th.who-right div.default { background-color: var(--mob-lime-light);  color:white; }
+
+table.chat-phyls  td.who-says { vertical-align:bottom; }
+table.chat-phyls  td.who-says div { max-width:80%; }
+table.chat-phyls  td.who-says div span.phy { 
+	border-radius:.5em; /*color:black;*/
+	margin:.1em 0 0 0;
+}
+table.chat-phyls  td.who-says div span.when { color:silver; font-size:80%; padding:.5em 0; white-space:nowrap; }
+table.chat-phyls  td.who-says div span.who { color:grey; font-size:90%; padding:.8em .2em .2em .2em; white-space:nowrap; }
+table.chat-phyls  td.who-says div.left { margin: 0 auto 0 0; text-align:left; }
+table.chat-phyls  td.who-says div.right { margin: 0 0 0 auto; text-align:right; }
+table.chat-phyls  td.who-says div.left span.phy { float:left; padding: .3em 1em; /*background-color: #DDDDFF;*/ }
+table.chat-phyls  td.who-says div.right span.phy { float:right; padding: .3em 1em; /*background-color: #DDEECC;*/ }
+table.chat-phyls  td.who-says div.left span.phy.default { background-color: #DDDDFF; color:rgba(0 0 0 /.9); }
+table.chat-phyls  td.who-says div.right span.phy.default { background-color: #DDEECC; color:rgba(0 0 0 /.9); }
+table.chat-phyls  td.who-says div.left span.when {  }
+table.chat-phyls  td.who-says div.right span.when {  }
+
+
+
+/* css for C_iPLUS */
+
+/* table.plus { margin-left:1em; border-left:1px solid var(--mob-lime-light);}*/
+/* td.prefix { border-bottom:.5px solid transparent; border-image: linear-gradient(to right,rgba(0 0 0 /.2),rgba(0 0 0 /0)); border-image-slice: 1; } */
+table.plus { border-collapse:separate; margin-left:1em; border-left: 1px solid transparent; border-image: linear-gradient(to bottom, transparent .5em, rgba(175,197,60,1) .5em, rgba(175,197,60,.1) 90%); border-image-slice:1; }
+table.plus.reversed { border-collapse:separate; margin-left:1em; border-left: 1px solid transparent; border-image: linear-gradient(to top, transparent .5em, rgba(175,197,60,1) .5em, rgba(175,197,60,.1) 90%); border-image-slice:1; }
+
+table.plus tr > td { vertical-align:top; padding-left:.5em; line-height:1.6em; }
+table.plus tr > td > div.tag { background-color:white; }
+table.plus tr > td.plus-do { padding-left:.5em; padding-top:.3em; min-width:10em;}
+table.plus tr > td.blueprint { padding: 0 1em 1em 1em;  }
+table.plus tr > td:not(.plus-do):not(.blueprint):first-child{ padding:0em .2em; width:2em; text-align:center; }
+
+table.plus.patterns tr > td > div.bullet { background-color:white; width:2.4em; }
+
+
+div.tag, div.tagbig { cursor:pointer; vertical-align:middle; text-align:center;  }
+	div.tag { font-size:1.2em; height:1em; width:1.6em; }
+	div.tagbig { font-size:2em; width:2.2em; min-height:2.2em; height:2.2em; line-height:2.2em; background:white; border:1px solid rgba(0 0 0 /.1); border-radius:0.2em; }
+	div.tag.taglabelled { margin-right:0.2em; position:relative; bottom:.05em; padding: .12em .1em; border-radius:.2em; }
+		
+div.bullet { display:inline-block; width:2.4em; height:1.3em; min-height:1.3em; line-height:1.3em; font-size:1.2em; border-radius:0.15em; margin-right:0.5em; box-sizing:border-box; text-align:center; } /*  margin-top:2px; */
+	div.bullet.workcode { /* line-height:21px; */  /* see also (*bp01*) */ }
+	div.bullet.account {  border-radius:0.24em; height:1.3em; min-height:1.3em; line-height:1.3em; font-size:1.3em; } /* the space between two menu lines must be ruled here (*mt02*) */
+	div.bullet.account.fit {  position:absolute; inset:0; height:auto; min-height:auto; line-height:1.3em; font-size:1.3em; } /* the space between two menu lines must be ruled here (*mt02*) */
+	div.bullet.resource { /* line-height:1.3em; */  }
+	div.bullet.tboxing { /* line-height:1.3em; */ border-radius:.6em 0 0 .6em; }
+	div.bullet.tagged { }
+
+	div.bullet.padded { margin-right:0.6em; margin-left:0.6em; }
+	
+	div.bullet.login { font-size:.9em; width:36px; height:36px; max-width:36px; max-height:36px; line-height:36px; border-radius:50%; margin-right:0; }
+	div.bullet.login.fa { font-size:1.1em; }
+	div.bullet.login.big { width:48px; height:48px; max-width:48px; max-height:48px; line-height:48px;  }
+	div.bullet.login.small { width:25px; height:25px; max-width:25px; max-height:25px; line-height:24px;  }
+	div.bullet.login.tbar { font-size:1.0em; width:2em; height:1.8em; max-width:2em; max-height:1.8em; line-height:1.8em; }
+	div.bullet.login.fa.tbar { font-size:1.12em;  }
+	
+	
+div.bullet.c200 { border:1px solid rgba(0,0,23,.1); } /* see colors.css */
+
+div.bullet-chat { margin-right:1.4em; color:silver; }
+div.bullet-hourly { display:inline-block; width:1em; border-radius:2px; }
+/* div.bullet-tboxing { width:2em; border-radius:0.4em 0 0 0.3em; margin-right:0.5em; }*/
+div.plusorder { color:transparent; text-align:center; } /* drag-drop div */
+
+	
+/* css for C_iARRAY */
+
+div.filterblueprint { padding:.2em 3em; }
+
+div.list-header-dragging { font-weight:bolder; text-align:center; } /* drag and drop interactivity */
+
+div.i-array table{ margin: 0 auto; }
+div.i-array table tr.dds { height:0px; background:none; }
+	
+div.i-array table tr.see { text-align:center; color:rgb(var(--mob-txt-blue)); line-height:2em; background:rgba(20, 21, 255, 0.2); } /* blue background */
+div.i-array.standard { }
+div.i-array.highheader table tr.see { line-height:4em; }
+
+div.i-array table tr.see th { white-space:nowrap; padding:0 1em 0 1em;  }
+div.i-array table tr th.sorting { color:var(--main-text-darkest); }
+div.i-array table tr th.sorting i { color:rgb(var(--mob-lime-thick)); }
+
+div.i-array table tr td { padding:.1em 1em; white-space:nowrap; vertical-align:top; }
+div.i-array table tr td.text { text-align: left; }
+div.i-array table tr td.figure { text-align: right; }
+div.i-array table tr td.sum { text-align: right; font-weight:bold; font-size:85%; color:var(--mob-blue-thick); }
+div.i-array table tr td.max { text-align: left; font-style: italic; font-size:85%; color:orange; }
+div.i-array table tr td.count { text-align: center; font-style: normal; font-size:85%; color:var(--main-text-color); }
+div.i-array table tr { line-height:1.5em; cursor:pointer; }
+
+@media screen { /* shading odd lines and columns to help reading in the table */
+	div.i-array table col:nth-child(odd) { background: rgba(0, 0, 0, 0.02); } /* shadows one double column on two */
+	div.i-array table tr:not(.see):not(.counters):nth-child(odd) { background: rgba(0, 0, 0, 0.02); }
+	div.i-array table tr:not(.see):not(.counters):hover { background: rgba(194,226,73, 0.17); }
+	div.i-array table tr:not(.see):not(.counters):active { background: rgba(194,226,73, 0.37); }
+}
+
+div.i-array table col.ccss { width:2%; }
+div.i-array table col.creator { width:5%; }
+div.i-array table col.created { width:5%; }
+div.i-array table col.name { max-width:22%; }
+div.i-array table col.note { width:50%; }
+
+div.i-array table tr td.ccss { padding:0; border-left:none;  }
+div.i-array table tr td.name { text-align: left; white-space:normal; max-width:22%; }
+div.i-array table tr td.note { text-align: left; white-space:normal; }
+div.i-array table tr td.visitors { text-align: left; font-weight: bold; white-space:nowrap; }
+div.i-array table tr td.performances { text-align: left;  }
+
+div.i-array.smstraf table tr.see th { padding:0.1em 0.6em; min-width:5em; }
+
+div.array-busy { background:rgba(255, 255, 255, 0.8) url(spinner-128px.gif) center 10em no-repeat; }
+
+	/* custom C_iARRAY classes */
+	/* div.i-array.resas-finder table tr:not(.dds) { border-bottom: 1px solid #e5e7ef; background-color:transparent;  }
+	div.i-array.resas-finder table td { border-left: 1px dotted #e4f3a7; padding:.1em 1em; }
+	div.i-array.resas-finder table td div.bullet { margin-top:0.1em; }
+	div.i-array.resas-finder table { } */
+	
+	div.i-array table tr:not(.dds) { border-bottom: .5px solid #e5e7ef; background-color:transparent;  }
+	div.i-array table td, div.i-array table th { border-left:.5px dotted #e4f3a7; }
+	div.i-array table td.ccss { border-right:.5px solid transparent!important;  }
+	div.i-array table td div.bullet { margin-top:0.1em; margin-right:auto; margin-left:auto; }
+	div.i-array table { border-right:.5px dotted #e4f3a7; margin:0 auto; } 
+	
+	div.i-array table tr.ds-obsolete td { color:#CCC; }
+
+
+/* css for C_iBAR */
+
+table.iBAR-table { line-height: 1em; border: none; }
+
+table.iBAR-table.linedup tr { border-bottom: 2px solid transparent; background-color: rgba(0, 0, 0, 0.03); /*0px 1px 0px rgba(0, 0, 0, 0.1);*/ }
+table.iBAR-bars.linedup tr { border: none; background-color: transparent; }
+
+table.iBAR-bars.shadow tr { box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1); }
+table.iBAR-bars td.mobbar { box-shadow: inset 0px 3px 2px 1px rgba(255, 255, 255, 0.4), inset -0px -3px 2px rgba(0, 0, 0, 0.06); }
+
+
+
+/* css for C_iFILE */
+div.ifile { border:.3em dashed var(--mob-blue-thick); border-radius:0.4em; margin-top:1em; }
+div.ifile-new { border-color:rgb(var(--mob-lime-thick)); }
+
+
+

@@ -1,0 +1,11 @@
+<french>{dear} {gender} {lname},
+
+Le dentiste Philippe Martin (Cabinet Dentaire des Iles d'Or) vous rappelle le numéro de téléphone réservé à la prise de RDV pour ses consultations:
+02 513 92 34
+
+Seul ce numéro est utilisable et non celui du Centre Médical des Iles d'Or.
+En effet, le secrétariat du centre médical ne gère pas les agendas des dentistes.
+
+Bien cordialement,
+Secrétariat du dentiste Philippe MARTIN
+(SVP ne répondez pas à ce sms, utilisez uniquement le 025139234)</french>

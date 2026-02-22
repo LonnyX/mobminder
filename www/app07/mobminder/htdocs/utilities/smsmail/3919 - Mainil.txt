@@ -1,0 +1,5 @@
+﻿<french>{dear} {gender} {lname}, Bonjour.
+Nous espérons avoir le plaisir de reprendre notre activité au cabinet dentaire le 11/05/2020. Vous serez contacté(e) personnellement par téléphone pour vous fixer un nouveau rendez-vous dans le cadre de votre traitement en cours. Les rendez-vous se donneront suivant l'ordre des annulations depuis le 16/03 et suivant l'urgence des soins. Toutes les explications se trouveront sur le site web du dentiste Mainil, à savoir: www.dentistemainil.com
+Prenez bien soin de vous et de vos proches,
+Dentiste Jean-Edouard Mainil.
+(Ne répondez pas à ce SMS, vous serez recontacté(e). Nous ne pouvons pas lire les réponses par SMS.)</french>

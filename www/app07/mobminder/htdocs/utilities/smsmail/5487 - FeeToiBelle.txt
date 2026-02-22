@@ -1,0 +1,15 @@
+<french>Bonjour {gender} {lname},
+
+Votre institut ouvrira en nocturne pour votre shopping de Noël:
+
+- Le vendredi 9 décembre de 18h30 à 20h
+- Le vendredi 23 décembre de 17h à 19h30
+- Le samedi 24 décembre de 14h à 15h30
+
+Hâte de vous retrouver!
+
+La fée toibelle
+
+(svp ne répondez pas à ce sms, contactez-moi seulement via le 0474127542)</french>
+
+

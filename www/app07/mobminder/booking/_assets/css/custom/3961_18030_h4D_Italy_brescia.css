@@ -1,0 +1,20 @@
+
+
+body.c3961 { background: white;  }
+body.c3961 h1 { display:none !important; }
+body.c3961 h2 { display:none !important; }
+body.c3961 .action {  } /* this is the orange on buttons */
+body.c3961 .e-button {  }
+body.c3961 section.s-h1 { }
+body.c3961 section.s-info div.container { }
+
+body.c3961 section.s-img {  }
+	body.c3961 section.s-img div { padding:0; }
+		body.c3961 section.s-img div img { max-height:400px !important; }
+	
+body.c3961 section.s-info { }
+body.c3961 section.s-action {  }
+body.c3961 section.s-directions { }
+body.c3961 section.s-footer { /* display:none; */ }
+
+

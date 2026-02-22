@@ -1,0 +1,31 @@
+
+
+/* h4d Intériale */
+
+body.c3673 { background: white; color:rgb(105,108,124); }
+body.c3673 h1 { color: #1672C9; margin: 0 0 1em 0; }
+body.c3673 h2 { color:inherit; }
+body.c3673 .action { background: #F8A523; color:#1672C9; } /* this is the orange on buttons */
+body.c3673 .e-button { background-color:#F8A523; font-weight:bold; color:#1672C9; }
+body.c3673 section.s-h1 { }
+
+body.c3673 section.s-img { margin:0; }
+	body.c3673 section.s-img div { padding:0; }
+	
+body.c3673 section.s-info { }
+body.c3673 div.fa-info-circle { display:none !important; }
+body.c3673 section.s-info h2 { text-align:left; }
+
+body.c3673 section.s-action { background: rgb(242,242,242) }
+body.c3673 section.s-directions { }
+body.c3673 section.s-footer { }
+
+
+body.c3673 textarea.validNOK, body.c3673 input.validNOK { 
+    box-shadow: none !important; 
+	border:	1px solid rgba(245, 65, 35, 0.9) !important;  
+}
+
+body.c3673 #eresa_ampm { display:none !important } /* do not display choices for sunday and saturday */
+
+

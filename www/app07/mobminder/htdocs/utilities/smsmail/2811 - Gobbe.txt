@@ -1,0 +1,12 @@
+<french>Bonjour {gender} {lname},
+votre dentiste Pierre Gobbes travaillera dorénavant sur 2 sites: Dampremy et Gosselies.
+
+Pour un RDV les lundi, mercredi et jeudi à Gosselies contactez le 071342304.
+
+Pour un RDV le mardi à Dampremy contactez le 071319419.
+
+Gosselies: 7 Fb de Bruxelles.
+Dampremy: 137 rue Wauters.
+
+Merci de votre fidélité.
+(svp ne répondez pas à ce SMS)</french>

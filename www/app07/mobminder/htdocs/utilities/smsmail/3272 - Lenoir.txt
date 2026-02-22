@@ -1,0 +1,22 @@
+﻿<french>{dear} {gender} {lname},
+
+Je ferme avec regret mon cabinet d'Auderghem.
+Merci de m'avoir donné votre confiance pour prendre soin de vous.
+
+Le Dr Justine Delfosse (0487245883) peut prendre le relais.
+
+Pour toute question, vous pouvez me contacter par mail:
+
+docteurlenoir@gmail.com
+
+Merci,
+Dr Lenoir</french>
+
+
+
+
+
+
+
+
+

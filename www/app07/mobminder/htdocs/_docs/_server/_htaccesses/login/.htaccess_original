@@ -1,0 +1,16 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+
+
+RewriteRule   ^([0-9]{4,})\/([0-9]{4,})\/?([0-9]{0,})?$   http://be.mobminder.com/index.php?aid=$1&lid=$2&kid=$3 [NC,L]
+RewriteRule   ^.+$   error.html
+
+
+#=> Quand on indiquera login.mobminder.com/3103/8891/7518 
+#=> Ca va appeler http://be.mobminder.com/index.php?aid=3103&lid=8891&kid=7518
+# le 3ieme slash est optionel
+
+# le premier groupe contient minimum 4 chiffres
+# le second groupe contient minimum 4 chiffres
+# le troisieme groupe est optionnel

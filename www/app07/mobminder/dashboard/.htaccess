@@ -1,0 +1,4 @@
+AuthName "Protected Dashboard Page"
+AuthType Basic
+AuthUserFile "/srv/web/be.mobminder.com/dashboard/.htpassword"
+Require valid-user

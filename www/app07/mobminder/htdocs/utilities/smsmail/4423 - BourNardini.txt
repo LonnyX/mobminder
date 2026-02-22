@@ -1,0 +1,12 @@
+<french>{dear} {gender} {lname},
+Bonjour, 
+Afin de pouvoir fixer vos RDV de contrôle et de soins dentaires, la prise de RDV en ligne est à nouveau accessible via notre site internet www.cdbn.be
+Si vous faites partie des personnes à risque, nous vous recommandons toutefois de prendre un rdv en début de journée.
+Vous pouvez aussi nous appeler au 081216303
+.
+Le cabinet dentaire Bourgeois - Nardini
+51, rue Sainte Rita
+5004 Bouge
+.
+(SVP, ne répondez pas à ce SMS, nous ne pouvons pas lire les réponses aux SMS. Utilisez uniquement le numéro 081216303)
+</french>

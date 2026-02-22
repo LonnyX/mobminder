@@ -1,0 +1,10 @@
+<french>{dear} {gender} {lname},
+
+Le Dr Véronique Fontaine a récemment déménagé sa consultation à Rixensart, à cette nouvelle adresse:
+
+Avenue Marcel Tilquin 12, 1330 Rixensart
+
+www.docteurveroniquefontaine.be
+
+Cordialement,
+( merci de ne pas répondre à ce sms )</french>

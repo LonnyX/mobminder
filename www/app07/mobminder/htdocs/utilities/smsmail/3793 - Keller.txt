@@ -1,0 +1,10 @@
+<french>{dear} {gender} {lname},
+C'est avec plaisir que nous vous recevrons à nouveau au cabinet dentaire. Les mesures sanitaires ont été prises pour vous soigner en toute sécurité.
+C'est pourquoi, nous vous demandons de venir seul et à l'heure exacte afin que la salle d'attente ne soit pas encombrée.
+L'usage des toilettes est fortement déconseillé, merci de prendre vos précautions.
+Enfin, du gel hydroalcoolique sera à votre disposition dans la salle d'attente.
+Merci d'avance pour votre contribution à la santé de tous.
+Nous espérons vous voir prochainement, prenez bien soin de vous,
+Cathie Keller, Ina Petcana et Sandrine Keller
+Tél: 027721015
+(Ne répondez pas à ce SMS, nous ne lisons pas les réponses aux SMS. Merci d'utiliser uniquement le numéro fourni ci-dessus)</french>

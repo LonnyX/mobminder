@@ -1,0 +1,88 @@
+<div leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="-webkit-text-size-adjust:none; margin:0; padding-top:2em; padding-bottom:5em; text-align:center; background-color:#D3E361; width:100% !important;">
+	<center><table border="0" cellpadding="0" cellspacing="0" width="600" style="border:1px solid #DDDDDD; margin:50px auto; background-color:#FFFFFF;">
+				<tr><td>
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:transparent; color:#404040; font-family:Arial; font-size:14px; line-height:150%;">
+		<tr>
+			<td valign="bottom" style="text-align:left; padding-left:3em; padding-right:2em; padding-top:2em;">
+				<p style="color:#4477AA;text-align:center; font-size:2em;"><strong>EXCLUSIVITÉ</strong><br/>&nbsp;</p>
+				<p>Chère Mme Vanhove,</p>
+				<p>Cette semaine, en exclusivité avec l'APAD, Mobminder est heureux de vous proposer une offre exceptionnelle!</p>
+			</td>
+			<td valign="top" style="text-align:right; padding-right:2em; padding-top:2em;">
+				<div style="text-align:left; overflow:hidden;">
+				<a href="http://www.apad.be"><img src="http://be.mobminder.com/comm/apad2017/apad.jpg" style=" height:14em; max-height:14em;" alt="She" border="0" style="border:none;"></a>
+				</div>
+			</td>
+		</tr>
+		</table>
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:transparent; color:#404040; font-family:Arial; font-size:14px; line-height:150%;">
+		<tr>
+			<td valign="top" style="color:#606060; font-size:2em; text-align:center; padding-top:1em; padding-bottom:1em;">
+				<strong>Abonnement Premium - 6 mois gratuits</strong>
+			</td>
+		</tr>
+		</table>
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:transparent; color:#404040; font-family:Arial; font-size:14px; line-height:150%;">
+		<tr>
+			<td valign="center" style="text-align:left; padding-left:3em; padding-right:0em; vertical-align:top;">
+				<p style="text-align:right;"><a href="http://www.mobminder.com" target="_blank"><img src="http://be.mobminder.com/comm/mob-logo.jpg" style=" height:8em; max-height:8em;" alt="Mobminder" border="0" style="border:none;"></a></p>
+
+				<p style="color:#4477AA;text-align:left; font-size:1.3em; padding-left:2em;">
+					<span style="color:#C3E351;"><strong>✓&nbsp;</strong></span> Site Web<br/>
+					<span style="color:#C3E351;"><strong>✓&nbsp;</strong></span> Réservation par le Web<br/>
+					<span style="color:#C3E351;"><strong>✓&nbsp;</strong></span> SMS de rappel</strong><br/>
+					<span style="color:#C3E351;"><strong>✓&nbsp;</strong></span> SMS de relance prévention<br/>
+					<span style="color:#C3E351;"><strong>✓&nbsp;</strong></span> Agenda partagé et mobile<br/>
+				</p>
+				<ul style="text-align:left; padding-left:1em; padding-top:1em;">
+					<li>formule PREMIUM</li>
+					<li>Un tarif réduit (49€/mois htva)</li>
+					<li>Une période d'essai exceptionnelle</li>
+				</ul>
+				<p><br/>Mobminder permet d'ouvrir une partie des consultations à la prise de RDV par Internet, 24h/24. Mobminder rappelle de manière automatique les RDVs par SMS et exécute la <strong>relance prévention</strong></p>				
+			</td>
+			<td valign="top" style="text-align:right;">
+				<div style="text-align:left; overflow:hidden;">
+				<a href="http://www.mobminder.com" target="_blank"><img src="http://be.mobminder.com/comm/images/smile.jpg" style=" height:36em; max-height:36em;" alt="She" border="0" style="border:none;"></a>
+				</div>
+			</td>
+		</tr>
+		</table>
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:transparent; color:#404040; font-family:Arial; font-size:14px; line-height:150%;">
+		<tr>
+			<td valign="top" style="text-align:left; padding-left:3em; padding-right:3em; padding-top:0em;">
+				<p>Sont inclus dans ce prix:</p>
+				<ul>
+					<li style="color:#404040">Votre site Web avec la <strong>réservation en ligne</strong> pour vos patients</li>
+					<li style="color:#404040">Tous les SMS automatiques de <strong>rappel de RDV</strong></li>
+					<li style="color:#404040">Agenda professionnel <strong>partagé</strong> avec vos collègues et <strong>mobile</strong></li>
+				</ul>	
+			</td>
+		</tr>
+		</table>
+		<table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color:transparent; color:#404040; font-family:Arial; font-size:14px; line-height:150%;">
+		<tr>
+			<td valign="top" style="text-align:left; padding-left:3em; padding-right:3em; padding-top:0em;">
+				<p>Souhaitez-vous en parler avec des confrères déjà équipés?
+				<br/>Visitez leurs pages de réservation. Contactez les sans hésiter pour avoir un avis.</p>
+				<ul>
+					<li style=""><a style="color:#336699;font-weight: normal;text-decoration:underline;" target="_blank" href="http://agenda.mobminder.com/lousse">Le cabinet dentaire Alain Lousse de Nivelles</a></li>
+					<li style=""><a style="color:#336699;font-weight: normal;text-decoration:underline;" target="_blank" href="http://agenda.mobminder.com/keller">La clinique dentaire Keller & Associés</a></li>
+					<li style=""><a style="color:#336699;font-weight: normal;text-decoration:underline;" target="_blank" href="http://agenda.mobminder.com/sophiejacques">La pédodontiste Sophie Jacques</a></li>
+					<li style=""><a style="color:#336699;font-weight: normal;text-decoration:underline;" target="_blank" href="http://agenda.mobminder.com/namurois">Le dentiste Marc Namurois à Ottignies</a></li>
+				</ul>	
+				<p><br/><strong>Répondez à cet email ou contactez Mobminder via <a href="http://www.mobminder.com/contact" target="_blank" title="Découvrez Mobminder" style="color: #336699;font-weight: normal;text-decoration:underline;">www.mobminder.com</a></strong></p>	
+				<p><strong>Mobminder est présent sur les congrès organisés par l'APAD</strong></p>							
+				<p>Cette offre est limitée dans le temps, réagissez avant le 31 Mai. Une démonstration à votre cabinet est gratuite et sans engagement.</p>										
+			</td>
+		</tr>
+		</table>
+		<table border="0" cellpadding="10" cellspacing="10" width="100%" style="background-color:transparent; color:#404040; font-family:Arial; font-size:14px; line-height:150%;">
+		<tr>
+			<td valign="top" width="50%" style="text-align:center;">
+				<div style="text-align:center;"><a href="http://www.mobminder.com" target="_blank"><img src="http://be.mobminder.com/comm/mob-logo.jpg" style=" height:10em; max-height:10em;" alt="Mobminder" border="0" style="border:none;"></a></div>
+				<div style="text-align:center;"><a href="http://www.mobminder.com" target="_blank" title="Découvrez Mobminder" style="color: #336699;font-weight: normal;text-decoration: underline;">www.mobminder.com</a></div>
+			</td>
+		</tr>
+		</table></td></tr></table></center>
+	</div>

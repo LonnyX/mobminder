@@ -1,0 +1,10 @@
+<french>{dear} {gender} {lname},
+
+Le dentiste Dr Brice KITIO a déménagé à une nouvelle adresse: Rue Dagneau 11, 7080 Frameries
+
+À partir de mars 2026, il consultera également au 55 Chaussée du Roi Baudouin à 7030 Saint-Symphorien.
+
+Bien cordialement,
+
+Agenda en ligne: www.kitdental.be
+Contact: 028979819</french>

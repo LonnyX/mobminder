@@ -1,0 +1,14 @@
+<french>Bonjour {gender} {lname},
+
+A partir du lundi 4 aout 2025, je consulterai uniquement Avenue de Broqueville 270, 1200 Woluwe-Saint-Lambert.
+
+Plus d'informations sur
+
+www.drgracenzeza.be 
+
+ou en appelant au 0487/94.96.47.
+
+Bien à vous,
+
+Dr Grace Nzeza
+Médecin généraliste</french>

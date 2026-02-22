@@ -1,0 +1,10 @@
+<french>{dear} {gender} {lname},
+Bonjour et meilleurs vœux!
+En 2021, ma résolution reste de vous aider jusqu’à votre objectif.
+Et si on reprenait notre chemin ensemble?
+A très bientôt,
+👧 Félise
+Votre coach Dietplus,
+☎ 082614837
+🏠 {business}
+🌏 www.dietplus.be</french>

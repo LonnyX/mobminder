@@ -1,0 +1,23 @@
+// This file must be used as test data for an update upon a Mobminder account having already initialized data.
+// This file is used in combination with VisitorsSyncinitTest_Reverse_mobminder_side.csv
+// Note that VisitorsSyncinitTest_Reverse_mobminder_side.csv must be loaded on the test account before using this feil in reverse init mode
+//
+remoteId;gender;birthday;firstname;lastname;address;city;zipCode;phone;mobile;email;note;rcolor
+
+
+// this section has remote Ids already known from Mobminder
+//
+1030;1;19810231	;Val		;Bruny		;rue du parc 1;					;6000;			;			;;should match on birthday;BL
+1031;1;19820231	;Martin		;Brulote	;rue de la Beu 2;				;5800;  		;0493000222	;;should match on mobile;
+1032;1;19830231	;Véronique	;Binnoche	;rue des voies 3;Couvin			;5640;			;			;;should match on city;
+1033;1;19840231	;Leonard	;Bôdelu		;rue Lattre 4;					;1400;071364560	;			;;should match on phone;
+
+// the following lines have data known in Mobminder but unlinked so far. Clever link should find and link those item
+//
+1100;1;19881230;Maarten;Horendonk;;;1970;;;;note from remote side;
+1101;1;19881230;Mathiùs;Haerenveldt;;;1970;;;;note from remote side;
+
+// the following line is very new to Mobminder and should be created as new item
+//
+1200;1;20040511;Warner;Bros;incorporated 79;Hollywood;1070;026621799;0493000111;starfamily@gmail.com;looks pretty VIP;
+

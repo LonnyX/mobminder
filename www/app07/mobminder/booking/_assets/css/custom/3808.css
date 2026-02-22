@@ -1,0 +1,25 @@
+
+/* 3808 Nicolai experts immo */
+
+body.c3808 { background: white;  }
+body.c3808 h1 { color:rgb(36,40,40) }
+body.c3808 h2, div.e-bullet-caption { color:rgb(36,40,40); }
+body.c3808 .action {  } /* this is the orange on buttons */
+body.c3808 .e-button {  }
+body.c3808 section.s-h1 { background:linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,.7), rgba(0,0,0,.8)); margin:0; padding:1em 0;}
+	body.c3808 section.s-h1 h1 { color:white; margin:0; }
+
+body.c3808 section.s-img { background:linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,.7), rgba(0,0,0,.8)); padding:1em; margin-top:0; }
+	body.c3808 section.s-img div { padding:0; }
+		body.c3808 section.s-img div img { max-height:200px !important; }
+	
+body.c3808 section.s-info  { background:white; padding:1em;  }
+
+body.c3808 section.s-action {  }
+body.c3808 section.s-directions { }
+body.c3808 section.s-footer { background:linear-gradient(to right, rgba(0,0,0,.8), rgba(0,0,0,.7), rgba(0,0,0,.8)); margin-top:10em; /* display:none; */ }
+
+
+body.c3808 div.e-bullet, input.e-button { background:rgb(214,99,3);  }
+
+

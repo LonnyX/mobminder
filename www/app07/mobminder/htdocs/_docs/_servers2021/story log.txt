@@ -1,0 +1,23 @@
+
+Installation Debian10 depuis la console OVH
+
+	D'abord il faut enregistrer sa clé SSH sur OVH:
+	https://docs.ovh.com/fr/dedicated/creer-cle-ssh-serveur-dediees/
+
+	J'ai pris ma clé publique sur app03, dans /home/pascal/.ssh, avec un #cat authorized_keys
+	Dans un premier temps, pensant qu'après le = final on pouvait mettre ce qu'on veut, j'ai indiqué U= PVH_NUC, mais impossible de se connecter avec Putty. 
+	Apparemment il faut attaquer le port standard ssh 22. Mais sur nos serveurs app03 et app04, je vois qu'on utilise le port 5620
+
+Juste après l'installation, on reçoit un mail :
+
+	Le système d'exploitation est : Debian 10 (Buster)
+	Le compte "debian" a été configuré (accès via SSH)
+	Méthode d'authentification: clé SSH (choisie lors de l'installation)
+	IP du serveur: 51.91.30.177
+	Vous pouvez dès à présent vous connecter à votre serveur avec la commande :
+    		# ssh debian@51.91.30.177
+
+
+
+
+

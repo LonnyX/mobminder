@@ -1,0 +1,12 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteRule   ^([0-9]{4,})\/([0-9]{6,})\/([a-z]{3,})$   http://be.mobminder.com/vical.php?aid=$1&vid=$2&vdi=$3 [NC,L]
+RewriteRule   ^.+$   error.html
+
+# => Quand on indiquera  http://vical.mobminder.com/2785/471253/hoviet
+# => Ca va appeler http://be.mobminder.com/vical.php?aid=2785&vid=471253&vdi=hoviet
+
+# le 3ieme slash est obligatoire et doit contenir au moins 3 lettres
+# le premier groupe contient minimum 4 chiffres
+# le second groupe contient minimum 4 chiffres

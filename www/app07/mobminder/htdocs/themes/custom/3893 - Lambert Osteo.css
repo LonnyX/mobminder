@@ -1,0 +1,27 @@
+
+
+body.c3893 { background: white;  }
+body.c3893 h1 { color:rgb(130,144,82) }
+body.c3893 h2 { color:rgb(87,92,95); }
+body.c3893 .action {  } /* this is the orange on buttons */
+body.c3893 .e-button {  }
+body.c3893 section.s-h1 { }
+body.c3893 section.s-info div.container { border-radius:1em; padding-top:1em; padding-bottom:2em; margin-bottom:3em; 
+											background:linear-gradient(to right, rgba(199,214,159,.6), rgba(199,214,159,1), rgba(199,214,159,.6));
+											}
+
+body.c3893 section.s-img {  }
+	body.c3893 section.s-img div { padding:0; }
+		body.c3893 section.s-img div img { max-height:200px !important; }
+	
+body.c3893 section.s-info { }
+body.c3893 section.s-action {  }
+body.c3893 section.s-directions { }
+body.c3893 section.s-footer { background:linear-gradient(to right, rgba(209,214,209,.6), rgba(209,214,209,1), rgba(209,214,209,.6)); }
+
+
+
+body.c3893 div.e-bullet { background:rgb(130,144,82); }
+body.c3893 div.e-bullet-caption { color:rgb(87,92,95);  }
+body.c3893 input.e-button { background:rgb(130,144,82);  }
+body.c3893 div.action { background:rgb(110,144,62); color:white; }

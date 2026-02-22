@@ -1,0 +1,7 @@
+<french>{dear} {gender} {lname},
+
+Pour faciliter la prise de RDV et éviter toute confusion avec le numéro de ses collègues, nous vous rappelons que le numéro de téléphone de la dentiste Gisèle Badibanga, remplaçante de Diego de Suray au Cabinet Dentaire des Iles d'Or, est le
+02/318.15.24
+
+Bien cordialement,
+</french>

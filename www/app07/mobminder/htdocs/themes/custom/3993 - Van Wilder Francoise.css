@@ -1,0 +1,27 @@
+
+
+body { background: white;  }
+ h1 { color:#354456 }
+ h2 { color:rgb(87,92,95); }
+ .action {  } /* this is the orange on buttons */
+ .e-button {  }
+ section.s-h1 { padding: 2em 0 0 0; }
+ section.s-info div.container { 
+	border-radius:3em; padding-top:1em; padding-bottom:2em; margin-bottom:3em; 
+	/* border: .3em solid #23b8a2 */
+	/* background:linear-gradient(to right, rgba(199,214,159,.6), rgba(199,214,159,1), rgba(199,214,159,.6)); */
+	}
+
+ section.s-img {  }
+	 section.s-img div { padding:0; }
+		 section.s-img div img { max-height:300px !important; }
+	
+ section.s-info { }
+ section.s-action {  }
+ section.s-directions { color:#354456 }
+ section.s-footer { background:linear-gradient(to right, rgba(66,69,71,.6), rgba(7,83,115,1), rgba(66,69,71,.6)); }
+
+ div.e-bullet { background:rgb(130,144,82); }
+ div.e-bullet-caption { color:rgb(87,92,95);  }
+ input.e-button { background:rgb(130,144,82);  }
+ div.action { background:#23b8a2; color:white; box-shadow: 2px 2px 4px silver; }

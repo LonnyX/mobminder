@@ -1,0 +1,211 @@
+
+
+	=> we found this on the MySQL log, and that is definitely the right best practice
+
+
+	https://dev.mysql.com/doc/refman/8.0/en/mysqldump.html#option_mysqldump_master-data
+
+		-- not necessary to stop the master server while dumping the backup. The mysqldump command freezes the databases during the backup
+
+	app04 #
+	mysqldump --databases newmobcom smsgateaway mobminder --socket=/var/run/mysqld/mysqld.sock --master-data=1 > /root/fixback.sql
+
+		note: le même fichier peut servir pour recharger les deux slaves derrière la production (app03 mysql et app04 mysql1). Il contient les coordonnées du pointeur master.
+
+	app04 #scp -P 5620 /root/fixback_com.sql root@app03.mobminder.com:/root/fixback.sql
+	
+		-- app03, the sync between mysql1 from mysql was already set up from empty databases, 
+		-- loading the backup into app03/mysql would fill all in once the mysql1
+
+	app03 # mysql
+	mysql > stop slave;
+	mysql > exit;
+
+	app03 # cd /root
+	app03 # mysql < fixback.sql
+
+	app03 # mysql
+	mysql > start slave;
+	mysql > exit;
+
+
+
+	DO NOT USE THIS BELOW !!!  = OBSOLETE = kept here only for educational reason
+
+
+
+	Etape 1 : mettre en place master / slave sur app03
+	==================================================
+
+app03 sudo su
+app03 mm start 0
+app03 mysql : STOP Slave;
+app03 mysql : reset slave;
+app03 mysql : DROP database mobminder / smsgateaway / newmobcom 
+	mysql> drop database mobminder;
+	mysql> drop database smsgateaway;
+	mysql> drop database newmobcom;
+
+app03 mm start 1
+app03 mysql_1 : STOP Slave;
+app03 mysql_1 : ( DROP database mobminder / smsgateaway / newmobcom )
+	mysql> drop database mobminder;
+	mysql> drop database smsgateaway;
+	mysql> drop database newmobcom;
+
+app03 mysql : RESET MASTER; 
+
+app03 mysql ( prendre note du pointeur P )
+	mysql > show master status;
+
+	+------------------+----------+--------------+------------------+-------------------+
+	| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |
+	+------------------+----------+--------------+------------------+-------------------+
+	| mysql-bin.004215 |      154 |              |                  |                   |
+	+------------------+----------+--------------+------------------+-------------------+
+	1 row in set (0.00 sec)
+
+	
+app03 mysql_1 : ( indiquer le pointeur P )
+	mysql > reset slave;
+	mysql > CHANGE MASTER TO MASTER_HOST='127.0.0.1',MASTER_USER='slave1',MASTER_PASSWORD='slavepass',MASTER_LOG_FILE='mysql-bin.004215',MASTER_LOG_POS=154;	
+
+
+app03 mysql_1 : ( START SLAVE )
+	mysql > start slave; 
+
+
+app03 #logmysql    ( commandes que Quentin a créé dans le bashrc )
+app03 #logmysql1
+
+
+
+
+
+
+	Etape 2 : nettoyage du slave sur app_04
+	=======================================
+
+app03 # mm start 1
+app03 # mysql1
+app03 mysql_1 : STOP Slave;
+app03 mysql_1 : ( DROP database mobminder / smsgateaway / newmobcom )
+	mysql> drop database mobminder;
+	mysql> drop database smsgateaway;
+	mysql> drop database newmobcom;
+
+
+
+
+
+	Etape 3 : STOP Master app04
+	===========================
+
+
+app04 mysql : 
+	mysql > RESET MASTER;
+
+app04 mysql : ( Empécher toute écriture serveur ) 
+	mysql > use mobminder; FLUSH TABLES WITH READ LOCK;  <= marche pas, utiliser LOCK TABLES t1 WRITE, t2 WRITE, ... ; ?
+	mysql > use smsgateaway; FLUSH TABLES WITH READ LOCK;
+	mysql > use newmobcom; FLUSH TABLES WITH READ LOCK;
+
+	
+	
+
+app04 mysql : Relever pointeur X
+	mysql > show master status;
++------------------+----------+--------------+------------------+-------------------+
+| File             | Position | Binlog_Do_DB | Binlog_Ignore_DB | Executed_Gtid_Set |
++------------------+----------+--------------+------------------+-------------------+
+| mysql-bin.000014 | 97651103 |              |                  |                   |
++------------------+----------+--------------+------------------+-------------------+
+1 row in set (0.00 sec)
+	mysql > exit;
+
+app04 mysql : drop SQL Backup
+ 	app04# mysqldump --databases mobminder --socket=/var/run/mysqld/mysqld.sock > /root/fixback_mob.sql
+ 	app04# mysqldump --databases smsgateaway --socket=/var/run/mysqld/mysqld.sock > /root/fixback_sms.sql
+ 	app04# mysqldump --databases newmobcom --socket=/var/run/mysqld/mysqld.sock > /root/fixback_com.sql
+
+
+
+app04 mysql : START serveur
+	mysql > unlock tables;
+	mysql > exit;
+
+
+	(copy backups to the app03 standby server)
+app04 #scp -P 5620 /root/fixback_mob.sql root@app03.mobminder.com:/root/fixback_mob.sql
+app04 #scp -P 5620 /root/fixback_sms.sql root@app03.mobminder.com:/root/fixback_sms.sql
+app04 #scp -P 5620 /root/fixback_com.sql root@app03.mobminder.com:/root/fixback_com.sql
+
+
+
+
+	Etape 4 : 
+	=========
+
+
+app04 mysql_1 :
+	app04# cd /root
+	app04# ls -al     <= on doit voir les dump sql
+	app04# mysql1 < fixback_com.sql
+	app04# mysql1 < fixback_sms.sql
+	app04# mysql1 < fixback_mob.sql
+	
+	app04# mysql1
+	mysql > show databases;  <= doit montrer nos bases de données.
+
+
+app04 mysql_1 : Redémarrer la réplication ( pointeur X )
+	
+	mysql1 > CHANGE MASTER TO MASTER_HOST='app04.mobminder.com',MASTER_USER='app03',MASTER_PASSWORD='slavepass',MASTER_LOG_FILE='mysql-bin.000014',MASTER_LOG_POS=97651103;
+
+		note: ci-dessus on voit qu'on ré-utilise le user app03, qui appelle lui ausi mysql0 depuis app03
+
+
+	mysql1 > start slave;
+
+	=> vérifier les logs 
+	mysql >  show slave status \G;  <= montre un statut plus détaillé
+	note : set global sql_slave_skip_counter=1; (laisse tomber une erreur au démarrage de la réplication)
+
+
+
+	Etape 5 : 
+	=========
+
+
+app03 mysql : run Backup  =>  il va s'écouler jusque dans app03 mysql_1, qui est déjà en route de réplication
+	app03# cd /root
+	app03# ls -al     <= on doit voir les dump sql
+	app03# mysql1 < fixback_com.sql
+	app03# mysql1 < fixback_sms.sql
+	app03# mysql1 < fixback_mob.sql
+	
+	app03# mysql1
+	mysql > show databases;  <= doit montrer nos bases de données.
+
+	!! on a eu un petit soucis avec une erreur sur mysql1: "Slave failed to initialize relay log info structure from the repository, Error_code: 1872"
+	Qu'on a résolu avec une série de commandes trouvées sur : https://github.com/vitessio/vitess/issues/5067
+
+		mysql > reset slave;
+		mysql > start slave IO_THREAD;
+		mysql > stop slave IO_THREAD;
+		mysql > reset slave;
+		mysql > start slave;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
