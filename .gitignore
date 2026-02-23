@@ -97,3 +97,16 @@ www/app07/booking/*
 
 # Mobminder utilities
 www/app07/mobminder/htdocs/utilities/*
+
+# =========================
+# Large data files
+# =========================
+# ZIP code databases and address files
+www/app07/mobminder/htdocs/_docs/Zips*
+**/FR_adresses-france.csv
+**/GDL_addresses.csv
+**/BE_Flanders_postal_street.csv
+**/BE_Wallonia_postal_street.csv
+
+# System logs
+**/syslog
