@@ -110,3 +110,6 @@ www/app07/mobminder/htdocs/_docs/Zips*
 
 # System logs
 **/syslog
+
+
+/docs
