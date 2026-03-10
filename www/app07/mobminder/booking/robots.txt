@@ -1,7 +1,5 @@
 User-agent: *
-Allow: /*
-
-User-agent: *
-Disallow: /_assets
+Allow: /
+Disallow: /_assets/
 
 Sitemap: https://booking.mobminder.com/sitemap.xml

@@ -35,15 +35,16 @@ $helper->synchronizePages(); //pass true as argument for removing all postfixurl
 
 $content = '<?xml version="1.0" encoding="UTF-8"?>'.chr(10).'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'.chr(10);
 
+$lastmod = date('Y-m-d');
 $q = new Q('SELECT id, trim(eresaUrl) as eresaUrl, eresaIdentMode FROM logins WHERE trim(eresaUrl) <> "";');
-while($r = $q->result->fetch_array()) 
+while($r = $q->result->fetch_array())
 {
     $postfixurl = $r['eresaUrl'];
     $url = 'https://booking.mobminder.com/'.$postfixurl.'/';
-    //echo $postfixurl.'</br>';
 
     $content=$content.'    <url>'.chr(10);
     $content=$content.'        <loc>'.$url.'</loc>'.chr(10);
+    $content=$content.'        <lastmod>'.$lastmod.'</lastmod>'.chr(10);
     $content=$content.'    </url>'.chr(10);
 }
 $content=$content.'</urlset>'.chr(10);
