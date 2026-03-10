@@ -238,8 +238,8 @@ e_MOB.prototype = {
 		mobminder.app.post({key:key,paymean:paymean,id:id}, {key:'k',id:'id', paymean:'paymean'}, '../_assets/delete/payment.php' );
 	},
 
-	start: function() { // config has been received from the server
-		if(vbs) vlog('e-resa.js','e_MOB','start','account:'+mobminder.account.name); 
+	start: function(cancelOnly) { // config has been received from the server
+		if(vbs) vlog('e-resa.js','e_MOB','start','account:'+mobminder.account.name+', cancelOnly:'+(cancelOnly?'yes':'no')); 
 		
 		$(this.elements.desk).show();
 		$(this.elements.sections.img).hide();
@@ -250,7 +250,7 @@ e_MOB.prototype = {
 
 		$('html, body').animate({ scrollTop:$('#body').offset().top }, 600);
 		
-		let remote = new C_eProcess(this.eids.remote, {ondone:new A_cb(this, this.ondone)});
+		let remote = new C_eProcess(this.eids.remote, {ondone:new A_cb(this, this.ondone)}, {cancelOnly: cancelOnly});
 		
 		this.elements.desk.innerHTML = remote.display();
 		
@@ -281,7 +281,7 @@ e_MOB.prototype = {
 
 		preventBrowserBackButton(window, document);
 
-		this.start();
+		this.start(true); // pass cancelOnly=true
 	},
 	ondone: function() { // a reservation is complete
 		
@@ -669,24 +669,21 @@ C_eRESA.prototype = {
 		if(this.state.paybancontact) this.controls.paybancontact.busy(busy);
 	},*/
 	setbuttonbusy(busy){
-		if(this.state.confirm) this.controls.confirm.enable(!busy);
-		if(!is.small && this.state.payconiq) this.controls.payconiq.enable(!busy);
-		if(this.state.payconiq) this.controls.payconiqlogo.enable(!busy);
+		if(this.state.confirm) this.controls.confirm.busy(busy);
+		if(!is.small && this.state.payconiq) this.controls.payconiq.busy(busy);
+		if(this.state.payconiq) this.controls.payconiqlogo.busy(busy);
 		
-		if(!is.small && this.state.paycard) this.controls.payvisa.enable(!busy);
-		if(this.state.paycard) this.controls.payvisalogo.enable(!busy);
+		if(!is.small && this.state.paycard) this.controls.payvisa.busy(busy);
+		if(this.state.paycard) this.controls.payvisalogo.busy(busy);
 		
-		if(this.state.paycard) this.controls.cancelcreditdebit.enable(!busy);
-		if(this.state.paycard) this.controls.confirmcreditdebit.enable(!busy);
+		if(this.state.paycard) this.controls.cancelcreditdebit.busy(busy);
+		if(this.state.paycard) this.controls.confirmcreditdebit.busy(busy);
 
-		if(!is.small && this.state.paycard) this.controls.paymc.enable(!busy);
-		if(this.state.paycard) this.controls.paymclogo.enable(!busy);
-		
-		
-		
+		if(!is.small && this.state.paycard) this.controls.paymc.busy(busy);
+		if(this.state.paycard) this.controls.paymclogo.busy(busy);
 
-		if(!is.small && this.state.paybancontact) this.controls.paybancontact.enable(!busy);
-		if(this.state.paybancontact) this.controls.paybancontactlogo.enable(!busy);
+		if(!is.small && this.state.paybancontact) this.controls.paybancontact.busy(busy);
+		if(this.state.paybancontact) this.controls.paybancontactlogo.busy(busy);
 	},
 
 	
@@ -732,8 +729,9 @@ C_eRESA.prototype = {
 		if(this.callbacks.deleted) this.callbacks.deleted.cb(this.dataSet.id);
 		if(this.dataSet.id>0) this.dataSet.unregister();
 	},
-	failed: function(stream) { 
+	failed: function(stream) {
 		this.controls.action.busy(false);
+		this.setbuttonbusy(false);
 	},
 	savepayconiq: function() {
 		if(vbs) vlog('e-resa.js', 'C_eRESA', 'savepayconiq', '');
@@ -1204,21 +1202,16 @@ C_iSLOT.prototype = {
 	},
 	displayDate: function(currentyear) { 
 		let date1;
-		//let displayyear = (currentyear!= this.resa.jsDateIn.getFullYear());
 		let displayyear = (currentyear!= this.resa.cueIn_yyyy);
 		if(is.small)
 		{
-			//let date1 = C_XL.date(this.resa.jsDateIn, {abreviation:(is.small?'abr':'full'), weekday:true, year:false } );
-			//date1 = C_XL.date(this.resa.jsDateIn, {abreviation:'abr', weekday:true, year:false } );
 			date1 = C_XL.date(new DateAcc(this.resa), {abreviation:'abr', weekday:true, year:false } );
-			//if(displayyear) date1 = date1+'</br>'+this.resa.jsDateIn.getFullYear();
-			if(displayyear) date1 = date1+'</br>'+this.resa.cueIn_yyyy;
+			if(displayyear) date1 = date1+' <span class="e-year-label">'+this.resa.cueIn_yyyy+'</span>';
 		}
 		else
 		{
-			//date1 = C_XL.date(this.resa.jsDateIn, {abreviation:'full',abrmonth:'abr', weekday:true, year:displayyear } );
-			//console.log("call c_xl.date");
-			date1 = C_XL.date(new DateAcc(this.resa), {abreviation:'full',abrmonth:'abr', weekday:true, year:displayyear } );
+			date1 = C_XL.date(new DateAcc(this.resa), {abreviation:'full',abrmonth:'abr', weekday:true, year:false } );
+			if(displayyear) date1 = date1+'</br><span class="e-year-label">'+this.resa.cueIn_yyyy+'</span>';
 			
 		}
 		
@@ -1422,11 +1415,34 @@ C_eProgress = function(eid) {
 	this.elements = new A_el();
 	this.eids = { ident:eid+'_ident', search:eid+'_search', select:eid+'_select', confirm:eid+'_confirm', thanks:eid+'_thanks' };
 	
-	let ident 	= new C_eStep(this.eids.ident, 	{ step:1, caption:'e-step ident', 	on:true   , symbol:symbol('ident') });
-	let options = new C_eStep(this.eids.search, { step:2, caption:'e-step options', on:false  , symbol:symbol('options') });
-	let select 	= new C_eStep(this.eids.select, { step:3, caption:'e-step select', 	on:false  , symbol:symbol('select') });
-	let confirm = new C_eStep(this.eids.confirm,{ step:4, caption:'e-step confirm', on:false  , symbol:symbol('confirm') });
-	let thanks 	= new C_eStep(this.eids.thanks, { step:5, caption:'e-step thanks', 	on:false  , symbol:symbol('thanks') });
+	// Scenario 1 swaps the progress bar labels so the user sees:
+	//   Step 1: Options -> Step 2: Select slot -> Step 3: Identify
+	// instead of the normal order:
+	//   Step 1: Identify -> Step 2: Options -> Step 3: Select slot
+	let scenario = mobminder.context && mobminder.context.surfer && mobminder.context.surfer.eresaScenario;
+	
+	let step1Caption, step1Symbol, step2Caption, step2Symbol, step3Caption, step3Symbol;
+	if(scenario) {
+		step1Caption = 'e-step options';
+		step1Symbol = symbol('options');
+		step2Caption = 'e-step select';
+		step2Symbol = symbol('select');
+		step3Caption = 'e-step ident';
+		step3Symbol = symbol('ident');
+	} else {
+		step1Caption = 'e-step ident';
+		step1Symbol = symbol('ident');
+		step2Caption = 'e-step options';
+		step2Symbol = symbol('options');
+		step3Caption = 'e-step select';
+		step3Symbol = symbol('select');
+	}
+	
+	let ident 	= new C_eStep(this.eids.ident, 	{ step:1, caption:step1Caption, on:true, symbol:step1Symbol });
+	let options = new C_eStep(this.eids.search, { step:2, caption:step2Caption, on:false, symbol:step2Symbol });
+	let select 	= new C_eStep(this.eids.select, { step:3, caption:step3Caption, on:false, symbol:step3Symbol });
+	let confirm = new C_eStep(this.eids.confirm,{ step:4, caption:'e-step confirm', on:false, symbol:symbol('confirm') });
+	let thanks 	= new C_eStep(this.eids.thanks, { step:5, caption:'e-step thanks', 	on:false, symbol:symbol('thanks') });
 
 	this.controls = new A_ct({ ident:ident, options:options, select:select, confirm:confirm, thanks:thanks });
 	this.bystep = { 1:ident, 2:options, 3:select, 4:confirm, 5:thanks };

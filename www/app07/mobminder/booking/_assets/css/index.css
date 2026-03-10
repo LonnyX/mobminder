@@ -384,6 +384,8 @@ input:-moz-placeholder { color:#999; } ::-webkit-input-placeholder  { color:#999
     color: transparent; 
 }
 
+.click.loading { opacity: 0.35; pointer-events: none; cursor: loading; }
+
 
 /*   O N E    M O R E  O R   F I N I S H     B T N S     */
 /*
@@ -462,6 +464,20 @@ table.cresta-table.checks td > div.selected 	> table td.cresta-check  	> ruby { 
 
 
 /* css for C_iSLOT */
+
+.e-year-label {
+    color:var(--c-titles);
+    font-weight:bold;
+    font-size:1.6em;
+    animation:eYearFadeIn 0.5s ease-out;
+}
+@media only screen and (max-width:576px) {
+    .e-year-label { font-size:1.4em; }
+}
+@keyframes eYearFadeIn {
+    from { opacity:0; }
+    to   { opacity:1; }
+}
 
 /*table.slots tr { vertical-align:top; border-top: 1px dotted rgba(0,0,0,0.3); }*/
 /*table.slots tr:not(:first-child)  { border-top: 1px dotted rgba(0,0,0,0.1); }*/

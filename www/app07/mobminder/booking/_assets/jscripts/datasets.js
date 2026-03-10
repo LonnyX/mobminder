@@ -3326,7 +3326,9 @@ C_dS_login.defaults = new A_df({
 	eresaNote:'', eresaHourlies:'', eresaDirections:'', eresaDirLabel:'', eresaDirUrl:'', 
 	eresaWorkcodes:'', eresaLink1label:'', eresaLink1url:'', eresaLink2label:'', eresaLink2url:'', eresaPalette:'', 
 	eresaFontTitle:'', eresaFontText:'', eresaCcss:'', eresaAuthent:0, eresaBlacklist:0,
-	syncwhat:1,syncTrescs:1, syncTvisis:1, syncTresas:1, soundsVolume:8, locked:0
+	syncwhat:1,syncTrescs:1, syncTvisis:1, syncTresas:1, soundsVolume:8, locked:0,
+	decision:0, aienabled:0,
+	eresaScenario:0
 	});
 C_dS_login.prototype = {
 	getKeys: function() {

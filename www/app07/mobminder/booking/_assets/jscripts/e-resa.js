@@ -177,7 +177,7 @@ C_eREG.prototype = {
 	save: function() { // programmaticaly trigger a save
 		
 		//2024-10-11 correction, prevent to create duplicates visitors by clicking several times
-		this.controls.save.enable(false);
+		this.controls.save.busy(true);
 
 		let names = { id:'id', email:'email', bdate:'birthday', gender:'gender', fname:'firstname', lname:'lastname', mobile:'mobile', addr:'address', zip:'zipCode', city:'city', country:'country', phone:'phone'};
 		mobminder.app.post(this.controls, names, '../_assets/post/visitor.php', new A_cb(this,this.saved), new A_cb(this,this.failed));
@@ -232,8 +232,10 @@ C_eREG.prototype = {
 		let id = 0; for(id in visitors) break;
 		if(this.callbacks.saved) this.callbacks.saved.cb(visitors[id]);
 	},
-	failed: function() { 
-		this.controls.cartouche.failuremsg(); 
+	failed: function() {
+		this.controls.save.busy(false);
+		this.controls.save.enable(true);
+		this.controls.cartouche.failuremsg();
 	}
 }
 
@@ -670,13 +672,14 @@ C_eVisitor.prototype = {
 //    R E S E R V A T I O N     P R O C E S S
 //
 
-C_eProcess = function(eid, callbacks) { // FIVE STEPS RESERVATION PROCESS IS OVERALL MANAGED HERE
+C_eProcess = function(eid, callbacks, initOptions) { // FIVE STEPS RESERVATION PROCESS IS OVERALL MANAGED HERE
 	this.watchdog = false;
 	this.cancelhasbeenclicked = false;
 	this.watchdogcounter=0;
 	this.classname = 'C_eProcess';
 	this.callbacks = callbacks||{}; // callbacks like { ondone:A_cb }
-	if(vbs) vlog('e-resa.js','C_eProcess','constructor',''); 
+	initOptions = initOptions || {};
+	if(vbs) vlog('e-resa.js','C_eProcess','constructor','cancelOnly:'+(initOptions.cancelOnly?'yes':'no')); 
 	mobminder.app.search = this;
 		let b = eid+'_';
 	this.eids = { eid:eid, outset:b+'outset', ident:b+'ident', options:b+'options', slots:b+'out', resa:b+'resa', goodbye:b+'goodbye', qrcode:b+'qrcode',
@@ -794,10 +797,32 @@ C_eProcess = function(eid, callbacks) { // FIVE STEPS RESERVATION PROCESS IS OVE
 	
 	
 	let jetlag = false; 
+	let scenario = mobminder.context.surfer.eresaScenario || 0;
+	let cancelOnly = initOptions.cancelOnly || false;
 
-	this.state = { duplicate:false, wkcnt:wkcnt, initializing:false,jetlag:jetlag };
+	// Cancel mode always uses scenario 0 (identification first)
+	if(cancelOnly) scenario = 0;
+
+	this.state = { duplicate:false, wkcnt:wkcnt, initializing:false, jetlag:jetlag, scenario:scenario, cancelOnly: cancelOnly };
 }
 C_eProcess.prototype = {
+	// Maps logical step numbers to actual pane numbers.
+	// Scenario 0 (default): ident=1, options=2, slots=3
+	// Scenario 1:           options=1, slots=2, ident=3
+	// Steps 4 (confirm) and 5 (thanks) stay the same in both scenarios.
+	pn: function(logicalStep) {
+		if(!this.state.scenario) return logicalStep;
+		switch(logicalStep) {
+			case 1: return 3;
+			case 2: return 1;
+			case 3: return 2;
+			default: return logicalStep;
+		}
+	},
+	hasVisitor: function() {
+		let ds = this.controls.visi.ds();
+		return ds && ds.id;
+	},
 	// public interface 
 	display: function(containerEid) {
 		let single = mobminder.account.single;
@@ -921,7 +946,19 @@ C_eProcess.prototype = {
 		
 		let s5_thanks = s5+thankpane;
 
-		let outset = '<div class="container" id="'+this.eids.outset+'">'+s1_ident+s2_options+s3_choose+s4_confirm+s5_thanks+'</div>';
+		// Scenario 1: show availability before identification.
+		// Pane content is swapped so the user picks options & slots first,
+		// then identifies themselves, while keeping the same pane DOM IDs (p1/p2/p3).
+		let outset;
+		if(this.state.scenario) {
+			let p1_s1 = '<div id="'+this.eids.panes.p1+'" class="step-pane">'+chooseopt+perfarea+soptable+search+'</div>';
+			let p2_s1 = '<div id="'+this.eids.panes.p2+'" class="e-msg step-pane">'+change1+slotshere+selectmsg+jetlagmsg+backslots+slotspane+moreslots+'</div>';
+			let p3_s1 = '<div id="'+this.eids.panes.p3+'" class="step-pane">'+identpane+currapps+moreapp+'</div>';
+			
+			outset = '<div class="container" id="'+this.eids.outset+'">'+s1+p1_s1+s2+p2_s1+s3+p3_s1+s4_confirm+s5_thanks+'</div>';
+		} else {
+			outset = '<div class="container" id="'+this.eids.outset+'">'+s1_ident+s2_options+s3_choose+s4_confirm+s5_thanks+'</div>';
+		}
 		
 		return outset;
 	},
@@ -933,6 +970,16 @@ C_eProcess.prototype = {
 		this.workcodeSelect([this.controls.eperf.value()]);
 		this.paneset(1);
 		this.state.initializing = false;
+		
+		// Scenario 1 starts at the options step (no visitor yet),
+		// so display a generic "please choose your options" message.
+		// C_XL.w('pls options') is a translated string from the language dictionary.
+		if(this.state.scenario) {
+			let msg = C_XL.w('pls options');
+			this.elements.msgs.options.innerHTML = msg;
+			$(this.elements.msgs.options).show();
+			$(this.elements.options).show();
+		}
 	},
 	reload: function() {
 		C_iSLOT.flush();
@@ -940,9 +987,16 @@ C_eProcess.prototype = {
 		if(this.callbacks.ondone) this.callbacks.ondone.cb();
 		$(this.elements.goodbye).hide();
 		this.paneset(1).controls.progress.step(1).caption(1); 
-		if(!this.callbacks.ondone) this.controls.progress.slideto(1); // if the callback is defined, it will probably hide this section and take care of the scrolling
-		this.controls.ident.reset();
-		$(this.elements.ident).show();
+		if(!this.callbacks.ondone) this.controls.progress.slideto(1);
+		if(this.state.scenario) {
+			let msg = C_XL.w('pls options');
+			this.elements.msgs.options.innerHTML = msg;
+			$(this.elements.msgs.options).show();
+			$(this.elements.options).show();
+		} else {
+			this.controls.ident.reset();
+			$(this.elements.ident).show();
+		}
 	},
 	// private functions
 	paneset: function(steps) { // opens a section under a step bullet, close all other sections
@@ -1066,7 +1120,7 @@ C_eProcess.prototype = {
 
 		let commonTimeboxings = arrayAND(timeboxingIds); // only the common resources to all workcodes, if not compatible, all are selected
 		this.controls.tboxing.set(commonTimeboxings.join('!')||'-');
-		this.controls.progress.caption(2,name);
+		this.controls.progress.caption(this.pn(2),name);
 		//this.controls.continued.set(0);
 		this.controls.snexton.set('0'); 
 		this.continuedslots = [];
@@ -1086,7 +1140,27 @@ C_eProcess.prototype = {
 		
 		let dSvisitor = this.controls.visi.ds();
 		if(vbs) vlog('e-resa.js','C_eProcess','visitorLoaded','name:'+dSvisitor.firstname+'&nbsp;'+dSvisitor.lastname); 
-		this.controls.progress.caption(1,dSvisitor.firstname+'&nbsp;'+dSvisitor.lastname);
+		this.controls.progress.caption(this.pn(1),dSvisitor.firstname+'&nbsp;'+dSvisitor.lastname);
+		
+		// Scenario 1: visitor just identified after picking a slot.
+		// Attach the visitor and workcode to the stored slot (normally done
+		// inside slotsfresh, but skipped there because visitor didn't exist yet),
+		// then continue to confirmation as if the slot was just clicked.
+		if(this.state.scenario && this.state.selectedSlot) {
+			if(vbs) vlog('e-resa.js','C_eProcess','visitorLoaded','scenario 1 - proceeding to confirmation with stored slot'); 
+			let storedSlot = this.state.selectedSlot;
+			this.state.selectedSlot = null;
+
+			let virtualid = -1;
+			new C_dS_att_visitor('slots', [virtualid--, storedSlot.id, class_visitor, dSvisitor.id]);
+			if(this.state.wkcnt)
+				new C_dS_performance('slots', [virtualid--, storedSlot.id, this.controls.eperf.value(), dSvisitor.id]);
+			storedSlot.rmeta();
+
+			this.slotclick(storedSlot);
+			return;
+		}
+		
 		this.checklimit();
 	},
 	/*DEV : old version overriden by JONA : currentApps: function(options) { // displays the list of appointments
@@ -1138,28 +1212,65 @@ C_eProcess.prototype = {
 		let ac = this.controls.visi.appscount();
 		let maybookmore = (eresaMax==0)?true:(ac<eresaMax);
 
+		// In cancelOnly mode, never allow booking more appointments when appointments exist
+		if(this.state.cancelOnly && ac > 0) {
+			maybookmore = false;
+		}
+
 		this.buttons.moredone.enable({left:maybookmore});
 		//DEV
 		//this.buttons.moredone.showbutton({left:maybookmore});
 
 		if(is.tactile) document.activeElement.blur(); // lets the soft keyboard disappear on touch devices
 		
-		if(vbs) vlog('e-resa.js','C_eProcess','checklimit','apps count:'+ac+', eresaMax:'+eresaMax+', after deletion:'+(options.afterdelete?'yes':'no')+',maydelete='+options.maydelete); 
+		if(vbs) vlog('e-resa.js','C_eProcess','checklimit','apps count:'+ac+', eresaMax:'+eresaMax+', after deletion:'+(options.afterdelete?'yes':'no')+',maydelete='+options.maydelete+', cancelOnly:'+(this.state.cancelOnly?'yes':'no')); 
 		
 		if(ac) { // that visitor has appointments
 			
 			this.currentApps(options);
 			$(this.elements.slots).hide();
-			//if(maybookmore) 
-			$(this.elements.msgs.moreapp).show();
+			
+			// In cancelOnly mode, hide the "book more" button
+			if(this.state.cancelOnly) {
+				$(this.elements.msgs.moreapp).hide();
+			} else {
+				//if(maybookmore) 
+				$(this.elements.msgs.moreapp).show();
+			}
 
 			
 			
 				
 		} else { // no appointment yet
-			if(options.afterdelete) {
-				this.elements.msgs.currapps.innerHTML = C_XL.w('e- you have no appointments');
+			if(options.afterdelete || this.state.cancelOnly) {
+				// Show "no appointments" message
+				let msg = '<div style="margin: 1em 0;">'+C_XL.w('e- you have no appointments')+'</div>';
+				
+				// In cancelOnly mode, add a "Prendre rendez-vous" button to allow booking
+				if(this.state.cancelOnly) {
+					msg += '<div style="margin: 2em 0; text-align:center;">';
+					msg += '<button class="e-button-book" style="background-color:#c75448; color:white; padding:15px 30px; border:none; border-radius:8px; font-size:16px; cursor:pointer; display:inline-flex; align-items:center; justify-content:center;">';
+					msg += '<span class="fa fa-plus-circle" style="margin-right:8px;"></span>';
+					msg += C_XL.w('book now');
+					msg += '</button>';
+					msg += '</div>';
+				}
+				
+				this.elements.msgs.currapps.innerHTML = msg;
 				$(this.elements.msgs.currapps).show();
+				
+				// Attach click handler for the book button in cancelOnly mode
+				if(this.state.cancelOnly) {
+					let self = this;
+					setTimeout(function() {
+						$('.e-button-book').off('click').on('click', function() {
+							// Switch to booking mode by clearing cancelOnly and proceeding to options
+							self.state.cancelOnly = false;
+							self.searchoptions();
+						});
+					}, 100);
+				}
+				
 				return; // do not step to reservation choices, show empty list of appointments.
 			}
 			return this.searchoptions(); // no future appointments, go straight to options choice
@@ -1171,14 +1282,25 @@ C_eProcess.prototype = {
 		
 		let dSvisitor = this.controls.visi.ds();
 		$(this.elements.msgs.currapps).hide();	
-		let msg = '<strong>'+C_XL.gender(dSvisitor.gender, dSvisitor.language)+'&nbsp;'+dSvisitor.lastname+'</strong>,&nbsp;';
+		
+		// In scenario 1 the visitor is not identified yet, so we skip
+		// the personalized greeting and AM/PM preference. Just show the
+		// generic "please choose your options" message instead.
+		let msg;
+		if(this.state.scenario && (!dSvisitor || !dSvisitor.id)) {
+			msg = C_XL.w('pls options');
+		} else {
+			msg = '<strong>'+C_XL.gender(dSvisitor.gender, dSvisitor.language)+'&nbsp;'+dSvisitor.lastname+'</strong>,&nbsp;';
 			msg += C_XL.w('pls options');
+			// Set AM/PM preference from visitor
+			this.controls.ampm.and(dSvisitor.prefAMPM);
+		}
+		
 		this.elements.msgs.options.innerHTML = msg;
 		$(this.elements.msgs.options).show();
 		
 		if(vbs) vlog('e-resa.js','C_eProcess','searchoptions',''); 
-		this.controls.ampm.and(dSvisitor.prefAMPM);
-		this.paneset(2).controls.progress.step(2).slideto(1);
+		this.paneset(this.pn(2)).controls.progress.step(this.pn(2)).slideto(1);
 		$(this.elements.options).show();
 		$(this.elements.msgs.change1).hide();
 		this.elements.slots.innerHTML = '';
@@ -1204,7 +1326,17 @@ C_eProcess.prototype = {
 	},
 	search: function() { 
 		this.buttons.search.busy(true);
-		this.controls.visitor.set(this.controls.visi.ds().id);
+		this.buttons.moreslots.busy(true);
+		this.buttons.backslots.busy(true);
+		
+		// In scenario 1 the search happens before identification.
+		// Send '-' as visitor placeholder; the server accepts it and
+		// returns available slots without visitor-specific filtering.
+		if(this.state.scenario && !this.hasVisitor()) {
+			this.controls.visitor.set('-');
+		} else {
+			this.controls.visitor.set(this.controls.visi.ds().id);
+		}
 		
 		if(this.days) { // there is a limit date (introduced  exceptionally for h4d, check this.days )
 			
@@ -1322,6 +1454,16 @@ C_eProcess.prototype = {
 	},
 	slotclick: function(resa) {
 		
+		// Scenario 1: visitor hasn't identified yet, so we can't confirm.
+		// Store the selected slot and redirect to the identification pane.
+		// Once identified, visitorLoaded() will resume from this stored slot.
+		if(this.state.scenario && !this.hasVisitor()) {
+			if(vbs) vlog('e-resa.js','C_eProcess','slotclick','scenario 1 - storing slot and going to identification'); 
+			this.state.selectedSlot = resa;
+			this.paneset(this.pn(1)).controls.progress.step(this.pn(1)).slideto(1);
+			$(this.elements.ident).show();
+			return;
+		}
 
 		let amount=0;
 		let perfprice=0
@@ -1374,7 +1516,7 @@ C_eProcess.prototype = {
 		let confirm = (!payconiq && !paycard && !paybancontact);
 		
 		
-		this.paneset(4).controls.progress.step(4, undefined, 3).caption(4,(confirm?C_XL.w('e-step confirm',{cap:1}):C_XL.w('epay_paytoconfirm',{cap:1})));
+		this.paneset(4).controls.progress.step(4, undefined, this.pn(3)).caption(4,(confirm?C_XL.w('e-step confirm',{cap:1}):C_XL.w('epay_paytoconfirm',{cap:1})));
 		
 		//display note label in function of : (payment or not) AND (allow note or not)
 		let paymsg=false;
@@ -1409,7 +1551,7 @@ C_eProcess.prototype = {
 		
 		let eresa = new C_eRESA(resa, { saved:new A_cb(this,(confirm?this.newresasaved:this.newresasavedandpay)), failed:new A_cb(this,this.overbooking) },
 			{ confirm:confirm,payconiq:payconiq,paycard:paycard,cardholder:cardholder,paybancontact:paybancontact,amount:amount,transnote:transnote,paymsg:paymsg } );
-		this.controls.progress.caption(3, eresa.summary()).slideto(2);
+		this.controls.progress.caption(this.pn(3), eresa.summary()).slideto(2);
 			
 		this.elements.slots.innerHTML = '';
 		this.elements.resa.innerHTML = eresa.display(); // note field with confirm button
@@ -1849,12 +1991,14 @@ C_eProcess.prototype = {
 		
 		this.displayErrorInformation(message);
 	},
-	appsummary: function() { // heads back to step 1 after a new appointment was taken
+	appsummary: function() { // heads back to step 1 (identification pane) after a new appointment was taken
 		
 		var visiId = this.controls.visi.ds().id;
 		this.controls.visi.load(visiId);
 		
-		this.paneset(1).controls.progress.step(1).caption(2).caption(3).caption(4).caption(5).slideto(1);
+		// Use pn(1) to get the correct pane for identification based on scenario
+		// Scenario 0: pn(1)=1, Scenario 1: pn(1)=3
+		this.paneset(this.pn(1)).controls.progress.step(this.pn(1)).caption(2).caption(3).caption(4).caption(5).slideto(1);
 		this.checklimit();
 
 	},
@@ -1880,7 +2024,7 @@ C_eProcess.prototype = {
 		if(vbs) vlog('e-resa.js','C_eProcess','change',''); 
 		$(this.elements.options).show();
 		this.elements.slots.innerHTML = '';
-		this.paneset(2).controls.progress.step(2).slideto(1);
+		this.paneset(this.pn(2)).controls.progress.step(this.pn(2)).slideto(1);
 		//this.controls.continued.set(0);
 		this.controls.snexton.set('0'); 
 		this.continuedslots = [];
@@ -1888,9 +2032,13 @@ C_eProcess.prototype = {
 	// ajax callbacks
 	connfailed: function() {
 		this.buttons.search.busy(false);
+		this.buttons.moreslots.busy(false);
+		this.buttons.backslots.busy(false);
 	},
 	slotsfresh: function(inlineDataSets) { // this is where we display this stuff on the slots pad
 		this.buttons.search.busy(false);
+		this.buttons.moreslots.busy(false);
+		this.buttons.backslots.busy(false);
 		this.enablebacksearchbutton();
 		
 		//bsp do not hide anymore because last section is already hidden
@@ -1899,9 +2047,10 @@ C_eProcess.prototype = {
 		
 		//bsp : hide previous section
 		//this.paneset(2,3).controls.progress.step(3).caption(3).slideto(3);
-		this.paneset(3).controls.progress.step(3).caption(3).slideto(3);
+		this.paneset(this.pn(3)).controls.progress.step(this.pn(3)).caption(this.pn(3)).slideto(this.pn(3));
 		
 		let virtualid = -1, cueLast = 0;
+		let hasVisitor = this.hasVisitor();
 		for(let id in inlineDataSets['C_dS_reservation']) {
 			//this.state.duplicate = { replan:replan, note:resa.note, ccsscolor:resa.cssColor, ccsspattern:resa.cssPattern };
 			let resa = inlineDataSets['C_dS_reservation'][id];
@@ -1911,12 +2060,14 @@ C_eProcess.prototype = {
 				resa.cssPattern = this.state.duplicate.ccsspattern;
 				resa.replan = this.state.duplicate.replan;
 			}
-			// relink visitor (there is always a visitor via web, and only one)
-			new C_dS_att_visitor('slots', [virtualid--, id, class_visitor, this.controls.visi.ds().id]);
-			
-			// relink workcode
-			if(this.state.wkcnt)
-				new C_dS_performance('slots', [virtualid--, id, this.controls.eperf.value(), this.controls.visi.ds().id ]);
+			// Link visitor and workcode to each slot returned by the server.
+			// In scenario 1 this is deferred to visitorLoaded() because
+			// the visitor hasn't been identified yet at this point.
+			if(hasVisitor) {
+				new C_dS_att_visitor('slots', [virtualid--, id, class_visitor, this.controls.visi.ds().id]);
+				if(this.state.wkcnt)
+					new C_dS_performance('slots', [virtualid--, id, this.controls.eperf.value(), this.controls.visi.ds().id ]);
+			}
 			
 			resa.rmeta();
 			new C_iSLOT(this.eids.slots, resa, { selected:new A_cb(this, this.slotclick) } );
@@ -2061,24 +2212,17 @@ C_eProcess.prototype = {
 
 				this.paneset(4);
 
-				//display step1 title = visitor name
-				this.controls.progress.step(1).caption(1,visitor.firstname+'&nbsp;'+visitor.lastname);
+				this.controls.progress.step(this.pn(1)).caption(this.pn(1),visitor.firstname+'&nbsp;'+visitor.lastname);
 
-				//display step2 title = workcode name
-				//let workcodenames = joinnames(resa.performances);
 				let workcodenames = (resa.performances?joinnames(resa.performances):"");
-				this.controls.progress.step(2).caption(2,workcodenames);
+				this.controls.progress.step(this.pn(2)).caption(this.pn(2),workcodenames);
 
-				//display step3 title = rdv date
-				//let date = C_XL.date(resa.jsDateIn, {abreviation:'full', weekday:true, year:!is.small });
-				//let cin = resa.jsDateIn.HHmm();
-				//let cout = resa.jsDateOut.HHmm();
 				let date = C_XL.date(new DateAcc(resa), {abreviation:'full', weekday:true, year:!is.small });
 				let cin = resa.cueIn_hhmm;
 				let cout = resa.cueOut_hhmm();
 				
 				let summary =  date+', '+C_XL.w('fromtime',{cap:0})+'&nbsp;'+cin+'&nbsp;'+C_XL.w('to',{cap:0})+'&nbsp;'+cout;
-				this.controls.progress.step(3).caption(3,summary); 
+				this.controls.progress.step(this.pn(3)).caption(this.pn(3),summary); 
 
 				//display step4 title = confirmed
 				this.controls.progress.step(4).caption(4,C_XL.w('mobile_payment_processing'));
